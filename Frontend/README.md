@@ -14,7 +14,7 @@ Documentación del trabajo realizado en el frente **Frontend** para la tarea:
 
 - **Framework:** React 
 - **Herramienta de build:** Vite
-- **Lenguaje:** JavaScript / TypeScript *(a confirmar)*
+- **Lenguaje:** TypeScript
 - **Gestor de paquetes:** npm
 
 ### Estructura de carpetas propuesta
@@ -45,9 +45,9 @@ Se evaluaron dos opciones para la integración del mapa interactivo:
 
 ### Decisión
 
-**Librería elegida:** 
+**Librería elegida:** **Leaflet (`react-leaflet`)**
 
-**Justificación:** 
+**Justificación:**  Se selecciona Leaflet por su rapidez de implementación para el MVP, bajo consumo de recursos y soporte nativo para visualizar coordenadas y capas territoriales oficiales de CABA.
 
 ## 4. Cómo levantar el proyecto localmente
 
@@ -58,6 +58,6 @@ npm run dev
 
 ## Estado
 
-- [ ] Estructura base del proyecto configurada
-- [ ] Arquitectura de componentes definida
-- [ ] Librería de mapa evaluada y elegida
+- [x] Estructura base del proyecto configurada
+- [x] Arquitectura de componentes definida
+- [x] Librería de mapa evaluada y elegida
