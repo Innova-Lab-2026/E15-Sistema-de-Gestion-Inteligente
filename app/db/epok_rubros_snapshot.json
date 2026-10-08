@@ -1,0 +1,4818 @@
+{
+  "source": "https://epok.buenosaires.gob.ar/cur3d/cuadrosdeuso/rubros/",
+  "count": 401,
+  "rubros": [
+    {
+      "rubro_id": 2,
+      "rubro": "1.6.3. Autoservicio de productos alimenticios",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 4,
+      "rubro": "1.8.32. Pinturería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 11,
+      "rubro": "1.6. Comercio minorista alimenticios por sistema de venta",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 15,
+      "rubro": "1.8.25. Local de venta de toldos y accesorios",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 16,
+      "rubro": "1.8. Comercio minorista excluido comestibles como uso principal",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 19,
+      "rubro": "1.3. Comercio mayorista con depósito-Art. 3.13.5. a)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 20,
+      "rubro": "1.8.28. Local de venta de artículos y equipamiento médico, hospitalario y farmacéutico",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 23,
+      "rubro": "1.8.21. Metales y piedras preciosas (compra-venta)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 27,
+      "rubro": "1.7.1. Paseo de Compras/Grandes Tiendas",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 28,
+      "rubro": "1.8.13. Cerrajería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 30,
+      "rubro": "1.8.37. Gas envasado",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 46,
+      "rubro": "1.8.8. Local de venta de semillas, plantas, artículos y herramientas para jardinería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 56,
+      "rubro": "1.4.4. Local de venta de productos alimenticios y/o bebidas (excluido feria, mercado, supermercado y autoservicio)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 65,
+      "rubro": "1.7.4. Autoservicio de productos no alimenticios",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 66,
+      "rubro": "1.8.2. Farmacia",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 70,
+      "rubro": "1.3.1. Local de venta de productos perecederos",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 72,
+      "rubro": "1.8.16. Local de venta de vidrios y espejos",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 73,
+      "rubro": "1.8.19. Instrumentos de precisión, científicos, musicales, ortopedia",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 79,
+      "rubro": "1.7.3. Centro de Compras",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 83,
+      "rubro": "1.8.36. Local de venta de reactivos y aparatos para laboratorios de análisis clínicos o industriales",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 92,
+      "rubro": "1.4.1. Local de venta de leña y carbón de leña",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 96,
+      "rubro": "1.2. Comercio mayorista con depósito",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 99,
+      "rubro": "1.7. Comercio minorista no alimenticios por sistema de venta",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 102,
+      "rubro": "1.5. Alimentación en general y gastronomía",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 103,
+      "rubro": "1.4. Comercio minorista de productos de abasto y alimenticios",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 112,
+      "rubro": "1.8.33. Local de venta de sustancias químicas, caucho y plásticos",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 117,
+      "rubro": "1.8.1. Herboristería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 120,
+      "rubro": "1.8.20. Armería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 124,
+      "rubro": "1.6.5. Mercado",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 132,
+      "rubro": "1.8.3. Local de venta de papeles pintados/ alfombras / artículos de decoración",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 136,
+      "rubro": "1.8.9. Local de venta de animales domésticos",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 137,
+      "rubro": "1.6.1. Supermercado",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 144,
+      "rubro": "1.8.15. Local de venta de símbolos patrios, distintivos, medallas y trofeos",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 145,
+      "rubro": "1.8.10. Local de venta de artículos para el hogar y afines",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 150,
+      "rubro": "1.8.38. Gas envasado, distribución hasta 100kgs",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 164,
+      "rubro": "1.8.29. Local de venta de artículos y aparatos para equipamiento comercial y de servicio",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 169,
+      "rubro": "1.4.3. Maxikiosco",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 171,
+      "rubro": "1.8.35. Vivero",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 176,
+      "rubro": "1.6.2. Supermercado total",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 177,
+      "rubro": "1.8.26. Local de venta de muebles en general productos de madera y mimbre, metálicos-colchones y afines",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 178,
+      "rubro": "1.8.30. Local de venta de repuestos y accesorios para automotores",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 203,
+      "rubro": "1.8.17. Rodados en general, bicicletas, motos",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 215,
+      "rubro": "1.8.27. Local de venta de elementos contra incendio, matafuegos y artículos para seguridad industrial",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 220,
+      "rubro": "1.8.12. Tabaquería, cigarrería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 221,
+      "rubro": "1.8.14. Óptica y fotografía",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 241,
+      "rubro": "1.8.5. Local de venta de materiales de construcción clase I (exposición y venta)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 245,
+      "rubro": "1.4.2. Local de venta de golosinas envasadas (kiosco)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 256,
+      "rubro": "1.8.22. Almacén naval",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 259,
+      "rubro": "1.8.11. Local de venta de artículos publicitarios",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 262,
+      "rubro": "1.5.1. Patio gastronómico",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 269,
+      "rubro": "1.8.34. Local de venta de lubricantes y aditivos para automotores",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 271,
+      "rubro": "1.8.31. Automotores, embarcaciones, aviones",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 276,
+      "rubro": "1.8.4. Local de venta de antigüedades, objetos de arte",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 284,
+      "rubro": "1.8.6. Local de venta de materiales de construcción clase II (con depósito, sin materiales a granel)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 287,
+      "rubro": "1.8.7. Local de venta de materiales de construcción clase III (sin exclusiones)",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 291,
+      "rubro": "1.5.2. Mercado gastronómico",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 295,
+      "rubro": "1.8.24. Casa de remates",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 298,
+      "rubro": "1.1. Comercio mayorista sin depósito",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 299,
+      "rubro": "1.6.4. Autoservicio de proximidad",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 305,
+      "rubro": "1.8.18. Relojería y joyería",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 309,
+      "rubro": "1.8.23. Ferretería industrial, máquinas, herramientas, motores industriales y agrícolas",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 319,
+      "rubro": "1.7.2. Galería Comercial",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 471,
+      "rubro": "1.5.3 Alimentación en general para llevar",
+      "categoria_id": 1,
+      "categoria": "Comercial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 9,
+      "rubro": "8.2.1. Local de distribución",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 57,
+      "rubro": "8.1.4 Depósitos fiscales",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 63,
+      "rubro": "8.1.3 Depósito primario",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 84,
+      "rubro": "8.1. Establecimientos de escala local y metropolitana",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 153,
+      "rubro": "8.2.2. Depósito residencial y guardamuebles",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 233,
+      "rubro": "8.2. Establecimientos de escala barrial",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 270,
+      "rubro": "8.1.2 Depósito logístico",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 312,
+      "rubro": "8.1.1 Centros de concentración logística",
+      "categoria_id": 2,
+      "categoria": "Depositos, Almacenamiento y logística",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 12,
+      "rubro": "6.3.4. Empresa de servicios fúnebres sin depósito",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 31,
+      "rubro": "6.1.7. Estudio y laboratorio fotográfico",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 40,
+      "rubro": "6.5. Servicios públicos y/o sociales",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 41,
+      "rubro": "6.1.8. Estudio profesional",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 42,
+      "rubro": "6.3.1. Escuela para pequeños animales",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 47,
+      "rubro": "6.1.5. Banco, oficinas crediticias, financieras y cooperativas",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 49,
+      "rubro": "6.1.14 Playa de remisión",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 52,
+      "rubro": "6.1.1. Agencias comerciales de empleo, turismo, inmobiliaria y otros",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 59,
+      "rubro": "6.2.15. Laboratorio de análisis no industriales",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 61,
+      "rubro": "6.3.3. Estación de radio/ televisión",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 62,
+      "rubro": "6.1.18 Pilates",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 69,
+      "rubro": "6.2.3. Alquiler de artículos, elementos, accesorios y muebles para prestación de servicios de lunch con depósito (excepto productos perecederos)",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 71,
+      "rubro": "6.3. Servicios que pueden ocasionar molestias o ser peligrosos",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 85,
+      "rubro": "6.3.2. Pensionado de pequeños animales",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 86,
+      "rubro": "6.1.12. Garaje comercial",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 93,
+      "rubro": "6.2.11. Estudio de radio",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 97,
+      "rubro": "6.2.21. Telefonía móvil celular, campo de antenas y equipos de transmisión",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 107,
+      "rubro": "6.1.15 Playa de depósito de vehículos sin compactación",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 111,
+      "rubro": "6.2.8. Corporaciones, cámaras y asociaciones profesionales, mutuales, gremiales o de bien público",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 118,
+      "rubro": "6.5.1. Oficina pública con acceso de público",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 119,
+      "rubro": "6.2.1. Agencia de información y noticias",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 125,
+      "rubro": "6.5.4. Cuartel de Bomberos",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 126,
+      "rubro": "6.2.10. Estudio de filmación y fotografía",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 128,
+      "rubro": "6.2.23. Oficina de correos",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 139,
+      "rubro": "6.5.5. Policía (comisaría)",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 140,
+      "rubro": "6.2.16. Mensajería en motocicleta y bicicleta",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 141,
+      "rubro": "6.1.10. Empresa de servicio de seguridad sin polígono de tiro",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 147,
+      "rubro": "6.5.3. Centro integral de la mujer y/o la diversidad",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 148,
+      "rubro": "6.2.4. Banco casa central",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 149,
+      "rubro": "6.1.17. Instituto remodelación adelgazamiento y gimnasia correctiva (con supervisión profesional médico)",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 151,
+      "rubro": "6.2.13. Estudio de grabación de sonido",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 158,
+      "rubro": "6.2.12. Estudio de televisión",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 161,
+      "rubro": "6.1.4. Agencia de alquiler de motocicletas y bicicletas",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 167,
+      "rubro": "6.1.2. Agencia de loterías",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 174,
+      "rubro": "6.1.9. Empresa de publicidad",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 175,
+      "rubro": "6.4. Actividades admitidas en estación de servicio",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 179,
+      "rubro": "6.4.1. Venta minorista de repuestos, lubricantes y aditivos envasados, taller de reparación de automóviles (excluido chapa pintura y rectificación de motores)",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 189,
+      "rubro": "6.2.14. Laboratorio de análisis industriales",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 190,
+      "rubro": "6.1.11. Empresa de servicio de seguridad con polígono de tiro",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 192,
+      "rubro": "6.2.22. Taller productivo anexo a vivienda",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 195,
+      "rubro": "6.3.10. Lavadero automático de vehículos automotores/ manual de vehículos automotores",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 200,
+      "rubro": "6.2.17. Oficina comercial/consultora",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 206,
+      "rubro": "6.1.20 Peluquería y otros servicios para animales domésticos",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 209,
+      "rubro": "6.3.8. Exposición y venta de ataúdes",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 210,
+      "rubro": "6.2.24. Sala de ensayos",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 222,
+      "rubro": "6.2.7. Casa de cambio-agencia de seguros",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 223,
+      "rubro": "6.1.6. Cobro de impuestos y servicios",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 231,
+      "rubro": "6.2. Servicios ocasionales para empresas o industrias",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 235,
+      "rubro": "6.2.19. Centro de procesamiento de datos y tabulaciones",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 236,
+      "rubro": "6.2.6. Bolsa de valores y de comercio",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 239,
+      "rubro": "6.2.18. Espacio de Trabajo Colaborativo",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 243,
+      "rubro": "6.3.5. Estación de servicio-combustibles líquidos y/o GNC",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 249,
+      "rubro": "6.3.9. Velatorio",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 251,
+      "rubro": "6.2.5. Báscula pública",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 255,
+      "rubro": "6.5.6. Policía (departamento central)",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 263,
+      "rubro": "6.2.2. Alquiler de artículos, elementos, accesorios y muebles para prestación de servicios de lunch sin depósito",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 277,
+      "rubro": "6.1. Servicios para la vivienda y sus ocupantes",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 283,
+      "rubro": "6.1.3. Agencia de taxímetros/remises/autos de alquiler",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 285,
+      "rubro": "6.2.20. Actividades de Tecnologías de la Información y las Comunicaciones (TIC)",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 288,
+      "rubro": "6.5.2. Oficina pública sin acceso de público",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 289,
+      "rubro": "6.1.13. Playa de estacionamiento",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 296,
+      "rubro": "6.2.9. Editorial sin depósito ni imprenta",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 307,
+      "rubro": "6.3.7. Empresa de servicios fúnebres con depósito y/o garaje",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 315,
+      "rubro": "6.1.16. Salón de estética",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 316,
+      "rubro": "6.1.19 Local de perforación y tatuaje",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 318,
+      "rubro": "6.3.6 Estación de cargadores eléctricos",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 469,
+      "rubro": "6.1.21 Centro de Yoga",
+      "categoria_id": 3,
+      "categoria": "Servicios",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 13,
+      "rubro": "4.3.4 Albergue transitorio",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 34,
+      "rubro": "4.2.5. Hotel 4 y 5 estrellas",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 38,
+      "rubro": "4.1.3. Hotel residencial",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 45,
+      "rubro": "4.3.3. Hospedaje Turístico / Residencial Turístico Categoría A y B",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 51,
+      "rubro": "4.3.1. Albergue Turístico/ Hostel Estándar y Superior",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 90,
+      "rubro": "4.1.2. Hotel Familiar (con o sin servicio de comida)",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 91,
+      "rubro": "4.2. Alojamiento turístico hotelero",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 116,
+      "rubro": "4.2.6. Hotel Boutique",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 142,
+      "rubro": "4.3.2. Hostal / Bed&Breakfast/ Cama y Desayuno Estándar y Superior",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 157,
+      "rubro": "4.2.3. Hotel 1 y 2 estrellas",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 163,
+      "rubro": "4.2.2. Apart hotel (Apart-residencial) 3 estrellas",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 173,
+      "rubro": "4.2.1. Apart hotel (Apart-residencial) 1 y 2 estrellas",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 182,
+      "rubro": "4.1.1. Casa de pensión",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 187,
+      "rubro": "4.1. Alojamiento no turístico",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 197,
+      "rubro": "4.2.4. Hotel 3 estrellas",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 257,
+      "rubro": "4.3. Alojamiento turístico para hotelero",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 475,
+      "rubro": "4.1.4. Centro de alojamiento temporal y práctica de deportes, disciplinas, juegos en línea y creación de contenido audiovisual",
+      "categoria_id": 4,
+      "categoria": "Alojamiento",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 10,
+      "rubro": "7.2.6. Garaje y/o taller de subterráneo",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 21,
+      "rubro": "7.4.6. Helipuerto",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 36,
+      "rubro": "7.1. Depósito de transporte",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 37,
+      "rubro": "7.4.2. Estación Terminal de Transporte interjurisdiccional",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 50,
+      "rubro": "7.2.7. Transporte de caudales",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 58,
+      "rubro": "7.4.1. Estación de transporte pre y post aéreo",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 64,
+      "rubro": "7.5.1. Plataforma de transferencia (carga) Caso particular Parque Patricios",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 80,
+      "rubro": "7.1.1. Depósito de equipo ferroviario, playa de contenedores",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 121,
+      "rubro": "7.2.2. Garaje para camiones y material rodante (privado), volquete, mudanzas",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 122,
+      "rubro": "7.2.1. Expreso de carga liviana (taxi flet)",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 185,
+      "rubro": "7.2.3. Garaje para ómnibus y colectivos",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 188,
+      "rubro": "7.2.5. Garaje para camiones con servicio al transportista con abastecimiento de combustible",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 201,
+      "rubro": "7.5.2. Terminal de carga por automotor. Caso particular Parque Patricios",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 214,
+      "rubro": "7.2.4. Garaje para camiones con servicio al transportista sin abastecimiento de combustible",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 224,
+      "rubro": "7.3. Estación intermedia",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 227,
+      "rubro": "7.5. Transferencia",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 250,
+      "rubro": "7.4. Estación terminal",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 252,
+      "rubro": "7.5.3. Centro de Trasbordo",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 260,
+      "rubro": "7.2. Garaje",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 264,
+      "rubro": "7.4.3. Estación terminal para transporte público urbano automotor",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 268,
+      "rubro": "7.1.2. Playa y/o depósito de contenedores",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 275,
+      "rubro": "7.4.4. Estación terminal de subterráneo",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 279,
+      "rubro": "7.3.1. Estación intermedia de subterráneos",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 286,
+      "rubro": "7.4.5. Estación terminal de tren suburbano",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 293,
+      "rubro": "7.2.8. Caballerizas, studs, guarda de vehículos tracción a sangre",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 303,
+      "rubro": "7.3.2. Estación intermedia de tren suburbano",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 313,
+      "rubro": "7.3.3 Estación intermedia para transporte público urbano automotor",
+      "categoria_id": 5,
+      "categoria": "Transporte",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 1,
+      "rubro": "2.1.6. Museo Clase I.  Permanentes y temporarias",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 6,
+      "rubro": "2.3.9. Tiro, polígono acústicamente aislado",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 7,
+      "rubro": "2.1.3. Centro Cultural B (hasta 300 personas y 500 m²)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 18,
+      "rubro": "2.3.6. Cancha de Golf",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 26,
+      "rubro": "2.1.15. Autocine",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 29,
+      "rubro": "2.1.14. Salón de exposiciones",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 32,
+      "rubro": "2.3.8. Natatorio",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 39,
+      "rubro": "2.5. Local de juego",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 53,
+      "rubro": "2.3.2. Clubes de Barrio",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 54,
+      "rubro": "2.1.10. Teatro independiente",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 60,
+      "rubro": "2.4.5. Local de música, canto y variedades",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 68,
+      "rubro": "2.5.1. Sala de apuesta hípica",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 74,
+      "rubro": "2.1.2. Centro Cultural A (hasta 150 personas y 300m²)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 75,
+      "rubro": "2.4.6 Club de música en vivo. Hasta 300 espectadores y 500m2, conciertos musicales en vivo",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 82,
+      "rubro": "2.1.16. Acuario",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 88,
+      "rubro": "2.4.13. Juegos psicomotrices",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 94,
+      "rubro": "2.4.2. Casa o local de fiestas privadas",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 95,
+      "rubro": "2.1.9. Centro de exposiciones/ centro de eventos",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 106,
+      "rubro": "2.4.14. Feria infantil",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 110,
+      "rubro": "2.5.2. Sala de loto, loto familiar o loto de salón",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 123,
+      "rubro": "2.4.8. Local de baile clase “C” II: más de 1000m2",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 134,
+      "rubro": "2.3.5. Cancha de mini-futbol y/o futbol cinco, futbol, básquet, hockey, volleyball, handball, etc",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 135,
+      "rubro": "2.4.12. Juegos de mesa y manuales",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 143,
+      "rubro": "2.1.8. Galería de arte",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 146,
+      "rubro": "2.3.7. Práctica de Golf",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 152,
+      "rubro": "2.1.12. Cine",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 154,
+      "rubro": "2.4.7. Local de baile clase “C” I: hasta 1000m2",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 155,
+      "rubro": "2.2. Local de lectura",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 159,
+      "rubro": "2.1.17 Jardín Zoológico",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 165,
+      "rubro": "2.1.7. Museo Clase II. Condicionado por el inmueble",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 170,
+      "rubro": "2.4.16. Peña",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 181,
+      "rubro": "2.3.1. Club social, cultural y deportivo con o sin instalaciones al aire libre",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 193,
+      "rubro": "2.4.9 Local de baile clase “C” actividades complementarias (20% de superficie total)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 194,
+      "rubro": "2.1.11. Teatro",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 205,
+      "rubro": "2.5.3. Sala de bingo",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 207,
+      "rubro": "2.3. Local deportivo",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 208,
+      "rubro": "2.6. Local de culto",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 213,
+      "rubro": "2.1.5. Centro Cultural D (más de 500 personas y 1000 m²)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 225,
+      "rubro": "2.4.1. Casa o local de fiestas privadas infantiles",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 230,
+      "rubro": "2.4.4. Salón de Milonga",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 237,
+      "rubro": "2.4.3 Calesita/Carrusel",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 238,
+      "rubro": "2.1.1 Espacio cultural independiente.  (Hasta 500M²)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 242,
+      "rubro": "2.3.3. Gimnasio",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 254,
+      "rubro": "2.4.11. Pista patinaje y/o skate. Sala patinaje sobre hielo",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 258,
+      "rubro": "2.4.10. Juego de bolos, billar, dardos, tenis de mesa, hockey de mesa, futbol de mesa",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 261,
+      "rubro": "2.4.15. Centro de entretenimiento familiar",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 274,
+      "rubro": "2.4.17. Circo Rodante (uso transitorio)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 280,
+      "rubro": "2.4. Local de fiesta o diversión",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 290,
+      "rubro": "2.3.4. Cancha de tenis/ paddle/frontón con raqueta (squash)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 294,
+      "rubro": "2.1.4. Centro Cultural C (hasta 500 personas y 1000 m²)",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 302,
+      "rubro": "2.1.13. Salón de conferencias, sala audiovisual",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 304,
+      "rubro": "2.2.1. Biblioteca local",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 311,
+      "rubro": "2.1. Local de representación",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 472,
+      "rubro": "2.3.10. Local de actividades físicas recreativas",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 473,
+      "rubro": "2.3.11 Estudio de danza",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 474,
+      "rubro": "2.4.18. Colonia de vacaciones",
+      "categoria_id": 6,
+      "categoria": "Diversiones publicas, cultura, culto y recreacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 3,
+      "rubro": "3.1.3. Jardín de infantes. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 5,
+      "rubro": "3.1. Establecimientos educacionales",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 14,
+      "rubro": "3.1.17 Escuela de educación especial -sin formación laboral-con Internado. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 24,
+      "rubro": "3.1.13 Escuela de educación especial -con formación laboral-con internado- Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 35,
+      "rubro": "3.1.15 Escuela de educación especial -con formación laboral-sin Internado. Gestión Privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 43,
+      "rubro": "3.1.4. Jardín de infantes. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 48,
+      "rubro": "3.1.21. Escuela secundaria. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 67,
+      "rubro": "3.1.7. Centro de primera infancia",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 87,
+      "rubro": "3.1.12 Escuela de educación especial -con formación laboral-con internado. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 98,
+      "rubro": "3.1.2. Jardín maternal. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 101,
+      "rubro": "3.1.9. Escuela primaria. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 105,
+      "rubro": "3.1.26 Instituto de educación superior",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 113,
+      "rubro": "3.1.10. Escuela primaria modalidad adultos. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 115,
+      "rubro": "3.1.19 Escuela de educación especial -sin formación laboral-sin internado. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 127,
+      "rubro": "3.1.30 Instituto de Enseñanza para adultos",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 130,
+      "rubro": "3.1.18. Escuela de educación especial -sin formación laboral-sin internado. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 131,
+      "rubro": "3.1.11. Escuela primaria modalidad adultos. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 168,
+      "rubro": "3.1.6. Escuela infantil. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 199,
+      "rubro": "3.1.22. Escuela secundaria. Gestión privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 202,
+      "rubro": "3.1.29 Instituto de Enseñanza para niños, niñas y adolescentes",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 211,
+      "rubro": "3.1.27 Establecimiento educación a distancia con exámenes presenciales",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 212,
+      "rubro": "3.1.24 Escuela secundaria modalidad adultos. Gestión Privada",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 217,
+      "rubro": "3.1.5. Escuela infantil. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 228,
+      "rubro": "3.1.31 Instituto de investigación sin laboratorio",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 240,
+      "rubro": "3.1.1. Jardín maternal Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 247,
+      "rubro": "3.1.32 Instituto de investigación con laboratorio",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 281,
+      "rubro": "3.1.8. Escuela primaria. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 297,
+      "rubro": "3.1.23 Escuela secundaria modalidad adultos. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 300,
+      "rubro": "3.1.20 Escuela, colegio con internado",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 306,
+      "rubro": "3.1.25. Establecimiento universitario",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 308,
+      "rubro": "3.1.14. Escuela de educación especial con formación laboral sin Internado. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 314,
+      "rubro": "3.1.16 Escuela de educación especial -sin formación laboral-con Internado. Gestión estatal",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 317,
+      "rubro": "3.1.28 Establecimiento educación a distancia sin exámenes presenciales",
+      "categoria_id": 7,
+      "categoria": "Educacion",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 17,
+      "rubro": "5.2.20. Centro de reproducción medicamente asistida",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 22,
+      "rubro": "5.2.19. Maternidad",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 25,
+      "rubro": "5.2.14. Emprendimiento Socioproductivo",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 33,
+      "rubro": "5.2.13. Residencia de salud mental-Residencia asistida de alto nivel de apoyo",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 44,
+      "rubro": "5.2.3. Consultorio de reproducción medicamente asistida",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 77,
+      "rubro": "5.2.6. Servicio médico u odontológico (urgencia)",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 78,
+      "rubro": "5.1.2. Consultorio profesional (anexo a vivienda)",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 81,
+      "rubro": "5.2.30. Pequeño Hogar (con internación) – Discapacidad",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 89,
+      "rubro": "5.2.37. Vacunatorio",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 100,
+      "rubro": "5.3.1. Hospital",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 104,
+      "rubro": "5.1.1. Consultorio veterinario",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 108,
+      "rubro": "5.3. Establecimientos de sanidad - Centro principal",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 109,
+      "rubro": "5.2.36. Servicios de traslados sanitarios, atención domiciliaria y emergencias",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 114,
+      "rubro": "5.1. Establecimientos de sanidad-Nivel básico",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 129,
+      "rubro": "5.2.35. Laboratorio de prótesis dentales",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 138,
+      "rubro": "5.2.2. Consultorio profesional",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 156,
+      "rubro": "5.2.27. Centro Educativo Terapéutico",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 162,
+      "rubro": "5.2.28. Centro de Rehabilitación para personas con discapacidad/Centro de estimulación temprana",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 172,
+      "rubro": "5.2.1. Casa de cuidados paliativos",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 180,
+      "rubro": "5.2.38. Laboratorio de estudios radiológicos y/o estudios especiales",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 183,
+      "rubro": "5.2.31. Hogar (con internación) – Discapacidad",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 184,
+      "rubro": "5.2.8. Centro de salud mental-Atención Ambulatoria",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 186,
+      "rubro": "5.2.12. Residencia de salud mental-Residencia asistida de nivel medio de apoyo",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 191,
+      "rubro": "5.2.15. Servicio de salud mental en el primer nivel de atención",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 196,
+      "rubro": "5.2.24. Taller Protegido de Producción",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 204,
+      "rubro": "5.2.5. Centro médico u odontológico",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 216,
+      "rubro": "5.2.23. Instituto privado (sanidad) c/internación",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 218,
+      "rubro": "5.2.17. Clínica",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 219,
+      "rubro": "5.2.39 Laboratorio de análisis clínicos, y/o estudios especiales para animales",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 226,
+      "rubro": "5.2.33. Centro veterinario con internación limitada al proceso pre y postoperatorio",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 229,
+      "rubro": "5.2.16. Instituto de salud mental",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 232,
+      "rubro": "5.2.26. Centro de Día – Discapacidad",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 234,
+      "rubro": "5.2.7. Centro de Especialidades Médicas Ambulatorias Regional de la Red Sanitaria de la Ciudad de Buenos Aires",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 244,
+      "rubro": "5.2.4. Centro de Salud y Acción Comunitaria de la Red Sanitaria de la Ciudad de Buenos Aires",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 246,
+      "rubro": "5.2.34. Laboratorio de análisis clínicos",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 248,
+      "rubro": "5.2.18. Sanatorio",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 253,
+      "rubro": "5.2.21. Centro de rehabilitación en general (recuperación física y/o social)",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 265,
+      "rubro": "5.1.3. Consultorio de Salud Mental",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 266,
+      "rubro": "5.2.32. Clínica veterinaria",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 267,
+      "rubro": "5.2.22. Instituto privado (sanidad) s/internación",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 272,
+      "rubro": "5.2.29. Residencia (con internación)- Discapacidad",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 273,
+      "rubro": "5.2.11. Residencia de salud mental-Residencia asistida de bajo nivel de apoyo",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 278,
+      "rubro": "5.2. Establecimientos de sanidad-Nivel centro local",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 292,
+      "rubro": "5.2.9. Centro de salud mental-Hospital de Día",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 301,
+      "rubro": "5.2.10. Centro de salud mental-Centro de Día",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 310,
+      "rubro": "5.2.25. Taller Protegido Terapéutico",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 476,
+      "rubro": "5.2.40 Casa Club",
+      "categoria_id": 8,
+      "categoria": "Sanidad",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 8,
+      "rubro": "9.3. Residencia comunitaria",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 55,
+      "rubro": "9.1. Vivienda individual",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 76,
+      "rubro": "9.3.1. Convento",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 133,
+      "rubro": "9.3.5. Hogar de contención y/o refugio",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 160,
+      "rubro": "9.3.4. Residencial para personas mayores",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 166,
+      "rubro": "9.3.3. Residencia de estudiantes",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 198,
+      "rubro": "9.3.2. Hogar de niñas, niños y adolescentes",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 282,
+      "rubro": "9.2. Vivienda colectiva",
+      "categoria_id": 9,
+      "categoria": "Residencial",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 395,
+      "rubro": "10.1.6 Destilación de alcohol etílico",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 396,
+      "rubro": "10.3.11 Planta de tratamiento de RSU",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 397,
+      "rubro": "10.3.7 Planta de Transferencia de RSU",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 398,
+      "rubro": "10.1.16 Fabricación de gases comprimidos y licuados",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 399,
+      "rubro": "10.1.3 Matanza de animales y procesamiento de su carne; elaboración de subproductos cárnicos n.c.p",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 400,
+      "rubro": "10.2.18 Plantas fraccionamiento gases licuados",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 401,
+      "rubro": "10.3.4 Centros de almacenamiento transitorio de residuos sujetos a manejo especial",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 402,
+      "rubro": "10.2.9 Empresas de limpieza de edificios",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 403,
+      "rubro": "10.1.33 Fabricación y reparación de aeronaves",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 404,
+      "rubro": "10.1.1 Matanza de ganado bovino y procesamiento de su carne",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 405,
+      "rubro": "10.1.25 Fabricación de productos de cerámica refractaria",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 406,
+      "rubro": "10.2.11 Empresa de limpieza y desinfección de tanques de agua potable",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 407,
+      "rubro": "10.1.35 Reciclamiento de desperdicios y desechos no metálicos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 408,
+      "rubro": "10.1.27 Elaboración de cal y yeso",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 409,
+      "rubro": "10.3.5 Centro de procesamiento de residuos sujetos a manejo especial",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 410,
+      "rubro": "10.2.22 Servicios de depuración de aguas residuales, alcantarillado y cloacas",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 411,
+      "rubro": "10.1.21 Fabricación de plaguicidas y otros productos químicos de uso agropecuario",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 412,
+      "rubro": "10.3.10 Punto Limpio",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 413,
+      "rubro": "10.3.3 Recolección, reducción y eliminación de desperdicios",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 414,
+      "rubro": "10.1.30 Fundición de hierro y acero",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 415,
+      "rubro": "10.2.19 Suministro de vapor y agua caliente",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 416,
+      "rubro": "10.2.5 Instaladores de calefactores – acondicionadores de aire",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 417,
+      "rubro": "10.1.4 Elaboración de leches y productos lácteos deshidratados",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 418,
+      "rubro": "10.1.2 Matanza de ganado, excepto el bovino y procesamiento de su carne",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 419,
+      "rubro": "10.1.15 Elaboración de combustible nuclear",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 420,
+      "rubro": "10.1.14 Fabricación de productos de la refinación del petróleo",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 421,
+      "rubro": "10.1.23 Fabricación de envases de vidrio",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 422,
+      "rubro": "10.3.6 Clasificación y selección de materiales recuperables, reutilizables y reciclables",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 423,
+      "rubro": "10.2.21 Empresas de demolición",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 424,
+      "rubro": "10.2.23 Servicios de saneamiento público n.c.p",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 425,
+      "rubro": "10.2 Construcción; suministro de electricidad, gas, vapor y aire acondicionado; suministro de agua, cloacas y saneamiento público; servicios personales N.C.P",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 426,
+      "rubro": "10.1.8 Lavado de lana",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 427,
+      "rubro": "10.2.4 Instaladores de plomería",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 428,
+      "rubro": "10.1 Industria manufacturera",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 429,
+      "rubro": "10.2.7 Empresas de pintura, decoración, yesería",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 430,
+      "rubro": "10.1.10 Curtido y terminación de cueros",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 431,
+      "rubro": "10.2.2 Reparaciones y mantenimientos edificios y sus partes",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 432,
+      "rubro": "10.1.22 Fabricación de jabones y preparados para pulir",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 433,
+      "rubro": "10.2.8 Ensayos y análisis técnicos (según Ley N° 2.265)",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 434,
+      "rubro": "10.2.24 Lavado y limpieza de artículos de tela, cuero y/o de piel, incluso limpieza en seco",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 435,
+      "rubro": "10.3.2 Reciclamiento de desperdicios y desechos no metálicos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 436,
+      "rubro": "10.1.12 Fabricación de pasta de madera, papel y cartón",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 437,
+      "rubro": "10.2.20 Captación, depuración y distribución de agua de fuentes superficiales",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 438,
+      "rubro": "10.1.17 Fabricación de curtientes naturales y sintéticos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 439,
+      "rubro": "10.1.24 Fabricación y elaboración de vidrio plano",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 440,
+      "rubro": "10.3.1 Reciclamiento de desperdicios y desechos metálicos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 441,
+      "rubro": "10.2.15 Transporte de energía eléctrica",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 442,
+      "rubro": "10.2.1 Excavación y movimiento de tierra",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 443,
+      "rubro": "10.1.11 Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y tableros y paneles n.c.p",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 444,
+      "rubro": "10.1.31 Fundición de metales no ferrosos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 445,
+      "rubro": "10.1.32 Fabricación de armas y municiones",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 446,
+      "rubro": "10.2.13 Planta de reciclaje residuos sujeto a manejo especial",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 447,
+      "rubro": "10.2.10 Empresas de desinfección/desratización",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 448,
+      "rubro": "10.2.25 Guardado de pieles. (Cámara frigorífica)",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 449,
+      "rubro": "10.1.26 Elaboración de cemento",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 450,
+      "rubro": "10.1.34 Reciclamiento de desperdicios y desechos metálicos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 451,
+      "rubro": "10.1.19 Fabricación de materias químicas orgánicas básicas n.c.p",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 452,
+      "rubro": "10.2.16 Talleres de reparación y mantenimiento (empresas de provisión de energía eléctrica)",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 453,
+      "rubro": "10.2.17 Fabricación de gas y distribución de combustibles gaseosos por tuberías",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 454,
+      "rubro": "10.2.6 Colocadores de revestimientos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 455,
+      "rubro": "10.2.3 Empresas de hormigón",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 456,
+      "rubro": "10.2.12 Planta de tratamiento de residuos peligrosos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 457,
+      "rubro": "10.1.18 Fabricación de materias químicas inorgánicas básicas n.c.p",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 458,
+      "rubro": "10.3.9 Base secundaria de recolección de RSU",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 459,
+      "rubro": "10.3 Higiene urbana; gestión de residuos (excluidos residuos peligrosos) y recuperación de materiales",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 460,
+      "rubro": "10.1.5 Elaboración de quesos",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 461,
+      "rubro": "10.1.9 Teñido de pieles",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 462,
+      "rubro": "10.3.8 Base primaria de recolección de RSU",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 463,
+      "rubro": "10.1.7 Destilación, rectificación y mezcla de bebidas espirituosas",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 464,
+      "rubro": "10.1.29 Producción de metales no ferrosos n.c.p. y sus semielaborados",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 465,
+      "rubro": "10.1.28 Elaboración de aluminio primario y semielaborados de aluminio",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 466,
+      "rubro": "10.1.13 Fabricación de productos de hornos de coque",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 467,
+      "rubro": "10.1.20 Fabricación de abonos y compuestos de nitrógeno",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 468,
+      "rubro": "10.2.14 Generación de energía eléctrica",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "rubro_id": 470,
+      "rubro": "10.4 Hotel Industrial",
+      "categoria_id": 10,
+      "categoria": "Industria",
+      "mixturas": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ]
+}

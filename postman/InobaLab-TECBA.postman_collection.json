@@ -1,0 +1,803 @@
+{
+  "info": {
+    "name": "InobaLab TECBA API",
+    "description": "Colección Postman del backend TECBA. Se actualiza en cada etapa de implementación.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "00 Health",
+      "item": [
+        {
+          "name": "GET Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Body status is ok', function () {",
+                  "  var json = pm.response.json();",
+                  "  pm.expect(json.status).to.eql('ok');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/health",
+            "description": "Etapa 0 — healthcheck de la API."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "01 Catalog",
+      "item": [
+        {
+          "name": "GET Activities",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Has official epok rubros', function () {",
+                  "  var items = pm.response.json();",
+                  "  pm.expect(items.length).to.be.at.least(100);",
+                  "  pm.expect(items.some(i => i.code === 'rubro_102')).to.be.true;",
+                  "  pm.expect(items.some(i => i.epok_rubro_id === 102)).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/activities",
+            "description": "Etapa 1 — catalogo de actividades MVP."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Activities (epok fields)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Has ferreteria rubro_309 and epok fields', function () {",
+                  "  var items = pm.response.json();",
+                  "  pm.expect(items.length).to.be.at.least(100);",
+                  "  var hw = items.find(i => i.code === 'rubro_309');",
+                  "  pm.expect(hw).to.be.ok;",
+                  "  pm.expect(hw.epok_rubro_id).to.eql(309);",
+                  "  pm.expect(hw.epok_category_id).to.eql(1);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/activities",
+            "description": "Catalogo medio alineado a epok."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Sources",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('At least 3 sources', function () {",
+                  "  pm.expect(pm.response.json().length).to.be.at.least(3);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/sources",
+            "description": "Etapa 1 — fuentes oficiales seed."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Offices",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Offices include source_ids', function () {",
+                  "  var items = pm.response.json();",
+                  "  pm.expect(items.length).to.be.above(2);",
+                  "  pm.expect(items[0].source_ids.length).to.be.above(0);",
+                  "});",
+                  "pm.test('Includes official AGC office', function () {",
+                  "  var items = pm.response.json();",
+                  "  var agc = items.find(function (o) { return o.id === 'office-001'; });",
+                  "  pm.expect(agc).to.not.eql(undefined);",
+                  "  pm.expect(agc.address).to.include('Perón 2941');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/offices",
+            "description": "Etapa 1 — oficinas / canales con source_ids."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Offices by category and commune",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/offices?category=rubro_16&commune=5",
+            "description": "Etapa 1 — filtro por actividad y comuna (Sede Comunal 5 = Boedo)."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Sources (tramites curados)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Has curated procedure sources', function () {",
+                  "  var items = pm.response.json();",
+                  "  var ids = items.map(i => i.id);",
+                  "  pm.expect(ids).to.include('source-001');",
+                  "  pm.expect(ids).to.include('source-005');",
+                  "  pm.expect(ids).to.include('source-006');",
+                  "  var guia = items.find(i => i.id === 'source-001');",
+                  "  pm.expect(guia.url).to.include('como-habilitar-tu-local-comercial');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/sources",
+            "description": "Etapa 3b — fuentes de tramites curados con URL oficial."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Open Data packages (BA Data)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Has BA Data packages', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.packages.length).to.be.at.least(1);",
+                  "  pm.expect(j.gastronomia.total).to.be.at.least(1000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/open-data/packages",
+            "description": "Etapa 3b — snapshot ETL BA Data."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Gastronomy context Balvanera",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Context for Balvanera/Comuna 3', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.count_barrio).to.be.above(0);",
+                  "  pm.expect(j.count_comuna).to.be.above(0);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/open-data/gastronomy-context?commune=3&neighborhood=Balvanera",
+            "description": "Conteo BA Data por comuna/barrio."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 Location",
+      "item": [
+        {
+          "name": "POST Geocode — Corrientes 2500",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Confirmed with coords', function () {",
+                  "  var json = pm.response.json();",
+                  "  pm.expect(json.status).to.eql('confirmed');",
+                  "  pm.expect(json.latitude).to.be.a('number');",
+                  "  pm.expect(json.longitude).to.be.a('number');",
+                  "  pm.expect(json.commune).to.be.ok;",
+                  "  pm.expect(json.neighborhood).to.be.ok;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": \"Av. Corrientes 2500\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/geocode",
+            "description": "Etapa 2 — camino feliz mock/USIG (comuna/barrio enriquecidos)."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Geocode — Libertador 1954 CABA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Confirmed CABA with commune', function () {",
+                  "  var json = pm.response.json();",
+                  "  pm.expect(json.status).to.eql('confirmed');",
+                  "  pm.expect(json.candidates.length).to.eql(1);",
+                  "  pm.expect(json.commune).to.be.ok;",
+                  "  pm.expect(json.neighborhood).to.be.ok;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": \"Av. del Libertador 1954\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/geocode",
+            "description": "Filtra matches fuera de CABA y completa comuna/barrio via datos_utiles."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Geocode — Palermo ambiguous",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Ambiguous with candidates', function () {",
+                  "  var json = pm.response.json();",
+                  "  pm.expect(json.status).to.eql('ambiguous');",
+                  "  pm.expect(json.candidates.length).to.be.above(1);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": \"Palermo\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/geocode"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Geocode — outside CABA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Out of scope', function () {",
+                  "  pm.expect(pm.response.json().status).to.eql('out_of_scope');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": \"Mar del Plata\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/geocode"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Geocode — not found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Not found', function () {",
+                  "  pm.expect(pm.response.json().status).to.eql('not_found');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": \"Calle Inventada 99999\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/geocode"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Geocode — empty address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 422', function () {",
+                  "  pm.response.to.have.status(422);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": \"\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/geocode"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Zoning — Corrientes coords + rubro_102",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Has smp and mixtura', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(['ok','rubro_allowed','rubro_not_allowed']).to.include(j.status);",
+                  "  pm.expect(j.parcel).to.be.ok;",
+                  "  pm.expect(j.parcel.smp).to.be.ok;",
+                  "  pm.expect(j.mixtura).to.be.a('number');",
+                  "  pm.expect(j.epok_rubro_id).to.eql(102);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"latitude\": -34.604,\n  \"longitude\": -58.413,\n  \"activity_code\": \"rubro_102\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/locations/zoning",
+            "description": "Etapa 3b — parcela/smp + mixtura + check rubro gastronomia."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 Consultations",
+      "item": [
+        {
+          "name": "POST Consultation — cafeteria + Corrientes (deterministic)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Curated tramites + zoning', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(['complete','partial']).to.include(j.status);",
+                  "  pm.expect(j.location.status).to.eql('confirmed');",
+                  "  pm.expect(j.requirements.length).to.be.above(0);",
+                  "  pm.expect(j.requirements[0].steps.length).to.eql(6);",
+                  "  pm.expect(j.requirements[0].description).to.include('buenosaires.gob.ar');",
+                  "  pm.expect(j.steps[0].url_fuente).to.be.ok;",
+                  "  pm.expect(j.zoning).to.be.ok;",
+                  "  pm.expect(j.zoning.parcel.smp).to.be.ok;",
+                  "  var sourceIds = j.sources.map(s => s.id);",
+                  "  var terr = (j.territorial_information || []).map(t => t.title).join('|');",
+                  "  pm.expect(terr).to.include('BA Data');",
+                  "  pm.expect(sourceIds).to.include('source-005');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"Av. Corrientes 2500\",\n  \"confirmed_location\": null\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/consultations",
+            "description": "Etapa 3+3b — deterministico con zoning epok (smp/mixtura/rubro)."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Consultation — NL query cafeteria",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Interpreted rubro_102', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.interpretation.activity.normalized_category).to.eql('rubro_102');",
+                  "  pm.expect(j.location.status).to.eql('confirmed');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir una cafeteria en Av. Corrientes 2500. Que tengo que hacer?\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/consultations",
+            "description": "Etapa 3+4 — interpreta NL y completa orientacion."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Consultation — actividad invalida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('activity_unknown', function () {",
+                  "  pm.expect(pm.response.json().status).to.eql('activity_unknown');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activity_code\": \"veterinaria\",\n  \"address\": \"Av. Corrientes 2500\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/consultations"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Consultation — fuera de CABA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('out_of_scope or location_not_found', function () {",
+                  "  pm.expect(['out_of_scope','location_not_found']).to.include(pm.response.json().status);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"Mar del Plata\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/consultations"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 Interpretations",
+      "item": [
+        {
+          "name": "POST Interpret — cafeteria Corrientes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Ready for geocoding', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.status).to.eql('ready_for_geocoding');",
+                  "  pm.expect(j.activity.normalized_category).to.eql('rubro_102');",
+                  "  pm.expect(j.location.address).to.be.ok;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir una cafeteria en Av. Corrientes 2500. Que tengo que hacer?\",\n  \"conversation_id\": null\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/interpretations",
+            "description": "Etapa 4 — extrae cafeteria + direccion. Sin LLM_API_KEY usa mock."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Interpret — ferreteria",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('ferreteria -> rubro_309', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.status).to.eql('ready_for_geocoding');",
+                  "  pm.expect(j.activity.normalized_category).to.eql('rubro_309');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir una ferreteria en Santiago del Estero 112. Que tengo que hacer?\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/interpretations"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Interpret — local de ropa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir un local de ropa en Av. del Libertador 1954\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/interpretations"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Interpret — sin direccion",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Needs clarification', function () {",
+                  "  pm.expect(pm.response.json().status).to.eql('needs_clarification');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir una cafeteria\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/interpretations"
+          },
+          "response": []
+        },
+        {
+          "name": "POST Interpret — actividad fuera de catalogo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir una veterinaria en Av. Corrientes 2500\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/interpretations"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "source": "https://data.buenosaires.gob.ar",
+  "fetched_at": "2026-10-01T00:54:12.068784+00:00",
+  "package_ids": [
+    "oferta-establecimientos-gastronomicos",
+    "comunas",
+    "barrios",
+    "api-consulta-datos-utiles",
+    "codigo-urbanistico"
+  ],
+  "packages": [
+    {
+      "id": "oferta-establecimientos-gastronomicos",
+      "title": "Oferta y Establecimientos gastronómicos",
+      "notes": "Listado de restaurantes y otros establecimientos de oferta gastronómica existentes en la Ciudad Autónoma de Buenos Aires",
+      "organization": "Ente de Turismo (ENTUR)",
+      "license_id": "CC-BY-2.5-AR",
+      "metadata_created": "2021-05-10T20:19:55.560000",
+      "metadata_modified": "2026-07-22T13:13:22.725228",
+      "url": "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos",
+      "resources": [
+        {
+          "id": "e66613ef-aaf4-44aa-b89c-638c431fef0e-xlsx",
+          "name": "Oferta gastronómica (XLSX)",
+          "format": "XLSX",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta_gastronomica.xlsx",
+          "description": "Restaurantes, bares y cafeterías de la Ciudad de Buenos Aires"
+        },
+        {
+          "id": "e66613ef-aaf4-44aa-b89c-638c431fef0e",
+          "name": "Oferta gastronómica",
+          "format": "CSV",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta_gastronomica.csv",
+          "description": "Restaurantes, bares y cafeterías de la Ciudad de Buenos Aires"
+        },
+        {
+          "id": "4dc39a90-07a4-4173-8a20-eb353a577a9f-xlsx",
+          "name": "Establecimientos Gastronómicos (XLSX)",
+          "format": "XLSX",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/establecimientos_gastronomicos.xlsx",
+          "description": "Ubicación de los establecimientos gastronómicos inscriptos en el Registro de Prestadores Turísticos de la Ciudad Autónoma de Buenos Aires"
+        },
+        {
+          "id": "4dc39a90-07a4-4173-8a20-eb353a577a9f",
+          "name": "Establecimientos Gastronómicos",
+          "format": "CSV",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/establecimientos_gastronomicos.csv",
+          "description": "Ubicación de los establecimientos gastronómicos inscriptos en el Registro de Prestadores Turísticos de la Ciudad Autónoma de Buenos Aires"
+        },
+        {
+          "id": "ec94f84b-3052-45ca-a8f0-3e6d2c04d9e8",
+          "name": "Establecimientos Gastronómicos (SHP)",
+          "format": "ZIP",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/establecimientos-gastronomicos.zip",
+          "description": "Archivo shapefile con los establecimientos gastronómicos"
+        },
+        {
+          "id": "9623ce40-7771-499a-9bec-782222eba786",
+          "name": "Oferta gastronómica (GeoJSON)",
+          "format": "GeoJSON",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta-gastronomica.geojson",
+          "description": "Archivo GeoJSON con la localización de la oferta gastronómica de la ciudad"
+        },
+        {
+          "id": "a0addddd-440e-4133-9dd2-4ffa05b556b2",
+          "name": "Oferta gastronómica (SHP)",
+          "format": "ZIP",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta-gastronomica.zip",
+          "description": "Archivo shapefile de la oferta gastronómica de la ciudad"
+        }
+      ]
+    },
+    {
+      "id": "comunas",
+      "title": "Comunas",
+      "notes": "Este conjunto de datos proporciona información sobre la ubicación, perímetro y área de las comunas de la Ciudad de Buenos Aires, establecidas a partir de la Ley Orgánica de Comunas (Ley Nº 1777/2005). La información permite analizar la distribución territorial y la organización administrativa de la ciudad, facilitando estudios de planificación urbana y gestión pública.",
+      "organization": "Secretaria de Innovación y Transformación Digital",
+      "license_id": "CC-BY-2.5-AR",
+      "metadata_created": "2021-05-10T20:20:54.646000",
+      "metadata_modified": "2026-07-29T17:10:59.271822",
+      "url": "https://data.buenosaires.gob.ar/dataset/comunas",
+      "resources": [
+        {
+          "id": "Juqdkmgo-612222-resource",
+          "name": "Comunas (SHP)",
+          "format": "ZIP",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/comunas/comunas.zip",
+          "description": "Archivo shapefile con las comunas de la Ciudad."
+        },
+        {
+          "id": "Juqdkmgo-612221-resource-xlsx",
+          "name": "Comunas (XLSX)",
+          "format": "XLSX",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/comunas/comunas.xlsx",
+          "description": "Comunas de la Ciudad incluyendo los barrios que la componen."
+        },
+        {
+          "id": "b0b627ac-5b47-4574-89ac-6999b63598ee",
+          "name": "Comunas (GeoJSON)",
+          "format": "JSON",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/comunas/comunas.geojson",
+          "description": "Archivo GeoJSON con la localización de las comunas de la Ciudad."
+        },
+        {
+          "id": "Juqdkmgo-612221-resource",
+          "name": "Comunas (CSV)",
+          "format": "CSV",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/comunas/comunas.csv",
+          "description": "Comunas de la Ciudad incluyendo los barrios que la componen."
+        }
+      ]
+    },
+    {
+      "id": "barrios",
+      "title": "Barrios",
+      "notes": "En este dataset encontrarás los recursos geográficos necesarios que delimitan oficialmente cada uno de los barrios de la Ciudad Autónoma de Buenos Aires, incluyendo su ubicación y extensión territorial. \r\n",
+      "organization": "Secretaria de Innovación y Transformación Digital",
+      "license_id": "CC-BY-2.5-AR",
+      "metadata_created": "2021-05-10T20:20:48.705000",
+      "metadata_modified": "2026-07-29T17:10:54.619370",
+      "url": "https://data.buenosaires.gob.ar/dataset/barrios",
+      "resources": [
+        {
+          "id": "dcd11728-8ec5-4082-a81c-7348ac89a48a",
+          "name": "Barrios (SHP)",
+          "format": "ZIP",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/barrios/barrios.zip",
+          "description": "Archivo Shapefile de los Barrios de la Ciudad."
+        },
+        {
+          "id": "juqdkmgo-191-resource-xlsx",
+          "name": "Barrios (XLSX)",
+          "format": "XLSX",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/barrios/barrios.xlsx",
+          "description": "Localización y límites geográficos de los barrios de la Ciudad."
+        },
+        {
+          "id": "1c3d185b-fdc9-474b-b41b-9bd960a3806e",
+          "name": "Barrios (GeoJSON)",
+          "format": "GeoJSON",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/barrios/barrios.geojson",
+          "description": "Archivo GeoJSON con la localización de los barrios de la Ciudad."
+        },
+        {
+          "id": "juqdkmgo-191-resource",
+          "name": "Barrios (CSV)",
+          "format": "CSV",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/barrios/barrios.csv",
+          "description": "Localización y límites geográficos de los barrios de la Ciudad."
+        },
+        {
+          "id": "7ac3ebfa-2f32-41d4-ae39-ae6f5ba15070",
+          "name": "Barrios por Comuna (CSV)",
+          "format": "CSV",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/barrios/barrios_comunas_p_Ciencia_de_Datos_y_PP.csv",
+          "description": "Número de comuna al que pertenece cada barrio. Archivo utilizado para el curso de Ciencia de Datos para Políticas Públicas de GCBA. "
+        },
+        {
+          "id": "7ac3ebfa-2f32-41d4-ae39-ae6f5ba15070-xlsx",
+          "name": "Barrios por Comuna (XLSX)",
+          "format": "XLSX",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/barrios/barrios_comunas_p_Ciencia_de_Datos_y_PP.xlsx",
+          "description": "Número de comuna al que pertenece cada barrio. Archivo utilizado para el curso de Ciencia de Datos para Políticas Públicas de GCBA."
+        },
+        {
+          "id": "5040e8fe-ce16-4d08-a091-b1dbe53335f1",
+          "name": "Población por barrio (CSV)",
+          "format": "CSV",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/barrios/caba_pob_barrios_2010.csv",
+          "description": "Información de la cantidad de población que tiene cada barrio a partir del Censo 2010. "
+        },
+        {
+          "id": "bc5c9bc7-a16c-4786-831e-f76499bcf68e",
+          "name": "Población por barrio (XLSX)",
+          "format": "XLSX",
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/barrios/caba_pob_barrios_2010.xlsx",
+          "description": "Información de la cantidad de población que tiene cada barrio a partir del Censo 2010. "
+        }
+      ]
+    }
+  ],
+  "gastronomia": {
+    "total": 2823,
+    "csv_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta_gastronomica.csv",
+    "geojson_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta-gastronomica.geojson",
+    "by_comuna": {
+      "1": 870,
+      "14": 467,
+      "2": 327,
+      "3": 224,
+      "4": 142,
+      "13": 140,
+      "6": 125,
+      "7": 100,
+      "15": 87,
+      "5": 77,
+      "12": 70,
+      "9": 68,
+      "10": 58,
+      "11": 50,
+      "8": 18
+    },
+    "by_barrio": {
+      "Palermo": 467,
+      "San Nicolas": 454,
+      "Recoleta": 327,
+      "Balvanera": 215,
+      "Monserrat": 149,
+      "Caballito": 125,
+      "Retiro": 109,
+      "Flores": 85,
+      "San Telmo": 80,
+      "Belgrano": 71,
+      "Almagro": 63,
+      "Barracas": 49,
+      "Puerto Madero": 48,
+      "Villa Crespo": 44,
+      "Boca": 44,
+      "Colegiales": 41,
+      "Parque Patricios": 37,
+      "Mataderos": 34,
+      "Villa Devoto": 32,
+      "Constitucion": 30,
+      "NuÃÂ±ez": 28,
+      "Villa Urquiza": 27,
+      "Saavedra": 25,
+      "Villa Ortuzar": 20,
+      "Liniers": 20,
+      "Chacarita": 18,
+      "Monte Castro": 15,
+      "Parque Chacabuco": 15,
+      "Parque Avellaneda": 14,
+      "Boedo": 14,
+      "Velez Sarsfield": 13,
+      "Villa Pueyrredon": 13,
+      "Floresta": 13,
+      "Nueva Pompeya": 12,
+      "Villa Lugano": 10,
+      "Versalles": 10,
+      "San Cristobal": 9,
+      "Villa Del Parque": 9,
+      "Villa Riachuelo": 6,
+      "Villa Gral. Mitre": 5
+    },
+    "by_categoria": {
+      "RESTAURANTE": 1990,
+      "CAFE": 334,
+      "BAR": 247,
+      "CONFITERIA": 55,
+      "PUB": 53,
+      "VINERIA": 22,
+      "SANDWICHERIA": 4,
+      "DELIVERY & TAKE AWAY": 2
+    },
+    "sample_balvanera": [
+      {
+        "nombre": "A CORUÃâA",
+        "categoria": "VINERIA",
+        "direccion": "MISIONES 125",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "ALA...",
+        "categoria": "RESTAURANTE",
+        "direccion": "BELGRANO AV. 1836",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "ALABAMA",
+        "categoria": "RESTAURANTE",
+        "direccion": "RIVADAVIA AV. 3102",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "ALBERNIZ",
+        "categoria": "CAFE",
+        "direccion": "RIVADAVIA AV. 2886",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "AMAKAI",
+        "categoria": "CAFE",
+        "direccion": "INDEPENDENCIA AV. 3001",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "APLAUSOS",
+        "categoria": "RESTAURANTE",
+        "direccion": "BELGRANO AV. 3251",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "ARACA BUENOS AIRES",
+        "categoria": "RESTAURANTE",
+        "direccion": "AYACUCHO 408",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      },
+      {
+        "nombre": "ATENEA",
+        "categoria": "RESTAURANTE",
+        "direccion": "RIVADAVIA AV. 2300",
+        "barrio": "Balvanera",
+        "comuna": "3"
+      }
+    ],
+    "encoding": "latin-1",
+    "delimiter": ";"
+  }
+}
