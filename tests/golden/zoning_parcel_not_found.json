@@ -1,0 +1,20 @@
+{
+  "affectations": null,
+  "allowed_rubro_ids_sample": [],
+  "epok_category_id": null,
+  "epok_rubro_id": null,
+  "latitude": -34.7,
+  "longitude": -58.5,
+  "message": "Mock epok: no hay parcela fixture cerca de esas coordenadas.",
+  "mixtura": null,
+  "parcel": null,
+  "provider_id": "epok-mock",
+  "provider_name": "Mock Ciudad 3D / epok",
+  "referencias": null,
+  "rubro_allowed": null,
+  "source_ids": [
+    "source-004"
+  ],
+  "status": "parcel_not_found",
+  "usos": []
+}

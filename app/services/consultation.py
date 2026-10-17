@@ -46,8 +46,17 @@ class ConsultationService:
         self.settings = settings
         self.db = db
         self.location_service = LocationService(settings)
+        self._llm_fallback_reason: str | None = None
 
     async def create(self, body: ConsultationRequest) -> ConsultationResponse:
+        response = await self._build_response(body)
+        if self._llm_fallback_reason:
+            # The LLM was configured but failed: the frontend can tell the user the
+            # interpretation came from local rules.
+            response.data_status.warnings.append("llm_fallback_mock")
+        return response
+
+    async def _build_response(self, body: ConsultationRequest) -> ConsultationResponse:
         activity_code = body.activity_code
         address = body.address
         original_query = body.query
@@ -59,6 +68,7 @@ class ConsultationService:
             interpreted = await InterpretationService(
                 self.settings, self.db
             ).interpret(body.query.strip())
+            self._llm_fallback_reason = interpreted.fallback_reason
 
             original_query = interpreted.original_query
             if interpreted.status in {"needs_clarification", "activity_unknown", "out_of_scope"}:
@@ -191,17 +201,21 @@ class ConsultationService:
                     data_status=DataStatus(overall="blocked", missing=["location"]),
                     message=geo.message,
                 )
-            location = ConsultationLocation(
-                normalized_address=geo.normalized_address,
-                commune=geo.commune,
-                neighborhood=geo.neighborhood,
-                city=geo.city,
-                latitude=geo.latitude,
-                longitude=geo.longitude,
-                precision=geo.precision,
-                status="confirmed",
-                candidates=geo.candidates,
-            )
+            if geo.status == "unavailable":
+                # Partial answer: requirements/offices/sources still apply without coordinates.
+                location = ConsultationLocation(status="unavailable", message=geo.message)
+            else:
+                location = ConsultationLocation(
+                    normalized_address=geo.normalized_address,
+                    commune=geo.commune,
+                    neighborhood=geo.neighborhood,
+                    city=geo.city,
+                    latitude=geo.latitude,
+                    longitude=geo.longitude,
+                    precision=geo.precision,
+                    status="confirmed",
+                    candidates=geo.candidates,
+                )
 
         # Retrieve official-ish seed data
         payload = await self._retrieve(
@@ -215,6 +229,9 @@ class ConsultationService:
         zoning_out: ZoningOut | None = None
         missing: list[str] = []
         warnings: list[str] = []
+        if location.status == "unavailable":
+            missing.append("location")
+            warnings.append("geocoder_unavailable")
 
         if location.latitude is not None and location.longitude is not None:
             zoning_result = await get_epok_client(self.settings).lookup_zoning(

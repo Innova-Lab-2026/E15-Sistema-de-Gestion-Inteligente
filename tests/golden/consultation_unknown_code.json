@@ -1,0 +1,34 @@
+{
+  "data_status": {
+    "missing": [
+      "activity"
+    ],
+    "overall": "blocked",
+    "warnings": []
+  },
+  "documents": [],
+  "interpretation": null,
+  "location": {
+    "candidates": [],
+    "city": null,
+    "commune": null,
+    "latitude": null,
+    "longitude": null,
+    "message": null,
+    "neighborhood": null,
+    "normalized_address": null,
+    "precision": null,
+    "status": "pending"
+  },
+  "map_layers": [],
+  "message": "activity_out_of_scope",
+  "online_procedures": [],
+  "physical_offices": [],
+  "requirements": [],
+  "sources": [],
+  "status": "activity_unknown",
+  "steps": [],
+  "summary": "La actividad \"rubro_999999\" no pertenece al catalogo del MVP.",
+  "territorial_information": [],
+  "zoning": null
+}

@@ -40,6 +40,28 @@
             "description": "Etapa 0 — healthcheck de la API."
           },
           "response": []
+        },
+        {
+          "name": "GET Ready",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Ready', function () { pm.expect(pm.response.json().status).to.eql('ready'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ready",
+            "description": "Readiness: DB + schema migrado. 503 database_unavailable si la base no responde."
+          },
+          "response": []
         }
       ]
     },
@@ -448,9 +470,13 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('Status is 422', function () {",
-                  "  pm.response.to.have.status(422);",
-                  "});"
+                  "pm.test('Status 422', function () { pm.response.to.have.status(422); });",
+                  "pm.test('Standard error format', function () {",
+                  "  var e = pm.response.json().error;",
+                  "  pm.expect(e).to.have.all.keys('code', 'message', 'detail', 'request_id');",
+                  "  pm.expect(e.request_id).to.eql(pm.response.headers.get('X-Request-ID'));",
+                  "});",
+                  "pm.test('Code invalid_request', function () { pm.expect(pm.response.json().error.code).to.eql('invalid_request'); });"
                 ]
               }
             }
@@ -794,6 +820,177 @@
               "raw": "{\n  \"query\": \"Quiero abrir una veterinaria en Av. Corrientes 2500\"\n}"
             },
             "url": "{{baseUrl}}/api/v1/interpretations"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "90 Errors & limits",
+      "item": [
+        {
+          "name": "POST Geocode — missing field",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 422', function () { pm.response.to.have.status(422); });",
+                  "pm.test('Standard error format', function () {",
+                  "  var e = pm.response.json().error;",
+                  "  pm.expect(e).to.have.all.keys('code', 'message', 'detail', 'request_id');",
+                  "  pm.expect(e.request_id).to.eql(pm.response.headers.get('X-Request-ID'));",
+                  "});",
+                  "pm.test('Code invalid_request', function () { pm.expect(pm.response.json().error.code).to.eql('invalid_request'); });",
+                  "pm.test('Field detail', function () {",
+                  "  pm.expect(pm.response.json().error.detail[0].field).to.eql('address');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/locations/geocode",
+            "description": "Validacion: detail = [{field, message}] en espanol.",
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Interpret — query too long",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 422', function () { pm.response.to.have.status(422); });",
+                  "pm.test('Standard error format', function () {",
+                  "  var e = pm.response.json().error;",
+                  "  pm.expect(e).to.have.all.keys('code', 'message', 'detail', 'request_id');",
+                  "  pm.expect(e.request_id).to.eql(pm.response.headers.get('X-Request-ID'));",
+                  "});",
+                  "pm.test('Code invalid_request', function () { pm.expect(pm.response.json().error.code).to.eql('invalid_request'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/interpretations",
+            "description": "Limite de largo: query <= 500 caracteres.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Zoning — coordinates outside CABA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 422', function () { pm.response.to.have.status(422); });",
+                  "pm.test('Standard error format', function () {",
+                  "  var e = pm.response.json().error;",
+                  "  pm.expect(e).to.have.all.keys('code', 'message', 'detail', 'request_id');",
+                  "  pm.expect(e.request_id).to.eql(pm.response.headers.get('X-Request-ID'));",
+                  "});",
+                  "pm.test('Code invalid_request', function () { pm.expect(pm.response.json().error.code).to.eql('invalid_request'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/locations/zoning",
+            "description": "Coordenadas acotadas a CABA.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"latitude\": 0,\n  \"longitude\": 0\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Unknown route",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 404', function () { pm.response.to.have.status(404); });",
+                  "pm.test('Standard error format', function () {",
+                  "  var e = pm.response.json().error;",
+                  "  pm.expect(e).to.have.all.keys('code', 'message', 'detail', 'request_id');",
+                  "  pm.expect(e.request_id).to.eql(pm.response.headers.get('X-Request-ID'));",
+                  "});",
+                  "pm.test('Code not_found', function () { pm.expect(pm.response.json().error.code).to.eql('not_found'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/does-not-exist",
+            "description": "Rutas inexistentes con el formato unico."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Health — echoes X-Request-ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Echoes request id', function () {",
+                  "  pm.expect(pm.response.headers.get('X-Request-ID')).to.eql('postman-check-1');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Request-ID",
+                "value": "postman-check-1"
+              }
+            ],
+            "url": "{{baseUrl}}/health",
+            "description": "El X-Request-ID del cliente vuelve en la respuesta y en los logs."
           },
           "response": []
         }

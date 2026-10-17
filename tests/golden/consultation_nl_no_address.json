@@ -1,0 +1,34 @@
+{
+  "data_status": {
+    "missing": [
+      "location"
+    ],
+    "overall": "blocked",
+    "warnings": []
+  },
+  "documents": [],
+  "interpretation": null,
+  "location": {
+    "candidates": [],
+    "city": null,
+    "commune": null,
+    "latitude": null,
+    "longitude": null,
+    "message": "Detecte la actividad \"1.5. Alimentación en general y gastronomía\", pero falta una direccion con calle y altura en CABA. Indica la direccion para continuar.",
+    "neighborhood": null,
+    "normalized_address": null,
+    "precision": null,
+    "status": "pending"
+  },
+  "map_layers": [],
+  "message": "Detecte la actividad \"1.5. Alimentación en general y gastronomía\", pero falta una direccion con calle y altura en CABA. Indica la direccion para continuar.",
+  "online_procedures": [],
+  "physical_offices": [],
+  "requirements": [],
+  "sources": [],
+  "status": "needs_clarification",
+  "steps": [],
+  "summary": "Detecte la actividad \"1.5. Alimentación en general y gastronomía\", pero falta una direccion con calle y altura en CABA. Indica la direccion para continuar.",
+  "territorial_information": [],
+  "zoning": null
+}

@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: tecba
       POSTGRES_DB: tecba
     ports:
-      - "5432:5432"
+      - "${DB_PORT:-5432}:5432"
     volumes:
       - tecba_pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -20,7 +20,7 @@ services:
     build: .
     container_name: tecba-api
     ports:
-      - "8000:8000"
+      - "${API_PORT:-8000}:8000"
     env_file:
       - .env
     environment:

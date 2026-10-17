@@ -1,0 +1,25 @@
+{
+  "barrio": null,
+  "by_categoria": {
+    "BAR": 247,
+    "CAFE": 334,
+    "CONFITERIA": 55,
+    "DELIVERY & TAKE AWAY": 2,
+    "PUB": 53,
+    "RESTAURANTE": 1990,
+    "SANDWICHERIA": 4,
+    "VINERIA": 22
+  },
+  "comuna": null,
+  "count_barrio": null,
+  "count_comuna": null,
+  "csv_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta_gastronomica.csv",
+  "dataset": "oferta-establecimientos-gastronomicos",
+  "dataset_url": "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos",
+  "fetched_at": "2026-10-01T00:54:12.068784+00:00",
+  "geojson_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta-gastronomica.geojson",
+  "source_ids": [
+    "source-002"
+  ],
+  "total_caba": 2823
+}

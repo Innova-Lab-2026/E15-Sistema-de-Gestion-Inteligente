@@ -2,12 +2,14 @@ from typing import Any, Literal, Optional
 
 from pydantic import BaseModel, Field
 
+from app.schemas.limits import MAX_CODE_LENGTH, MAX_QUERY_LENGTH
+
 
 class InterpretationRequest(BaseModel):
-    query: str = Field(min_length=1, examples=[
+    query: str = Field(min_length=1, max_length=MAX_QUERY_LENGTH, examples=[
         "Quiero abrir una cafeteria en Av. Corrientes 2500. Que tengo que hacer?"
     ])
-    conversation_id: Optional[str] = None
+    conversation_id: Optional[str] = Field(default=None, max_length=MAX_CODE_LENGTH)
     confirmed_location: Optional[dict[str, Any]] = None
 
 
@@ -41,4 +43,8 @@ class InterpretationResponse(BaseModel):
     clarification_question: Optional[str] = None
     status: InterpretationStatus
     provider: str = Field(description="mock | llm")
+    fallback_reason: Optional[Literal["llm_unavailable", "llm_rate_limited", "llm_invalid_output"]] = Field(
+        default=None,
+        description="Set when the LLM is configured but failed and the local rules were used instead",
+    )
     original_query: str

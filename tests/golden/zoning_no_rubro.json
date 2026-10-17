@@ -1,0 +1,41 @@
+{
+  "affectations": {
+    "apertura": 0,
+    "ci_digital": 0,
+    "ensanche": 0,
+    "lep": 0,
+    "riesgo_hidrico": 0
+  },
+  "allowed_rubro_ids_sample": [],
+  "epok_category_id": null,
+  "epok_rubro_id": null,
+  "latitude": -34.604,
+  "longitude": -58.413,
+  "message": "Parcela 013-051-005F, mixtura 4 (mock).",
+  "mixtura": 4,
+  "parcel": {
+    "centroide": [
+      -58.412949,
+      -34.60396
+    ],
+    "direccion": "CORRIENTES AV. 3399",
+    "manzana": "051",
+    "parcela": "005F",
+    "seccion": "013",
+    "smp": "013-051-005F",
+    "superficie_total": "246.00"
+  },
+  "provider_id": "epok-mock",
+  "provider_name": "Mock Ciudad 3D / epok",
+  "referencias": null,
+  "rubro_allowed": null,
+  "source_ids": [
+    "source-004"
+  ],
+  "status": "ok",
+  "usos": [
+    4,
+    0,
+    0
+  ]
+}

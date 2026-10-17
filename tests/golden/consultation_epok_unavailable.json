@@ -1,0 +1,525 @@
+{
+  "data_status": {
+    "missing": [
+      "zoning_epok"
+    ],
+    "overall": "partial",
+    "warnings": [
+      "epok_unavailable"
+    ]
+  },
+  "documents": [
+    {
+      "details": "Perfil digital en miBA para iniciar tramites. Ver guia: https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad",
+      "name": "Cuenta miBA / identidad digital",
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    },
+    {
+      "details": "Representante legal ante ARCA: Clave Ciudad AGIP y vinculacion con la persona juridica para apoderamientos en TAD.",
+      "name": "Apoderamientos / Clave Ciudad (si es persona juridica)",
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    },
+    {
+      "details": "Arquitecto, ingeniero o maestro mayor de obras matriculado en CABA verifica condiciones edilicias (Codigo de Edificacion / Urbanismo).",
+      "name": "Anexo tecnico de profesional matriculado (si no es expres)",
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+    },
+    {
+      "details": "Solicitar antes o durante la Autorizacion de Actividad Economica.",
+      "name": "Certificado de Aptitud Ambiental (CAA)",
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+    },
+    {
+      "details": "Grupo 1: declaracion jurada. Grupos 2/3: aprobacion del sistema segun cuadro de clasificacion de establecimientos.",
+      "name": "Sistema de Autoproteccion (segun grupo 1/2/3)",
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    }
+  ],
+  "interpretation": {
+    "activity": {
+      "confidence": 1.0,
+      "display_name": "1.5. Alimentación en general y gastronomía",
+      "normalized_category": "rubro_102",
+      "raw_text": null
+    },
+    "intent": "start_commercial_activity",
+    "original_query": "Consulta deterministica: rubro_102 en Av. Corrientes 2500"
+  },
+  "location": {
+    "candidates": [
+      {
+        "city": "Ciudad Autonoma de Buenos Aires",
+        "commune": "Comuna 5",
+        "latitude": -34.604,
+        "longitude": -58.413,
+        "neighborhood": "Almagro",
+        "normalized_address": "Avenida Corrientes 2500, CABA",
+        "precision": "rooftop"
+      }
+    ],
+    "city": "Ciudad Autonoma de Buenos Aires",
+    "commune": "Comuna 5",
+    "latitude": -34.604,
+    "longitude": -58.413,
+    "message": null,
+    "neighborhood": "Almagro",
+    "normalized_address": "Avenida Corrientes 2500, CABA",
+    "precision": "rooftop",
+    "status": "confirmed"
+  },
+  "map_layers": [
+    {
+      "description": "Capa territorial de referencia (epok / Codigo Urbanistico)",
+      "id": "layer-001",
+      "layer_type": "geojson",
+      "name": "Uso del suelo (referencia Ciudad 3D)",
+      "source_ids": [
+        "source-002"
+      ],
+      "status": "available",
+      "url": "https://ciudad3d.buenosaires.gob.ar/"
+    },
+    {
+      "description": "Barrios",
+      "id": "layer-ba-barrios",
+      "layer_type": "geojson",
+      "name": "Barrios CABA (BA Data)",
+      "source_ids": [
+        "source-002"
+      ],
+      "status": "available",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/barrios/barrios.geojson"
+    },
+    {
+      "description": "Comunas",
+      "id": "layer-ba-comunas",
+      "layer_type": "geojson",
+      "name": "Comunas CABA (BA Data)",
+      "source_ids": [
+        "source-002"
+      ],
+      "status": "available",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/comunas/comunas.geojson"
+    },
+    {
+      "description": "Oferta y Establecimientos gastronómicos",
+      "id": "layer-ba-gastro-geojson",
+      "layer_type": "geojson",
+      "name": "Oferta gastronomica (BA Data GeoJSON)",
+      "source_ids": [
+        "source-002"
+      ],
+      "status": "available",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta-gastronomica.geojson"
+    }
+  ],
+  "message": null,
+  "online_procedures": [
+    {
+      "address": "Online (miBA / SSIT)",
+      "commune": null,
+      "distance_meters": 609.4,
+      "id": "office-002",
+      "latitude": -34.607815,
+      "longitude": -58.40822,
+      "name": "Habilitacion de actividad economica (SSIT / online)",
+      "neighborhood": null,
+      "opening_hours": "Online",
+      "organization": "GCBA / Agencia Gubernamental de Control",
+      "source_ids": [
+        "source-003"
+      ],
+      "status": "available",
+      "type": "online_channel",
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+    }
+  ],
+  "physical_offices": [
+    {
+      "address": "Tte. Juan Domingo Perón 2941, CABA",
+      "commune": null,
+      "distance_meters": 609.4,
+      "id": "office-001",
+      "latitude": -34.607815,
+      "longitude": -58.40822,
+      "name": "Agencia Gubernamental de Control - Habilitaciones y Permisos",
+      "neighborhood": "Balvanera",
+      "opening_hours": "Lunes a viernes de 9 a 13:30 h",
+      "organization": "GCBA / Agencia Gubernamental de Control",
+      "source_ids": [
+        "source-003"
+      ],
+      "status": "available",
+      "type": "physical_office",
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+    }
+  ],
+  "requirements": [
+    {
+      "description": "Orientacion curada para 1.5. Alimentación en general y gastronomía (rubro epok 102) en CABA, basada en la guia oficial GCBA \"Como habilitar tu local comercial en la Ciudad\". Fuente: https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad (curado 2026-09-30). Confirmar siempre en el sitio oficial: condiciones, superficies y documentos pueden cambiar.",
+      "documents": [
+        {
+          "details": "Perfil digital en miBA para iniciar tramites. Ver guia: https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad",
+          "name": "Cuenta miBA / identidad digital",
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        },
+        {
+          "details": "Representante legal ante ARCA: Clave Ciudad AGIP y vinculacion con la persona juridica para apoderamientos en TAD.",
+          "name": "Apoderamientos / Clave Ciudad (si es persona juridica)",
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        },
+        {
+          "details": "Arquitecto, ingeniero o maestro mayor de obras matriculado en CABA verifica condiciones edilicias (Codigo de Edificacion / Urbanismo).",
+          "name": "Anexo tecnico de profesional matriculado (si no es expres)",
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "details": "Solicitar antes o durante la Autorizacion de Actividad Economica.",
+          "name": "Certificado de Aptitud Ambiental (CAA)",
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "details": "Grupo 1: declaracion jurada. Grupos 2/3: aprobacion del sistema segun cuadro de clasificacion de establecimientos.",
+          "name": "Sistema de Autoproteccion (segun grupo 1/2/3)",
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        }
+      ],
+      "id": "requirement-rubro_102",
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "status": "available",
+      "steps": [
+        {
+          "description": "Registra o inicia sesion en miBA para tramitar en linea.",
+          "order": 1,
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "title": "Crear cuenta en miBA",
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        },
+        {
+          "description": "Si actuas por persona juridica, obtene Clave Ciudad AGIP y vincula al representante para validar apoderamientos en TAD.",
+          "order": 2,
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "title": "Gestionar apoderamientos necesarios",
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        },
+        {
+          "description": "Verifica que la actividad este permitida en la direccion (mixturas, usos, superficies). Codigo Urbanistico Ley 6099/2018.",
+          "order": 3,
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "title": "Revisar normativa del lote (Ciudad 3D)",
+          "url_fuente": "https://ciudad3d.buenosaires.gob.ar/"
+        },
+        {
+          "description": "Factibilidad de uso, publicidades, marquesinas/toldos o antenas en areas o inmuebles con proteccion especial.",
+          "order": 4,
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "title": "Consulta de usos / visados especiales (si aplica)",
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        },
+        {
+          "description": "Si el local tiene menos de 200 m2, evaluar habilitación exprés. Si no cumple, tramite comun con profesional matriculado + CAA.",
+          "order": 5,
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "title": "Autorizacion de Actividad Economica",
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "description": "Clasifica el establecimiento (Grupo 1/2/3) y completa DDJJ o aprobacion segun corresponda.",
+          "order": 6,
+          "source_ids": [
+            "source-001",
+            "source-004",
+            "source-005",
+            "source-006",
+            "source-007"
+          ],
+          "title": "Sistema de Autoproteccion",
+          "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+        }
+      ],
+      "title": "Habilitacion de local comercial - 1.5. Alimentación en general y gastronomía"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-001",
+      "name": "Guia GCBA: como habilitar tu local comercial",
+      "organization": "GCBA",
+      "source_type": "procedures",
+      "url": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad",
+      "validity_status": "available"
+    },
+    {
+      "id": "source-002",
+      "name": "BA Data - oferta gastronomica / comunas / barrios",
+      "organization": "GCBA / BA Data (CKAN)",
+      "source_type": "territorial",
+      "url": "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos",
+      "validity_status": "available"
+    },
+    {
+      "id": "source-003",
+      "name": "AGC + Sedes Comunales (BA Data / oficiales)",
+      "organization": "GCBA / BA Data / AGC",
+      "source_type": "offices",
+      "url": "https://data.buenosaires.gob.ar/dataset/sedes-comunales",
+      "validity_status": "available"
+    },
+    {
+      "id": "source-004",
+      "name": "Ciudad 3D / epok rubros oficiales",
+      "organization": "GCBA / USIG",
+      "source_type": "normative",
+      "url": "https://epok.buenosaires.gob.ar/cur3d/cuadrosdeuso/rubros/",
+      "validity_status": "available"
+    },
+    {
+      "id": "source-005",
+      "name": "Habilitacion de actividad economica (GCBA)",
+      "organization": "GCBA / AGC",
+      "source_type": "procedures",
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica",
+      "validity_status": "available"
+    },
+    {
+      "id": "source-006",
+      "name": "Habilitacion de actividad economica expres (GCBA)",
+      "organization": "GCBA / AGC",
+      "source_type": "procedures",
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres",
+      "validity_status": "available"
+    },
+    {
+      "id": "source-007",
+      "name": "Ciudad 3D (visor normativa del lote)",
+      "organization": "GCBA / USIG",
+      "source_type": "normative",
+      "url": "https://ciudad3d.buenosaires.gob.ar/",
+      "validity_status": "available"
+    }
+  ],
+  "status": "partial",
+  "steps": [
+    {
+      "description": "Registra o inicia sesion en miBA para tramitar en linea.",
+      "order": 1,
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "title": "Crear cuenta en miBA",
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    },
+    {
+      "description": "Si actuas por persona juridica, obtene Clave Ciudad AGIP y vincula al representante para validar apoderamientos en TAD.",
+      "order": 2,
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "title": "Gestionar apoderamientos necesarios",
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    },
+    {
+      "description": "Verifica que la actividad este permitida en la direccion (mixturas, usos, superficies). Codigo Urbanistico Ley 6099/2018.",
+      "order": 3,
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "title": "Revisar normativa del lote (Ciudad 3D)",
+      "url_fuente": "https://ciudad3d.buenosaires.gob.ar/"
+    },
+    {
+      "description": "Factibilidad de uso, publicidades, marquesinas/toldos o antenas en areas o inmuebles con proteccion especial.",
+      "order": 4,
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "title": "Consulta de usos / visados especiales (si aplica)",
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    },
+    {
+      "description": "Si el local tiene menos de 200 m2, evaluar habilitación exprés. Si no cumple, tramite comun con profesional matriculado + CAA.",
+      "order": 5,
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "title": "Autorizacion de Actividad Economica",
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+    },
+    {
+      "description": "Clasifica el establecimiento (Grupo 1/2/3) y completa DDJJ o aprobacion segun corresponda.",
+      "order": 6,
+      "source_ids": [
+        "source-001",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007"
+      ],
+      "title": "Sistema de Autoproteccion",
+      "url_fuente": "https://www.buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad"
+    }
+  ],
+  "summary": "Orientacion para 1.5. Alimentación en general y gastronomía en Avenida Corrientes 2500, CABA (Almagro, Comuna 5). Se recuperaron 1 requisito(s) y 2 canal(es) desde el catalogo integrado (seed MVP). Validar siempre contra las fuentes citadas.",
+  "territorial_information": [
+    {
+      "description": "Comuna: Comuna 5. Barrio: Almagro. Coordenadas: (-34.604, -58.413). Obtenido via geocodificacion USIG/mock.",
+      "source_ids": [
+        "geocoder"
+      ],
+      "title": "Contexto territorial de la consulta"
+    },
+    {
+      "description": "Dataset BA Data oferta gastronomica: 2823 locales en CABA. Comuna 5: 77 establecimientos. Barrio Almagro: 63 establecimientos. Categorias top CABA: RESTAURANTE=1990, CAFE=334, BAR=247, CONFITERIA=55. Fuente: https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos.",
+      "source_ids": [
+        "source-002"
+      ],
+      "title": "Contexto BA Data (oferta gastronomica)"
+    }
+  ],
+  "zoning": {
+    "affectations": null,
+    "allowed_rubro_ids_sample": [],
+    "epok_category_id": 1,
+    "epok_rubro_id": 102,
+    "latitude": -34.604,
+    "longitude": -58.413,
+    "message": "Ciudad 3D / epok no esta disponible en este momento.",
+    "mixtura": null,
+    "parcel": null,
+    "provider_id": "epok",
+    "provider_name": "Ciudad 3D / epok",
+    "referencias": null,
+    "rubro_allowed": null,
+    "source_ids": [
+      "source-004"
+    ],
+    "status": "unavailable",
+    "usos": []
+  }
+}

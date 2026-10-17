@@ -1,0 +1,17 @@
+{
+  "candidates": [],
+  "city": null,
+  "commune": null,
+  "latitude": null,
+  "longitude": null,
+  "message": "No se pudo geocodificar la direccion.",
+  "neighborhood": null,
+  "normalized_address": null,
+  "original_address": "Calle Inexistente 123",
+  "precision": null,
+  "source": {
+    "id": "geocoder-mock",
+    "name": "Mock geocoder CABA"
+  },
+  "status": "not_found"
+}

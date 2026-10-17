@@ -1,0 +1,23 @@
+{
+  "activity": {
+    "confidence": 0.0,
+    "display_name": null,
+    "normalized_category": null,
+    "raw_text": null
+  },
+  "clarification_question": "Detecte una direccion, pero la actividad no esta en el catalogo del MVP (rubro_1, rubro_10, rubro_100, rubro_101, rubro_102, rubro_103, rubro_104, rubro_105, ...). Reformula la actividad o consulta el listado /activities.",
+  "fallback_reason": null,
+  "intent": null,
+  "jurisdiction": "CABA",
+  "location": {
+    "address": "Av. Corrientes 2500",
+    "confidence": 0.85,
+    "raw_text": "Av. Corrientes 2500"
+  },
+  "missing_fields": [
+    "activity"
+  ],
+  "original_query": "Quiero abrir una nave espacial en Av. Corrientes 2500",
+  "provider": "mock",
+  "status": "activity_unknown"
+}

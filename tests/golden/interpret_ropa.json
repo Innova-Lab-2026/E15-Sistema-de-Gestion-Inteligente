@@ -1,0 +1,21 @@
+{
+  "activity": {
+    "confidence": 0.85,
+    "display_name": "1.8. Comercio minorista excluido comestibles como uso principal",
+    "normalized_category": "rubro_16",
+    "raw_text": "local de ropa"
+  },
+  "clarification_question": null,
+  "fallback_reason": null,
+  "intent": "start_commercial_activity",
+  "jurisdiction": "CABA",
+  "location": {
+    "address": "Av. Corrientes 2500",
+    "confidence": 0.85,
+    "raw_text": "Av. Corrientes 2500"
+  },
+  "missing_fields": [],
+  "original_query": "Quiero abrir un local de ropa en Av. Corrientes 2500",
+  "provider": "mock",
+  "status": "ready_for_geocoding"
+}

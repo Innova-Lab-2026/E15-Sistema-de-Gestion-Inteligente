@@ -61,19 +61,24 @@ class InterpretationService:
 
     async def interpret(self, query: str) -> InterpretationResponse:
         catalog = await self._load_catalog()
-        provider = self._choose_provider()
+        fallback_reason: str | None = None
 
-        if provider == "llm":
+        if self._choose_provider() == "llm":
             try:
                 raw = await self._interpret_with_llm(query, catalog)
+                return self._validate_and_build(query=query, raw=raw, catalog=catalog, provider="llm")
             except LLMUnavailableError as exc:
-                logger.warning("LLM unavailable, falling back to mock: %s", exc)
-                raw = mock_interpret(query, catalog)
-                provider = "mock"
-        else:
-            raw = mock_interpret(query, catalog)
+                fallback_reason = exc.reason
+                logger.warning("LLM unavailable (%s), falling back to mock: %s", exc.reason, exc)
+            except (ValueError, TypeError, AttributeError) as exc:
+                # JSON object with unexpected types/values (pydantic ValidationError is a ValueError).
+                fallback_reason = "llm_invalid_output"
+                logger.warning("LLM output failed validation, falling back to mock: %r", exc)
 
-        return self._validate_and_build(query=query, raw=raw, catalog=catalog, provider=provider)
+        raw = mock_interpret(query, catalog)
+        response = self._validate_and_build(query=query, raw=raw, catalog=catalog, provider="mock")
+        response.fallback_reason = fallback_reason
+        return response
 
     def _choose_provider(self) -> str:
         # Prefer LLM when configured; otherwise mock for local testing.

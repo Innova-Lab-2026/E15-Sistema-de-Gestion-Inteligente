@@ -12,24 +12,43 @@ class Settings(BaseSettings):
     )
 
     app_name: str = Field(default="InobaLab TECBA API", alias="APP_NAME")
-    app_env: str = Field(default="local", alias="APP_ENV")
+    # "local" syncs the catalog on startup; any other value requires an explicit seed.
+    app_env: str = Field(default="production", alias="APP_ENV")
     debug: bool = Field(default=False, alias="DEBUG")
     cors_origins: str = Field(
-        default="http://localhost:3000,http://127.0.0.1:3000",
+        default=(
+            "http://localhost:3000,http://127.0.0.1:3000,"
+            "http://localhost:5173,http://127.0.0.1:5173"
+        ),
         alias="CORS_ORIGINS",
     )
+    # No auth / cookies in the MVP: credentials stay off unless explicitly needed.
+    cors_allow_credentials: bool = Field(default=False, alias="CORS_ALLOW_CREDENTIALS")
 
     database_url: str = Field(
         default="postgresql+asyncpg://tecba:tecba@localhost:5432/tecba",
         alias="DATABASE_URL",
     )
 
+    http_user_agent: str = Field(
+        default="Mozilla/5.0 (compatible; InobaLab-TECBA/1.0)",
+        alias="HTTP_USER_AGENT",
+    )
+    http_timeout_seconds: int = Field(default=10, alias="HTTP_TIMEOUT_SECONDS")
+    http_retries: int = Field(default=2, alias="HTTP_RETRIES")
+
+    rate_limit_enabled: bool = Field(default=True, alias="RATE_LIMIT_ENABLED")
+    rate_limit_per_minute: int = Field(default=30, ge=1, alias="RATE_LIMIT_PER_MINUTE")
+
+    max_request_bytes: int = Field(default=64 * 1024, alias="MAX_REQUEST_BYTES")
+
     llm_base_url: str = Field(default="", alias="LLM_BASE_URL")
     llm_api_key: str = Field(default="", alias="LLM_API_KEY")
     llm_model: str = Field(default="gemini-2.0-flash", alias="LLM_MODEL")
     llm_timeout_seconds: int = Field(default=30, alias="LLM_TIMEOUT_SECONDS")
 
-    geocoder_provider: str = Field(default="mock", alias="GEOCODER_PROVIDER")
+    # "mock" uses local fixtures and is meant for offline development and tests only.
+    geocoder_provider: str = Field(default="usig", alias="GEOCODER_PROVIDER")
     geocoder_base_url: str = Field(
         default="https://servicios.usig.buenosaires.gob.ar",
         alias="GEOCODER_BASE_URL",

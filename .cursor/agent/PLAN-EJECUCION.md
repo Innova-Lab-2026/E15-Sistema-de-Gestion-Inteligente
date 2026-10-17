@@ -104,7 +104,7 @@ Usar este archivo para marcar avance, notas y bloqueos. No duplicar el diseño c
 - [ ] Postman: folder `06 Follow-ups` + README orden de colección
 - [ ] Criterio: e2e NL + follow-up en contexto
 
-**Notas:** —
+**Notas:** Endurecimiento adelantado (rama `feature/backend-errores-seguridad`, 2026-10-17): timeouts + cliente HTTP compartido, rate limit por IP, límites de entrada, formato único de error, `/ready`, pytest (golden de respuestas + unitarios con mocks) y CI. Pendiente de esta etapa: sanitizar URLs, follow-ups, persistencia y pytest e2e contra fuentes reales. Ver `documents/errores-y-seguridad.md`.
 
 ---
 
@@ -126,6 +126,7 @@ Usar este archivo para marcar avance, notas y bloqueos. No duplicar el diseño c
 | 2026-09-30 | 3b | Tramites GCBA curados + sources 005-007 + url_fuente | OK · guia 6 pasos en rubro_102 |
 | 2026-09-30 | 3b | BA Data ETL + `/open-data/*` + contexto en consultations | OK · 2823 locales · Balvanera 215 |
 | 2026-10-08 | 1/3b | Oficinas oficiales: AGC + SSIT + 21 sedes BA Data | OK · `offices_snapshot.json` · USIG coords |
+| 2026-10-17 | 6 (parcial) | Endurecimiento: errores, request id, USIG parcial, límites, rate limit, Docker, `/ready`, pytest + CI | OK · 91 tests · golden sin cambios funcionales |
 
 ---
 

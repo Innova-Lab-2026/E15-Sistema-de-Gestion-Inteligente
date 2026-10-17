@@ -1,0 +1,4012 @@
+[
+  {
+    "code": "rubro_1",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 1,
+    "example": "Consulta orientativa: 2.1.6. Museo Clase I.  Permanentes y temporarias",
+    "id": "activity-rubro_1",
+    "name": "2.1.6. Museo Clase I.  Permanentes y temporarias"
+  },
+  {
+    "code": "rubro_10",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 10,
+    "example": "Consulta orientativa: 7.2.6. Garaje y/o taller de subterráneo",
+    "id": "activity-rubro_10",
+    "name": "7.2.6. Garaje y/o taller de subterráneo"
+  },
+  {
+    "code": "rubro_100",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 100,
+    "example": "Consulta orientativa: 5.3.1. Hospital",
+    "id": "activity-rubro_100",
+    "name": "5.3.1. Hospital"
+  },
+  {
+    "code": "rubro_101",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 101,
+    "example": "Consulta orientativa: 3.1.9. Escuela primaria. Gestión privada",
+    "id": "activity-rubro_101",
+    "name": "3.1.9. Escuela primaria. Gestión privada"
+  },
+  {
+    "code": "rubro_102",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 102,
+    "example": "Consulta orientativa: 1.5. Alimentación en general y gastronomía",
+    "id": "activity-rubro_102",
+    "name": "1.5. Alimentación en general y gastronomía"
+  },
+  {
+    "code": "rubro_103",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 103,
+    "example": "Consulta orientativa: 1.4. Comercio minorista de productos de abasto y alimenticios",
+    "id": "activity-rubro_103",
+    "name": "1.4. Comercio minorista de productos de abasto y alimenticios"
+  },
+  {
+    "code": "rubro_104",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 104,
+    "example": "Consulta orientativa: 5.1.1. Consultorio veterinario",
+    "id": "activity-rubro_104",
+    "name": "5.1.1. Consultorio veterinario"
+  },
+  {
+    "code": "rubro_105",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 105,
+    "example": "Consulta orientativa: 3.1.26 Instituto de educación superior",
+    "id": "activity-rubro_105",
+    "name": "3.1.26 Instituto de educación superior"
+  },
+  {
+    "code": "rubro_106",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 106,
+    "example": "Consulta orientativa: 2.4.14. Feria infantil",
+    "id": "activity-rubro_106",
+    "name": "2.4.14. Feria infantil"
+  },
+  {
+    "code": "rubro_107",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 107,
+    "example": "Consulta orientativa: 6.1.15 Playa de depósito de vehículos sin compactación",
+    "id": "activity-rubro_107",
+    "name": "6.1.15 Playa de depósito de vehículos sin compactación"
+  },
+  {
+    "code": "rubro_108",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 108,
+    "example": "Consulta orientativa: 5.3. Establecimientos de sanidad - Centro principal",
+    "id": "activity-rubro_108",
+    "name": "5.3. Establecimientos de sanidad - Centro principal"
+  },
+  {
+    "code": "rubro_109",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 109,
+    "example": "Consulta orientativa: 5.2.36. Servicios de traslados sanitarios, atención domiciliaria y emergencias",
+    "id": "activity-rubro_109",
+    "name": "5.2.36. Servicios de traslados sanitarios, atención domiciliaria y emergencias"
+  },
+  {
+    "code": "rubro_11",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 11,
+    "example": "Consulta orientativa: 1.6. Comercio minorista alimenticios por sistema de venta",
+    "id": "activity-rubro_11",
+    "name": "1.6. Comercio minorista alimenticios por sistema de venta"
+  },
+  {
+    "code": "rubro_110",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 110,
+    "example": "Consulta orientativa: 2.5.2. Sala de loto, loto familiar o loto de salón",
+    "id": "activity-rubro_110",
+    "name": "2.5.2. Sala de loto, loto familiar o loto de salón"
+  },
+  {
+    "code": "rubro_111",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 111,
+    "example": "Consulta orientativa: 6.2.8. Corporaciones, cámaras y asociaciones profesionales, mutuales, gremiales o de bien público",
+    "id": "activity-rubro_111",
+    "name": "6.2.8. Corporaciones, cámaras y asociaciones profesionales, mutuales, gremiales o de bien público"
+  },
+  {
+    "code": "rubro_112",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 112,
+    "example": "Consulta orientativa: 1.8.33. Local de venta de sustancias químicas, caucho y plásticos",
+    "id": "activity-rubro_112",
+    "name": "1.8.33. Local de venta de sustancias químicas, caucho y plásticos"
+  },
+  {
+    "code": "rubro_113",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 113,
+    "example": "Consulta orientativa: 3.1.10. Escuela primaria modalidad adultos. Gestión estatal",
+    "id": "activity-rubro_113",
+    "name": "3.1.10. Escuela primaria modalidad adultos. Gestión estatal"
+  },
+  {
+    "code": "rubro_114",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 114,
+    "example": "Consulta orientativa: 5.1. Establecimientos de sanidad-Nivel básico",
+    "id": "activity-rubro_114",
+    "name": "5.1. Establecimientos de sanidad-Nivel básico"
+  },
+  {
+    "code": "rubro_115",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 115,
+    "example": "Consulta orientativa: 3.1.19 Escuela de educación especial -sin formación laboral-sin internado. Gestión privada",
+    "id": "activity-rubro_115",
+    "name": "3.1.19 Escuela de educación especial -sin formación laboral-sin internado. Gestión privada"
+  },
+  {
+    "code": "rubro_116",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 116,
+    "example": "Consulta orientativa: 4.2.6. Hotel Boutique",
+    "id": "activity-rubro_116",
+    "name": "4.2.6. Hotel Boutique"
+  },
+  {
+    "code": "rubro_117",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 117,
+    "example": "Consulta orientativa: 1.8.1. Herboristería",
+    "id": "activity-rubro_117",
+    "name": "1.8.1. Herboristería"
+  },
+  {
+    "code": "rubro_118",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 118,
+    "example": "Consulta orientativa: 6.5.1. Oficina pública con acceso de público",
+    "id": "activity-rubro_118",
+    "name": "6.5.1. Oficina pública con acceso de público"
+  },
+  {
+    "code": "rubro_119",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 119,
+    "example": "Consulta orientativa: 6.2.1. Agencia de información y noticias",
+    "id": "activity-rubro_119",
+    "name": "6.2.1. Agencia de información y noticias"
+  },
+  {
+    "code": "rubro_12",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 12,
+    "example": "Consulta orientativa: 6.3.4. Empresa de servicios fúnebres sin depósito",
+    "id": "activity-rubro_12",
+    "name": "6.3.4. Empresa de servicios fúnebres sin depósito"
+  },
+  {
+    "code": "rubro_120",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 120,
+    "example": "Consulta orientativa: 1.8.20. Armería",
+    "id": "activity-rubro_120",
+    "name": "1.8.20. Armería"
+  },
+  {
+    "code": "rubro_121",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 121,
+    "example": "Consulta orientativa: 7.2.2. Garaje para camiones y material rodante (privado), volquete, mudanzas",
+    "id": "activity-rubro_121",
+    "name": "7.2.2. Garaje para camiones y material rodante (privado), volquete, mudanzas"
+  },
+  {
+    "code": "rubro_122",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 122,
+    "example": "Consulta orientativa: 7.2.1. Expreso de carga liviana (taxi flet)",
+    "id": "activity-rubro_122",
+    "name": "7.2.1. Expreso de carga liviana (taxi flet)"
+  },
+  {
+    "code": "rubro_123",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 123,
+    "example": "Consulta orientativa: 2.4.8. Local de baile clase “C” II: más de 1000m2",
+    "id": "activity-rubro_123",
+    "name": "2.4.8. Local de baile clase “C” II: más de 1000m2"
+  },
+  {
+    "code": "rubro_124",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 124,
+    "example": "Consulta orientativa: 1.6.5. Mercado",
+    "id": "activity-rubro_124",
+    "name": "1.6.5. Mercado"
+  },
+  {
+    "code": "rubro_125",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 125,
+    "example": "Consulta orientativa: 6.5.4. Cuartel de Bomberos",
+    "id": "activity-rubro_125",
+    "name": "6.5.4. Cuartel de Bomberos"
+  },
+  {
+    "code": "rubro_126",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 126,
+    "example": "Consulta orientativa: 6.2.10. Estudio de filmación y fotografía",
+    "id": "activity-rubro_126",
+    "name": "6.2.10. Estudio de filmación y fotografía"
+  },
+  {
+    "code": "rubro_127",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 127,
+    "example": "Consulta orientativa: 3.1.30 Instituto de Enseñanza para adultos",
+    "id": "activity-rubro_127",
+    "name": "3.1.30 Instituto de Enseñanza para adultos"
+  },
+  {
+    "code": "rubro_128",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 128,
+    "example": "Consulta orientativa: 6.2.23. Oficina de correos",
+    "id": "activity-rubro_128",
+    "name": "6.2.23. Oficina de correos"
+  },
+  {
+    "code": "rubro_129",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 129,
+    "example": "Consulta orientativa: 5.2.35. Laboratorio de prótesis dentales",
+    "id": "activity-rubro_129",
+    "name": "5.2.35. Laboratorio de prótesis dentales"
+  },
+  {
+    "code": "rubro_13",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 13,
+    "example": "Consulta orientativa: 4.3.4 Albergue transitorio",
+    "id": "activity-rubro_13",
+    "name": "4.3.4 Albergue transitorio"
+  },
+  {
+    "code": "rubro_130",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 130,
+    "example": "Consulta orientativa: 3.1.18. Escuela de educación especial -sin formación laboral-sin internado. Gestión estatal",
+    "id": "activity-rubro_130",
+    "name": "3.1.18. Escuela de educación especial -sin formación laboral-sin internado. Gestión estatal"
+  },
+  {
+    "code": "rubro_131",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 131,
+    "example": "Consulta orientativa: 3.1.11. Escuela primaria modalidad adultos. Gestión privada",
+    "id": "activity-rubro_131",
+    "name": "3.1.11. Escuela primaria modalidad adultos. Gestión privada"
+  },
+  {
+    "code": "rubro_132",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 132,
+    "example": "Consulta orientativa: 1.8.3. Local de venta de papeles pintados/ alfombras / artículos de decoración",
+    "id": "activity-rubro_132",
+    "name": "1.8.3. Local de venta de papeles pintados/ alfombras / artículos de decoración"
+  },
+  {
+    "code": "rubro_133",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 133,
+    "example": "Consulta orientativa: 9.3.5. Hogar de contención y/o refugio",
+    "id": "activity-rubro_133",
+    "name": "9.3.5. Hogar de contención y/o refugio"
+  },
+  {
+    "code": "rubro_134",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 134,
+    "example": "Consulta orientativa: 2.3.5. Cancha de mini-futbol y/o futbol cinco, futbol, básquet, hockey, volleyball, handball, etc",
+    "id": "activity-rubro_134",
+    "name": "2.3.5. Cancha de mini-futbol y/o futbol cinco, futbol, básquet, hockey, volleyball, handball, etc"
+  },
+  {
+    "code": "rubro_135",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 135,
+    "example": "Consulta orientativa: 2.4.12. Juegos de mesa y manuales",
+    "id": "activity-rubro_135",
+    "name": "2.4.12. Juegos de mesa y manuales"
+  },
+  {
+    "code": "rubro_136",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 136,
+    "example": "Consulta orientativa: 1.8.9. Local de venta de animales domésticos",
+    "id": "activity-rubro_136",
+    "name": "1.8.9. Local de venta de animales domésticos"
+  },
+  {
+    "code": "rubro_137",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 137,
+    "example": "Consulta orientativa: 1.6.1. Supermercado",
+    "id": "activity-rubro_137",
+    "name": "1.6.1. Supermercado"
+  },
+  {
+    "code": "rubro_138",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 138,
+    "example": "Consulta orientativa: 5.2.2. Consultorio profesional",
+    "id": "activity-rubro_138",
+    "name": "5.2.2. Consultorio profesional"
+  },
+  {
+    "code": "rubro_139",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 139,
+    "example": "Consulta orientativa: 6.5.5. Policía (comisaría)",
+    "id": "activity-rubro_139",
+    "name": "6.5.5. Policía (comisaría)"
+  },
+  {
+    "code": "rubro_14",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 14,
+    "example": "Consulta orientativa: 3.1.17 Escuela de educación especial -sin formación laboral-con Internado. Gestión privada",
+    "id": "activity-rubro_14",
+    "name": "3.1.17 Escuela de educación especial -sin formación laboral-con Internado. Gestión privada"
+  },
+  {
+    "code": "rubro_140",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 140,
+    "example": "Consulta orientativa: 6.2.16. Mensajería en motocicleta y bicicleta",
+    "id": "activity-rubro_140",
+    "name": "6.2.16. Mensajería en motocicleta y bicicleta"
+  },
+  {
+    "code": "rubro_141",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 141,
+    "example": "Consulta orientativa: 6.1.10. Empresa de servicio de seguridad sin polígono de tiro",
+    "id": "activity-rubro_141",
+    "name": "6.1.10. Empresa de servicio de seguridad sin polígono de tiro"
+  },
+  {
+    "code": "rubro_142",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 142,
+    "example": "Consulta orientativa: 4.3.2. Hostal / Bed&Breakfast/ Cama y Desayuno Estándar y Superior",
+    "id": "activity-rubro_142",
+    "name": "4.3.2. Hostal / Bed&Breakfast/ Cama y Desayuno Estándar y Superior"
+  },
+  {
+    "code": "rubro_143",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 143,
+    "example": "Consulta orientativa: 2.1.8. Galería de arte",
+    "id": "activity-rubro_143",
+    "name": "2.1.8. Galería de arte"
+  },
+  {
+    "code": "rubro_144",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 144,
+    "example": "Consulta orientativa: 1.8.15. Local de venta de símbolos patrios, distintivos, medallas y trofeos",
+    "id": "activity-rubro_144",
+    "name": "1.8.15. Local de venta de símbolos patrios, distintivos, medallas y trofeos"
+  },
+  {
+    "code": "rubro_145",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 145,
+    "example": "Consulta orientativa: 1.8.10. Local de venta de artículos para el hogar y afines",
+    "id": "activity-rubro_145",
+    "name": "1.8.10. Local de venta de artículos para el hogar y afines"
+  },
+  {
+    "code": "rubro_146",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 146,
+    "example": "Consulta orientativa: 2.3.7. Práctica de Golf",
+    "id": "activity-rubro_146",
+    "name": "2.3.7. Práctica de Golf"
+  },
+  {
+    "code": "rubro_147",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 147,
+    "example": "Consulta orientativa: 6.5.3. Centro integral de la mujer y/o la diversidad",
+    "id": "activity-rubro_147",
+    "name": "6.5.3. Centro integral de la mujer y/o la diversidad"
+  },
+  {
+    "code": "rubro_148",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 148,
+    "example": "Consulta orientativa: 6.2.4. Banco casa central",
+    "id": "activity-rubro_148",
+    "name": "6.2.4. Banco casa central"
+  },
+  {
+    "code": "rubro_149",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 149,
+    "example": "Consulta orientativa: 6.1.17. Instituto remodelación adelgazamiento y gimnasia correctiva (con supervisión profesional médico)",
+    "id": "activity-rubro_149",
+    "name": "6.1.17. Instituto remodelación adelgazamiento y gimnasia correctiva (con supervisión profesional médico)"
+  },
+  {
+    "code": "rubro_15",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 15,
+    "example": "Consulta orientativa: 1.8.25. Local de venta de toldos y accesorios",
+    "id": "activity-rubro_15",
+    "name": "1.8.25. Local de venta de toldos y accesorios"
+  },
+  {
+    "code": "rubro_150",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 150,
+    "example": "Consulta orientativa: 1.8.38. Gas envasado, distribución hasta 100kgs",
+    "id": "activity-rubro_150",
+    "name": "1.8.38. Gas envasado, distribución hasta 100kgs"
+  },
+  {
+    "code": "rubro_151",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 151,
+    "example": "Consulta orientativa: 6.2.13. Estudio de grabación de sonido",
+    "id": "activity-rubro_151",
+    "name": "6.2.13. Estudio de grabación de sonido"
+  },
+  {
+    "code": "rubro_152",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 152,
+    "example": "Consulta orientativa: 2.1.12. Cine",
+    "id": "activity-rubro_152",
+    "name": "2.1.12. Cine"
+  },
+  {
+    "code": "rubro_153",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 153,
+    "example": "Consulta orientativa: 8.2.2. Depósito residencial y guardamuebles",
+    "id": "activity-rubro_153",
+    "name": "8.2.2. Depósito residencial y guardamuebles"
+  },
+  {
+    "code": "rubro_154",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 154,
+    "example": "Consulta orientativa: 2.4.7. Local de baile clase “C” I: hasta 1000m2",
+    "id": "activity-rubro_154",
+    "name": "2.4.7. Local de baile clase “C” I: hasta 1000m2"
+  },
+  {
+    "code": "rubro_155",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 155,
+    "example": "Consulta orientativa: 2.2. Local de lectura",
+    "id": "activity-rubro_155",
+    "name": "2.2. Local de lectura"
+  },
+  {
+    "code": "rubro_156",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 156,
+    "example": "Consulta orientativa: 5.2.27. Centro Educativo Terapéutico",
+    "id": "activity-rubro_156",
+    "name": "5.2.27. Centro Educativo Terapéutico"
+  },
+  {
+    "code": "rubro_157",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 157,
+    "example": "Consulta orientativa: 4.2.3. Hotel 1 y 2 estrellas",
+    "id": "activity-rubro_157",
+    "name": "4.2.3. Hotel 1 y 2 estrellas"
+  },
+  {
+    "code": "rubro_158",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 158,
+    "example": "Consulta orientativa: 6.2.12. Estudio de televisión",
+    "id": "activity-rubro_158",
+    "name": "6.2.12. Estudio de televisión"
+  },
+  {
+    "code": "rubro_159",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 159,
+    "example": "Consulta orientativa: 2.1.17 Jardín Zoológico",
+    "id": "activity-rubro_159",
+    "name": "2.1.17 Jardín Zoológico"
+  },
+  {
+    "code": "rubro_16",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 16,
+    "example": "Consulta orientativa: 1.8. Comercio minorista excluido comestibles como uso principal",
+    "id": "activity-rubro_16",
+    "name": "1.8. Comercio minorista excluido comestibles como uso principal"
+  },
+  {
+    "code": "rubro_160",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 160,
+    "example": "Consulta orientativa: 9.3.4. Residencial para personas mayores",
+    "id": "activity-rubro_160",
+    "name": "9.3.4. Residencial para personas mayores"
+  },
+  {
+    "code": "rubro_161",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 161,
+    "example": "Consulta orientativa: 6.1.4. Agencia de alquiler de motocicletas y bicicletas",
+    "id": "activity-rubro_161",
+    "name": "6.1.4. Agencia de alquiler de motocicletas y bicicletas"
+  },
+  {
+    "code": "rubro_162",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 162,
+    "example": "Consulta orientativa: 5.2.28. Centro de Rehabilitación para personas con discapacidad/Centro de estimulación temprana",
+    "id": "activity-rubro_162",
+    "name": "5.2.28. Centro de Rehabilitación para personas con discapacidad/Centro de estimulación temprana"
+  },
+  {
+    "code": "rubro_163",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 163,
+    "example": "Consulta orientativa: 4.2.2. Apart hotel (Apart-residencial) 3 estrellas",
+    "id": "activity-rubro_163",
+    "name": "4.2.2. Apart hotel (Apart-residencial) 3 estrellas"
+  },
+  {
+    "code": "rubro_164",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 164,
+    "example": "Consulta orientativa: 1.8.29. Local de venta de artículos y aparatos para equipamiento comercial y de servicio",
+    "id": "activity-rubro_164",
+    "name": "1.8.29. Local de venta de artículos y aparatos para equipamiento comercial y de servicio"
+  },
+  {
+    "code": "rubro_165",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 165,
+    "example": "Consulta orientativa: 2.1.7. Museo Clase II. Condicionado por el inmueble",
+    "id": "activity-rubro_165",
+    "name": "2.1.7. Museo Clase II. Condicionado por el inmueble"
+  },
+  {
+    "code": "rubro_166",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 166,
+    "example": "Consulta orientativa: 9.3.3. Residencia de estudiantes",
+    "id": "activity-rubro_166",
+    "name": "9.3.3. Residencia de estudiantes"
+  },
+  {
+    "code": "rubro_167",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 167,
+    "example": "Consulta orientativa: 6.1.2. Agencia de loterías",
+    "id": "activity-rubro_167",
+    "name": "6.1.2. Agencia de loterías"
+  },
+  {
+    "code": "rubro_168",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 168,
+    "example": "Consulta orientativa: 3.1.6. Escuela infantil. Gestión privada",
+    "id": "activity-rubro_168",
+    "name": "3.1.6. Escuela infantil. Gestión privada"
+  },
+  {
+    "code": "rubro_169",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 169,
+    "example": "Consulta orientativa: 1.4.3. Maxikiosco",
+    "id": "activity-rubro_169",
+    "name": "1.4.3. Maxikiosco"
+  },
+  {
+    "code": "rubro_17",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 17,
+    "example": "Consulta orientativa: 5.2.20. Centro de reproducción medicamente asistida",
+    "id": "activity-rubro_17",
+    "name": "5.2.20. Centro de reproducción medicamente asistida"
+  },
+  {
+    "code": "rubro_170",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 170,
+    "example": "Consulta orientativa: 2.4.16. Peña",
+    "id": "activity-rubro_170",
+    "name": "2.4.16. Peña"
+  },
+  {
+    "code": "rubro_171",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 171,
+    "example": "Consulta orientativa: 1.8.35. Vivero",
+    "id": "activity-rubro_171",
+    "name": "1.8.35. Vivero"
+  },
+  {
+    "code": "rubro_172",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 172,
+    "example": "Consulta orientativa: 5.2.1. Casa de cuidados paliativos",
+    "id": "activity-rubro_172",
+    "name": "5.2.1. Casa de cuidados paliativos"
+  },
+  {
+    "code": "rubro_173",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 173,
+    "example": "Consulta orientativa: 4.2.1. Apart hotel (Apart-residencial) 1 y 2 estrellas",
+    "id": "activity-rubro_173",
+    "name": "4.2.1. Apart hotel (Apart-residencial) 1 y 2 estrellas"
+  },
+  {
+    "code": "rubro_174",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 174,
+    "example": "Consulta orientativa: 6.1.9. Empresa de publicidad",
+    "id": "activity-rubro_174",
+    "name": "6.1.9. Empresa de publicidad"
+  },
+  {
+    "code": "rubro_175",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 175,
+    "example": "Consulta orientativa: 6.4. Actividades admitidas en estación de servicio",
+    "id": "activity-rubro_175",
+    "name": "6.4. Actividades admitidas en estación de servicio"
+  },
+  {
+    "code": "rubro_176",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 176,
+    "example": "Consulta orientativa: 1.6.2. Supermercado total",
+    "id": "activity-rubro_176",
+    "name": "1.6.2. Supermercado total"
+  },
+  {
+    "code": "rubro_177",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 177,
+    "example": "Consulta orientativa: 1.8.26. Local de venta de muebles en general productos de madera y mimbre, metálicos-colchones y afines",
+    "id": "activity-rubro_177",
+    "name": "1.8.26. Local de venta de muebles en general productos de madera y mimbre, metálicos-colchones y afines"
+  },
+  {
+    "code": "rubro_178",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 178,
+    "example": "Consulta orientativa: 1.8.30. Local de venta de repuestos y accesorios para automotores",
+    "id": "activity-rubro_178",
+    "name": "1.8.30. Local de venta de repuestos y accesorios para automotores"
+  },
+  {
+    "code": "rubro_179",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 179,
+    "example": "Consulta orientativa: 6.4.1. Venta minorista de repuestos, lubricantes y aditivos envasados, taller de reparación de automóviles (excluido chapa pintura y rectificación de motores)",
+    "id": "activity-rubro_179",
+    "name": "6.4.1. Venta minorista de repuestos, lubricantes y aditivos envasados, taller de reparación de automóviles (excluido chapa pintura y rectificación de motores)"
+  },
+  {
+    "code": "rubro_18",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 18,
+    "example": "Consulta orientativa: 2.3.6. Cancha de Golf",
+    "id": "activity-rubro_18",
+    "name": "2.3.6. Cancha de Golf"
+  },
+  {
+    "code": "rubro_180",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 180,
+    "example": "Consulta orientativa: 5.2.38. Laboratorio de estudios radiológicos y/o estudios especiales",
+    "id": "activity-rubro_180",
+    "name": "5.2.38. Laboratorio de estudios radiológicos y/o estudios especiales"
+  },
+  {
+    "code": "rubro_181",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 181,
+    "example": "Consulta orientativa: 2.3.1. Club social, cultural y deportivo con o sin instalaciones al aire libre",
+    "id": "activity-rubro_181",
+    "name": "2.3.1. Club social, cultural y deportivo con o sin instalaciones al aire libre"
+  },
+  {
+    "code": "rubro_182",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 182,
+    "example": "Consulta orientativa: 4.1.1. Casa de pensión",
+    "id": "activity-rubro_182",
+    "name": "4.1.1. Casa de pensión"
+  },
+  {
+    "code": "rubro_183",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 183,
+    "example": "Consulta orientativa: 5.2.31. Hogar (con internación) – Discapacidad",
+    "id": "activity-rubro_183",
+    "name": "5.2.31. Hogar (con internación) – Discapacidad"
+  },
+  {
+    "code": "rubro_184",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 184,
+    "example": "Consulta orientativa: 5.2.8. Centro de salud mental-Atención Ambulatoria",
+    "id": "activity-rubro_184",
+    "name": "5.2.8. Centro de salud mental-Atención Ambulatoria"
+  },
+  {
+    "code": "rubro_185",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 185,
+    "example": "Consulta orientativa: 7.2.3. Garaje para ómnibus y colectivos",
+    "id": "activity-rubro_185",
+    "name": "7.2.3. Garaje para ómnibus y colectivos"
+  },
+  {
+    "code": "rubro_186",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 186,
+    "example": "Consulta orientativa: 5.2.12. Residencia de salud mental-Residencia asistida de nivel medio de apoyo",
+    "id": "activity-rubro_186",
+    "name": "5.2.12. Residencia de salud mental-Residencia asistida de nivel medio de apoyo"
+  },
+  {
+    "code": "rubro_187",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 187,
+    "example": "Consulta orientativa: 4.1. Alojamiento no turístico",
+    "id": "activity-rubro_187",
+    "name": "4.1. Alojamiento no turístico"
+  },
+  {
+    "code": "rubro_188",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 188,
+    "example": "Consulta orientativa: 7.2.5. Garaje para camiones con servicio al transportista con abastecimiento de combustible",
+    "id": "activity-rubro_188",
+    "name": "7.2.5. Garaje para camiones con servicio al transportista con abastecimiento de combustible"
+  },
+  {
+    "code": "rubro_189",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 189,
+    "example": "Consulta orientativa: 6.2.14. Laboratorio de análisis industriales",
+    "id": "activity-rubro_189",
+    "name": "6.2.14. Laboratorio de análisis industriales"
+  },
+  {
+    "code": "rubro_19",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 19,
+    "example": "Consulta orientativa: 1.3. Comercio mayorista con depósito-Art. 3.13.5. a)",
+    "id": "activity-rubro_19",
+    "name": "1.3. Comercio mayorista con depósito-Art. 3.13.5. a)"
+  },
+  {
+    "code": "rubro_190",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 190,
+    "example": "Consulta orientativa: 6.1.11. Empresa de servicio de seguridad con polígono de tiro",
+    "id": "activity-rubro_190",
+    "name": "6.1.11. Empresa de servicio de seguridad con polígono de tiro"
+  },
+  {
+    "code": "rubro_191",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 191,
+    "example": "Consulta orientativa: 5.2.15. Servicio de salud mental en el primer nivel de atención",
+    "id": "activity-rubro_191",
+    "name": "5.2.15. Servicio de salud mental en el primer nivel de atención"
+  },
+  {
+    "code": "rubro_192",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 192,
+    "example": "Consulta orientativa: 6.2.22. Taller productivo anexo a vivienda",
+    "id": "activity-rubro_192",
+    "name": "6.2.22. Taller productivo anexo a vivienda"
+  },
+  {
+    "code": "rubro_193",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 193,
+    "example": "Consulta orientativa: 2.4.9 Local de baile clase “C” actividades complementarias (20% de superficie total)",
+    "id": "activity-rubro_193",
+    "name": "2.4.9 Local de baile clase “C” actividades complementarias (20% de superficie total)"
+  },
+  {
+    "code": "rubro_194",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 194,
+    "example": "Consulta orientativa: 2.1.11. Teatro",
+    "id": "activity-rubro_194",
+    "name": "2.1.11. Teatro"
+  },
+  {
+    "code": "rubro_195",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 195,
+    "example": "Consulta orientativa: 6.3.10. Lavadero automático de vehículos automotores/ manual de vehículos automotores",
+    "id": "activity-rubro_195",
+    "name": "6.3.10. Lavadero automático de vehículos automotores/ manual de vehículos automotores"
+  },
+  {
+    "code": "rubro_196",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 196,
+    "example": "Consulta orientativa: 5.2.24. Taller Protegido de Producción",
+    "id": "activity-rubro_196",
+    "name": "5.2.24. Taller Protegido de Producción"
+  },
+  {
+    "code": "rubro_197",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 197,
+    "example": "Consulta orientativa: 4.2.4. Hotel 3 estrellas",
+    "id": "activity-rubro_197",
+    "name": "4.2.4. Hotel 3 estrellas"
+  },
+  {
+    "code": "rubro_198",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 198,
+    "example": "Consulta orientativa: 9.3.2. Hogar de niñas, niños y adolescentes",
+    "id": "activity-rubro_198",
+    "name": "9.3.2. Hogar de niñas, niños y adolescentes"
+  },
+  {
+    "code": "rubro_199",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 199,
+    "example": "Consulta orientativa: 3.1.22. Escuela secundaria. Gestión privada",
+    "id": "activity-rubro_199",
+    "name": "3.1.22. Escuela secundaria. Gestión privada"
+  },
+  {
+    "code": "rubro_2",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 2,
+    "example": "Consulta orientativa: 1.6.3. Autoservicio de productos alimenticios",
+    "id": "activity-rubro_2",
+    "name": "1.6.3. Autoservicio de productos alimenticios"
+  },
+  {
+    "code": "rubro_20",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 20,
+    "example": "Consulta orientativa: 1.8.28. Local de venta de artículos y equipamiento médico, hospitalario y farmacéutico",
+    "id": "activity-rubro_20",
+    "name": "1.8.28. Local de venta de artículos y equipamiento médico, hospitalario y farmacéutico"
+  },
+  {
+    "code": "rubro_200",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 200,
+    "example": "Consulta orientativa: 6.2.17. Oficina comercial/consultora",
+    "id": "activity-rubro_200",
+    "name": "6.2.17. Oficina comercial/consultora"
+  },
+  {
+    "code": "rubro_201",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 201,
+    "example": "Consulta orientativa: 7.5.2. Terminal de carga por automotor. Caso particular Parque Patricios",
+    "id": "activity-rubro_201",
+    "name": "7.5.2. Terminal de carga por automotor. Caso particular Parque Patricios"
+  },
+  {
+    "code": "rubro_202",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 202,
+    "example": "Consulta orientativa: 3.1.29 Instituto de Enseñanza para niños, niñas y adolescentes",
+    "id": "activity-rubro_202",
+    "name": "3.1.29 Instituto de Enseñanza para niños, niñas y adolescentes"
+  },
+  {
+    "code": "rubro_203",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 203,
+    "example": "Consulta orientativa: 1.8.17. Rodados en general, bicicletas, motos",
+    "id": "activity-rubro_203",
+    "name": "1.8.17. Rodados en general, bicicletas, motos"
+  },
+  {
+    "code": "rubro_204",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 204,
+    "example": "Consulta orientativa: 5.2.5. Centro médico u odontológico",
+    "id": "activity-rubro_204",
+    "name": "5.2.5. Centro médico u odontológico"
+  },
+  {
+    "code": "rubro_205",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 205,
+    "example": "Consulta orientativa: 2.5.3. Sala de bingo",
+    "id": "activity-rubro_205",
+    "name": "2.5.3. Sala de bingo"
+  },
+  {
+    "code": "rubro_206",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 206,
+    "example": "Consulta orientativa: 6.1.20 Peluquería y otros servicios para animales domésticos",
+    "id": "activity-rubro_206",
+    "name": "6.1.20 Peluquería y otros servicios para animales domésticos"
+  },
+  {
+    "code": "rubro_207",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 207,
+    "example": "Consulta orientativa: 2.3. Local deportivo",
+    "id": "activity-rubro_207",
+    "name": "2.3. Local deportivo"
+  },
+  {
+    "code": "rubro_208",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 208,
+    "example": "Consulta orientativa: 2.6. Local de culto",
+    "id": "activity-rubro_208",
+    "name": "2.6. Local de culto"
+  },
+  {
+    "code": "rubro_209",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 209,
+    "example": "Consulta orientativa: 6.3.8. Exposición y venta de ataúdes",
+    "id": "activity-rubro_209",
+    "name": "6.3.8. Exposición y venta de ataúdes"
+  },
+  {
+    "code": "rubro_21",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 21,
+    "example": "Consulta orientativa: 7.4.6. Helipuerto",
+    "id": "activity-rubro_21",
+    "name": "7.4.6. Helipuerto"
+  },
+  {
+    "code": "rubro_210",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 210,
+    "example": "Consulta orientativa: 6.2.24. Sala de ensayos",
+    "id": "activity-rubro_210",
+    "name": "6.2.24. Sala de ensayos"
+  },
+  {
+    "code": "rubro_211",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 211,
+    "example": "Consulta orientativa: 3.1.27 Establecimiento educación a distancia con exámenes presenciales",
+    "id": "activity-rubro_211",
+    "name": "3.1.27 Establecimiento educación a distancia con exámenes presenciales"
+  },
+  {
+    "code": "rubro_212",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 212,
+    "example": "Consulta orientativa: 3.1.24 Escuela secundaria modalidad adultos. Gestión Privada",
+    "id": "activity-rubro_212",
+    "name": "3.1.24 Escuela secundaria modalidad adultos. Gestión Privada"
+  },
+  {
+    "code": "rubro_213",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 213,
+    "example": "Consulta orientativa: 2.1.5. Centro Cultural D (más de 500 personas y 1000 m²)",
+    "id": "activity-rubro_213",
+    "name": "2.1.5. Centro Cultural D (más de 500 personas y 1000 m²)"
+  },
+  {
+    "code": "rubro_214",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 214,
+    "example": "Consulta orientativa: 7.2.4. Garaje para camiones con servicio al transportista sin abastecimiento de combustible",
+    "id": "activity-rubro_214",
+    "name": "7.2.4. Garaje para camiones con servicio al transportista sin abastecimiento de combustible"
+  },
+  {
+    "code": "rubro_215",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 215,
+    "example": "Consulta orientativa: 1.8.27. Local de venta de elementos contra incendio, matafuegos y artículos para seguridad industrial",
+    "id": "activity-rubro_215",
+    "name": "1.8.27. Local de venta de elementos contra incendio, matafuegos y artículos para seguridad industrial"
+  },
+  {
+    "code": "rubro_216",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 216,
+    "example": "Consulta orientativa: 5.2.23. Instituto privado (sanidad) c/internación",
+    "id": "activity-rubro_216",
+    "name": "5.2.23. Instituto privado (sanidad) c/internación"
+  },
+  {
+    "code": "rubro_217",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 217,
+    "example": "Consulta orientativa: 3.1.5. Escuela infantil. Gestión estatal",
+    "id": "activity-rubro_217",
+    "name": "3.1.5. Escuela infantil. Gestión estatal"
+  },
+  {
+    "code": "rubro_218",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 218,
+    "example": "Consulta orientativa: 5.2.17. Clínica",
+    "id": "activity-rubro_218",
+    "name": "5.2.17. Clínica"
+  },
+  {
+    "code": "rubro_219",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 219,
+    "example": "Consulta orientativa: 5.2.39 Laboratorio de análisis clínicos, y/o estudios especiales para animales",
+    "id": "activity-rubro_219",
+    "name": "5.2.39 Laboratorio de análisis clínicos, y/o estudios especiales para animales"
+  },
+  {
+    "code": "rubro_22",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 22,
+    "example": "Consulta orientativa: 5.2.19. Maternidad",
+    "id": "activity-rubro_22",
+    "name": "5.2.19. Maternidad"
+  },
+  {
+    "code": "rubro_220",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 220,
+    "example": "Consulta orientativa: 1.8.12. Tabaquería, cigarrería",
+    "id": "activity-rubro_220",
+    "name": "1.8.12. Tabaquería, cigarrería"
+  },
+  {
+    "code": "rubro_221",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 221,
+    "example": "Consulta orientativa: 1.8.14. Óptica y fotografía",
+    "id": "activity-rubro_221",
+    "name": "1.8.14. Óptica y fotografía"
+  },
+  {
+    "code": "rubro_222",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 222,
+    "example": "Consulta orientativa: 6.2.7. Casa de cambio-agencia de seguros",
+    "id": "activity-rubro_222",
+    "name": "6.2.7. Casa de cambio-agencia de seguros"
+  },
+  {
+    "code": "rubro_223",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 223,
+    "example": "Consulta orientativa: 6.1.6. Cobro de impuestos y servicios",
+    "id": "activity-rubro_223",
+    "name": "6.1.6. Cobro de impuestos y servicios"
+  },
+  {
+    "code": "rubro_224",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 224,
+    "example": "Consulta orientativa: 7.3. Estación intermedia",
+    "id": "activity-rubro_224",
+    "name": "7.3. Estación intermedia"
+  },
+  {
+    "code": "rubro_225",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 225,
+    "example": "Consulta orientativa: 2.4.1. Casa o local de fiestas privadas infantiles",
+    "id": "activity-rubro_225",
+    "name": "2.4.1. Casa o local de fiestas privadas infantiles"
+  },
+  {
+    "code": "rubro_226",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 226,
+    "example": "Consulta orientativa: 5.2.33. Centro veterinario con internación limitada al proceso pre y postoperatorio",
+    "id": "activity-rubro_226",
+    "name": "5.2.33. Centro veterinario con internación limitada al proceso pre y postoperatorio"
+  },
+  {
+    "code": "rubro_227",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 227,
+    "example": "Consulta orientativa: 7.5. Transferencia",
+    "id": "activity-rubro_227",
+    "name": "7.5. Transferencia"
+  },
+  {
+    "code": "rubro_228",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 228,
+    "example": "Consulta orientativa: 3.1.31 Instituto de investigación sin laboratorio",
+    "id": "activity-rubro_228",
+    "name": "3.1.31 Instituto de investigación sin laboratorio"
+  },
+  {
+    "code": "rubro_229",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 229,
+    "example": "Consulta orientativa: 5.2.16. Instituto de salud mental",
+    "id": "activity-rubro_229",
+    "name": "5.2.16. Instituto de salud mental"
+  },
+  {
+    "code": "rubro_23",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 23,
+    "example": "Consulta orientativa: 1.8.21. Metales y piedras preciosas (compra-venta)",
+    "id": "activity-rubro_23",
+    "name": "1.8.21. Metales y piedras preciosas (compra-venta)"
+  },
+  {
+    "code": "rubro_230",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 230,
+    "example": "Consulta orientativa: 2.4.4. Salón de Milonga",
+    "id": "activity-rubro_230",
+    "name": "2.4.4. Salón de Milonga"
+  },
+  {
+    "code": "rubro_231",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 231,
+    "example": "Consulta orientativa: 6.2. Servicios ocasionales para empresas o industrias",
+    "id": "activity-rubro_231",
+    "name": "6.2. Servicios ocasionales para empresas o industrias"
+  },
+  {
+    "code": "rubro_232",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 232,
+    "example": "Consulta orientativa: 5.2.26. Centro de Día – Discapacidad",
+    "id": "activity-rubro_232",
+    "name": "5.2.26. Centro de Día – Discapacidad"
+  },
+  {
+    "code": "rubro_233",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 233,
+    "example": "Consulta orientativa: 8.2. Establecimientos de escala barrial",
+    "id": "activity-rubro_233",
+    "name": "8.2. Establecimientos de escala barrial"
+  },
+  {
+    "code": "rubro_234",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 234,
+    "example": "Consulta orientativa: 5.2.7. Centro de Especialidades Médicas Ambulatorias Regional de la Red Sanitaria de la Ciudad de Buenos Aires",
+    "id": "activity-rubro_234",
+    "name": "5.2.7. Centro de Especialidades Médicas Ambulatorias Regional de la Red Sanitaria de la Ciudad de Buenos Aires"
+  },
+  {
+    "code": "rubro_235",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 235,
+    "example": "Consulta orientativa: 6.2.19. Centro de procesamiento de datos y tabulaciones",
+    "id": "activity-rubro_235",
+    "name": "6.2.19. Centro de procesamiento de datos y tabulaciones"
+  },
+  {
+    "code": "rubro_236",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 236,
+    "example": "Consulta orientativa: 6.2.6. Bolsa de valores y de comercio",
+    "id": "activity-rubro_236",
+    "name": "6.2.6. Bolsa de valores y de comercio"
+  },
+  {
+    "code": "rubro_237",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 237,
+    "example": "Consulta orientativa: 2.4.3 Calesita/Carrusel",
+    "id": "activity-rubro_237",
+    "name": "2.4.3 Calesita/Carrusel"
+  },
+  {
+    "code": "rubro_238",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 238,
+    "example": "Consulta orientativa: 2.1.1 Espacio cultural independiente.  (Hasta 500M²)",
+    "id": "activity-rubro_238",
+    "name": "2.1.1 Espacio cultural independiente.  (Hasta 500M²)"
+  },
+  {
+    "code": "rubro_239",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 239,
+    "example": "Consulta orientativa: 6.2.18. Espacio de Trabajo Colaborativo",
+    "id": "activity-rubro_239",
+    "name": "6.2.18. Espacio de Trabajo Colaborativo"
+  },
+  {
+    "code": "rubro_24",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 24,
+    "example": "Consulta orientativa: 3.1.13 Escuela de educación especial -con formación laboral-con internado- Gestión estatal",
+    "id": "activity-rubro_24",
+    "name": "3.1.13 Escuela de educación especial -con formación laboral-con internado- Gestión estatal"
+  },
+  {
+    "code": "rubro_240",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 240,
+    "example": "Consulta orientativa: 3.1.1. Jardín maternal Gestión estatal",
+    "id": "activity-rubro_240",
+    "name": "3.1.1. Jardín maternal Gestión estatal"
+  },
+  {
+    "code": "rubro_241",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 241,
+    "example": "Consulta orientativa: 1.8.5. Local de venta de materiales de construcción clase I (exposición y venta)",
+    "id": "activity-rubro_241",
+    "name": "1.8.5. Local de venta de materiales de construcción clase I (exposición y venta)"
+  },
+  {
+    "code": "rubro_242",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 242,
+    "example": "Consulta orientativa: 2.3.3. Gimnasio",
+    "id": "activity-rubro_242",
+    "name": "2.3.3. Gimnasio"
+  },
+  {
+    "code": "rubro_243",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 243,
+    "example": "Consulta orientativa: 6.3.5. Estación de servicio-combustibles líquidos y/o GNC",
+    "id": "activity-rubro_243",
+    "name": "6.3.5. Estación de servicio-combustibles líquidos y/o GNC"
+  },
+  {
+    "code": "rubro_244",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 244,
+    "example": "Consulta orientativa: 5.2.4. Centro de Salud y Acción Comunitaria de la Red Sanitaria de la Ciudad de Buenos Aires",
+    "id": "activity-rubro_244",
+    "name": "5.2.4. Centro de Salud y Acción Comunitaria de la Red Sanitaria de la Ciudad de Buenos Aires"
+  },
+  {
+    "code": "rubro_245",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 245,
+    "example": "Consulta orientativa: 1.4.2. Local de venta de golosinas envasadas (kiosco)",
+    "id": "activity-rubro_245",
+    "name": "1.4.2. Local de venta de golosinas envasadas (kiosco)"
+  },
+  {
+    "code": "rubro_246",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 246,
+    "example": "Consulta orientativa: 5.2.34. Laboratorio de análisis clínicos",
+    "id": "activity-rubro_246",
+    "name": "5.2.34. Laboratorio de análisis clínicos"
+  },
+  {
+    "code": "rubro_247",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 247,
+    "example": "Consulta orientativa: 3.1.32 Instituto de investigación con laboratorio",
+    "id": "activity-rubro_247",
+    "name": "3.1.32 Instituto de investigación con laboratorio"
+  },
+  {
+    "code": "rubro_248",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 248,
+    "example": "Consulta orientativa: 5.2.18. Sanatorio",
+    "id": "activity-rubro_248",
+    "name": "5.2.18. Sanatorio"
+  },
+  {
+    "code": "rubro_249",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 249,
+    "example": "Consulta orientativa: 6.3.9. Velatorio",
+    "id": "activity-rubro_249",
+    "name": "6.3.9. Velatorio"
+  },
+  {
+    "code": "rubro_25",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 25,
+    "example": "Consulta orientativa: 5.2.14. Emprendimiento Socioproductivo",
+    "id": "activity-rubro_25",
+    "name": "5.2.14. Emprendimiento Socioproductivo"
+  },
+  {
+    "code": "rubro_250",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 250,
+    "example": "Consulta orientativa: 7.4. Estación terminal",
+    "id": "activity-rubro_250",
+    "name": "7.4. Estación terminal"
+  },
+  {
+    "code": "rubro_251",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 251,
+    "example": "Consulta orientativa: 6.2.5. Báscula pública",
+    "id": "activity-rubro_251",
+    "name": "6.2.5. Báscula pública"
+  },
+  {
+    "code": "rubro_252",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 252,
+    "example": "Consulta orientativa: 7.5.3. Centro de Trasbordo",
+    "id": "activity-rubro_252",
+    "name": "7.5.3. Centro de Trasbordo"
+  },
+  {
+    "code": "rubro_253",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 253,
+    "example": "Consulta orientativa: 5.2.21. Centro de rehabilitación en general (recuperación física y/o social)",
+    "id": "activity-rubro_253",
+    "name": "5.2.21. Centro de rehabilitación en general (recuperación física y/o social)"
+  },
+  {
+    "code": "rubro_254",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 254,
+    "example": "Consulta orientativa: 2.4.11. Pista patinaje y/o skate. Sala patinaje sobre hielo",
+    "id": "activity-rubro_254",
+    "name": "2.4.11. Pista patinaje y/o skate. Sala patinaje sobre hielo"
+  },
+  {
+    "code": "rubro_255",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 255,
+    "example": "Consulta orientativa: 6.5.6. Policía (departamento central)",
+    "id": "activity-rubro_255",
+    "name": "6.5.6. Policía (departamento central)"
+  },
+  {
+    "code": "rubro_256",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 256,
+    "example": "Consulta orientativa: 1.8.22. Almacén naval",
+    "id": "activity-rubro_256",
+    "name": "1.8.22. Almacén naval"
+  },
+  {
+    "code": "rubro_257",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 257,
+    "example": "Consulta orientativa: 4.3. Alojamiento turístico para hotelero",
+    "id": "activity-rubro_257",
+    "name": "4.3. Alojamiento turístico para hotelero"
+  },
+  {
+    "code": "rubro_258",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 258,
+    "example": "Consulta orientativa: 2.4.10. Juego de bolos, billar, dardos, tenis de mesa, hockey de mesa, futbol de mesa",
+    "id": "activity-rubro_258",
+    "name": "2.4.10. Juego de bolos, billar, dardos, tenis de mesa, hockey de mesa, futbol de mesa"
+  },
+  {
+    "code": "rubro_259",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 259,
+    "example": "Consulta orientativa: 1.8.11. Local de venta de artículos publicitarios",
+    "id": "activity-rubro_259",
+    "name": "1.8.11. Local de venta de artículos publicitarios"
+  },
+  {
+    "code": "rubro_26",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 26,
+    "example": "Consulta orientativa: 2.1.15. Autocine",
+    "id": "activity-rubro_26",
+    "name": "2.1.15. Autocine"
+  },
+  {
+    "code": "rubro_260",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 260,
+    "example": "Consulta orientativa: 7.2. Garaje",
+    "id": "activity-rubro_260",
+    "name": "7.2. Garaje"
+  },
+  {
+    "code": "rubro_261",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 261,
+    "example": "Consulta orientativa: 2.4.15. Centro de entretenimiento familiar",
+    "id": "activity-rubro_261",
+    "name": "2.4.15. Centro de entretenimiento familiar"
+  },
+  {
+    "code": "rubro_262",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 262,
+    "example": "Consulta orientativa: 1.5.1. Patio gastronómico",
+    "id": "activity-rubro_262",
+    "name": "1.5.1. Patio gastronómico"
+  },
+  {
+    "code": "rubro_263",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 263,
+    "example": "Consulta orientativa: 6.2.2. Alquiler de artículos, elementos, accesorios y muebles para prestación de servicios de lunch sin depósito",
+    "id": "activity-rubro_263",
+    "name": "6.2.2. Alquiler de artículos, elementos, accesorios y muebles para prestación de servicios de lunch sin depósito"
+  },
+  {
+    "code": "rubro_264",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 264,
+    "example": "Consulta orientativa: 7.4.3. Estación terminal para transporte público urbano automotor",
+    "id": "activity-rubro_264",
+    "name": "7.4.3. Estación terminal para transporte público urbano automotor"
+  },
+  {
+    "code": "rubro_265",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 265,
+    "example": "Consulta orientativa: 5.1.3. Consultorio de Salud Mental",
+    "id": "activity-rubro_265",
+    "name": "5.1.3. Consultorio de Salud Mental"
+  },
+  {
+    "code": "rubro_266",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 266,
+    "example": "Consulta orientativa: 5.2.32. Clínica veterinaria",
+    "id": "activity-rubro_266",
+    "name": "5.2.32. Clínica veterinaria"
+  },
+  {
+    "code": "rubro_267",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 267,
+    "example": "Consulta orientativa: 5.2.22. Instituto privado (sanidad) s/internación",
+    "id": "activity-rubro_267",
+    "name": "5.2.22. Instituto privado (sanidad) s/internación"
+  },
+  {
+    "code": "rubro_268",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 268,
+    "example": "Consulta orientativa: 7.1.2. Playa y/o depósito de contenedores",
+    "id": "activity-rubro_268",
+    "name": "7.1.2. Playa y/o depósito de contenedores"
+  },
+  {
+    "code": "rubro_269",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 269,
+    "example": "Consulta orientativa: 1.8.34. Local de venta de lubricantes y aditivos para automotores",
+    "id": "activity-rubro_269",
+    "name": "1.8.34. Local de venta de lubricantes y aditivos para automotores"
+  },
+  {
+    "code": "rubro_27",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 27,
+    "example": "Consulta orientativa: 1.7.1. Paseo de Compras/Grandes Tiendas",
+    "id": "activity-rubro_27",
+    "name": "1.7.1. Paseo de Compras/Grandes Tiendas"
+  },
+  {
+    "code": "rubro_270",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 270,
+    "example": "Consulta orientativa: 8.1.2 Depósito logístico",
+    "id": "activity-rubro_270",
+    "name": "8.1.2 Depósito logístico"
+  },
+  {
+    "code": "rubro_271",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 271,
+    "example": "Consulta orientativa: 1.8.31. Automotores, embarcaciones, aviones",
+    "id": "activity-rubro_271",
+    "name": "1.8.31. Automotores, embarcaciones, aviones"
+  },
+  {
+    "code": "rubro_272",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 272,
+    "example": "Consulta orientativa: 5.2.29. Residencia (con internación)- Discapacidad",
+    "id": "activity-rubro_272",
+    "name": "5.2.29. Residencia (con internación)- Discapacidad"
+  },
+  {
+    "code": "rubro_273",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 273,
+    "example": "Consulta orientativa: 5.2.11. Residencia de salud mental-Residencia asistida de bajo nivel de apoyo",
+    "id": "activity-rubro_273",
+    "name": "5.2.11. Residencia de salud mental-Residencia asistida de bajo nivel de apoyo"
+  },
+  {
+    "code": "rubro_274",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 274,
+    "example": "Consulta orientativa: 2.4.17. Circo Rodante (uso transitorio)",
+    "id": "activity-rubro_274",
+    "name": "2.4.17. Circo Rodante (uso transitorio)"
+  },
+  {
+    "code": "rubro_275",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 275,
+    "example": "Consulta orientativa: 7.4.4. Estación terminal de subterráneo",
+    "id": "activity-rubro_275",
+    "name": "7.4.4. Estación terminal de subterráneo"
+  },
+  {
+    "code": "rubro_276",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 276,
+    "example": "Consulta orientativa: 1.8.4. Local de venta de antigüedades, objetos de arte",
+    "id": "activity-rubro_276",
+    "name": "1.8.4. Local de venta de antigüedades, objetos de arte"
+  },
+  {
+    "code": "rubro_277",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 277,
+    "example": "Consulta orientativa: 6.1. Servicios para la vivienda y sus ocupantes",
+    "id": "activity-rubro_277",
+    "name": "6.1. Servicios para la vivienda y sus ocupantes"
+  },
+  {
+    "code": "rubro_278",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 278,
+    "example": "Consulta orientativa: 5.2. Establecimientos de sanidad-Nivel centro local",
+    "id": "activity-rubro_278",
+    "name": "5.2. Establecimientos de sanidad-Nivel centro local"
+  },
+  {
+    "code": "rubro_279",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 279,
+    "example": "Consulta orientativa: 7.3.1. Estación intermedia de subterráneos",
+    "id": "activity-rubro_279",
+    "name": "7.3.1. Estación intermedia de subterráneos"
+  },
+  {
+    "code": "rubro_28",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 28,
+    "example": "Consulta orientativa: 1.8.13. Cerrajería",
+    "id": "activity-rubro_28",
+    "name": "1.8.13. Cerrajería"
+  },
+  {
+    "code": "rubro_280",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 280,
+    "example": "Consulta orientativa: 2.4. Local de fiesta o diversión",
+    "id": "activity-rubro_280",
+    "name": "2.4. Local de fiesta o diversión"
+  },
+  {
+    "code": "rubro_281",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 281,
+    "example": "Consulta orientativa: 3.1.8. Escuela primaria. Gestión estatal",
+    "id": "activity-rubro_281",
+    "name": "3.1.8. Escuela primaria. Gestión estatal"
+  },
+  {
+    "code": "rubro_282",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 282,
+    "example": "Consulta orientativa: 9.2. Vivienda colectiva",
+    "id": "activity-rubro_282",
+    "name": "9.2. Vivienda colectiva"
+  },
+  {
+    "code": "rubro_283",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 283,
+    "example": "Consulta orientativa: 6.1.3. Agencia de taxímetros/remises/autos de alquiler",
+    "id": "activity-rubro_283",
+    "name": "6.1.3. Agencia de taxímetros/remises/autos de alquiler"
+  },
+  {
+    "code": "rubro_284",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 284,
+    "example": "Consulta orientativa: 1.8.6. Local de venta de materiales de construcción clase II (con depósito, sin materiales a granel)",
+    "id": "activity-rubro_284",
+    "name": "1.8.6. Local de venta de materiales de construcción clase II (con depósito, sin materiales a granel)"
+  },
+  {
+    "code": "rubro_285",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 285,
+    "example": "Consulta orientativa: 6.2.20. Actividades de Tecnologías de la Información y las Comunicaciones (TIC)",
+    "id": "activity-rubro_285",
+    "name": "6.2.20. Actividades de Tecnologías de la Información y las Comunicaciones (TIC)"
+  },
+  {
+    "code": "rubro_286",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 286,
+    "example": "Consulta orientativa: 7.4.5. Estación terminal de tren suburbano",
+    "id": "activity-rubro_286",
+    "name": "7.4.5. Estación terminal de tren suburbano"
+  },
+  {
+    "code": "rubro_287",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 287,
+    "example": "Consulta orientativa: 1.8.7. Local de venta de materiales de construcción clase III (sin exclusiones)",
+    "id": "activity-rubro_287",
+    "name": "1.8.7. Local de venta de materiales de construcción clase III (sin exclusiones)"
+  },
+  {
+    "code": "rubro_288",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 288,
+    "example": "Consulta orientativa: 6.5.2. Oficina pública sin acceso de público",
+    "id": "activity-rubro_288",
+    "name": "6.5.2. Oficina pública sin acceso de público"
+  },
+  {
+    "code": "rubro_289",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 289,
+    "example": "Consulta orientativa: 6.1.13. Playa de estacionamiento",
+    "id": "activity-rubro_289",
+    "name": "6.1.13. Playa de estacionamiento"
+  },
+  {
+    "code": "rubro_29",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 29,
+    "example": "Consulta orientativa: 2.1.14. Salón de exposiciones",
+    "id": "activity-rubro_29",
+    "name": "2.1.14. Salón de exposiciones"
+  },
+  {
+    "code": "rubro_290",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 290,
+    "example": "Consulta orientativa: 2.3.4. Cancha de tenis/ paddle/frontón con raqueta (squash)",
+    "id": "activity-rubro_290",
+    "name": "2.3.4. Cancha de tenis/ paddle/frontón con raqueta (squash)"
+  },
+  {
+    "code": "rubro_291",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 291,
+    "example": "Consulta orientativa: 1.5.2. Mercado gastronómico",
+    "id": "activity-rubro_291",
+    "name": "1.5.2. Mercado gastronómico"
+  },
+  {
+    "code": "rubro_292",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 292,
+    "example": "Consulta orientativa: 5.2.9. Centro de salud mental-Hospital de Día",
+    "id": "activity-rubro_292",
+    "name": "5.2.9. Centro de salud mental-Hospital de Día"
+  },
+  {
+    "code": "rubro_293",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 293,
+    "example": "Consulta orientativa: 7.2.8. Caballerizas, studs, guarda de vehículos tracción a sangre",
+    "id": "activity-rubro_293",
+    "name": "7.2.8. Caballerizas, studs, guarda de vehículos tracción a sangre"
+  },
+  {
+    "code": "rubro_294",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 294,
+    "example": "Consulta orientativa: 2.1.4. Centro Cultural C (hasta 500 personas y 1000 m²)",
+    "id": "activity-rubro_294",
+    "name": "2.1.4. Centro Cultural C (hasta 500 personas y 1000 m²)"
+  },
+  {
+    "code": "rubro_295",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 295,
+    "example": "Consulta orientativa: 1.8.24. Casa de remates",
+    "id": "activity-rubro_295",
+    "name": "1.8.24. Casa de remates"
+  },
+  {
+    "code": "rubro_296",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 296,
+    "example": "Consulta orientativa: 6.2.9. Editorial sin depósito ni imprenta",
+    "id": "activity-rubro_296",
+    "name": "6.2.9. Editorial sin depósito ni imprenta"
+  },
+  {
+    "code": "rubro_297",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 297,
+    "example": "Consulta orientativa: 3.1.23 Escuela secundaria modalidad adultos. Gestión estatal",
+    "id": "activity-rubro_297",
+    "name": "3.1.23 Escuela secundaria modalidad adultos. Gestión estatal"
+  },
+  {
+    "code": "rubro_298",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 298,
+    "example": "Consulta orientativa: 1.1. Comercio mayorista sin depósito",
+    "id": "activity-rubro_298",
+    "name": "1.1. Comercio mayorista sin depósito"
+  },
+  {
+    "code": "rubro_299",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 299,
+    "example": "Consulta orientativa: 1.6.4. Autoservicio de proximidad",
+    "id": "activity-rubro_299",
+    "name": "1.6.4. Autoservicio de proximidad"
+  },
+  {
+    "code": "rubro_3",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 3,
+    "example": "Consulta orientativa: 3.1.3. Jardín de infantes. Gestión estatal",
+    "id": "activity-rubro_3",
+    "name": "3.1.3. Jardín de infantes. Gestión estatal"
+  },
+  {
+    "code": "rubro_30",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 30,
+    "example": "Consulta orientativa: 1.8.37. Gas envasado",
+    "id": "activity-rubro_30",
+    "name": "1.8.37. Gas envasado"
+  },
+  {
+    "code": "rubro_300",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 300,
+    "example": "Consulta orientativa: 3.1.20 Escuela, colegio con internado",
+    "id": "activity-rubro_300",
+    "name": "3.1.20 Escuela, colegio con internado"
+  },
+  {
+    "code": "rubro_301",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 301,
+    "example": "Consulta orientativa: 5.2.10. Centro de salud mental-Centro de Día",
+    "id": "activity-rubro_301",
+    "name": "5.2.10. Centro de salud mental-Centro de Día"
+  },
+  {
+    "code": "rubro_302",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 302,
+    "example": "Consulta orientativa: 2.1.13. Salón de conferencias, sala audiovisual",
+    "id": "activity-rubro_302",
+    "name": "2.1.13. Salón de conferencias, sala audiovisual"
+  },
+  {
+    "code": "rubro_303",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 303,
+    "example": "Consulta orientativa: 7.3.2. Estación intermedia de tren suburbano",
+    "id": "activity-rubro_303",
+    "name": "7.3.2. Estación intermedia de tren suburbano"
+  },
+  {
+    "code": "rubro_304",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 304,
+    "example": "Consulta orientativa: 2.2.1. Biblioteca local",
+    "id": "activity-rubro_304",
+    "name": "2.2.1. Biblioteca local"
+  },
+  {
+    "code": "rubro_305",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 305,
+    "example": "Consulta orientativa: 1.8.18. Relojería y joyería",
+    "id": "activity-rubro_305",
+    "name": "1.8.18. Relojería y joyería"
+  },
+  {
+    "code": "rubro_306",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 306,
+    "example": "Consulta orientativa: 3.1.25. Establecimiento universitario",
+    "id": "activity-rubro_306",
+    "name": "3.1.25. Establecimiento universitario"
+  },
+  {
+    "code": "rubro_307",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 307,
+    "example": "Consulta orientativa: 6.3.7. Empresa de servicios fúnebres con depósito y/o garaje",
+    "id": "activity-rubro_307",
+    "name": "6.3.7. Empresa de servicios fúnebres con depósito y/o garaje"
+  },
+  {
+    "code": "rubro_308",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 308,
+    "example": "Consulta orientativa: 3.1.14. Escuela de educación especial con formación laboral sin Internado. Gestión estatal",
+    "id": "activity-rubro_308",
+    "name": "3.1.14. Escuela de educación especial con formación laboral sin Internado. Gestión estatal"
+  },
+  {
+    "code": "rubro_309",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 309,
+    "example": "Consulta orientativa: 1.8.23. Ferretería industrial, máquinas, herramientas, motores industriales y agrícolas",
+    "id": "activity-rubro_309",
+    "name": "1.8.23. Ferretería industrial, máquinas, herramientas, motores industriales y agrícolas"
+  },
+  {
+    "code": "rubro_31",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 31,
+    "example": "Consulta orientativa: 6.1.7. Estudio y laboratorio fotográfico",
+    "id": "activity-rubro_31",
+    "name": "6.1.7. Estudio y laboratorio fotográfico"
+  },
+  {
+    "code": "rubro_310",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 310,
+    "example": "Consulta orientativa: 5.2.25. Taller Protegido Terapéutico",
+    "id": "activity-rubro_310",
+    "name": "5.2.25. Taller Protegido Terapéutico"
+  },
+  {
+    "code": "rubro_311",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 311,
+    "example": "Consulta orientativa: 2.1. Local de representación",
+    "id": "activity-rubro_311",
+    "name": "2.1. Local de representación"
+  },
+  {
+    "code": "rubro_312",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 312,
+    "example": "Consulta orientativa: 8.1.1 Centros de concentración logística",
+    "id": "activity-rubro_312",
+    "name": "8.1.1 Centros de concentración logística"
+  },
+  {
+    "code": "rubro_313",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 313,
+    "example": "Consulta orientativa: 7.3.3 Estación intermedia para transporte público urbano automotor",
+    "id": "activity-rubro_313",
+    "name": "7.3.3 Estación intermedia para transporte público urbano automotor"
+  },
+  {
+    "code": "rubro_314",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 314,
+    "example": "Consulta orientativa: 3.1.16 Escuela de educación especial -sin formación laboral-con Internado. Gestión estatal",
+    "id": "activity-rubro_314",
+    "name": "3.1.16 Escuela de educación especial -sin formación laboral-con Internado. Gestión estatal"
+  },
+  {
+    "code": "rubro_315",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 315,
+    "example": "Consulta orientativa: 6.1.16. Salón de estética",
+    "id": "activity-rubro_315",
+    "name": "6.1.16. Salón de estética"
+  },
+  {
+    "code": "rubro_316",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 316,
+    "example": "Consulta orientativa: 6.1.19 Local de perforación y tatuaje",
+    "id": "activity-rubro_316",
+    "name": "6.1.19 Local de perforación y tatuaje"
+  },
+  {
+    "code": "rubro_317",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 317,
+    "example": "Consulta orientativa: 3.1.28 Establecimiento educación a distancia sin exámenes presenciales",
+    "id": "activity-rubro_317",
+    "name": "3.1.28 Establecimiento educación a distancia sin exámenes presenciales"
+  },
+  {
+    "code": "rubro_318",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 318,
+    "example": "Consulta orientativa: 6.3.6 Estación de cargadores eléctricos",
+    "id": "activity-rubro_318",
+    "name": "6.3.6 Estación de cargadores eléctricos"
+  },
+  {
+    "code": "rubro_319",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 319,
+    "example": "Consulta orientativa: 1.7.2. Galería Comercial",
+    "id": "activity-rubro_319",
+    "name": "1.7.2. Galería Comercial"
+  },
+  {
+    "code": "rubro_32",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 32,
+    "example": "Consulta orientativa: 2.3.8. Natatorio",
+    "id": "activity-rubro_32",
+    "name": "2.3.8. Natatorio"
+  },
+  {
+    "code": "rubro_33",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 33,
+    "example": "Consulta orientativa: 5.2.13. Residencia de salud mental-Residencia asistida de alto nivel de apoyo",
+    "id": "activity-rubro_33",
+    "name": "5.2.13. Residencia de salud mental-Residencia asistida de alto nivel de apoyo"
+  },
+  {
+    "code": "rubro_34",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 34,
+    "example": "Consulta orientativa: 4.2.5. Hotel 4 y 5 estrellas",
+    "id": "activity-rubro_34",
+    "name": "4.2.5. Hotel 4 y 5 estrellas"
+  },
+  {
+    "code": "rubro_35",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 35,
+    "example": "Consulta orientativa: 3.1.15 Escuela de educación especial -con formación laboral-sin Internado. Gestión Privada",
+    "id": "activity-rubro_35",
+    "name": "3.1.15 Escuela de educación especial -con formación laboral-sin Internado. Gestión Privada"
+  },
+  {
+    "code": "rubro_36",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 36,
+    "example": "Consulta orientativa: 7.1. Depósito de transporte",
+    "id": "activity-rubro_36",
+    "name": "7.1. Depósito de transporte"
+  },
+  {
+    "code": "rubro_37",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 37,
+    "example": "Consulta orientativa: 7.4.2. Estación Terminal de Transporte interjurisdiccional",
+    "id": "activity-rubro_37",
+    "name": "7.4.2. Estación Terminal de Transporte interjurisdiccional"
+  },
+  {
+    "code": "rubro_38",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 38,
+    "example": "Consulta orientativa: 4.1.3. Hotel residencial",
+    "id": "activity-rubro_38",
+    "name": "4.1.3. Hotel residencial"
+  },
+  {
+    "code": "rubro_39",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 39,
+    "example": "Consulta orientativa: 2.5. Local de juego",
+    "id": "activity-rubro_39",
+    "name": "2.5. Local de juego"
+  },
+  {
+    "code": "rubro_395",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 395,
+    "example": "Consulta orientativa: 10.1.6 Destilación de alcohol etílico",
+    "id": "activity-rubro_395",
+    "name": "10.1.6 Destilación de alcohol etílico"
+  },
+  {
+    "code": "rubro_396",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 396,
+    "example": "Consulta orientativa: 10.3.11 Planta de tratamiento de RSU",
+    "id": "activity-rubro_396",
+    "name": "10.3.11 Planta de tratamiento de RSU"
+  },
+  {
+    "code": "rubro_397",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 397,
+    "example": "Consulta orientativa: 10.3.7 Planta de Transferencia de RSU",
+    "id": "activity-rubro_397",
+    "name": "10.3.7 Planta de Transferencia de RSU"
+  },
+  {
+    "code": "rubro_398",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 398,
+    "example": "Consulta orientativa: 10.1.16 Fabricación de gases comprimidos y licuados",
+    "id": "activity-rubro_398",
+    "name": "10.1.16 Fabricación de gases comprimidos y licuados"
+  },
+  {
+    "code": "rubro_399",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 399,
+    "example": "Consulta orientativa: 10.1.3 Matanza de animales y procesamiento de su carne; elaboración de subproductos cárnicos n.c.p",
+    "id": "activity-rubro_399",
+    "name": "10.1.3 Matanza de animales y procesamiento de su carne; elaboración de subproductos cárnicos n.c.p"
+  },
+  {
+    "code": "rubro_4",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 4,
+    "example": "Consulta orientativa: 1.8.32. Pinturería",
+    "id": "activity-rubro_4",
+    "name": "1.8.32. Pinturería"
+  },
+  {
+    "code": "rubro_40",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 40,
+    "example": "Consulta orientativa: 6.5. Servicios públicos y/o sociales",
+    "id": "activity-rubro_40",
+    "name": "6.5. Servicios públicos y/o sociales"
+  },
+  {
+    "code": "rubro_400",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 400,
+    "example": "Consulta orientativa: 10.2.18 Plantas fraccionamiento gases licuados",
+    "id": "activity-rubro_400",
+    "name": "10.2.18 Plantas fraccionamiento gases licuados"
+  },
+  {
+    "code": "rubro_401",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 401,
+    "example": "Consulta orientativa: 10.3.4 Centros de almacenamiento transitorio de residuos sujetos a manejo especial",
+    "id": "activity-rubro_401",
+    "name": "10.3.4 Centros de almacenamiento transitorio de residuos sujetos a manejo especial"
+  },
+  {
+    "code": "rubro_402",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 402,
+    "example": "Consulta orientativa: 10.2.9 Empresas de limpieza de edificios",
+    "id": "activity-rubro_402",
+    "name": "10.2.9 Empresas de limpieza de edificios"
+  },
+  {
+    "code": "rubro_403",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 403,
+    "example": "Consulta orientativa: 10.1.33 Fabricación y reparación de aeronaves",
+    "id": "activity-rubro_403",
+    "name": "10.1.33 Fabricación y reparación de aeronaves"
+  },
+  {
+    "code": "rubro_404",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 404,
+    "example": "Consulta orientativa: 10.1.1 Matanza de ganado bovino y procesamiento de su carne",
+    "id": "activity-rubro_404",
+    "name": "10.1.1 Matanza de ganado bovino y procesamiento de su carne"
+  },
+  {
+    "code": "rubro_405",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 405,
+    "example": "Consulta orientativa: 10.1.25 Fabricación de productos de cerámica refractaria",
+    "id": "activity-rubro_405",
+    "name": "10.1.25 Fabricación de productos de cerámica refractaria"
+  },
+  {
+    "code": "rubro_406",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 406,
+    "example": "Consulta orientativa: 10.2.11 Empresa de limpieza y desinfección de tanques de agua potable",
+    "id": "activity-rubro_406",
+    "name": "10.2.11 Empresa de limpieza y desinfección de tanques de agua potable"
+  },
+  {
+    "code": "rubro_407",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 407,
+    "example": "Consulta orientativa: 10.1.35 Reciclamiento de desperdicios y desechos no metálicos",
+    "id": "activity-rubro_407",
+    "name": "10.1.35 Reciclamiento de desperdicios y desechos no metálicos"
+  },
+  {
+    "code": "rubro_408",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 408,
+    "example": "Consulta orientativa: 10.1.27 Elaboración de cal y yeso",
+    "id": "activity-rubro_408",
+    "name": "10.1.27 Elaboración de cal y yeso"
+  },
+  {
+    "code": "rubro_409",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 409,
+    "example": "Consulta orientativa: 10.3.5 Centro de procesamiento de residuos sujetos a manejo especial",
+    "id": "activity-rubro_409",
+    "name": "10.3.5 Centro de procesamiento de residuos sujetos a manejo especial"
+  },
+  {
+    "code": "rubro_41",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 41,
+    "example": "Consulta orientativa: 6.1.8. Estudio profesional",
+    "id": "activity-rubro_41",
+    "name": "6.1.8. Estudio profesional"
+  },
+  {
+    "code": "rubro_410",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 410,
+    "example": "Consulta orientativa: 10.2.22 Servicios de depuración de aguas residuales, alcantarillado y cloacas",
+    "id": "activity-rubro_410",
+    "name": "10.2.22 Servicios de depuración de aguas residuales, alcantarillado y cloacas"
+  },
+  {
+    "code": "rubro_411",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 411,
+    "example": "Consulta orientativa: 10.1.21 Fabricación de plaguicidas y otros productos químicos de uso agropecuario",
+    "id": "activity-rubro_411",
+    "name": "10.1.21 Fabricación de plaguicidas y otros productos químicos de uso agropecuario"
+  },
+  {
+    "code": "rubro_412",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 412,
+    "example": "Consulta orientativa: 10.3.10 Punto Limpio",
+    "id": "activity-rubro_412",
+    "name": "10.3.10 Punto Limpio"
+  },
+  {
+    "code": "rubro_413",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 413,
+    "example": "Consulta orientativa: 10.3.3 Recolección, reducción y eliminación de desperdicios",
+    "id": "activity-rubro_413",
+    "name": "10.3.3 Recolección, reducción y eliminación de desperdicios"
+  },
+  {
+    "code": "rubro_414",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 414,
+    "example": "Consulta orientativa: 10.1.30 Fundición de hierro y acero",
+    "id": "activity-rubro_414",
+    "name": "10.1.30 Fundición de hierro y acero"
+  },
+  {
+    "code": "rubro_415",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 415,
+    "example": "Consulta orientativa: 10.2.19 Suministro de vapor y agua caliente",
+    "id": "activity-rubro_415",
+    "name": "10.2.19 Suministro de vapor y agua caliente"
+  },
+  {
+    "code": "rubro_416",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 416,
+    "example": "Consulta orientativa: 10.2.5 Instaladores de calefactores – acondicionadores de aire",
+    "id": "activity-rubro_416",
+    "name": "10.2.5 Instaladores de calefactores – acondicionadores de aire"
+  },
+  {
+    "code": "rubro_417",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 417,
+    "example": "Consulta orientativa: 10.1.4 Elaboración de leches y productos lácteos deshidratados",
+    "id": "activity-rubro_417",
+    "name": "10.1.4 Elaboración de leches y productos lácteos deshidratados"
+  },
+  {
+    "code": "rubro_418",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 418,
+    "example": "Consulta orientativa: 10.1.2 Matanza de ganado, excepto el bovino y procesamiento de su carne",
+    "id": "activity-rubro_418",
+    "name": "10.1.2 Matanza de ganado, excepto el bovino y procesamiento de su carne"
+  },
+  {
+    "code": "rubro_419",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 419,
+    "example": "Consulta orientativa: 10.1.15 Elaboración de combustible nuclear",
+    "id": "activity-rubro_419",
+    "name": "10.1.15 Elaboración de combustible nuclear"
+  },
+  {
+    "code": "rubro_42",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 42,
+    "example": "Consulta orientativa: 6.3.1. Escuela para pequeños animales",
+    "id": "activity-rubro_42",
+    "name": "6.3.1. Escuela para pequeños animales"
+  },
+  {
+    "code": "rubro_420",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 420,
+    "example": "Consulta orientativa: 10.1.14 Fabricación de productos de la refinación del petróleo",
+    "id": "activity-rubro_420",
+    "name": "10.1.14 Fabricación de productos de la refinación del petróleo"
+  },
+  {
+    "code": "rubro_421",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 421,
+    "example": "Consulta orientativa: 10.1.23 Fabricación de envases de vidrio",
+    "id": "activity-rubro_421",
+    "name": "10.1.23 Fabricación de envases de vidrio"
+  },
+  {
+    "code": "rubro_422",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 422,
+    "example": "Consulta orientativa: 10.3.6 Clasificación y selección de materiales recuperables, reutilizables y reciclables",
+    "id": "activity-rubro_422",
+    "name": "10.3.6 Clasificación y selección de materiales recuperables, reutilizables y reciclables"
+  },
+  {
+    "code": "rubro_423",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 423,
+    "example": "Consulta orientativa: 10.2.21 Empresas de demolición",
+    "id": "activity-rubro_423",
+    "name": "10.2.21 Empresas de demolición"
+  },
+  {
+    "code": "rubro_424",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 424,
+    "example": "Consulta orientativa: 10.2.23 Servicios de saneamiento público n.c.p",
+    "id": "activity-rubro_424",
+    "name": "10.2.23 Servicios de saneamiento público n.c.p"
+  },
+  {
+    "code": "rubro_425",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 425,
+    "example": "Consulta orientativa: 10.2 Construcción; suministro de electricidad, gas, vapor y aire acondicionado; suministro de agua, cloacas y saneamiento público; servicios personales N.C.P",
+    "id": "activity-rubro_425",
+    "name": "10.2 Construcción; suministro de electricidad, gas, vapor y aire acondicionado; suministro de agua, cloacas y saneamiento público; servicios personales N.C.P"
+  },
+  {
+    "code": "rubro_426",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 426,
+    "example": "Consulta orientativa: 10.1.8 Lavado de lana",
+    "id": "activity-rubro_426",
+    "name": "10.1.8 Lavado de lana"
+  },
+  {
+    "code": "rubro_427",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 427,
+    "example": "Consulta orientativa: 10.2.4 Instaladores de plomería",
+    "id": "activity-rubro_427",
+    "name": "10.2.4 Instaladores de plomería"
+  },
+  {
+    "code": "rubro_428",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 428,
+    "example": "Consulta orientativa: 10.1 Industria manufacturera",
+    "id": "activity-rubro_428",
+    "name": "10.1 Industria manufacturera"
+  },
+  {
+    "code": "rubro_429",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 429,
+    "example": "Consulta orientativa: 10.2.7 Empresas de pintura, decoración, yesería",
+    "id": "activity-rubro_429",
+    "name": "10.2.7 Empresas de pintura, decoración, yesería"
+  },
+  {
+    "code": "rubro_43",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 43,
+    "example": "Consulta orientativa: 3.1.4. Jardín de infantes. Gestión privada",
+    "id": "activity-rubro_43",
+    "name": "3.1.4. Jardín de infantes. Gestión privada"
+  },
+  {
+    "code": "rubro_430",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 430,
+    "example": "Consulta orientativa: 10.1.10 Curtido y terminación de cueros",
+    "id": "activity-rubro_430",
+    "name": "10.1.10 Curtido y terminación de cueros"
+  },
+  {
+    "code": "rubro_431",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 431,
+    "example": "Consulta orientativa: 10.2.2 Reparaciones y mantenimientos edificios y sus partes",
+    "id": "activity-rubro_431",
+    "name": "10.2.2 Reparaciones y mantenimientos edificios y sus partes"
+  },
+  {
+    "code": "rubro_432",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 432,
+    "example": "Consulta orientativa: 10.1.22 Fabricación de jabones y preparados para pulir",
+    "id": "activity-rubro_432",
+    "name": "10.1.22 Fabricación de jabones y preparados para pulir"
+  },
+  {
+    "code": "rubro_433",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 433,
+    "example": "Consulta orientativa: 10.2.8 Ensayos y análisis técnicos (según Ley N° 2.265)",
+    "id": "activity-rubro_433",
+    "name": "10.2.8 Ensayos y análisis técnicos (según Ley N° 2.265)"
+  },
+  {
+    "code": "rubro_434",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 434,
+    "example": "Consulta orientativa: 10.2.24 Lavado y limpieza de artículos de tela, cuero y/o de piel, incluso limpieza en seco",
+    "id": "activity-rubro_434",
+    "name": "10.2.24 Lavado y limpieza de artículos de tela, cuero y/o de piel, incluso limpieza en seco"
+  },
+  {
+    "code": "rubro_435",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 435,
+    "example": "Consulta orientativa: 10.3.2 Reciclamiento de desperdicios y desechos no metálicos",
+    "id": "activity-rubro_435",
+    "name": "10.3.2 Reciclamiento de desperdicios y desechos no metálicos"
+  },
+  {
+    "code": "rubro_436",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 436,
+    "example": "Consulta orientativa: 10.1.12 Fabricación de pasta de madera, papel y cartón",
+    "id": "activity-rubro_436",
+    "name": "10.1.12 Fabricación de pasta de madera, papel y cartón"
+  },
+  {
+    "code": "rubro_437",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 437,
+    "example": "Consulta orientativa: 10.2.20 Captación, depuración y distribución de agua de fuentes superficiales",
+    "id": "activity-rubro_437",
+    "name": "10.2.20 Captación, depuración y distribución de agua de fuentes superficiales"
+  },
+  {
+    "code": "rubro_438",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 438,
+    "example": "Consulta orientativa: 10.1.17 Fabricación de curtientes naturales y sintéticos",
+    "id": "activity-rubro_438",
+    "name": "10.1.17 Fabricación de curtientes naturales y sintéticos"
+  },
+  {
+    "code": "rubro_439",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 439,
+    "example": "Consulta orientativa: 10.1.24 Fabricación y elaboración de vidrio plano",
+    "id": "activity-rubro_439",
+    "name": "10.1.24 Fabricación y elaboración de vidrio plano"
+  },
+  {
+    "code": "rubro_44",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 44,
+    "example": "Consulta orientativa: 5.2.3. Consultorio de reproducción medicamente asistida",
+    "id": "activity-rubro_44",
+    "name": "5.2.3. Consultorio de reproducción medicamente asistida"
+  },
+  {
+    "code": "rubro_440",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 440,
+    "example": "Consulta orientativa: 10.3.1 Reciclamiento de desperdicios y desechos metálicos",
+    "id": "activity-rubro_440",
+    "name": "10.3.1 Reciclamiento de desperdicios y desechos metálicos"
+  },
+  {
+    "code": "rubro_441",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 441,
+    "example": "Consulta orientativa: 10.2.15 Transporte de energía eléctrica",
+    "id": "activity-rubro_441",
+    "name": "10.2.15 Transporte de energía eléctrica"
+  },
+  {
+    "code": "rubro_442",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 442,
+    "example": "Consulta orientativa: 10.2.1 Excavación y movimiento de tierra",
+    "id": "activity-rubro_442",
+    "name": "10.2.1 Excavación y movimiento de tierra"
+  },
+  {
+    "code": "rubro_443",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 443,
+    "example": "Consulta orientativa: 10.1.11 Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y tableros y paneles n.c.p",
+    "id": "activity-rubro_443",
+    "name": "10.1.11 Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y tableros y paneles n.c.p"
+  },
+  {
+    "code": "rubro_444",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 444,
+    "example": "Consulta orientativa: 10.1.31 Fundición de metales no ferrosos",
+    "id": "activity-rubro_444",
+    "name": "10.1.31 Fundición de metales no ferrosos"
+  },
+  {
+    "code": "rubro_445",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 445,
+    "example": "Consulta orientativa: 10.1.32 Fabricación de armas y municiones",
+    "id": "activity-rubro_445",
+    "name": "10.1.32 Fabricación de armas y municiones"
+  },
+  {
+    "code": "rubro_446",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 446,
+    "example": "Consulta orientativa: 10.2.13 Planta de reciclaje residuos sujeto a manejo especial",
+    "id": "activity-rubro_446",
+    "name": "10.2.13 Planta de reciclaje residuos sujeto a manejo especial"
+  },
+  {
+    "code": "rubro_447",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 447,
+    "example": "Consulta orientativa: 10.2.10 Empresas de desinfección/desratización",
+    "id": "activity-rubro_447",
+    "name": "10.2.10 Empresas de desinfección/desratización"
+  },
+  {
+    "code": "rubro_448",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 448,
+    "example": "Consulta orientativa: 10.2.25 Guardado de pieles. (Cámara frigorífica)",
+    "id": "activity-rubro_448",
+    "name": "10.2.25 Guardado de pieles. (Cámara frigorífica)"
+  },
+  {
+    "code": "rubro_449",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 449,
+    "example": "Consulta orientativa: 10.1.26 Elaboración de cemento",
+    "id": "activity-rubro_449",
+    "name": "10.1.26 Elaboración de cemento"
+  },
+  {
+    "code": "rubro_45",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 45,
+    "example": "Consulta orientativa: 4.3.3. Hospedaje Turístico / Residencial Turístico Categoría A y B",
+    "id": "activity-rubro_45",
+    "name": "4.3.3. Hospedaje Turístico / Residencial Turístico Categoría A y B"
+  },
+  {
+    "code": "rubro_450",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 450,
+    "example": "Consulta orientativa: 10.1.34 Reciclamiento de desperdicios y desechos metálicos",
+    "id": "activity-rubro_450",
+    "name": "10.1.34 Reciclamiento de desperdicios y desechos metálicos"
+  },
+  {
+    "code": "rubro_451",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 451,
+    "example": "Consulta orientativa: 10.1.19 Fabricación de materias químicas orgánicas básicas n.c.p",
+    "id": "activity-rubro_451",
+    "name": "10.1.19 Fabricación de materias químicas orgánicas básicas n.c.p"
+  },
+  {
+    "code": "rubro_452",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 452,
+    "example": "Consulta orientativa: 10.2.16 Talleres de reparación y mantenimiento (empresas de provisión de energía eléctrica)",
+    "id": "activity-rubro_452",
+    "name": "10.2.16 Talleres de reparación y mantenimiento (empresas de provisión de energía eléctrica)"
+  },
+  {
+    "code": "rubro_453",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 453,
+    "example": "Consulta orientativa: 10.2.17 Fabricación de gas y distribución de combustibles gaseosos por tuberías",
+    "id": "activity-rubro_453",
+    "name": "10.2.17 Fabricación de gas y distribución de combustibles gaseosos por tuberías"
+  },
+  {
+    "code": "rubro_454",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 454,
+    "example": "Consulta orientativa: 10.2.6 Colocadores de revestimientos",
+    "id": "activity-rubro_454",
+    "name": "10.2.6 Colocadores de revestimientos"
+  },
+  {
+    "code": "rubro_455",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 455,
+    "example": "Consulta orientativa: 10.2.3 Empresas de hormigón",
+    "id": "activity-rubro_455",
+    "name": "10.2.3 Empresas de hormigón"
+  },
+  {
+    "code": "rubro_456",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 456,
+    "example": "Consulta orientativa: 10.2.12 Planta de tratamiento de residuos peligrosos",
+    "id": "activity-rubro_456",
+    "name": "10.2.12 Planta de tratamiento de residuos peligrosos"
+  },
+  {
+    "code": "rubro_457",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 457,
+    "example": "Consulta orientativa: 10.1.18 Fabricación de materias químicas inorgánicas básicas n.c.p",
+    "id": "activity-rubro_457",
+    "name": "10.1.18 Fabricación de materias químicas inorgánicas básicas n.c.p"
+  },
+  {
+    "code": "rubro_458",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 458,
+    "example": "Consulta orientativa: 10.3.9 Base secundaria de recolección de RSU",
+    "id": "activity-rubro_458",
+    "name": "10.3.9 Base secundaria de recolección de RSU"
+  },
+  {
+    "code": "rubro_459",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 459,
+    "example": "Consulta orientativa: 10.3 Higiene urbana; gestión de residuos (excluidos residuos peligrosos) y recuperación de materiales",
+    "id": "activity-rubro_459",
+    "name": "10.3 Higiene urbana; gestión de residuos (excluidos residuos peligrosos) y recuperación de materiales"
+  },
+  {
+    "code": "rubro_46",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 46,
+    "example": "Consulta orientativa: 1.8.8. Local de venta de semillas, plantas, artículos y herramientas para jardinería",
+    "id": "activity-rubro_46",
+    "name": "1.8.8. Local de venta de semillas, plantas, artículos y herramientas para jardinería"
+  },
+  {
+    "code": "rubro_460",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 460,
+    "example": "Consulta orientativa: 10.1.5 Elaboración de quesos",
+    "id": "activity-rubro_460",
+    "name": "10.1.5 Elaboración de quesos"
+  },
+  {
+    "code": "rubro_461",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 461,
+    "example": "Consulta orientativa: 10.1.9 Teñido de pieles",
+    "id": "activity-rubro_461",
+    "name": "10.1.9 Teñido de pieles"
+  },
+  {
+    "code": "rubro_462",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 462,
+    "example": "Consulta orientativa: 10.3.8 Base primaria de recolección de RSU",
+    "id": "activity-rubro_462",
+    "name": "10.3.8 Base primaria de recolección de RSU"
+  },
+  {
+    "code": "rubro_463",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 463,
+    "example": "Consulta orientativa: 10.1.7 Destilación, rectificación y mezcla de bebidas espirituosas",
+    "id": "activity-rubro_463",
+    "name": "10.1.7 Destilación, rectificación y mezcla de bebidas espirituosas"
+  },
+  {
+    "code": "rubro_464",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 464,
+    "example": "Consulta orientativa: 10.1.29 Producción de metales no ferrosos n.c.p. y sus semielaborados",
+    "id": "activity-rubro_464",
+    "name": "10.1.29 Producción de metales no ferrosos n.c.p. y sus semielaborados"
+  },
+  {
+    "code": "rubro_465",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 465,
+    "example": "Consulta orientativa: 10.1.28 Elaboración de aluminio primario y semielaborados de aluminio",
+    "id": "activity-rubro_465",
+    "name": "10.1.28 Elaboración de aluminio primario y semielaborados de aluminio"
+  },
+  {
+    "code": "rubro_466",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 466,
+    "example": "Consulta orientativa: 10.1.13 Fabricación de productos de hornos de coque",
+    "id": "activity-rubro_466",
+    "name": "10.1.13 Fabricación de productos de hornos de coque"
+  },
+  {
+    "code": "rubro_467",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 467,
+    "example": "Consulta orientativa: 10.1.20 Fabricación de abonos y compuestos de nitrógeno",
+    "id": "activity-rubro_467",
+    "name": "10.1.20 Fabricación de abonos y compuestos de nitrógeno"
+  },
+  {
+    "code": "rubro_468",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 468,
+    "example": "Consulta orientativa: 10.2.14 Generación de energía eléctrica",
+    "id": "activity-rubro_468",
+    "name": "10.2.14 Generación de energía eléctrica"
+  },
+  {
+    "code": "rubro_469",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 469,
+    "example": "Consulta orientativa: 6.1.21 Centro de Yoga",
+    "id": "activity-rubro_469",
+    "name": "6.1.21 Centro de Yoga"
+  },
+  {
+    "code": "rubro_47",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 47,
+    "example": "Consulta orientativa: 6.1.5. Banco, oficinas crediticias, financieras y cooperativas",
+    "id": "activity-rubro_47",
+    "name": "6.1.5. Banco, oficinas crediticias, financieras y cooperativas"
+  },
+  {
+    "code": "rubro_470",
+    "enabled": true,
+    "epok_category_id": 10,
+    "epok_category_name": "Industria",
+    "epok_rubro_id": 470,
+    "example": "Consulta orientativa: 10.4 Hotel Industrial",
+    "id": "activity-rubro_470",
+    "name": "10.4 Hotel Industrial"
+  },
+  {
+    "code": "rubro_471",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 471,
+    "example": "Consulta orientativa: 1.5.3 Alimentación en general para llevar",
+    "id": "activity-rubro_471",
+    "name": "1.5.3 Alimentación en general para llevar"
+  },
+  {
+    "code": "rubro_472",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 472,
+    "example": "Consulta orientativa: 2.3.10. Local de actividades físicas recreativas",
+    "id": "activity-rubro_472",
+    "name": "2.3.10. Local de actividades físicas recreativas"
+  },
+  {
+    "code": "rubro_473",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 473,
+    "example": "Consulta orientativa: 2.3.11 Estudio de danza",
+    "id": "activity-rubro_473",
+    "name": "2.3.11 Estudio de danza"
+  },
+  {
+    "code": "rubro_474",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 474,
+    "example": "Consulta orientativa: 2.4.18. Colonia de vacaciones",
+    "id": "activity-rubro_474",
+    "name": "2.4.18. Colonia de vacaciones"
+  },
+  {
+    "code": "rubro_475",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 475,
+    "example": "Consulta orientativa: 4.1.4. Centro de alojamiento temporal y práctica de deportes, disciplinas, juegos en línea y creación de contenido audiovisual",
+    "id": "activity-rubro_475",
+    "name": "4.1.4. Centro de alojamiento temporal y práctica de deportes, disciplinas, juegos en línea y creación de contenido audiovisual"
+  },
+  {
+    "code": "rubro_476",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 476,
+    "example": "Consulta orientativa: 5.2.40 Casa Club",
+    "id": "activity-rubro_476",
+    "name": "5.2.40 Casa Club"
+  },
+  {
+    "code": "rubro_48",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 48,
+    "example": "Consulta orientativa: 3.1.21. Escuela secundaria. Gestión estatal",
+    "id": "activity-rubro_48",
+    "name": "3.1.21. Escuela secundaria. Gestión estatal"
+  },
+  {
+    "code": "rubro_49",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 49,
+    "example": "Consulta orientativa: 6.1.14 Playa de remisión",
+    "id": "activity-rubro_49",
+    "name": "6.1.14 Playa de remisión"
+  },
+  {
+    "code": "rubro_5",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 5,
+    "example": "Consulta orientativa: 3.1. Establecimientos educacionales",
+    "id": "activity-rubro_5",
+    "name": "3.1. Establecimientos educacionales"
+  },
+  {
+    "code": "rubro_50",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 50,
+    "example": "Consulta orientativa: 7.2.7. Transporte de caudales",
+    "id": "activity-rubro_50",
+    "name": "7.2.7. Transporte de caudales"
+  },
+  {
+    "code": "rubro_51",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 51,
+    "example": "Consulta orientativa: 4.3.1. Albergue Turístico/ Hostel Estándar y Superior",
+    "id": "activity-rubro_51",
+    "name": "4.3.1. Albergue Turístico/ Hostel Estándar y Superior"
+  },
+  {
+    "code": "rubro_52",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 52,
+    "example": "Consulta orientativa: 6.1.1. Agencias comerciales de empleo, turismo, inmobiliaria y otros",
+    "id": "activity-rubro_52",
+    "name": "6.1.1. Agencias comerciales de empleo, turismo, inmobiliaria y otros"
+  },
+  {
+    "code": "rubro_53",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 53,
+    "example": "Consulta orientativa: 2.3.2. Clubes de Barrio",
+    "id": "activity-rubro_53",
+    "name": "2.3.2. Clubes de Barrio"
+  },
+  {
+    "code": "rubro_54",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 54,
+    "example": "Consulta orientativa: 2.1.10. Teatro independiente",
+    "id": "activity-rubro_54",
+    "name": "2.1.10. Teatro independiente"
+  },
+  {
+    "code": "rubro_55",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 55,
+    "example": "Consulta orientativa: 9.1. Vivienda individual",
+    "id": "activity-rubro_55",
+    "name": "9.1. Vivienda individual"
+  },
+  {
+    "code": "rubro_56",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 56,
+    "example": "Consulta orientativa: 1.4.4. Local de venta de productos alimenticios y/o bebidas (excluido feria, mercado, supermercado y autoservicio)",
+    "id": "activity-rubro_56",
+    "name": "1.4.4. Local de venta de productos alimenticios y/o bebidas (excluido feria, mercado, supermercado y autoservicio)"
+  },
+  {
+    "code": "rubro_57",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 57,
+    "example": "Consulta orientativa: 8.1.4 Depósitos fiscales",
+    "id": "activity-rubro_57",
+    "name": "8.1.4 Depósitos fiscales"
+  },
+  {
+    "code": "rubro_58",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 58,
+    "example": "Consulta orientativa: 7.4.1. Estación de transporte pre y post aéreo",
+    "id": "activity-rubro_58",
+    "name": "7.4.1. Estación de transporte pre y post aéreo"
+  },
+  {
+    "code": "rubro_59",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 59,
+    "example": "Consulta orientativa: 6.2.15. Laboratorio de análisis no industriales",
+    "id": "activity-rubro_59",
+    "name": "6.2.15. Laboratorio de análisis no industriales"
+  },
+  {
+    "code": "rubro_6",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 6,
+    "example": "Consulta orientativa: 2.3.9. Tiro, polígono acústicamente aislado",
+    "id": "activity-rubro_6",
+    "name": "2.3.9. Tiro, polígono acústicamente aislado"
+  },
+  {
+    "code": "rubro_60",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 60,
+    "example": "Consulta orientativa: 2.4.5. Local de música, canto y variedades",
+    "id": "activity-rubro_60",
+    "name": "2.4.5. Local de música, canto y variedades"
+  },
+  {
+    "code": "rubro_61",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 61,
+    "example": "Consulta orientativa: 6.3.3. Estación de radio/ televisión",
+    "id": "activity-rubro_61",
+    "name": "6.3.3. Estación de radio/ televisión"
+  },
+  {
+    "code": "rubro_62",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 62,
+    "example": "Consulta orientativa: 6.1.18 Pilates",
+    "id": "activity-rubro_62",
+    "name": "6.1.18 Pilates"
+  },
+  {
+    "code": "rubro_63",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 63,
+    "example": "Consulta orientativa: 8.1.3 Depósito primario",
+    "id": "activity-rubro_63",
+    "name": "8.1.3 Depósito primario"
+  },
+  {
+    "code": "rubro_64",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 64,
+    "example": "Consulta orientativa: 7.5.1. Plataforma de transferencia (carga) Caso particular Parque Patricios",
+    "id": "activity-rubro_64",
+    "name": "7.5.1. Plataforma de transferencia (carga) Caso particular Parque Patricios"
+  },
+  {
+    "code": "rubro_65",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 65,
+    "example": "Consulta orientativa: 1.7.4. Autoservicio de productos no alimenticios",
+    "id": "activity-rubro_65",
+    "name": "1.7.4. Autoservicio de productos no alimenticios"
+  },
+  {
+    "code": "rubro_66",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 66,
+    "example": "Consulta orientativa: 1.8.2. Farmacia",
+    "id": "activity-rubro_66",
+    "name": "1.8.2. Farmacia"
+  },
+  {
+    "code": "rubro_67",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 67,
+    "example": "Consulta orientativa: 3.1.7. Centro de primera infancia",
+    "id": "activity-rubro_67",
+    "name": "3.1.7. Centro de primera infancia"
+  },
+  {
+    "code": "rubro_68",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 68,
+    "example": "Consulta orientativa: 2.5.1. Sala de apuesta hípica",
+    "id": "activity-rubro_68",
+    "name": "2.5.1. Sala de apuesta hípica"
+  },
+  {
+    "code": "rubro_69",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 69,
+    "example": "Consulta orientativa: 6.2.3. Alquiler de artículos, elementos, accesorios y muebles para prestación de servicios de lunch con depósito (excepto productos perecederos)",
+    "id": "activity-rubro_69",
+    "name": "6.2.3. Alquiler de artículos, elementos, accesorios y muebles para prestación de servicios de lunch con depósito (excepto productos perecederos)"
+  },
+  {
+    "code": "rubro_7",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 7,
+    "example": "Consulta orientativa: 2.1.3. Centro Cultural B (hasta 300 personas y 500 m²)",
+    "id": "activity-rubro_7",
+    "name": "2.1.3. Centro Cultural B (hasta 300 personas y 500 m²)"
+  },
+  {
+    "code": "rubro_70",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 70,
+    "example": "Consulta orientativa: 1.3.1. Local de venta de productos perecederos",
+    "id": "activity-rubro_70",
+    "name": "1.3.1. Local de venta de productos perecederos"
+  },
+  {
+    "code": "rubro_71",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 71,
+    "example": "Consulta orientativa: 6.3. Servicios que pueden ocasionar molestias o ser peligrosos",
+    "id": "activity-rubro_71",
+    "name": "6.3. Servicios que pueden ocasionar molestias o ser peligrosos"
+  },
+  {
+    "code": "rubro_72",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 72,
+    "example": "Consulta orientativa: 1.8.16. Local de venta de vidrios y espejos",
+    "id": "activity-rubro_72",
+    "name": "1.8.16. Local de venta de vidrios y espejos"
+  },
+  {
+    "code": "rubro_73",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 73,
+    "example": "Consulta orientativa: 1.8.19. Instrumentos de precisión, científicos, musicales, ortopedia",
+    "id": "activity-rubro_73",
+    "name": "1.8.19. Instrumentos de precisión, científicos, musicales, ortopedia"
+  },
+  {
+    "code": "rubro_74",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 74,
+    "example": "Consulta orientativa: 2.1.2. Centro Cultural A (hasta 150 personas y 300m²)",
+    "id": "activity-rubro_74",
+    "name": "2.1.2. Centro Cultural A (hasta 150 personas y 300m²)"
+  },
+  {
+    "code": "rubro_75",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 75,
+    "example": "Consulta orientativa: 2.4.6 Club de música en vivo. Hasta 300 espectadores y 500m2, conciertos musicales en vivo",
+    "id": "activity-rubro_75",
+    "name": "2.4.6 Club de música en vivo. Hasta 300 espectadores y 500m2, conciertos musicales en vivo"
+  },
+  {
+    "code": "rubro_76",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 76,
+    "example": "Consulta orientativa: 9.3.1. Convento",
+    "id": "activity-rubro_76",
+    "name": "9.3.1. Convento"
+  },
+  {
+    "code": "rubro_77",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 77,
+    "example": "Consulta orientativa: 5.2.6. Servicio médico u odontológico (urgencia)",
+    "id": "activity-rubro_77",
+    "name": "5.2.6. Servicio médico u odontológico (urgencia)"
+  },
+  {
+    "code": "rubro_78",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 78,
+    "example": "Consulta orientativa: 5.1.2. Consultorio profesional (anexo a vivienda)",
+    "id": "activity-rubro_78",
+    "name": "5.1.2. Consultorio profesional (anexo a vivienda)"
+  },
+  {
+    "code": "rubro_79",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 79,
+    "example": "Consulta orientativa: 1.7.3. Centro de Compras",
+    "id": "activity-rubro_79",
+    "name": "1.7.3. Centro de Compras"
+  },
+  {
+    "code": "rubro_8",
+    "enabled": true,
+    "epok_category_id": 9,
+    "epok_category_name": "Residencial",
+    "epok_rubro_id": 8,
+    "example": "Consulta orientativa: 9.3. Residencia comunitaria",
+    "id": "activity-rubro_8",
+    "name": "9.3. Residencia comunitaria"
+  },
+  {
+    "code": "rubro_80",
+    "enabled": true,
+    "epok_category_id": 5,
+    "epok_category_name": "Transporte",
+    "epok_rubro_id": 80,
+    "example": "Consulta orientativa: 7.1.1. Depósito de equipo ferroviario, playa de contenedores",
+    "id": "activity-rubro_80",
+    "name": "7.1.1. Depósito de equipo ferroviario, playa de contenedores"
+  },
+  {
+    "code": "rubro_81",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 81,
+    "example": "Consulta orientativa: 5.2.30. Pequeño Hogar (con internación) – Discapacidad",
+    "id": "activity-rubro_81",
+    "name": "5.2.30. Pequeño Hogar (con internación) – Discapacidad"
+  },
+  {
+    "code": "rubro_82",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 82,
+    "example": "Consulta orientativa: 2.1.16. Acuario",
+    "id": "activity-rubro_82",
+    "name": "2.1.16. Acuario"
+  },
+  {
+    "code": "rubro_83",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 83,
+    "example": "Consulta orientativa: 1.8.36. Local de venta de reactivos y aparatos para laboratorios de análisis clínicos o industriales",
+    "id": "activity-rubro_83",
+    "name": "1.8.36. Local de venta de reactivos y aparatos para laboratorios de análisis clínicos o industriales"
+  },
+  {
+    "code": "rubro_84",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 84,
+    "example": "Consulta orientativa: 8.1. Establecimientos de escala local y metropolitana",
+    "id": "activity-rubro_84",
+    "name": "8.1. Establecimientos de escala local y metropolitana"
+  },
+  {
+    "code": "rubro_85",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 85,
+    "example": "Consulta orientativa: 6.3.2. Pensionado de pequeños animales",
+    "id": "activity-rubro_85",
+    "name": "6.3.2. Pensionado de pequeños animales"
+  },
+  {
+    "code": "rubro_86",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 86,
+    "example": "Consulta orientativa: 6.1.12. Garaje comercial",
+    "id": "activity-rubro_86",
+    "name": "6.1.12. Garaje comercial"
+  },
+  {
+    "code": "rubro_87",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 87,
+    "example": "Consulta orientativa: 3.1.12 Escuela de educación especial -con formación laboral-con internado. Gestión privada",
+    "id": "activity-rubro_87",
+    "name": "3.1.12 Escuela de educación especial -con formación laboral-con internado. Gestión privada"
+  },
+  {
+    "code": "rubro_88",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 88,
+    "example": "Consulta orientativa: 2.4.13. Juegos psicomotrices",
+    "id": "activity-rubro_88",
+    "name": "2.4.13. Juegos psicomotrices"
+  },
+  {
+    "code": "rubro_89",
+    "enabled": true,
+    "epok_category_id": 8,
+    "epok_category_name": "Sanidad",
+    "epok_rubro_id": 89,
+    "example": "Consulta orientativa: 5.2.37. Vacunatorio",
+    "id": "activity-rubro_89",
+    "name": "5.2.37. Vacunatorio"
+  },
+  {
+    "code": "rubro_9",
+    "enabled": true,
+    "epok_category_id": 2,
+    "epok_category_name": "Depositos, Almacenamiento y logistica",
+    "epok_rubro_id": 9,
+    "example": "Consulta orientativa: 8.2.1. Local de distribución",
+    "id": "activity-rubro_9",
+    "name": "8.2.1. Local de distribución"
+  },
+  {
+    "code": "rubro_90",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 90,
+    "example": "Consulta orientativa: 4.1.2. Hotel Familiar (con o sin servicio de comida)",
+    "id": "activity-rubro_90",
+    "name": "4.1.2. Hotel Familiar (con o sin servicio de comida)"
+  },
+  {
+    "code": "rubro_91",
+    "enabled": true,
+    "epok_category_id": 4,
+    "epok_category_name": "Alojamiento",
+    "epok_rubro_id": 91,
+    "example": "Consulta orientativa: 4.2. Alojamiento turístico hotelero",
+    "id": "activity-rubro_91",
+    "name": "4.2. Alojamiento turístico hotelero"
+  },
+  {
+    "code": "rubro_92",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 92,
+    "example": "Consulta orientativa: 1.4.1. Local de venta de leña y carbón de leña",
+    "id": "activity-rubro_92",
+    "name": "1.4.1. Local de venta de leña y carbón de leña"
+  },
+  {
+    "code": "rubro_93",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 93,
+    "example": "Consulta orientativa: 6.2.11. Estudio de radio",
+    "id": "activity-rubro_93",
+    "name": "6.2.11. Estudio de radio"
+  },
+  {
+    "code": "rubro_94",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 94,
+    "example": "Consulta orientativa: 2.4.2. Casa o local de fiestas privadas",
+    "id": "activity-rubro_94",
+    "name": "2.4.2. Casa o local de fiestas privadas"
+  },
+  {
+    "code": "rubro_95",
+    "enabled": true,
+    "epok_category_id": 6,
+    "epok_category_name": "Diversiones publicas, cultura, culto y recreacion",
+    "epok_rubro_id": 95,
+    "example": "Consulta orientativa: 2.1.9. Centro de exposiciones/ centro de eventos",
+    "id": "activity-rubro_95",
+    "name": "2.1.9. Centro de exposiciones/ centro de eventos"
+  },
+  {
+    "code": "rubro_96",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 96,
+    "example": "Consulta orientativa: 1.2. Comercio mayorista con depósito",
+    "id": "activity-rubro_96",
+    "name": "1.2. Comercio mayorista con depósito"
+  },
+  {
+    "code": "rubro_97",
+    "enabled": true,
+    "epok_category_id": 3,
+    "epok_category_name": "Servicios",
+    "epok_rubro_id": 97,
+    "example": "Consulta orientativa: 6.2.21. Telefonía móvil celular, campo de antenas y equipos de transmisión",
+    "id": "activity-rubro_97",
+    "name": "6.2.21. Telefonía móvil celular, campo de antenas y equipos de transmisión"
+  },
+  {
+    "code": "rubro_98",
+    "enabled": true,
+    "epok_category_id": 7,
+    "epok_category_name": "Educacion",
+    "epok_rubro_id": 98,
+    "example": "Consulta orientativa: 3.1.2. Jardín maternal. Gestión privada",
+    "id": "activity-rubro_98",
+    "name": "3.1.2. Jardín maternal. Gestión privada"
+  },
+  {
+    "code": "rubro_99",
+    "enabled": true,
+    "epok_category_id": 1,
+    "epok_category_name": "Comercial",
+    "epok_rubro_id": 99,
+    "example": "Consulta orientativa: 1.7. Comercio minorista no alimenticios por sistema de venta",
+    "id": "activity-rubro_99",
+    "name": "1.7. Comercio minorista no alimenticios por sistema de venta"
+  }
+]

@@ -1,7 +1,8 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings, get_settings
+from app.core.errors import AppError, ErrorCode
 from app.db.session import get_db
 from app.schemas.location import GeocodeRequest, GeocodeResponse
 from app.schemas.zoning import ZoningOut, ZoningRequest
@@ -24,9 +25,9 @@ async def geocode_address(
 ) -> GeocodeResponse:
     address = body.address.strip()
     if not address:
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail="address is required",
+        raise AppError(
+            ErrorCode.INVALID_REQUEST,
+            [{"field": "address", "message": "Campo obligatorio."}],
         )
     return await service.geocode(address)
 

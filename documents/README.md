@@ -11,6 +11,7 @@ Swagger en vivo (con la API levantada): [http://127.0.0.1:8000/docs](http://127.
 3. [endpoints.md](endpoints.md) — catálogo de endpoints v1  
 4. [fuentes-y-datos.md](fuentes-y-datos.md) — USIG, epok, BA Data, trámites, oficinas  
 5. [snapshots-y-seed.md](snapshots-y-seed.md) — scripts `fetch_*`, seed y qué necesita (o no) uvicorn  
+6. [errores-y-seguridad.md](errores-y-seguridad.md) — formato de error, respuestas parciales, límites, rate limit, tests  
 
 ## Documentos de contexto / equipo
 
@@ -23,5 +24,6 @@ Swagger en vivo (con la API levantada): [http://127.0.0.1:8000/docs](http://127.
 
 ## Pruebas
 
+- Tests automáticos: `scripts/test.sh` (ver [errores-y-seguridad.md](errores-y-seguridad.md#tests))
 - Colección Postman: [`../postman/README.md`](../postman/README.md)
 - Checklist del agente (interno): [`.cursor/agent/PLAN-EJECUCION.md`](../.cursor/agent/PLAN-EJECUCION.md)
