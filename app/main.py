@@ -15,11 +15,21 @@ from app.providers.http import close_http_client, open_http_client
 logger = logging.getLogger(__name__)
 
 
+def _warn_unsafe_settings(settings) -> None:
+    if settings.app_env in {"local", "test"}:
+        return
+    if settings.geocoder_provider.lower() == "mock" or settings.epok_provider.lower() == "mock":
+        logger.warning("Mock providers enabled with APP_ENV=%s: responses use local fixtures", settings.app_env)
+    if settings.debug:
+        logger.warning("DEBUG=true with APP_ENV=%s: SQL statements are logged", settings.app_env)
+
+
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     settings = get_settings()
     configure_logging(debug=settings.debug)
     await open_http_client(settings)
+    _warn_unsafe_settings(settings)
     if settings.app_env == "local":
         try:
             async with AsyncSessionLocal() as session:
@@ -44,7 +54,7 @@ def create_app() -> FastAPI:
     application.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origin_list,
-        allow_credentials=True,
+        allow_credentials=settings.cors_allow_credentials,
         allow_methods=["*"],
         allow_headers=["*"],
     )

@@ -28,6 +28,7 @@ os.environ.update(
         "EPOK_PROVIDER": "mock",
         "LLM_BASE_URL": "",
         "LLM_API_KEY": "",
+        "CORS_ORIGINS": "http://localhost:3000,http://localhost:5173",
         # Enabled per test in test_rate_limit.py.
         "RATE_LIMIT_ENABLED": "false",
     }

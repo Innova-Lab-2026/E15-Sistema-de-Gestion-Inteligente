@@ -37,6 +37,7 @@ class ErrorCode(StrEnum):
     METHOD_NOT_ALLOWED = "method_not_allowed"
     REQUEST_TOO_LARGE = "request_too_large"
     RATE_LIMITED = "rate_limited"
+    DATABASE_UNAVAILABLE = "database_unavailable"
     INTERNAL_ERROR = "internal_error"
 
 
@@ -47,6 +48,7 @@ ERROR_CATALOG: dict[ErrorCode, tuple[int, str]] = {
     ErrorCode.METHOD_NOT_ALLOWED: (405, "Metodo no permitido para este recurso."),
     ErrorCode.REQUEST_TOO_LARGE: (413, "La solicitud es demasiado grande."),
     ErrorCode.RATE_LIMITED: (429, "Hay muchas consultas en poco tiempo. Espera un momento y vuelve a intentar."),
+    ErrorCode.DATABASE_UNAVAILABLE: (503, "El servicio no esta disponible en este momento. Intenta de nuevo en unos minutos."),
     ErrorCode.INTERNAL_ERROR: (
         500,
         "Ocurrio un error inesperado. Si se repite, informalo con el codigo de referencia.",

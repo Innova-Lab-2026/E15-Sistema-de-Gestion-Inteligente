@@ -12,12 +12,18 @@ class Settings(BaseSettings):
     )
 
     app_name: str = Field(default="InobaLab TECBA API", alias="APP_NAME")
-    app_env: str = Field(default="local", alias="APP_ENV")
+    # "local" syncs the catalog on startup; any other value requires an explicit seed.
+    app_env: str = Field(default="production", alias="APP_ENV")
     debug: bool = Field(default=False, alias="DEBUG")
     cors_origins: str = Field(
-        default="http://localhost:3000,http://127.0.0.1:3000",
+        default=(
+            "http://localhost:3000,http://127.0.0.1:3000,"
+            "http://localhost:5173,http://127.0.0.1:5173"
+        ),
         alias="CORS_ORIGINS",
     )
+    # No auth / cookies in the MVP: credentials stay off unless explicitly needed.
+    cors_allow_credentials: bool = Field(default=False, alias="CORS_ALLOW_CREDENTIALS")
 
     database_url: str = Field(
         default="postgresql+asyncpg://tecba:tecba@localhost:5432/tecba",
@@ -41,7 +47,8 @@ class Settings(BaseSettings):
     llm_model: str = Field(default="gemini-2.0-flash", alias="LLM_MODEL")
     llm_timeout_seconds: int = Field(default=30, alias="LLM_TIMEOUT_SECONDS")
 
-    geocoder_provider: str = Field(default="mock", alias="GEOCODER_PROVIDER")
+    # "mock" uses local fixtures and is meant for offline development and tests only.
+    geocoder_provider: str = Field(default="usig", alias="GEOCODER_PROVIDER")
     geocoder_base_url: str = Field(
         default="https://servicios.usig.buenosaires.gob.ar",
         alias="GEOCODER_BASE_URL",
