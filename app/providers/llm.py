@@ -16,6 +16,24 @@ logger = logging.getLogger(__name__)
 class LLMUnavailableError(Exception):
     """Raised when the LLM provider cannot be reached or is misconfigured."""
 
+    reason = "llm_unavailable"
+
+
+class LLMRateLimitedError(LLMUnavailableError):
+    """HTTP 429: provider quota exhausted (free tiers have low RPM/TPM limits)."""
+
+    reason = "llm_rate_limited"
+
+    def __init__(self, retry_after: str | None) -> None:
+        self.retry_after = retry_after
+        super().__init__(f"LLM rate limited (retry-after={retry_after})")
+
+
+class LLMInvalidOutputError(LLMUnavailableError):
+    """The provider answered, but not with the expected JSON object."""
+
+    reason = "llm_invalid_output"
+
 
 class LLMClient:
     def __init__(self, settings: Settings) -> None:
@@ -55,11 +73,15 @@ class LLMClient:
         try:
             async with httpx.AsyncClient(timeout=self.timeout) as client:
                 response = await client.post(url, headers=headers, json=payload)
+                if response.status_code == 429:
+                    raise LLMRateLimitedError(response.headers.get("retry-after"))
                 response.raise_for_status()
                 data = response.json()
         except httpx.HTTPError as exc:
-            logger.exception("LLM request failed")
+            logger.warning("LLM request failed: %r", exc)
             raise LLMUnavailableError(str(exc)) from exc
+        except ValueError as exc:  # body is not JSON
+            raise LLMInvalidOutputError("LLM response is not JSON") from exc
 
         try:
             content = data["choices"][0]["message"]["content"]
@@ -69,7 +91,10 @@ class LLMClient:
                     part.get("text", "") if isinstance(part, dict) else str(part)
                     for part in content
                 )
-            return json.loads(content)
+            parsed = json.loads(content)
         except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
-            logger.exception("LLM returned unparseable JSON")
-            raise LLMUnavailableError("LLM returned invalid JSON") from exc
+            logger.warning("LLM returned unparseable JSON: %r", exc)
+            raise LLMInvalidOutputError("LLM returned invalid JSON") from exc
+        if not isinstance(parsed, dict):
+            raise LLMInvalidOutputError("LLM returned JSON that is not an object")
+        return parsed

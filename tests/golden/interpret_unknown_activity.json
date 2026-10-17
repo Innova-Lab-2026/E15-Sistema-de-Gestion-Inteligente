@@ -6,6 +6,7 @@
     "raw_text": null
   },
   "clarification_question": "Detecte una direccion, pero la actividad no esta en el catalogo del MVP (rubro_1, rubro_10, rubro_100, rubro_101, rubro_102, rubro_103, rubro_104, rubro_105, ...). Reformula la actividad o consulta el listado /activities.",
+  "fallback_reason": null,
   "intent": null,
   "jurisdiction": "CABA",
   "location": {

@@ -46,8 +46,17 @@ class ConsultationService:
         self.settings = settings
         self.db = db
         self.location_service = LocationService(settings)
+        self._llm_fallback_reason: str | None = None
 
     async def create(self, body: ConsultationRequest) -> ConsultationResponse:
+        response = await self._build_response(body)
+        if self._llm_fallback_reason:
+            # The LLM was configured but failed: the frontend can tell the user the
+            # interpretation came from local rules.
+            response.data_status.warnings.append("llm_fallback_mock")
+        return response
+
+    async def _build_response(self, body: ConsultationRequest) -> ConsultationResponse:
         activity_code = body.activity_code
         address = body.address
         original_query = body.query
@@ -59,6 +68,7 @@ class ConsultationService:
             interpreted = await InterpretationService(
                 self.settings, self.db
             ).interpret(body.query.strip())
+            self._llm_fallback_reason = interpreted.fallback_reason
 
             original_query = interpreted.original_query
             if interpreted.status in {"needs_clarification", "activity_unknown", "out_of_scope"}:

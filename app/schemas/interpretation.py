@@ -43,4 +43,8 @@ class InterpretationResponse(BaseModel):
     clarification_question: Optional[str] = None
     status: InterpretationStatus
     provider: str = Field(description="mock | llm")
+    fallback_reason: Optional[Literal["llm_unavailable", "llm_rate_limited", "llm_invalid_output"]] = Field(
+        default=None,
+        description="Set when the LLM is configured but failed and the local rules were used instead",
+    )
     original_query: str

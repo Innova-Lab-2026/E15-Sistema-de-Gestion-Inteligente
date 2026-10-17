@@ -6,6 +6,7 @@
     "raw_text": "local de ropa"
   },
   "clarification_question": null,
+  "fallback_reason": null,
   "intent": "start_commercial_activity",
   "jurisdiction": "CABA",
   "location": {
