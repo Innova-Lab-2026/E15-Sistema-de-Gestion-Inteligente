@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.router import api_router
 from app.core.config import get_settings
+from app.core.errors import register_error_handling
 from app.core.logging import configure_logging
 from app.db.seed import seed_if_empty
 from app.db.session import AsyncSessionLocal
@@ -35,6 +36,8 @@ def create_app() -> FastAPI:
         version="0.1.0",
         lifespan=lifespan,
     )
+    # Before CORS: CORS must stay outermost so error responses also carry its headers.
+    register_error_handling(application)
     application.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origin_list,

@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings, get_settings
+from app.core.errors import AppError, ErrorCode
 from app.db.session import get_db
 from app.providers.llm import LLMUnavailableError
 from app.schemas.interpretation import InterpretationRequest, InterpretationResponse
@@ -18,9 +19,9 @@ async def interpret_query(
 ) -> InterpretationResponse:
     query = body.query.strip()
     if not query:
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail="query is required",
+        raise AppError(
+            ErrorCode.INVALID_REQUEST,
+            [{"field": "query", "message": "Campo obligatorio."}],
         )
 
     service = InterpretationService(settings=settings, db=db)

@@ -38,8 +38,8 @@ class ConsultationRequest(BaseModel):
         has_confirmed = self.confirmed_location is not None and bool(self.activity_code)
         if not (has_deterministic or has_query or has_confirmed):
             raise ValueError(
-                "Provide activity_code+address, or query, "
-                "or activity_code+confirmed_location"
+                "Indica activity_code + address, o query, "
+                "o activity_code + confirmed_location."
             )
         return self
 
