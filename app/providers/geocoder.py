@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -8,10 +9,14 @@ from urllib.parse import quote
 
 import httpx
 
-from app.core.config import Settings
+from app.core.config import Settings, get_settings
+from app.providers.http import shared_http_client
+
+logger = logging.getLogger(__name__)
 
 
-GeocodeStatus = Literal["confirmed", "ambiguous", "out_of_scope", "not_found"]
+# "unavailable": the geocoding service failed (network, HTTP error or unexpected payload).
+GeocodeStatus = Literal["confirmed", "ambiguous", "out_of_scope", "not_found", "unavailable"]
 
 
 @dataclass
@@ -193,15 +198,30 @@ class UsigGeocoder(GeocoderClient):
         base_url: str,
         ws_base_url: str,
         timeout_seconds: int = 10,
+        settings: Settings | None = None,
     ) -> None:
+        self.settings = settings
         self.base_url = base_url.rstrip("/")
         self.ws_base_url = ws_base_url.rstrip("/")
         self.timeout = timeout_seconds
 
     async def geocode(self, address: str) -> GeocodeResult:
+        try:
+            return await self._geocode(address)
+        except (httpx.HTTPError, ValueError, KeyError, TypeError, AttributeError) as exc:
+            # Network failure, HTTP error, WAF HTML page or unexpected JSON: answer a typed
+            # status so consultations can respond partially instead of failing.
+            logger.warning("USIG unavailable: %r", exc)
+            return self._result(
+                status="unavailable",
+                address=address,
+                message="El servicio de geocodificacion (USIG) no esta disponible en este momento.",
+            )
+
+    async def _geocode(self, address: str) -> GeocodeResult:
         url = f"{self.base_url}/normalizar/?direccion={quote(address)}&geocodificar=true"
-        async with httpx.AsyncClient(timeout=self.timeout) as client:
-            response = await client.get(url)
+        async with shared_http_client(self.settings or get_settings()) as client:
+            response = await client.get(url, timeout=self.timeout)
             response.raise_for_status()
             payload = response.json()
 
@@ -289,6 +309,7 @@ class UsigGeocoder(GeocoderClient):
             convert = await client.get(
                 f"{self.ws_base_url}/rest/convertir_coordenadas",
                 params={"x": longitude, "y": latitude, "output": "gkba"},
+                timeout=self.timeout,
             )
             convert.raise_for_status()
             resultado = (convert.json() or {}).get("resultado") or {}
@@ -300,6 +321,7 @@ class UsigGeocoder(GeocoderClient):
             useful = await client.get(
                 f"{self.ws_base_url}/datos_utiles",
                 params={"x": x, "y": y},
+                timeout=self.timeout,
             )
             useful.raise_for_status()
             data = useful.json() or {}
@@ -336,5 +358,6 @@ def get_geocoder(settings: Settings) -> GeocoderClient:
             base_url=settings.geocoder_base_url,
             ws_base_url=settings.geocoder_ws_base_url,
             timeout_seconds=settings.geocoder_timeout_seconds,
+            settings=settings,
         )
     return MockGeocoder()

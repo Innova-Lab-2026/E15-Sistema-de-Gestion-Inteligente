@@ -25,7 +25,7 @@ class LocationCandidate(BaseModel):
 
 
 class GeocodeResponse(BaseModel):
-    status: Literal["confirmed", "ambiguous", "out_of_scope", "not_found"]
+    status: Literal["confirmed", "ambiguous", "out_of_scope", "not_found", "unavailable"]
     original_address: str
     normalized_address: Optional[str] = None
     city: Optional[str] = None

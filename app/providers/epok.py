@@ -9,8 +9,13 @@ from typing import Any, Literal
 
 import httpx
 
+import logging
+
 from app.core.config import Settings
 from app.db.catalog_data import load_epok_rubros
+from app.providers.http import shared_http_client
+
+logger = logging.getLogger(__name__)
 
 
 ZoningStatus = Literal[
@@ -202,6 +207,7 @@ class MockEpokClient(EpokClient):
 
 class HttpEpokClient(EpokClient):
     def __init__(self, settings: Settings) -> None:
+        self.settings = settings
         self.base_url = settings.epok_base_url.rstrip("/")
         self.timeout = settings.epok_timeout_seconds
 
@@ -214,7 +220,7 @@ class HttpEpokClient(EpokClient):
         epok_rubro_id: int | None = None,
     ) -> ZoningResult:
         try:
-            async with httpx.AsyncClient(timeout=self.timeout) as client:
+            async with shared_http_client(self.settings) as client:
                 parcel = await self._fetch_parcel(client, latitude, longitude)
                 if parcel is None:
                     return ZoningResult(
@@ -303,13 +309,15 @@ class HttpEpokClient(EpokClient):
                     message=message,
                 )
         except (httpx.HTTPError, ValueError, KeyError, TypeError) as exc:
+            # Details go to the log only: the client gets a fixed message.
+            logger.warning("epok unavailable: %r", exc)
             return ZoningResult(
                 status="unavailable",
                 latitude=latitude,
                 longitude=longitude,
                 epok_category_id=epok_category_id,
                 epok_rubro_id=epok_rubro_id,
-                message=f"epok no disponible: {exc}",
+                message="Ciudad 3D / epok no esta disponible en este momento.",
             )
 
     async def _fetch_parcel(
@@ -359,7 +367,7 @@ class HttpEpokClient(EpokClient):
         params: dict[str, Any] | None = None,
     ) -> dict[str, Any] | None:
         url = f"{self.base_url}{path}"
-        response = await client.get(url, params=params)
+        response = await client.get(url, params=params, timeout=self.timeout)
         response.raise_for_status()
         if not response.content:
             return None

@@ -10,6 +10,7 @@ from app.core.errors import register_error_handling
 from app.core.logging import configure_logging
 from app.db.seed import seed_if_empty
 from app.db.session import AsyncSessionLocal
+from app.providers.http import close_http_client, open_http_client
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,7 @@ logger = logging.getLogger(__name__)
 async def lifespan(_app: FastAPI):
     settings = get_settings()
     configure_logging(debug=settings.debug)
+    await open_http_client(settings)
     if settings.app_env == "local":
         try:
             async with AsyncSessionLocal() as session:
@@ -27,6 +29,7 @@ async def lifespan(_app: FastAPI):
                 "Could not seed catalog on startup; run migrations and seed manually"
             )
     yield
+    await close_http_client()
 
 
 def create_app() -> FastAPI:

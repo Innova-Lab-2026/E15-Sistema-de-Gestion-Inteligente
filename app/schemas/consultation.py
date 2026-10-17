@@ -66,7 +66,7 @@ class ConsultationLocation(BaseModel):
     longitude: Optional[float] = None
     precision: Optional[str] = None
     status: Literal[
-        "confirmed", "ambiguous", "out_of_scope", "not_found", "pending"
+        "confirmed", "ambiguous", "out_of_scope", "not_found", "pending", "unavailable"
     ] = "pending"
     candidates: list[LocationCandidate] = Field(default_factory=list)
     message: Optional[str] = None

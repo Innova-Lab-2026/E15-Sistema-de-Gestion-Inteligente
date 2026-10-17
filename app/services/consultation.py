@@ -191,17 +191,21 @@ class ConsultationService:
                     data_status=DataStatus(overall="blocked", missing=["location"]),
                     message=geo.message,
                 )
-            location = ConsultationLocation(
-                normalized_address=geo.normalized_address,
-                commune=geo.commune,
-                neighborhood=geo.neighborhood,
-                city=geo.city,
-                latitude=geo.latitude,
-                longitude=geo.longitude,
-                precision=geo.precision,
-                status="confirmed",
-                candidates=geo.candidates,
-            )
+            if geo.status == "unavailable":
+                # Partial answer: requirements/offices/sources still apply without coordinates.
+                location = ConsultationLocation(status="unavailable", message=geo.message)
+            else:
+                location = ConsultationLocation(
+                    normalized_address=geo.normalized_address,
+                    commune=geo.commune,
+                    neighborhood=geo.neighborhood,
+                    city=geo.city,
+                    latitude=geo.latitude,
+                    longitude=geo.longitude,
+                    precision=geo.precision,
+                    status="confirmed",
+                    candidates=geo.candidates,
+                )
 
         # Retrieve official-ish seed data
         payload = await self._retrieve(
@@ -215,6 +219,9 @@ class ConsultationService:
         zoning_out: ZoningOut | None = None
         missing: list[str] = []
         warnings: list[str] = []
+        if location.status == "unavailable":
+            missing.append("location")
+            warnings.append("geocoder_unavailable")
 
         if location.latitude is not None and location.longitude is not None:
             zoning_result = await get_epok_client(self.settings).lookup_zoning(

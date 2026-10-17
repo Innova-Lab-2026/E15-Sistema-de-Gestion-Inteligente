@@ -509,7 +509,7 @@
     "epok_rubro_id": 102,
     "latitude": -34.604,
     "longitude": -58.413,
-    "message": "epok no disponible: All connection attempts failed",
+    "message": "Ciudad 3D / epok no esta disponible en este momento.",
     "mixtura": null,
     "parcel": null,
     "provider_id": "epok",
