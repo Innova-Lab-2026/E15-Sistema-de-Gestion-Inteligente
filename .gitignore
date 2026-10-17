@@ -25,3 +25,8 @@ coverage.xml
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# pruebas
+Makefile
+compose.local.yml
+pruebas-manuales.html
