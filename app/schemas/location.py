@@ -3,9 +3,11 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
+from app.schemas.limits import MAX_ADDRESS_LENGTH
+
 
 class GeocodeRequest(BaseModel):
-    address: str = Field(min_length=1, examples=["Av. Corrientes 2500"])
+    address: str = Field(min_length=1, max_length=MAX_ADDRESS_LENGTH, examples=["Av. Corrientes 2500"])
 
 
 class GeocodeSource(BaseModel):

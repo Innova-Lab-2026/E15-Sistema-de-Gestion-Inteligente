@@ -3,32 +3,43 @@ from uuid import uuid4
 
 from pydantic import BaseModel, Field, model_validator
 
+from app.schemas.limits import (
+    MAX_ADDRESS_LENGTH,
+    MAX_CODE_LENGTH,
+    MAX_NAME_LENGTH,
+    MAX_QUERY_LENGTH,
+    CabaLatitude,
+    CabaLongitude,
+)
 from app.schemas.location import LocationCandidate
 from app.schemas.zoning import ZoningOut
 
 
 class ConfirmedLocation(BaseModel):
-    normalized_address: str
-    latitude: float
-    longitude: float
-    commune: Optional[str] = None
-    neighborhood: Optional[str] = None
-    city: Optional[str] = "Ciudad Autonoma de Buenos Aires"
-    precision: Optional[str] = "rooftop"
+    normalized_address: str = Field(max_length=MAX_ADDRESS_LENGTH)
+    latitude: CabaLatitude
+    longitude: CabaLongitude
+    commune: Optional[str] = Field(default=None, max_length=MAX_CODE_LENGTH)
+    neighborhood: Optional[str] = Field(default=None, max_length=MAX_NAME_LENGTH)
+    city: Optional[str] = Field(default="Ciudad Autonoma de Buenos Aires", max_length=MAX_NAME_LENGTH)
+    precision: Optional[str] = Field(default="rooftop", max_length=MAX_CODE_LENGTH)
 
 
 class ConsultationRequest(BaseModel):
     """Deterministic body and/or natural-language query."""
 
     activity_code: Optional[str] = Field(
-        default=None, examples=["rubro_102", "rubro_309"]
+        default=None, max_length=MAX_CODE_LENGTH, examples=["rubro_102", "rubro_309"]
     )
-    address: Optional[str] = Field(default=None, examples=["Av. Corrientes 2500"])
+    address: Optional[str] = Field(
+        default=None, max_length=MAX_ADDRESS_LENGTH, examples=["Av. Corrientes 2500"]
+    )
     query: Optional[str] = Field(
         default=None,
+        max_length=MAX_QUERY_LENGTH,
         examples=["Quiero abrir una cafeteria en Av. Corrientes 2500"],
     )
-    conversation_id: Optional[str] = None
+    conversation_id: Optional[str] = Field(default=None, max_length=MAX_CODE_LENGTH)
     confirmed_location: Optional[ConfirmedLocation] = None
 
     @model_validator(mode="after")

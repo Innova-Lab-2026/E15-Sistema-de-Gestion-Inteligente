@@ -6,15 +6,17 @@ from typing import Any, Literal, Optional
 
 from pydantic import BaseModel, Field
 
+from app.schemas.limits import MAX_CODE_LENGTH, CabaLatitude, CabaLongitude
+
 
 class ZoningRequest(BaseModel):
-    latitude: float = Field(examples=[-34.604])
-    longitude: float = Field(examples=[-58.413])
+    latitude: CabaLatitude = Field(examples=[-34.604])
+    longitude: CabaLongitude = Field(examples=[-58.413])
     activity_code: Optional[str] = Field(
-        default=None, examples=["rubro_102", "rubro_309"]
+        default=None, max_length=MAX_CODE_LENGTH, examples=["rubro_102", "rubro_309"]
     )
-    epok_category_id: Optional[int] = Field(default=None, examples=[1])
-    epok_rubro_id: Optional[int] = Field(default=None, examples=[102])
+    epok_category_id: Optional[int] = Field(default=None, ge=0, examples=[1])
+    epok_rubro_id: Optional[int] = Field(default=None, ge=0, examples=[102])
 
 
 class ParcelOut(BaseModel):

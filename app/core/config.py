@@ -31,6 +31,8 @@ class Settings(BaseSettings):
     http_timeout_seconds: int = Field(default=10, alias="HTTP_TIMEOUT_SECONDS")
     http_retries: int = Field(default=2, alias="HTTP_RETRIES")
 
+    max_request_bytes: int = Field(default=64 * 1024, alias="MAX_REQUEST_BYTES")
+
     llm_base_url: str = Field(default="", alias="LLM_BASE_URL")
     llm_api_key: str = Field(default="", alias="LLM_API_KEY")
     llm_model: str = Field(default="gemini-2.0-flash", alias="LLM_MODEL")

@@ -21,6 +21,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from app.core.config import get_settings
 from app.core.logging import request_id_var
 from app.schemas.error import ErrorBody, ErrorResponse
 
@@ -34,6 +35,7 @@ class ErrorCode(StrEnum):
     INVALID_REQUEST = "invalid_request"
     NOT_FOUND = "not_found"
     METHOD_NOT_ALLOWED = "method_not_allowed"
+    REQUEST_TOO_LARGE = "request_too_large"
     INTERNAL_ERROR = "internal_error"
 
 
@@ -42,6 +44,7 @@ ERROR_CATALOG: dict[ErrorCode, tuple[int, str]] = {
     ErrorCode.INVALID_REQUEST: (422, "Revisa los datos enviados."),
     ErrorCode.NOT_FOUND: (404, "El recurso solicitado no existe."),
     ErrorCode.METHOD_NOT_ALLOWED: (405, "Metodo no permitido para este recurso."),
+    ErrorCode.REQUEST_TOO_LARGE: (413, "La solicitud es demasiado grande."),
     ErrorCode.INTERNAL_ERROR: (
         500,
         "Ocurrio un error inesperado. Si se repite, informalo con el codigo de referencia.",
@@ -149,11 +152,18 @@ async def _http_exception_handler(request: Request, exc: StarletteHTTPException)
     return error_response(request, code, detail, status=exc.status_code, headers=exc.headers)
 
 
+def _declared_body_too_large(request: Request) -> bool:
+    """Rejects bodies whose Content-Length exceeds MAX_REQUEST_BYTES before reading them."""
+    length = request.headers.get("content-length")
+    return length is not None and length.isdigit() and int(length) > get_settings().max_request_bytes
+
+
 async def _request_middleware(request: Request, call_next):
     """Wraps EVERY endpoint, current and future.
 
     - Assigns a request id (the client's X-Request-ID or a new one), exposes it to the logs and
       returns it in the response header. Handlers run inside, so request.state always has it.
+    - Rejects oversized bodies (declared Content-Length) with request_too_large.
     - Any unexpected exception is logged with its traceback and answered as internal_error:
       the request fails in a controlled way, without internal details, and the server keeps serving.
     """
@@ -164,7 +174,10 @@ async def _request_middleware(request: Request, call_next):
     started = time.perf_counter()
     try:
         try:
-            response = await call_next(request)
+            if _declared_body_too_large(request):
+                response = error_response(request, ErrorCode.REQUEST_TOO_LARGE)
+            else:
+                response = await call_next(request)
         except Exception:
             logger.exception("Unhandled error in %s %s", request.method, request.url.path)
             response = error_response(request, ErrorCode.INTERNAL_ERROR)
