@@ -36,6 +36,7 @@ class ErrorCode(StrEnum):
     NOT_FOUND = "not_found"
     METHOD_NOT_ALLOWED = "method_not_allowed"
     REQUEST_TOO_LARGE = "request_too_large"
+    RATE_LIMITED = "rate_limited"
     INTERNAL_ERROR = "internal_error"
 
 
@@ -45,6 +46,7 @@ ERROR_CATALOG: dict[ErrorCode, tuple[int, str]] = {
     ErrorCode.NOT_FOUND: (404, "El recurso solicitado no existe."),
     ErrorCode.METHOD_NOT_ALLOWED: (405, "Metodo no permitido para este recurso."),
     ErrorCode.REQUEST_TOO_LARGE: (413, "La solicitud es demasiado grande."),
+    ErrorCode.RATE_LIMITED: (429, "Hay muchas consultas en poco tiempo. Espera un momento y vuelve a intentar."),
     ErrorCode.INTERNAL_ERROR: (
         500,
         "Ocurrio un error inesperado. Si se repite, informalo con el codigo de referencia.",
@@ -203,6 +205,10 @@ def register_error_handling(app: FastAPI) -> None:
 
 
 # Documents the error contract in OpenAPI for every v1 route.
+RATE_LIMITED_RESPONSES: dict[int | str, dict[str, Any]] = {
+    429: {"model": ErrorResponse, "description": "Rate limit exceeded (see Retry-After)"},
+}
+
 ERROR_RESPONSES: dict[int | str, dict[str, Any]] = {
     status: {"model": ErrorResponse, "description": description}
     for status, description in {
