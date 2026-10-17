@@ -10,7 +10,8 @@ Prefijo de negocio: `/api/v1` (salvo health).
 
 | Método | Path | Body | Respuesta |
 |---|---|---|---|
-| GET | `/health` | — | `{ "status": "ok" }` |
+| GET | `/health` | — | `{ "status": "ok" }` (liveness, no toca la base) |
+| GET | `/ready` | — | `{ "status": "ready" }` o 503 `database_unavailable` |
 
 ## Catálogo
 
@@ -26,7 +27,7 @@ Ejemplo filtro: `GET /api/v1/offices?category=rubro_16&commune=5`
 
 | Método | Path | Body mínimo | Respuesta |
 |---|---|---|---|
-| POST | `/api/v1/locations/geocode` | `{ "address": "Av. Corrientes 2500" }` | `confirmed` / `ambiguous` / `out_of_scope` / `not_found` + candidatos |
+| POST | `/api/v1/locations/geocode` | `{ "address": "Av. Corrientes 2500" }` | `confirmed` / `ambiguous` / `out_of_scope` / `not_found` / `unavailable` (USIG caído) + candidatos |
 | POST | `/api/v1/locations/zoning` | `{ "latitude": -34.604, "longitude": -58.413, "activity_code": "rubro_102" }` | parcela `smp`, mixtura, `rubro_allowed` |
 
 ## Interpretación (NL → actividad + dirección)
@@ -35,7 +36,7 @@ Ejemplo filtro: `GET /api/v1/offices?category=rubro_16&commune=5`
 |---|---|---|---|
 | POST | `/api/v1/interpretations` | `{ "query": "Quiero abrir una cafeteria en Av. Corrientes 2500..." }` | actividad normalizada + dirección candidata |
 
-Sin `LLM_API_KEY` (o si el LLM falla) usa reglas locales (mock).
+Sin `LLM_API_KEY` (o si el LLM falla) usa reglas locales (mock). Si el LLM estaba configurado y falló, `fallback_reason` dice por qué (`llm_unavailable`, `llm_rate_limited` o `llm_invalid_output`).
 
 ## Consultas unificadas
 
@@ -43,7 +44,7 @@ Sin `LLM_API_KEY` (o si el LLM falla) usa reglas locales (mock).
 |---|---|---|---|
 | POST | `/api/v1/consultations` | Determinístico: `{ "activity_code": "rubro_102", "address": "Av. Corrientes 2500" }` **o** NL: `{ "query": "..." }` | Orientación: requirements, offices, zoning, sources, contexto BA Data |
 
-Estados tipados incluyen actividad desconocida, ubicación fuera de CABA, parcial si epok falla, etc.
+Estados tipados incluyen actividad desconocida, ubicación fuera de CABA, parcial si epok o USIG fallan, etc. Warnings posibles en `data_status.warnings`: `epok_unavailable`, `epok_parcel_not_found`, `rubro_not_allowed_in_mixtura`, `ambiguous_address`, `no_sources_linked`, `geocoder_unavailable`, `llm_fallback_mock`.
 
 ## Open data (snapshot BA Data)
 
@@ -53,6 +54,10 @@ Estados tipados incluyen actividad desconocida, ubicación fuera de CABA, parcia
 | GET | `/api/v1/open-data/gastronomy-context` | `commune`, `neighborhood` | Conteos de oferta gastronómica |
 
 Ejemplo: `GET /api/v1/open-data/gastronomy-context?commune=3&neighborhood=Balvanera`
+
+## Errores, límites y rate limit
+
+Todo error usa `{ "error": { code, message, detail, request_id } }` y cada respuesta lleva `X-Request-ID`. `/consultations`, `/interpretations` y `/locations/*` tienen rate limit por IP (429 `rate_limited` + `Retry-After`) y límites de largo y coordenadas. Detalle: [errores-y-seguridad.md](errores-y-seguridad.md).
 
 ## Notas
 

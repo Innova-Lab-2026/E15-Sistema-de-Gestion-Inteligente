@@ -51,6 +51,13 @@ Sin `LLM_API_KEY` usa intérprete mock. Con key intenta LLM y, si falla, cae a m
 
 Flujo sugerido: Interpret → Geocode, o Consultation NL de un solo paso.
 
+## Errores y límites (endurecimiento)
+
+1. **00 Health → GET Ready** — `{ "status": "ready" }` si la base responde.
+2. **90 Errors & limits** — formato único `{ error: { code, message, detail, request_id } }`: validación, query demasiado larga, coordenadas fuera de CABA, ruta inexistente y eco de `X-Request-ID`.
+
+Regenerar: `python scripts/update_postman_errors.py`.
+
 ## Próximas etapas
 
 - Etapa 5: folder `05 Partial / Confirmation`

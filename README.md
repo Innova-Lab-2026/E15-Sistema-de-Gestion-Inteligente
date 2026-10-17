@@ -45,11 +45,22 @@ Copy-Item .env.example .env
 docker compose --profile full up --build
 ```
 
+El contenedor aplica las migraciones al arrancar.
+
+## Tests
+
+```bash
+DB_PORT=5432 scripts/test.sh
+```
+
+pytest dentro de la imagen de la API contra la base aislada `tecba_test`. Errores, límites y seguridad: [documents/errores-y-seguridad.md](documents/errores-y-seguridad.md).
+
 ## Estructura
 
 ```text
 app/          # API, services, providers, db, models
 documents/    # documentación de onboarding
 postman/      # colección y environments
-scripts/      # regenerar snapshots oficiales
+scripts/      # regenerar snapshots oficiales, tests, entrypoint Docker
+tests/        # pytest (golden de respuestas + errores, límites, fuentes caídas)
 ```
