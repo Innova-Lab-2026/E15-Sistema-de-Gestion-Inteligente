@@ -1,0 +1,64 @@
+{
+  "data_status": {
+    "missing": [
+      "confirmed_location"
+    ],
+    "overall": "blocked",
+    "warnings": [
+      "ambiguous_address"
+    ]
+  },
+  "documents": [],
+  "interpretation": {
+    "activity": {
+      "confidence": 1.0,
+      "display_name": "1.5. Alimentación en general y gastronomía",
+      "normalized_category": "rubro_102",
+      "raw_text": null
+    },
+    "intent": "start_commercial_activity",
+    "original_query": "Consulta deterministica: rubro_102 en Palermo"
+  },
+  "location": {
+    "candidates": [
+      {
+        "city": "Ciudad Autonoma de Buenos Aires",
+        "commune": "Comuna 14",
+        "latitude": -34.5889,
+        "longitude": -58.4306,
+        "neighborhood": "Palermo",
+        "normalized_address": "Palermo, CABA (centro aproximado)",
+        "precision": "neighborhood"
+      },
+      {
+        "city": "Ciudad Autonoma de Buenos Aires",
+        "commune": "Comuna 14",
+        "latitude": -34.5865,
+        "longitude": -58.4095,
+        "neighborhood": "Palermo",
+        "normalized_address": "Av. Santa Fe y Coronel Diaz, Palermo, CABA",
+        "precision": "intersection"
+      }
+    ],
+    "city": null,
+    "commune": null,
+    "latitude": null,
+    "longitude": null,
+    "message": "Hay varias coincidencias. Selecciona la ubicacion correcta.",
+    "neighborhood": null,
+    "normalized_address": null,
+    "precision": null,
+    "status": "ambiguous"
+  },
+  "map_layers": [],
+  "message": "Hay varias coincidencias. Selecciona la ubicacion correcta.",
+  "online_procedures": [],
+  "physical_offices": [],
+  "requirements": [],
+  "sources": [],
+  "status": "needs_location_confirmation",
+  "steps": [],
+  "summary": "Hay varias coincidencias de ubicacion. Confirma una con confirmed_location para continuar.",
+  "territorial_information": [],
+  "zoning": null
+}

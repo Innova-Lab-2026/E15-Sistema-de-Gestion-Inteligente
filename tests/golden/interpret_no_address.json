@@ -1,0 +1,22 @@
+{
+  "activity": {
+    "confidence": 0.85,
+    "display_name": "1.5. Alimentación en general y gastronomía",
+    "normalized_category": "rubro_102",
+    "raw_text": "cafeteria"
+  },
+  "clarification_question": "Detecte la actividad \"1.5. Alimentación en general y gastronomía\", pero falta una direccion con calle y altura en CABA. Indica la direccion para continuar.",
+  "intent": "start_commercial_activity",
+  "jurisdiction": "CABA",
+  "location": {
+    "address": null,
+    "confidence": 0.0,
+    "raw_text": null
+  },
+  "missing_fields": [
+    "location"
+  ],
+  "original_query": "Quiero abrir una cafeteria",
+  "provider": "mock",
+  "status": "needs_clarification"
+}

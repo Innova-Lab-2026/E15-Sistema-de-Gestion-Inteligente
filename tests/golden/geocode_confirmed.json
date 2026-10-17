@@ -1,0 +1,27 @@
+{
+  "candidates": [
+    {
+      "city": "Ciudad Autonoma de Buenos Aires",
+      "commune": "Comuna 5",
+      "latitude": -34.604,
+      "longitude": -58.413,
+      "neighborhood": "Almagro",
+      "normalized_address": "Avenida Corrientes 2500, CABA",
+      "precision": "rooftop"
+    }
+  ],
+  "city": "Ciudad Autonoma de Buenos Aires",
+  "commune": "Comuna 5",
+  "latitude": -34.604,
+  "longitude": -58.413,
+  "message": null,
+  "neighborhood": "Almagro",
+  "normalized_address": "Avenida Corrientes 2500, CABA",
+  "original_address": "Av. Corrientes 2500",
+  "precision": "rooftop",
+  "source": {
+    "id": "geocoder-mock",
+    "name": "Mock geocoder CABA"
+  },
+  "status": "confirmed"
+}

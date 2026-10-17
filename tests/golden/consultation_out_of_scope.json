@@ -1,0 +1,43 @@
+{
+  "data_status": {
+    "missing": [
+      "location_in_caba"
+    ],
+    "overall": "blocked",
+    "warnings": []
+  },
+  "documents": [],
+  "interpretation": {
+    "activity": {
+      "confidence": 1.0,
+      "display_name": "1.5. Alimentación en general y gastronomía",
+      "normalized_category": "rubro_102",
+      "raw_text": null
+    },
+    "intent": "start_commercial_activity",
+    "original_query": "Consulta deterministica: rubro_102 en Mar del Plata"
+  },
+  "location": {
+    "candidates": [],
+    "city": null,
+    "commune": null,
+    "latitude": null,
+    "longitude": null,
+    "message": "La ubicacion parece estar fuera de CABA.",
+    "neighborhood": null,
+    "normalized_address": null,
+    "precision": null,
+    "status": "out_of_scope"
+  },
+  "map_layers": [],
+  "message": "La ubicacion parece estar fuera de CABA.",
+  "online_procedures": [],
+  "physical_offices": [],
+  "requirements": [],
+  "sources": [],
+  "status": "out_of_scope",
+  "steps": [],
+  "summary": "La ubicacion parece estar fuera de CABA.",
+  "territorial_information": [],
+  "zoning": null
+}

@@ -1,0 +1,20 @@
+{
+  "activity": {
+    "confidence": 0.85,
+    "display_name": "1.5. Alimentación en general y gastronomía",
+    "normalized_category": "rubro_102",
+    "raw_text": "cafeteria"
+  },
+  "clarification_question": null,
+  "intent": "start_commercial_activity",
+  "jurisdiction": "CABA",
+  "location": {
+    "address": "Av. Corrientes 2500",
+    "confidence": 0.85,
+    "raw_text": "Av. Corrientes 2500"
+  },
+  "missing_fields": [],
+  "original_query": "Quiero abrir una cafeteria en Av. Corrientes 2500. Que tengo que hacer?",
+  "provider": "mock",
+  "status": "ready_for_geocoding"
+}

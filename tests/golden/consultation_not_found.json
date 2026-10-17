@@ -1,0 +1,43 @@
+{
+  "data_status": {
+    "missing": [
+      "location"
+    ],
+    "overall": "blocked",
+    "warnings": []
+  },
+  "documents": [],
+  "interpretation": {
+    "activity": {
+      "confidence": 1.0,
+      "display_name": "1.5. Alimentación en general y gastronomía",
+      "normalized_category": "rubro_102",
+      "raw_text": null
+    },
+    "intent": "start_commercial_activity",
+    "original_query": "Consulta deterministica: rubro_102 en Calle Inexistente 123"
+  },
+  "location": {
+    "candidates": [],
+    "city": null,
+    "commune": null,
+    "latitude": null,
+    "longitude": null,
+    "message": "No se pudo geocodificar la direccion.",
+    "neighborhood": null,
+    "normalized_address": null,
+    "precision": null,
+    "status": "not_found"
+  },
+  "map_layers": [],
+  "message": "No se pudo geocodificar la direccion.",
+  "online_procedures": [],
+  "physical_offices": [],
+  "requirements": [],
+  "sources": [],
+  "status": "location_not_found",
+  "steps": [],
+  "summary": "No se pudo geocodificar la direccion.",
+  "territorial_information": [],
+  "zoning": null
+}

@@ -1,0 +1,17 @@
+{
+  "candidates": [],
+  "city": null,
+  "commune": null,
+  "latitude": null,
+  "longitude": null,
+  "message": "La ubicacion parece estar fuera de CABA.",
+  "neighborhood": null,
+  "normalized_address": null,
+  "original_address": "Mar del Plata",
+  "precision": null,
+  "source": {
+    "id": "geocoder-mock",
+    "name": "Mock geocoder CABA"
+  },
+  "status": "out_of_scope"
+}

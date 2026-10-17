@@ -1,0 +1,36 @@
+{
+  "candidates": [
+    {
+      "city": "Ciudad Autonoma de Buenos Aires",
+      "commune": "Comuna 14",
+      "latitude": -34.5889,
+      "longitude": -58.4306,
+      "neighborhood": "Palermo",
+      "normalized_address": "Palermo, CABA (centro aproximado)",
+      "precision": "neighborhood"
+    },
+    {
+      "city": "Ciudad Autonoma de Buenos Aires",
+      "commune": "Comuna 14",
+      "latitude": -34.5865,
+      "longitude": -58.4095,
+      "neighborhood": "Palermo",
+      "normalized_address": "Av. Santa Fe y Coronel Diaz, Palermo, CABA",
+      "precision": "intersection"
+    }
+  ],
+  "city": null,
+  "commune": null,
+  "latitude": null,
+  "longitude": null,
+  "message": "Hay varias coincidencias. Selecciona la ubicacion correcta.",
+  "neighborhood": null,
+  "normalized_address": null,
+  "original_address": "Palermo",
+  "precision": null,
+  "source": {
+    "id": "geocoder-mock",
+    "name": "Mock geocoder CABA"
+  },
+  "status": "ambiguous"
+}
