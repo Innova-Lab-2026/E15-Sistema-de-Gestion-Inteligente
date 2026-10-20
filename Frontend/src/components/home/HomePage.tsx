@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import LoadingScreen from "./LoadingScreen";
 
 export default function HomePage() {
   const queryRef = useRef<HTMLInputElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (queryRef.current) {
@@ -19,7 +21,15 @@ export default function HomePage() {
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(queryRef.current?.value);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <section className="flex flex-col items-center justify-center max-md:pt-48 max-md:pb-20 bg-background-gray h-[calc(100dvh-56px)] mx-auto w-full max-md:px-4 gap-8">
