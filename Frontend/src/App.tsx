@@ -1,13 +1,14 @@
-import type { LatLngExpression } from "leaflet";
-import MapLocation from "@/components/MapLocation";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./components/home/HomePage";
+import Layout from "./components/ui/Layout";
 
 function App() {
-  const position: LatLngExpression = [-34.6035512473822, -58.381626261539125];
-
   return (
-    <>
-      <MapLocation position={position} />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+    </Routes>
   );
 }
 

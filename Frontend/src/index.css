@@ -1,4 +1,22 @@
+@import url('https://googleapis.com');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-primary-gray: #38485C;
+  --color-primary-gray-2: #505E70;
+  --color-primary-white: #F3F6F9;
+  --color-primary-yellow: #FFDB2E;
+  --color-semantic-orange: #FFA82E;
+  --color-semantic-green: #26874A;
+  --color-semantic-blue: #007BC7;
+  --color-semantic-red: #C93B3B;
+  --color-background-white: #ffffff;
+  --color-background-white-2: #F3F6F9;
+  --color-background-gray: #E6EBF0;
+  --color-background-gray-2: #D1D8E0;
+
+}
 
 :root {
   --text: #6b6375;
@@ -36,8 +54,7 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
+    --bg: var(--color-background-gray);
     --code-bg: #1f2028;
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
@@ -68,38 +85,6 @@ body {
   margin: 0;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-
-p {
-  margin: 0;
-}
 
 code,
 .counter {
