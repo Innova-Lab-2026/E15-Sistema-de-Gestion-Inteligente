@@ -10,7 +10,7 @@ export default function MapLocation({
     <MapContainer
       center={position}
       zoom={17}
-      className="m-auto"
+      className="m-auto font-sans z-10"
       scrollWheelZoom={false}
       style={{ height: "500px", width: "500px" }}
     >
