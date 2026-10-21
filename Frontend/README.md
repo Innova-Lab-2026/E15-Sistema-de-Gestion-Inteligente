@@ -4,11 +4,17 @@
 Documentación del trabajo realizado en el frente **Frontend** para la tarea:
 "Configuración base del proyecto y evaluación de mapa interactivo" (#4).
 
+## Enlaces del Proyecto
+
+* **Despliegue de la Aplicación:** [Sistema de Gestión Inteligente (TECBA - E15)](https://sistema-de-gestion-inteligente.netlify.app/)
+* **Plataforma:** Netlify
+
 ## Equipo Frontend
 
 - Christiam Salcedo
 - Ezequiel Torres
 - Mauricio Chambi
+- Ariadna Siares
 
 ## 1. Configuración base del proyecto
 
