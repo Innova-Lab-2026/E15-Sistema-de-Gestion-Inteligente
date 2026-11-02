@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import LoadingScreen from "./LoadingScreen";
+import ResultsPage from "../results/ResultsPage";
 
 export default function HomePage() {
   const queryRef = useRef<HTMLInputElement>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [finishedLoading, setFinishedLoading] = useState(false);
 
   useEffect(() => {
     if (queryRef.current) {
@@ -24,11 +26,16 @@ export default function HomePage() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      setFinishedLoading(true);
     }, 2000);
   };
 
   if (isLoading) {
     return <LoadingScreen />;
+  }
+  
+  if (finishedLoading) {
+    return <ResultsPage />;
   }
 
   return (
