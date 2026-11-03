@@ -1,0 +1,477 @@
+{
+  "fetched_at": "2026-10-08T21:50:45.809423+00:00",
+  "sources": {
+    "ba_data_sedes": {
+      "dataset": "https://data.buenosaires.gob.ar/dataset/sedes-comunales",
+      "csv_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/sedes-comunales/sedes_comunales.csv",
+      "geojson_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/sedes-comunales/sedes_comunales.geojson"
+    },
+    "habilitacion": {
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+    },
+    "agc": {
+      "url": "https://buenosaires.gob.ar/gcaba_historico/justicia/agencia-gubernamental-de-control"
+    }
+  },
+  "offices": [
+    {
+      "id": "office-001",
+      "name": "Agencia Gubernamental de Control - Habilitaciones y Permisos",
+      "organization": "GCBA / Agencia Gubernamental de Control",
+      "type": "physical_office",
+      "address": "Tte. Juan Domingo Perón 2941, CABA",
+      "opening_hours": "Lunes a viernes de 9 a 13:30 h",
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica",
+      "latitude": -34.607815,
+      "longitude": -58.40822,
+      "commune": null,
+      "neighborhood": "Balvanera",
+      "status": "available",
+      "phone": null,
+      "normalized_address": "PERON, JUAN DOMINGO, TTE. GENERAL 2941, CABA",
+      "source_refs": [
+        "tramite-habilitacion",
+        "agc"
+      ]
+    },
+    {
+      "id": "office-002",
+      "name": "Habilitacion de actividad economica (SSIT / online)",
+      "organization": "GCBA / Agencia Gubernamental de Control",
+      "type": "online_channel",
+      "address": "Online (miBA / SSIT)",
+      "opening_hours": "Online",
+      "url": "https://www.buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica",
+      "latitude": -34.607815,
+      "longitude": -58.40822,
+      "commune": null,
+      "neighborhood": null,
+      "status": "available",
+      "phone": null,
+      "normalized_address": null,
+      "source_refs": [
+        "tramite-habilitacion"
+      ]
+    },
+    {
+      "id": "office-sede-01",
+      "name": "Sede Comunal 1",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Humberto 1° 250, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-1",
+      "latitude": -34.620693,
+      "longitude": -58.369359,
+      "commune": "1",
+      "neighborhood": "San Telmo",
+      "status": "available",
+      "phone": null,
+      "kind": "sede",
+      "normalized_address": "HUMBERTO 1° 250, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-02",
+      "name": "Subsede Comunal 2",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Lopez, Vicente 2050, 3 piso, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-2",
+      "latitude": -34.588922,
+      "longitude": -58.393629,
+      "commune": "2",
+      "neighborhood": "Recoleta",
+      "status": "available",
+      "phone": "4808-7300",
+      "kind": "subsede",
+      "normalized_address": "LOPEZ, VICENTE 2050, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-03",
+      "name": "Sede Comunal 2",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Uriburu Jose E., Pres. 1022, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-2",
+      "latitude": -34.596667,
+      "longitude": -58.398846,
+      "commune": "2",
+      "neighborhood": "Recoleta",
+      "status": "available",
+      "phone": "4370-9702",
+      "kind": "sede",
+      "normalized_address": "URIBURU JOSE E., PRES. 1022, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-04",
+      "name": "Sede Comunal 3",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Sarandi 1273, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-3",
+      "latitude": -34.623726,
+      "longitude": -58.393708,
+      "commune": "3",
+      "neighborhood": "San Cristobal",
+      "status": "available",
+      "phone": "4304-5153",
+      "kind": "sede",
+      "normalized_address": "SARANDI 1273, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-05",
+      "name": "Subsede Comunal 3",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Moreno 2301, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-3",
+      "latitude": -34.613128,
+      "longitude": -58.398895,
+      "commune": "3",
+      "neighborhood": "Balvanera",
+      "status": "available",
+      "phone": "4304-5153",
+      "kind": "subsede",
+      "normalized_address": "MORENO 2301, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-06",
+      "name": "Sede Comunal 4",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Barco Centenera Del 2906, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-4",
+      "latitude": -34.650475,
+      "longitude": -58.424654,
+      "commune": "4",
+      "neighborhood": "Nueva Pompeya",
+      "status": "available",
+      "phone": "4918-2243/1815/8920-4949 9024 int 105",
+      "kind": "sede",
+      "normalized_address": "BARCO CENTENERA DEL 2906, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-07",
+      "name": "Unidad de Atención Ciudadana Comuna 4",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Garcia, Martin Av. 464, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-4",
+      "latitude": -34.630267,
+      "longitude": -58.3713,
+      "commune": "4",
+      "neighborhood": "Barracas",
+      "status": "available",
+      "phone": null,
+      "kind": "unidad_atencion",
+      "normalized_address": "GARCIA, MARTIN AV. 464, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-08",
+      "name": "Sede Comunal 5",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Calvo, Carlos 3307, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-5",
+      "latitude": -34.62305,
+      "longitude": -58.412661,
+      "commune": "5",
+      "neighborhood": "Boedo",
+      "status": "available",
+      "phone": "4931- 0667 (int. 307 y 308).",
+      "kind": "sede",
+      "normalized_address": "CALVO, CARLOS 3307, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-09",
+      "name": "Sede Comunal 13",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Cabildo Av. 3067, 1 piso, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-13",
+      "latitude": -34.553783,
+      "longitude": -58.464026,
+      "commune": "13",
+      "neighborhood": "Nuñez",
+      "status": "available",
+      "phone": "4702-3748 / 9",
+      "kind": "sede",
+      "normalized_address": "CABILDO AV. 3067, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-10",
+      "name": "Sede Comunal 14",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Beruti 3325, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-14",
+      "latitude": -34.587236,
+      "longitude": -58.409438,
+      "commune": "14",
+      "neighborhood": "Palermo",
+      "status": "available",
+      "phone": "4827-5957 / 4827-5954",
+      "kind": "sede",
+      "normalized_address": "BERUTI 3325, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-11",
+      "name": "Sede Comunal 6",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Patricias Argentinas Av. 277, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-6",
+      "latitude": -34.60604,
+      "longitude": -58.432762,
+      "commune": "6",
+      "neighborhood": "Caballito",
+      "status": "available",
+      "phone": "4958-6504 / 7660 / 7047",
+      "kind": "sede",
+      "normalized_address": "PATRICIAS ARGENTINAS AV. 277, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-12",
+      "name": "Sede Comunal 7",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Rivadavia Av. 7202, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-7",
+      "latitude": -34.630155,
+      "longitude": -58.467002,
+      "commune": "7",
+      "neighborhood": "Flores",
+      "status": "available",
+      "phone": "4637-2355 / 4145 / 6902 / 4613-1530",
+      "kind": "sede",
+      "normalized_address": "RIVADAVIA AV. 7202, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-13",
+      "name": "Subsede Comunal 7",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Mitre, Emilio 956, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-7",
+      "latitude": -34.632272,
+      "longitude": -58.441102,
+      "commune": "7",
+      "neighborhood": "Parque Chacabuco",
+      "status": "available",
+      "phone": "4923-5021",
+      "kind": "subsede",
+      "normalized_address": "MITRE, EMILIO 956, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-14",
+      "name": "Sede Comunal 8",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Roca, Cnel. Av. 5252, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-8",
+      "latitude": -34.684708,
+      "longitude": -58.455339,
+      "commune": "8",
+      "neighborhood": "Villa Riachuelo",
+      "status": "available",
+      "phone": "4605-1735 / 2631",
+      "kind": "sede",
+      "normalized_address": "ROCA, CNEL. AV. 5252, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-15",
+      "name": "Sede Comunal 9",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Gordillo, Timoteo 2212, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-9",
+      "latitude": -34.659689,
+      "longitude": -58.505088,
+      "commune": "9",
+      "neighborhood": "Mataderos",
+      "status": "available",
+      "phone": "4687-2569/2570/2512",
+      "kind": "sede",
+      "normalized_address": "GORDILLO, TIMOTEO 2212, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-16",
+      "name": "Subsede Comunal 9",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Directorio Av. 4360, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-9",
+      "latitude": -34.645694,
+      "longitude": -58.484928,
+      "commune": "9",
+      "neighborhood": "Parque Avellaneda",
+      "status": "available",
+      "phone": "4671-0804 / 4636-2022",
+      "kind": "subsede",
+      "normalized_address": "DIRECTORIO AV. 4360, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-17",
+      "name": "Sede Comunal 10",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Bacacay 3968, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-10",
+      "latitude": -34.631814,
+      "longitude": -58.483568,
+      "commune": "10",
+      "neighborhood": "Floresta",
+      "status": "available",
+      "phone": "4636-2898 / 2490 / 2398 / 2262 / 1678",
+      "kind": "sede",
+      "normalized_address": "BACACAY 3968, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-18",
+      "name": "Sede Comunal 11",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Beiro, Francisco Av. 4680, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-11",
+      "latitude": -34.608753,
+      "longitude": -58.516368,
+      "commune": "11",
+      "neighborhood": "Villa Devoto",
+      "status": "available",
+      "phone": "4501-5583/0287 / 4504-5019 / 4587-6240",
+      "kind": "sede",
+      "normalized_address": "BEIRO, FRANCISCO AV. 4680, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-19",
+      "name": "Subsede Comunal 11",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Gutierrez, Ricardo 3254, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-11",
+      "latitude": -34.601838,
+      "longitude": -58.495813,
+      "commune": "11",
+      "neighborhood": "Villa Del Parque",
+      "status": "available",
+      "phone": "4503-3959",
+      "kind": "subsede",
+      "normalized_address": "GUTIERREZ, RICARDO 3254, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-20",
+      "name": "Sede Comunal 12",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Holmberg 2548, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-12",
+      "latitude": -34.56851,
+      "longitude": -58.477729,
+      "commune": "12",
+      "neighborhood": "Villa Urquiza",
+      "status": "available",
+      "phone": "5197-6183",
+      "kind": "sede",
+      "normalized_address": "HOLMBERG 2548, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    },
+    {
+      "id": "office-sede-21",
+      "name": "Sede Comunal 15",
+      "organization": "GCBA / Gestion Comunal",
+      "type": "physical_office",
+      "address": "Cordoba Av. 5690, CABA",
+      "opening_hours": null,
+      "url": "https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-15",
+      "latitude": -34.586988,
+      "longitude": -58.441255,
+      "commune": "15",
+      "neighborhood": "Chacarita",
+      "status": "available",
+      "phone": "4771-1960 / 4771-0750 / 4772-6398 / 4771-1306",
+      "kind": "sede",
+      "normalized_address": "CORDOBA AV. 5690, CABA",
+      "source_refs": [
+        "ba-data-sedes-comunales"
+      ]
+    }
+  ]
+}
