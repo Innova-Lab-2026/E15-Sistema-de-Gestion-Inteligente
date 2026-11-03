@@ -1,0 +1,12 @@
+---
+description: Usar la carpeta .cursor/agent para el plan de ejecución del agente
+alwaysApply: true
+---
+
+# Ejecución del agente en este repo
+
+- El plan canónico del equipo está en `documents/plan-implementacion.md`.
+- El plan de ejecución del agente (checklist, log, etapa actual) está en `.cursor/agent/PLAN-EJECUCION.md`.
+- Antes de implementar una etapa, leer ambos archivos y actualizar `.cursor/agent/PLAN-EJECUCION.md` al avanzar.
+- Cada etapa que agregue endpoints debe actualizar la colección en `postman/`.
+- No saltar etapas: seguir el orden 0 → 6 salvo indicación explícita del usuario.
