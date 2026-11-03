@@ -1,0 +1,27 @@
+# Reglas comunes a todo el repo. Cada proyecto tiene además su propio .gitignore
+# (Backend/.gitignore, Frontend/.gitignore).
+
+# Variables de entorno y secretos (los .env.example sí se versionan)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+
+# Editores (solo en la raíz: Frontend/.gitignore decide sobre su propio .vscode/)
+/.vscode/
+/.idea/
+*.swp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
