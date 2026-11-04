@@ -37,8 +37,8 @@ export default function ResultsPage() {
                 </div>
 
                 {/* Columna derecha - Mapa */}
-                <article className="flex flex-col bg-background-gray rounded-xl shadow-[0_1px_2px_2px_rgba(0,0,0,0.30),0_2px_3px_1px_rgba(0,0,0,0.10)] p-6 h-fit w-full gap-4">
-                    <div className="flex flex-col gap-4 w-full h-full bg-background-white p-4 rounded-xl">
+                <article className="flex flex-col p-6 h-fit w-full gap-4 bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
+                    <div className="flex flex-col gap-4 w-full h-full bg-background-white border-2 border-background-gray-2 p-4 rounded-xl">
                         <h2 className="text-xl font-semibold text-primary-gray bg-background-white">
                             Ubicación
                         </h2>
@@ -55,7 +55,7 @@ export default function ResultsPage() {
                     <h3 className="text-base font-semibold text-primary-gray">
                         Contexto de la zona
                     </h3>
-                    <div className="flex flex-col gap-4 w-full h-20 bg-sky-100 border-3 border-sky-300 p-4 rounded-xl">
+                    <div className="flex flex-col gap-4 w-full h-20 bg-[#E5F9FF] border-2 border-[#0086AD] p-4 rounded-xl">
                         
                     </div>
                 </article>

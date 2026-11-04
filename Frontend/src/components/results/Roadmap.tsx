@@ -12,7 +12,7 @@ export default function Roadmap() {
     const currentStep = 2;
 
     return (
-        <article className="flex flex-col gap-4 p-6 w-full bg-background-gray rounded-xl shadow-[0_1px_2px_2px_rgba(0,0,0,0.30),0_2px_3px_1px_rgba(0,0,0,0.10)]">
+        <article className="flex flex-col gap-4 p-6 w-full bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
 
             <div className="flex items-start gap-2">
                 <Route className="w-6 h-6 mt-1 shrink-0 text-semantic-blue"/>
@@ -39,7 +39,7 @@ export default function Roadmap() {
                                 <div className={`absolute top-5 left-1/2 w-full h-[3px] ${
                                     completed
                                     ? "bg-semantic-green"
-                                    : "bg-gray-300"
+                                    : "bg-roadmap-inactive"
                                 }`}/>
                             )}
 
@@ -49,10 +49,10 @@ export default function Roadmap() {
                                 flex items-center justify-center border-2 font-bold text-lg mb-4
                                 ${
                                     completed
-                                    ? "bg-gray-200 ring-semantic-green ring-3 text-semantic-green font-extrabold text-xl"
+                                    ? "bg-background-gray ring-semantic-green ring-3 text-semantic-green font-extrabold text-xl"
                                     : current
-                                    ? "bg-primary-yellow border-gray-200 border-3 text-gray-500 ring-2 ring-primary-yellow ring-4"
-                                    : "bg-gray-200 ring ring-2 text-gray-400"
+                                    ? "bg-primary-yellow border-background-gray border-3 ring-4 ring-primary-yellow text-primary-gray-2 text-xl"
+                                    : "bg-background-gray border-none ring-3 ring-roadmap-inactive text-primary-gray-2 text-xl"
                                 }`}
                             >
                                 {completed ? <Check size={25} strokeWidth={4.5}/> : step.id}
@@ -63,18 +63,18 @@ export default function Roadmap() {
                                 <p
                                 className={`text-sm font-semibold ${
                                     completed
-                                    ? "text-gray-800"
+                                    ? "text-primary-gray"
                                     : current
-                                    ? "text-gray-800"
+                                    ? "text-primary-gray"
                                     : "text-gray-400"
                                 }`}
                                 >
                                 {step.title}
                                 </p>
 
-                                <p className={`text-xs text-gray-500 mt-1 ${
+                                <p className={`text-xs text-primary-gray mt-1 ${
                                     completed
-                                    ? "font-semibold"
+                                    ? ""
                                     : current
                                     ? "text-semantic-blue font-semibold"
                                     : "text-gray-400"

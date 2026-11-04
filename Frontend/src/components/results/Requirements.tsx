@@ -8,7 +8,7 @@ export default function Requirements({ requirements }: { requirements: { id: num
                 Requisitos
             </h2>
 
-            <article className="flex flex-col gap-6 p-6 w-full bg-background-gray rounded-xl shadow-[0_1px_2px_2px_rgba(0,0,0,0.30),0_2px_3px_1px_rgba(0,0,0,0.10)]">
+            <article className="flex flex-col gap-6 p-6 w-full bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
 
                 {requirements.map((group) => (
                     <RequirementGroup
