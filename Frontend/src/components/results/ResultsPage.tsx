@@ -17,7 +17,7 @@ export default function ResultsPage() {
             <div className="grid grid-cols-[2fr_1fr] max-sm:grid-cols-1 gap-10 w-full">
 
                 {/* Columna izquierda */}
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-8 order-2 sm:order-1">
 
                     {/* Resumen */}
                     <Summary
@@ -37,7 +37,7 @@ export default function ResultsPage() {
                 </div>
 
                 {/* Columna derecha - Mapa */}
-                <article className="flex flex-col p-6 h-fit w-full gap-4 bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
+                <article className="flex flex-col p-6 h-fit w-full gap-4 bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] order-1 sm:order-2">
                     <div className="flex flex-col gap-4 w-full h-full bg-background-white border-2 border-background-gray-2 p-4 rounded-xl">
                         <h2 className="text-xl font-semibold text-primary-gray bg-background-white">
                             Ubicación

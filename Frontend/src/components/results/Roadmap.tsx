@@ -12,7 +12,7 @@ export default function Roadmap() {
     const currentStep = 2;
 
     return (
-        <article className="flex flex-col gap-4 p-6 w-full bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
+        <article className="flex flex-col gap-4 p-6 w-full sm:max-md:px-4 bg-background-gray rounded-xl border border-secundary-gray shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
 
             <div className="flex items-start gap-2">
                 <Route className="w-6 h-6 mt-1 shrink-0 text-semantic-blue"/>
@@ -22,7 +22,7 @@ export default function Roadmap() {
                 </h2>
             </div>
             
-            <div className="w-full p-6">
+            <div className="w-full p-6 sm:max-md:px-0">
                 <div className="flex items-start w-full">
 
                     {steps.map((step, index) => {
