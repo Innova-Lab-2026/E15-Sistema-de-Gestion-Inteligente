@@ -2,21 +2,10 @@
 
 from __future__ import annotations
 
-import re
 from typing import Any
 
 from app.db.catalog_data import ACTIVITY_DEFINITIONS
-
-_ADDRESS_PATTERNS = [
-    re.compile(
-        r"(?:en|sobre)\s+(?P<addr>(?:av(?:\.|enida)?|calle|diag(?:\.|onal)?)\s+[^,?\.]+?\s+\d{1,5})",
-        re.IGNORECASE,
-    ),
-    re.compile(
-        r"(?P<addr>(?:av(?:\.|enida)?\.?\s+)?(?:corrientes|santa\s+fe|rivadavia|del\s+libertador|cabildo|cordoba|callao|9\s+de\s+julio|santiago\s+del\s+estero)[^,?\.]*?\s+\d{1,5})",
-        re.IGNORECASE,
-    ),
-]
+from app.providers.address_parser import extract_address
 
 # Longer / more specific keywords first
 _ACTIVITY_KEYWORDS: list[tuple[str, tuple[str, ...]]] = sorted(
@@ -43,17 +32,9 @@ def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
         if activity_code:
             break
 
-    address_raw: str | None = None
-    for pattern in _ADDRESS_PATTERNS:
-        match = pattern.search(text)
-        if match:
-            address_raw = " ".join(match.group("addr").split())
-            break
-
-    if not address_raw:
-        loose = re.search(r"\ben\s+(.+?\d{1,5})\b", text, re.IGNORECASE)
-        if loose:
-            address_raw = " ".join(loose.group(1).split()).rstrip(".,;?")
+    parsed = extract_address(text)
+    address_raw = parsed.raw_text if parsed else None
+    address = parsed.address if parsed else None
 
     intent = "start_commercial_activity" if activity_code else None
     missing: list[str] = []
@@ -99,7 +80,7 @@ def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
         },
         "location": {
             "raw_text": address_raw,
-            "address": address_raw,
+            "address": address,
             "confidence": 0.85 if address_raw else 0.0,
         },
         "jurisdiction": "CABA",

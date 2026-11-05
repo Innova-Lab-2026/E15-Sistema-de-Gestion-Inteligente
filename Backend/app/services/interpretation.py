@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import Settings
 from app.models import ActivityCategory
 from app.providers.llm import LLMClient, LLMUnavailableError
+from app.providers.address_parser import normalize_address
 from app.providers.mock_interpreter import mock_interpret
 from app.schemas.interpretation import (
     ActivityInterpretation,
@@ -135,7 +136,8 @@ class InterpretationService:
         raw_text = activity_raw.get("raw_text")
         conf_act = float(activity_raw.get("confidence") or 0.0)
         loc_text = location_raw.get("raw_text") or location_raw.get("address")
-        address = location_raw.get("address") or location_raw.get("raw_text")
+        # El LLM puede devolver la altura en palabras ("Monroe dos mil quinientos"): USIG necesita cifras.
+        address = normalize_address(location_raw.get("address") or location_raw.get("raw_text"))
         conf_loc = float(location_raw.get("confidence") or 0.0)
 
         missing = list(raw.get("missing_fields") or [])
