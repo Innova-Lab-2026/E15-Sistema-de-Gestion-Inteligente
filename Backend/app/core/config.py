@@ -44,7 +44,7 @@ class Settings(BaseSettings):
 
     llm_base_url: str = Field(default="", alias="LLM_BASE_URL")
     llm_api_key: str = Field(default="", alias="LLM_API_KEY")
-    llm_model: str = Field(default="gemini-2.0-flash", alias="LLM_MODEL")
+    llm_model: str = Field(default="gemini-flash-lite-latest", alias="LLM_MODEL")
     llm_timeout_seconds: int = Field(default=30, alias="LLM_TIMEOUT_SECONDS")
 
     # "mock" uses local fixtures and is meant for offline development and tests only.
