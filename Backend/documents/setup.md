@@ -30,6 +30,9 @@ Copiar desde `.env.example`. Las más usadas:
 | `DATABASE_URL` | `postgresql+asyncpg://tecba:tecba@localhost:5432/tecba` | Postgres local |
 | `APP_ENV` | `local` / `production` (default) | `local` sincroniza el catálogo al arrancar; en otro entorno el seed es explícito |
 | `GEOCODER_PROVIDER` | `usig` (default) / `mock` | USIG real vs fixtures locales (solo offline/tests) |
+| `GEOCODER_TIMEOUT_SECONDS` / `GEOCODER_TOTAL_TIMEOUT_SECONDS` | `3` / `4.5` | Espera por pedido y total de la geocodificación: con USIG caído la respuesta `partial` llega en menos de 5 s |
+| `GEOCODER_CACHE_TTL_SECONDS` | `600` | Caché en memoria de direcciones ya resueltas (`0` la apaga; no guarda fallas) |
+| `GEOCODER_BREAKER_FAILURES` / `GEOCODER_BREAKER_COOLDOWN_SECONDS` | `3` / `120` | Tras 3 fallas seguidas no se llama a USIG por 2 minutos (responde `unavailable` al instante) |
 | `EPOK_PROVIDER` | `epok` / `mock` | Zoning Ciudad 3D vs fixtures |
 | `LLM_API_KEY` | vacío o key | Sin key → interpretación mock |
 | `LLM_BASE_URL` / `LLM_MODEL` | OpenAI-compatible | Cliente LLM |

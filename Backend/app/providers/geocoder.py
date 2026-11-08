@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 import re
+import time
+from collections import OrderedDict
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -248,6 +251,57 @@ class MockGeocoder(GeocoderClient):
         )
 
 
+class _UsigState:
+    """Per-process state of USIG (B18): short cache and a circuit breaker.
+
+    The geocoder object is created per request, so the state lives at module level.
+    """
+
+    def __init__(self) -> None:
+        self.cache: OrderedDict[str, tuple[float, GeocodeResult]] = OrderedDict()
+        self.failures = 0
+        self.open_until = 0.0
+
+    def reset(self) -> None:
+        self.__init__()
+
+    def cached(self, key: str) -> GeocodeResult | None:
+        entry = self.cache.get(key)
+        if entry is None:
+            return None
+        expires, result = entry
+        if expires < time.monotonic():
+            self.cache.pop(key, None)
+            return None
+        self.cache.move_to_end(key)
+        return result
+
+    def store(self, key: str, result: GeocodeResult, ttl: int, size: int) -> None:
+        if ttl <= 0:
+            return
+        self.cache[key] = (time.monotonic() + ttl, result)
+        self.cache.move_to_end(key)
+        while len(self.cache) > size:
+            self.cache.popitem(last=False)
+
+    @property
+    def is_open(self) -> bool:
+        return time.monotonic() < self.open_until
+
+    def record(self, ok: bool, threshold: int, cooldown: int) -> None:
+        if ok:
+            self.failures = 0
+            self.open_until = 0.0
+            return
+        self.failures += 1
+        if self.failures >= threshold:
+            self.open_until = time.monotonic() + cooldown
+            logger.warning("USIG failed %s times in a row: not calling it for %s s", self.failures, cooldown)
+
+
+usig_state = _UsigState()
+
+
 class UsigGeocoder(GeocoderClient):
     """USIG / GCBA normalizador + datos utiles (comuna/barrio)."""
 
@@ -255,30 +309,52 @@ class UsigGeocoder(GeocoderClient):
         self,
         base_url: str,
         ws_base_url: str,
-        timeout_seconds: int = 10,
+        timeout_seconds: float = 3,
         settings: Settings | None = None,
     ) -> None:
-        self.settings = settings
+        self.settings = settings or get_settings()
         self.base_url = base_url.rstrip("/")
         self.ws_base_url = ws_base_url.rstrip("/")
         self.timeout = timeout_seconds
 
     async def geocode(self, address: str) -> GeocodeResult:
-        try:
-            return await self._geocode(address)
-        except (httpx.HTTPError, ValueError, KeyError, TypeError, AttributeError) as exc:
-            # Network failure, HTTP error, WAF HTML page or unexpected JSON: answer a typed
-            # status so consultations can respond partially instead of failing.
-            logger.warning("USIG unavailable: %r", exc)
-            return self._result(
-                status="unavailable",
-                address=address,
-                message="El servicio de geocodificacion (USIG) no esta disponible en este momento.",
+        settings = self.settings
+        key = _normalize_key(address)
+        cached = usig_state.cached(key)
+        if cached is not None:
+            return GeocodeResult(
+                status=cached.status,
+                original_address=address,
+                hits=list(cached.hits),
+                message=cached.message,
+                provider_id=cached.provider_id,
+                provider_name=cached.provider_name,
+                retrieved_at=cached.retrieved_at,
             )
+        if usig_state.is_open:
+            return self._unavailable(address)
+        try:
+            result = await asyncio.wait_for(self._geocode(address), timeout=settings.geocoder_total_timeout_seconds)
+        except (TimeoutError, httpx.HTTPError, ValueError, KeyError, TypeError, AttributeError) as exc:
+            # Network failure, HTTP error, WAF HTML page, unexpected JSON or too slow: answer a
+            # typed status so consultations can respond partially instead of failing.
+            logger.warning("USIG unavailable: %r", exc)
+            usig_state.record(False, settings.geocoder_breaker_failures, settings.geocoder_breaker_cooldown_seconds)
+            return self._unavailable(address)
+        usig_state.record(True, settings.geocoder_breaker_failures, settings.geocoder_breaker_cooldown_seconds)
+        usig_state.store(key, result, settings.geocoder_cache_ttl_seconds, settings.geocoder_cache_size)
+        return result
+
+    def _unavailable(self, address: str) -> GeocodeResult:
+        return self._result(
+            status="unavailable",
+            address=address,
+            message="El servicio de geocodificacion (USIG) no esta disponible en este momento.",
+        )
 
     async def _geocode(self, address: str) -> GeocodeResult:
         url = f"{self.base_url}/normalizar/?direccion={quote(address)}&geocodificar=true"
-        async with shared_http_client(self.settings or get_settings()) as client:
+        async with shared_http_client(self.settings) as client:
             response = await client.get(url, timeout=self.timeout)
             response.raise_for_status()
             payload = response.json()

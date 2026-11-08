@@ -61,9 +61,16 @@ class Settings(BaseSettings):
         default="https://ws.usig.buenosaires.gob.ar",
         alias="GEOCODER_WS_BASE_URL",
     )
-    geocoder_timeout_seconds: int = Field(
-        default=10, alias="GEOCODER_TIMEOUT_SECONDS"
-    )
+    # B18: per request, and for the whole geocoding (normalizar + datos_utiles), so that a
+    # USIG outage gives a partial answer in under 5 s.
+    geocoder_timeout_seconds: float = Field(default=3, gt=0, alias="GEOCODER_TIMEOUT_SECONDS")
+    geocoder_total_timeout_seconds: float = Field(default=4.5, gt=0, alias="GEOCODER_TOTAL_TIMEOUT_SECONDS")
+    # Short in-memory cache of addresses already resolved (0 disables it).
+    geocoder_cache_ttl_seconds: int = Field(default=600, ge=0, alias="GEOCODER_CACHE_TTL_SECONDS")
+    geocoder_cache_size: int = Field(default=512, ge=1, alias="GEOCODER_CACHE_SIZE")
+    # After this many consecutive failures, stop calling USIG for the cooldown.
+    geocoder_breaker_failures: int = Field(default=3, ge=1, alias="GEOCODER_BREAKER_FAILURES")
+    geocoder_breaker_cooldown_seconds: int = Field(default=120, ge=1, alias="GEOCODER_BREAKER_COOLDOWN_SECONDS")
 
     epok_provider: str = Field(default="epok", alias="EPOK_PROVIDER")
     epok_base_url: str = Field(

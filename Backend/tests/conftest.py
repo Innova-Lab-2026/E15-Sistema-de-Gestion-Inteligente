@@ -99,3 +99,13 @@ def override_settings(app):
 
     yield _override
     app.dependency_overrides.pop(get_settings, None)
+
+
+@pytest.fixture(autouse=True)
+def _reset_usig_state():
+    """USIG cache and circuit breaker are per process (B18): start every test clean."""
+    from app.providers.geocoder import usig_state
+
+    usig_state.reset()
+    yield
+    usig_state.reset()
