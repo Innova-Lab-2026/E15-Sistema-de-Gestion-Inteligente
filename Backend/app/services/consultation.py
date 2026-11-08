@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.config import Settings
+from app.core.territory import normalize_commune, same_commune
 from app.models import ActivityCategory, MapLayer, Office, Requirement, Source
 from app.schemas.consultation import (
     ConsultationActivity,
@@ -136,7 +137,7 @@ class ConsultationService:
             loc = body.confirmed_location
             location = ConsultationLocation(
                 normalized_address=loc.normalized_address,
-                commune=loc.commune,
+                commune=normalize_commune(loc.commune),
                 neighborhood=loc.neighborhood,
                 city=loc.city,
                 latitude=loc.latitude,
@@ -368,11 +369,7 @@ class ConsultationService:
         )
         # commune filter: keep null (city-wide) or matching commune
         if commune:
-            req_rows = [
-                r
-                for r in req_rows
-                if r.commune is None or r.commune.lower() == commune.lower()
-            ]
+            req_rows = [r for r in req_rows if r.commune is None or same_commune(r.commune, commune)]
 
         offices = list(
             await self.db.scalars(
@@ -383,11 +380,8 @@ class ConsultationService:
         )
         offices = [o for o in offices if any(a.id == activity.id for a in o.activities)]
         if commune:
-            offices = [
-                o
-                for o in offices
-                if o.commune is None or o.commune.lower() == commune.lower()
-            ]
+            # Communes come as "Comuna 3" (USIG) or "3" (snapshot): compare the number.
+            offices = [o for o in offices if o.commune is None or same_commune(o.commune, commune)]
 
         layers = list(
             await self.db.scalars(

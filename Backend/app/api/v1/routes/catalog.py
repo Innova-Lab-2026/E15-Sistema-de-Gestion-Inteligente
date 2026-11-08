@@ -6,6 +6,7 @@ from sqlalchemy.orm import selectinload
 from app.db.session import get_db
 from app.models import ActivityCategory, Office, Source
 from app.schemas.catalog import ActivityOut, OfficeOut, SourceOut
+from app.core.territory import same_commune
 
 router = APIRouter(tags=["catalog"])
 
@@ -44,9 +45,7 @@ async def list_offices(
         activity_codes = [a.code for a in office.activities]
         if category and category not in activity_codes:
             continue
-        if commune and (
-            office.commune is None or office.commune.lower() != commune.lower()
-        ):
+        if commune and not same_commune(office.commune, commune):
             continue
         items.append(
             OfficeOut(

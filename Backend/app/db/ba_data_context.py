@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import json
-import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
+
+from app.core.territory import normalize_commune
 
 SNAPSHOT_PATH = Path(__file__).with_name("ba_data_snapshot.json")
 
@@ -16,16 +17,6 @@ def load_ba_data_snapshot() -> dict[str, Any]:
     if not SNAPSHOT_PATH.exists():
         return {"packages": [], "gastronomia": None}
     return json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
-
-
-def _normalize_comuna(value: str | None) -> str | None:
-    if not value:
-        return None
-    text = value.strip().lower()
-    m = re.search(r"(\d{1,2})", text)
-    if m:
-        return str(int(m.group(1)))
-    return text or None
 
 
 def gastronomy_context(
@@ -38,7 +29,7 @@ def gastronomy_context(
     if not gastro:
         return None
 
-    comuna_key = _normalize_comuna(commune)
+    comuna_key = normalize_commune(commune)
     barrio_key = (neighborhood or "").strip()
     by_comuna = gastro.get("by_comuna") or {}
     by_barrio = gastro.get("by_barrio") or {}

@@ -10,6 +10,7 @@ from urllib.parse import quote
 import httpx
 
 from app.core.config import Settings, get_settings
+from app.core.territory import normalize_commune
 from app.providers.http import shared_http_client
 
 logger = logging.getLogger(__name__)
@@ -24,7 +25,7 @@ class GeocodeHit:
     normalized_address: str
     latitude: float
     longitude: float
-    commune: str | None = None
+    commune: str | None = None  # "1".."15" (normalize_commune)
     neighborhood: str | None = None
     city: str = "Ciudad Autonoma de Buenos Aires"
     precision: str = "rooftop"
@@ -74,8 +75,8 @@ class MockGeocoder(GeocoderClient):
                         normalized_address="Avenida Corrientes 2500, CABA",
                         latitude=-34.604,
                         longitude=-58.413,
-                        commune="Comuna 5",
-                        neighborhood="Almagro",
+                        commune="3",
+                        neighborhood="Balvanera",
                         precision="rooftop",
                     )
                 ],
@@ -90,8 +91,8 @@ class MockGeocoder(GeocoderClient):
                         normalized_address="Avenida Corrientes 2500, CABA",
                         latitude=-34.604,
                         longitude=-58.413,
-                        commune="Comuna 5",
-                        neighborhood="Almagro",
+                        commune="3",
+                        neighborhood="Balvanera",
                         precision="rooftop",
                     )
                 ],
@@ -106,7 +107,7 @@ class MockGeocoder(GeocoderClient):
                         normalized_address="DEL LIBERTADOR AV. 1954, CABA",
                         latitude=-34.582239,
                         longitude=-58.401159,
-                        commune="Comuna 14",
+                        commune="14",
                         neighborhood="Palermo",
                         precision="rooftop",
                     )
@@ -122,7 +123,7 @@ class MockGeocoder(GeocoderClient):
                         normalized_address="Palermo, CABA (centro aproximado)",
                         latitude=-34.5889,
                         longitude=-58.4306,
-                        commune="Comuna 14",
+                        commune="14",
                         neighborhood="Palermo",
                         precision="neighborhood",
                     ),
@@ -130,7 +131,7 @@ class MockGeocoder(GeocoderClient):
                         normalized_address="Av. Santa Fe y Coronel Diaz, Palermo, CABA",
                         latitude=-34.5865,
                         longitude=-58.4095,
-                        commune="Comuna 14",
+                        commune="14",
                         neighborhood="Palermo",
                         precision="intersection",
                     ),
@@ -292,7 +293,7 @@ class UsigGeocoder(GeocoderClient):
             or fallback_address,
             latitude=latitude,
             longitude=longitude,
-            commune=commune,
+            commune=normalize_commune(commune),
             neighborhood=neighborhood,
             city="Ciudad Autonoma de Buenos Aires",
             precision="rooftop" if item.get("altura") else "street",

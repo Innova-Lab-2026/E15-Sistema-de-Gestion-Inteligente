@@ -93,7 +93,7 @@ Contratos iniciales viven en `app/schemas/` espejando las secciones 5, 7, 9–11
 
 **Objetivo:** dirección → coords → comuna/barrio (o ambigüedad).
 
-- `GeocoderClient` (USIG) + `MockGeocoder` (fixture `Av. Corrientes 2500` → Almagro / Comuna 5).
+- `GeocoderClient` (USIG) + `MockGeocoder` (fixture `Av. Corrientes 2500` → Balvanera / comuna `"3"`).
 - Servicio: normalizar, validar precisión, detectar múltiples matches / fuera de CABA.
 - Endpoint: `POST /api/v1/locations/geocode`
 
