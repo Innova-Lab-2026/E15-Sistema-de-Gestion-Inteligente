@@ -24,6 +24,11 @@ class LocationInterpretation(BaseModel):
     raw_text: Optional[str] = None
     address: Optional[str] = None
     confidence: float = Field(default=0.0, ge=0.0, le=1.0)
+    neighborhood_id: Optional[str] = Field(
+        default=None, description="barrio_id de data/barrios.csv si la consulta nombra un barrio", examples=["belgrano"]
+    )
+    neighborhood: Optional[str] = Field(default=None, description="Nombre oficial del barrio", examples=["Belgrano"])
+    commune: Optional[str] = Field(default=None, description='Comuna del barrio, "1" a "15"', examples=["13"])
 
 
 InterpretationStatus = Literal[

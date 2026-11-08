@@ -9,6 +9,7 @@ from sqlalchemy.orm import selectinload
 
 from app.core.config import Settings
 from app.core.territory import normalize_commune, same_commune
+from app.db.data_files import barrio, barrio_por_variante
 from app.models import ActivityCategory, MapLayer, Office, Requirement, Source
 from app.schemas.consultation import (
     ConsultationActivity,
@@ -61,6 +62,7 @@ class ConsultationService:
         activity_code = body.activity_code
         address = body.address
         original_query = body.query
+        neighborhood_id = body.neighborhood_id
         confidence = 1.0
         activity_raw: str | None = None
 
@@ -72,7 +74,16 @@ class ConsultationService:
             self._llm_fallback_reason = interpreted.fallback_reason
 
             original_query = interpreted.original_query
-            if interpreted.status in {"needs_clarification", "activity_unknown", "out_of_scope"}:
+            # Activity + barrio without street: answer partially by barrio (B07).
+            neighborhood_only = bool(
+                interpreted.activity.normalized_category
+                and not (interpreted.location.address or interpreted.location.raw_text)
+                and interpreted.location.neighborhood_id
+            )
+            if (
+                interpreted.status in {"needs_clarification", "activity_unknown", "out_of_scope"}
+                and not neighborhood_only
+            ):
                 return ConsultationResponse(
                     status=(
                         "activity_unknown"
@@ -97,6 +108,7 @@ class ConsultationService:
 
             activity_code = interpreted.activity.normalized_category
             address = interpreted.location.address or interpreted.location.raw_text
+            neighborhood_id = neighborhood_id or interpreted.location.neighborhood_id
             confidence = interpreted.activity.confidence
             activity_raw = interpreted.activity.raw_text
 
@@ -133,6 +145,7 @@ class ConsultationService:
         )
 
         # Location resolution
+        by_neighborhood = barrio(neighborhood_id) if not address else None
         if body.confirmed_location is not None:
             loc = body.confirmed_location
             location = ConsultationLocation(
@@ -144,6 +157,15 @@ class ConsultationService:
                 longitude=loc.longitude,
                 precision=loc.precision,
                 status="confirmed",
+            )
+        elif by_neighborhood is not None:
+            location = ConsultationLocation(
+                neighborhood=by_neighborhood.nombre,
+                neighborhood_id=by_neighborhood.id,
+                commune=str(by_neighborhood.comuna),
+                city="Ciudad Autonoma de Buenos Aires",
+                precision="neighborhood",
+                status="neighborhood",
             )
         else:
             if not address:
@@ -210,6 +232,7 @@ class ConsultationService:
                     normalized_address=geo.normalized_address,
                     commune=geo.commune,
                     neighborhood=geo.neighborhood,
+                    neighborhood_id=barrio_por_variante(geo.neighborhood),
                     city=geo.city,
                     latitude=geo.latitude,
                     longitude=geo.longitude,
@@ -230,9 +253,18 @@ class ConsultationService:
         zoning_out: ZoningOut | None = None
         missing: list[str] = []
         warnings: list[str] = []
+        reason: str | None = None
+        message: str | None = None
         if location.status == "unavailable":
             missing.append("location")
             warnings.append("geocoder_unavailable")
+        if location.status == "neighborhood":
+            missing.append("address")
+            reason = "location_neighborhood_only"
+            message = (
+                f"Con el barrio {location.neighborhood} te mostramos los tramites y la sede de la "
+                f"Comuna {location.commune}. Para revisar la zonificacion indica calle y altura."
+            )
 
         if location.latitude is not None and location.longitude is not None:
             zoning_result = await get_epok_client(self.settings).lookup_zoning(
@@ -312,8 +344,9 @@ class ConsultationService:
 
         summary = (
             f"Orientacion para {activity.name} en "
-            f"{location.normalized_address or 'la ubicacion consultada'} "
-            f"({location.neighborhood or 'barrio N/D'}, {location.commune or 'comuna N/D'})."
+            f"{location.normalized_address or (f'el barrio {location.neighborhood}' if location.status == 'neighborhood' else 'la ubicacion consultada')} "
+            f"({location.neighborhood or 'barrio N/D'}, "
+            f"{f'Comuna {location.commune}' if location.commune else 'comuna N/D'})."
             f"{zoning_bit} "
             f"Se recuperaron {len(payload['requirements'])} requisito(s) y "
             f"{len(payload['physical_offices']) + len(payload['online_procedures'])} canal(es) "
@@ -340,6 +373,8 @@ class ConsultationService:
                 missing=missing,
                 warnings=warnings,
             ),
+            reason=reason,
+            message=message,
         )
 
     async def _get_activity(self, code: str) -> ActivityCategory | None:
@@ -483,7 +518,19 @@ class ConsultationService:
             )
 
         territorial: list[TerritorialItem] = []
-        if commune or latitude is not None:
+        if commune and latitude is None and neighborhood:
+            territorial.append(
+                TerritorialItem(
+                    title="Contexto territorial de la consulta",
+                    description=(
+                        f"Barrio: {neighborhood}. Comuna: {commune}. "
+                        "Ubicacion aproximada por barrio, sin calle ni altura: "
+                        "no se puede revisar la zonificacion del lote."
+                    ),
+                    source_ids=["source-data-barrios"],
+                )
+            )
+        elif commune or latitude is not None:
             territorial.append(
                 TerritorialItem(
                     title="Contexto territorial de la consulta",

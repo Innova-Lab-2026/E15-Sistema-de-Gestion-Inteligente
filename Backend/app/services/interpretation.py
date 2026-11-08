@@ -9,10 +9,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings
 from app.db.catalog_data import activity_synonyms
+from app.db.data_files import barrio, barrio_por_variante
 from app.models import ActivityCategory
 from app.providers.llm import LLMClient, LLMUnavailableError
-from app.providers.address_parser import normalize_address
+from app.providers.address_parser import extract_address, normalize_address
 from app.providers.mock_interpreter import mock_interpret
+from app.providers.neighborhood_parser import NeighborhoodMatch, find_neighborhood
 from app.schemas.interpretation import (
     ActivityInterpretation,
     InterpretationResponse,
@@ -179,8 +181,20 @@ class InterpretationService:
                     f"Actividades soportadas: {', '.join(sorted(catalog.keys()))}."
                 )
 
+        neighborhood = self._neighborhood(query)
+        if address and barrio_por_variante(address):
+            # The "address" is only a barrio name ("Palermo"): keep it as the neighborhood.
+            neighborhood = neighborhood or self._neighborhood_from_id(barrio_por_variante(address))
+            address = loc_text = None
+
         if not address and not loc_text:
-            if "location" not in missing:
+            if neighborhood:
+                # Barrio without street and number: enough for procedures and the communal
+                # office; the address is still needed for zoning.
+                missing = [m for m in missing if m != "location"]
+                if "address" not in missing:
+                    missing.append("address")
+            elif "location" not in missing:
                 missing.append("location")
             if status == "ready_for_geocoding":
                 status = "needs_clarification"
@@ -211,6 +225,9 @@ class InterpretationService:
                 raw_text=loc_text,
                 address=address,
                 confidence=min(max(conf_loc, 0.0), 1.0),
+                neighborhood_id=neighborhood.barrio_id if neighborhood else None,
+                neighborhood=neighborhood.name if neighborhood else None,
+                commune=str(neighborhood.commune) if neighborhood else None,
             ),
             jurisdiction=str(raw.get("jurisdiction") or "CABA"),
             missing_fields=missing,
@@ -218,4 +235,19 @@ class InterpretationService:
             status=status,  # type: ignore[arg-type]
             provider=provider,
             original_query=query,
+        )
+
+    @staticmethod
+    def _neighborhood(query: str) -> NeighborhoodMatch | None:
+        """Barrio named in the query itself (same rules with or without LLM), outside the address."""
+        parsed = extract_address(query)
+        return find_neighborhood(query, skip=[(parsed.start, parsed.end)] if parsed else None)
+
+    @staticmethod
+    def _neighborhood_from_id(barrio_id: str | None) -> NeighborhoodMatch | None:
+        found = barrio(barrio_id)
+        if found is None:
+            return None
+        return NeighborhoodMatch(
+            barrio_id=found.id, name=found.nombre, commune=found.comuna, raw_text=found.nombre, start=0, end=0
         )

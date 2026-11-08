@@ -39,17 +39,23 @@ class ConsultationRequest(BaseModel):
         max_length=MAX_QUERY_LENGTH,
         examples=["Quiero abrir una cafeteria en Av. Corrientes 2500"],
     )
+    neighborhood_id: Optional[str] = Field(
+        default=None,
+        max_length=MAX_CODE_LENGTH,
+        description="barrio_id (data/barrios.csv). Con activity_code y sin address: respuesta partial por barrio",
+        examples=["belgrano"],
+    )
     conversation_id: Optional[str] = Field(default=None, max_length=MAX_CODE_LENGTH)
     confirmed_location: Optional[ConfirmedLocation] = None
 
     @model_validator(mode="after")
     def require_inputs(self) -> "ConsultationRequest":
-        has_deterministic = bool(self.activity_code and self.address)
+        has_deterministic = bool(self.activity_code and (self.address or self.neighborhood_id))
         has_query = bool(self.query and self.query.strip())
         has_confirmed = self.confirmed_location is not None and bool(self.activity_code)
         if not (has_deterministic or has_query or has_confirmed):
             raise ValueError(
-                "Indica activity_code + address, o query, "
+                "Indica activity_code + address (o neighborhood_id), o query, "
                 "o activity_code + confirmed_location."
             )
         return self
@@ -72,12 +78,14 @@ class ConsultationLocation(BaseModel):
     normalized_address: Optional[str] = None
     commune: Optional[str] = None
     neighborhood: Optional[str] = None
+    neighborhood_id: Optional[str] = Field(default=None, description="barrio_id de data/barrios.csv")
     city: Optional[str] = None
     latitude: Optional[float] = None
     longitude: Optional[float] = None
     precision: Optional[str] = None
+    # "neighborhood": only the barrio is known (no street and number): no coordinates, no zoning.
     status: Literal[
-        "confirmed", "ambiguous", "out_of_scope", "not_found", "pending", "unavailable"
+        "confirmed", "ambiguous", "out_of_scope", "not_found", "pending", "unavailable", "neighborhood"
     ] = "pending"
     candidates: list[LocationCandidate] = Field(default_factory=list)
     message: Optional[str] = None
@@ -184,4 +192,5 @@ class ConsultationResponse(BaseModel):
     sources: list[SourceItem] = Field(default_factory=list)
     zoning: Optional[ZoningOut] = None
     data_status: DataStatus = Field(default_factory=DataStatus)
+    reason: Optional[str] = Field(default=None, examples=["location_neighborhood_only"])
     message: Optional[str] = None
