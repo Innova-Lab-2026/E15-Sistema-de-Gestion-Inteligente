@@ -135,7 +135,7 @@ def test_source_down_gives_a_clearly_informed_partial_answer(client, override_se
 
 
 def test_ambiguous_address_requires_confirmation_and_then_continues(client):
-    blocked = _consult(client, {"activity_code": "rubro_102", "address": "Palermo"})
+    blocked = _consult(client, {"activity_code": "rubro_102", "address": "San Martin 100"})
     assert blocked["status"] == "needs_location_confirmation"
     assert blocked["reason"] == "location_ambiguous"
     assert not blocked["requirements"] and blocked["zoning"] is None

@@ -21,7 +21,7 @@ CONSULTATION_CASES = [
     ({"query": "quiero abrir una cafeteria"}, "needs_clarification", "location_missing"),
     ({"query": "quiero abrir una cafeteria en Palermo"}, "partial", "location_neighborhood_only"),
     ({"activity_code": "rubro_102", "address": "Calle Inexistente 123"}, "location_not_found", "location_not_found"),
-    ({"activity_code": "rubro_102", "address": "Palermo"}, "needs_location_confirmation", "location_ambiguous"),
+    ({"activity_code": "rubro_102", "address": "San Martin 100"}, "needs_location_confirmation", "location_ambiguous"),
     ({"activity_code": "rubro_102", "address": "Mar del Plata"}, "out_of_scope", "location_outside_caba"),
     ({"query": "cómo saco el DNI"}, "out_of_scope", "topic_out_of_scope"),
 ]

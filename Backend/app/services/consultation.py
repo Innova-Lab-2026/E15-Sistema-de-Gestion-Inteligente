@@ -36,6 +36,7 @@ from app.schemas.consultation import (
     StepItem,
     TerritorialItem,
 )
+from app.providers.address_parser import extract_address, normalize_address
 from app.schemas.interpretation import InterpretationResponse
 from app.services.interpretation import INTERPRETATION_PROMPT_VERSION, InterpretationService
 from app.services.messages import message_for
@@ -105,6 +106,15 @@ class ConsultationService:
             await self.db.rollback()
             logger.warning("Could not store consultation %s: %r", response.consultation_id, exc)
 
+    @staticmethod
+    def _direct_address(address: str) -> tuple[str | None, bool, str | None]:
+        """(address for USIG, approximate, barrio_id if the "address" is only a barrio)."""
+        parsed = extract_address(address)
+        typed_barrio = barrio_por_variante(address)
+        if typed_barrio and parsed is None:
+            return None, False, typed_barrio
+        return normalize_address(address), bool(parsed and parsed.approximate), None
+
     async def _build_response(self, body: ConsultationRequest) -> ConsultationResponse:
         activity_code = body.activity_code
         address = body.address
@@ -162,6 +172,12 @@ class ConsultationService:
             approximate = interpreted.location.approximate
             confidence = interpreted.activity.confidence
             activity_raw = interpreted.activity.raw_text
+
+        if interpreted is None and address:
+            # Direct call: the person typed the address in a field. Same parsing as the
+            # interpreter, without the LLM: "Monroe al 2 mil" -> "Monroe 2000", "Belgrano" -> barrio.
+            address, approximate, typed_barrio = self._direct_address(address)
+            neighborhood_id = neighborhood_id or typed_barrio
 
         if not activity_code:
             return ConsultationResponse(

@@ -104,3 +104,29 @@ def test_two_heights_are_approximate(client):
 
     body = client.post("/api/v1/consultations", json={"query": query}).json()
     assert "address_approximate" in body["data_status"]["warnings"]
+
+
+@pytest.mark.parametrize(
+    ("address", "approximate"),
+    [
+        ("Corrientes al 2 mil 500", False),
+        ("Corrientes dos mil quinientos", False),
+        ("Corrientes 2500 o 2600", True),
+        ("Av. Corrientes 2500", False),
+    ],
+)
+def test_direct_address_is_parsed_without_llm(client, address, approximate):
+    """The address typed in a field (second call) gets the same parsing as the query, with no LLM."""
+    body = client.post("/api/v1/consultations", json={"activity_code": "rubro_245", "address": address}).json()
+
+    assert body["status"] == "complete"
+    assert body["location"]["normalized_address"] == "Avenida Corrientes 2500, CABA"
+    assert ("address_approximate" in body["data_status"]["warnings"]) is approximate
+
+
+def test_direct_address_that_is_only_a_barrio(client):
+    body = client.post("/api/v1/consultations", json={"activity_code": "rubro_102", "address": "Belgrano"}).json()
+
+    assert body["status"] == "partial"
+    assert body["reason"] == "location_neighborhood_only"
+    assert body["location"]["neighborhood_id"] == "belgrano"

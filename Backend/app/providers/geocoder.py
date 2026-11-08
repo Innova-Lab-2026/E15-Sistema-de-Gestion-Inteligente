@@ -175,6 +175,32 @@ class MockGeocoder(GeocoderClient):
                 provider_id="geocoder-mock",
                 provider_name="Mock geocoder CABA",
             ),
+            # "San Martín" es una avenida (Villa del Parque) y una calle (San Nicolás).
+            "san martin 100": GeocodeResult(
+                status="ambiguous",
+                original_address="San Martin 100",
+                hits=[
+                    GeocodeHit(
+                        normalized_address="SAN MARTIN 100, CABA",
+                        latitude=-34.6035,
+                        longitude=-58.3728,
+                        commune="1",
+                        neighborhood="San Nicolas",
+                        precision="rooftop",
+                    ),
+                    GeocodeHit(
+                        normalized_address="SAN MARTIN AV. 100, CABA",
+                        latitude=-34.6074,
+                        longitude=-58.4381,
+                        commune="6",
+                        neighborhood="Caballito",
+                        precision="rooftop",
+                    ),
+                ],
+                message="Hay varias coincidencias. Selecciona la ubicacion correcta.",
+                provider_id="geocoder-mock",
+                provider_name="Mock geocoder CABA",
+            ),
             "palermo": GeocodeResult(
                 status="ambiguous",
                 original_address="Palermo",

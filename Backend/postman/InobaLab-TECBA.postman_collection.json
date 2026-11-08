@@ -1119,7 +1119,7 @@
           "response": []
         },
         {
-          "name": "location_ambiguous — Palermo",
+          "name": "location_ambiguous — San Martin 100",
           "event": [
             {
               "listen": "test",
@@ -1148,10 +1148,10 @@
               }
             ],
             "url": "{{baseUrl}}/api/v1/consultations",
-            "description": "Con el geocodificador simulado 'Palermo' es ambiguo; con USIG suele dar location_not_found.",
+            "description": "Con el geocodificador simulado 'San Martin 100' es ambiguo (avenida y calle); con USIG puede dar location_ambiguous o location_not_found. 'Palermo' solo en address se toma como barrio.",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"Palermo\"\n}"
+              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"San Martin 100\"\n}"
             }
           },
           "response": []
@@ -1419,10 +1419,10 @@
               }
             ],
             "url": "{{baseUrl}}/api/v1/consultations",
-            "description": "Con el geocodificador simulado 'Palermo' es ambiguo: pide confirmar y no da requisitos.",
+            "description": "Con el geocodificador simulado 'San Martin 100' es ambiguo (avenida y calle): pide confirmar y no da requisitos.",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"Palermo\"\n}"
+              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"San Martin 100\"\n}"
             }
           },
           "response": []
