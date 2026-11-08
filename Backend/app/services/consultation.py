@@ -26,6 +26,7 @@ from app.schemas.consultation import (
     StepItem,
     TerritorialItem,
 )
+from app.schemas.interpretation import InterpretationResponse
 from app.services.interpretation import InterpretationService
 from app.services.location import LocationService
 from app.services.zoning import ZoningService
@@ -66,6 +67,7 @@ class ConsultationService:
         approximate = False
         confidence = 1.0
         activity_raw: str | None = None
+        interpreted: InterpretationResponse | None = None
 
         # Natural language path
         if body.query and (not activity_code or not address):
@@ -93,18 +95,15 @@ class ConsultationService:
                         if interpreted.status == "out_of_scope"
                         else "needs_clarification"
                     ),
-                    interpretation=None,
-                    location=ConsultationLocation(
-                        status="pending",
-                        message=interpreted.clarification_question,
-                    ),
-                    summary=interpreted.clarification_question
-                    or "Se necesita aclaracion para continuar.",
+                    # Partial interpretation: the Frontend keeps what was already understood.
+                    interpretation=self._partial_interpretation(interpreted),
+                    location=ConsultationLocation(status="pending"),
+                    summary="Se necesita aclaracion para continuar.",
                     data_status=DataStatus(
                         overall="blocked",
                         missing=list(interpreted.missing_fields),
                     ),
-                    message=interpreted.clarification_question,
+                    reason=interpreted.reason,
                 )
 
             activity_code = interpreted.activity.normalized_category
@@ -117,21 +116,22 @@ class ConsultationService:
         if not activity_code:
             return ConsultationResponse(
                 status="activity_unknown",
+                interpretation=self._partial_interpretation(interpreted),
                 location=ConsultationLocation(status="pending"),
                 summary="No se indico una actividad del catalogo.",
                 data_status=DataStatus(overall="blocked", missing=["activity"]),
+                reason="activity_missing",
             )
 
         activity = await self._get_activity(activity_code)
         if activity is None:
             return ConsultationResponse(
                 status="activity_unknown",
+                interpretation=self._partial_interpretation(interpreted),
                 location=ConsultationLocation(status="pending"),
-                summary=(
-                    f'La actividad "{activity_code}" no pertenece al catalogo del MVP.'
-                ),
+                summary="La actividad indicada no pertenece al catalogo.",
                 data_status=DataStatus(overall="blocked", missing=["activity"]),
-                message="activity_out_of_scope",
+                reason="activity_not_in_catalog",
             )
 
         interpretation = ConsultationInterpretation(
@@ -142,6 +142,7 @@ class ConsultationService:
                 confidence=confidence,
                 raw_text=activity_raw,
             ),
+            location=interpreted.location if interpreted else None,
             original_query=original_query
             or f"Consulta deterministica: {activity.code} en {address or 'ubicacion confirmada'}",
         )
@@ -177,6 +178,7 @@ class ConsultationService:
                     location=ConsultationLocation(status="pending"),
                     summary="Falta una direccion para geocodificar.",
                     data_status=DataStatus(overall="blocked", missing=["location"]),
+                    reason="location_missing",
                 )
             geo = await self.location_service.geocode(address)
             if geo.status == "ambiguous":
@@ -197,6 +199,7 @@ class ConsultationService:
                         missing=["confirmed_location"],
                         warnings=["ambiguous_address"],
                     ),
+                    reason="location_ambiguous",
                     message=geo.message,
                 )
             if geo.status == "out_of_scope":
@@ -212,6 +215,7 @@ class ConsultationService:
                     data_status=DataStatus(
                         overall="blocked", missing=["location_in_caba"]
                     ),
+                    reason="location_outside_caba",
                     message=geo.message,
                 )
             if geo.status == "not_found":
@@ -224,6 +228,7 @@ class ConsultationService:
                     ),
                     summary=geo.message or "No se pudo geocodificar la direccion.",
                     data_status=DataStatus(overall="blocked", missing=["location"]),
+                    reason="location_not_found",
                     message=geo.message,
                 )
             if geo.status == "unavailable":
@@ -380,6 +385,23 @@ class ConsultationService:
             ),
             reason=reason,
             message=message,
+        )
+
+    @staticmethod
+    def _partial_interpretation(interpreted: InterpretationResponse | None) -> ConsultationInterpretation | None:
+        if interpreted is None:
+            return None
+        return ConsultationInterpretation(
+            intent=interpreted.intent,
+            activity=ConsultationActivity(
+                normalized_category=interpreted.activity.normalized_category,
+                display_name=interpreted.activity.display_name,
+                confidence=interpreted.activity.confidence,
+                raw_text=interpreted.activity.raw_text,
+            ),
+            location=interpreted.location,
+            missing_fields=list(interpreted.missing_fields),
+            original_query=interpreted.original_query,
         )
 
     async def _get_activity(self, code: str) -> ActivityCategory | None:

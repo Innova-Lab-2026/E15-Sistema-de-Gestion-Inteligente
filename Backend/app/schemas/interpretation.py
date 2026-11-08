@@ -34,6 +34,21 @@ class LocationInterpretation(BaseModel):
     )
 
 
+# Why a consultation cannot go on (fixed values: the Frontend picks its text or options from it).
+Reason = Literal[
+    "activity_missing",
+    "activity_not_in_catalog",
+    "location_missing",
+    "location_neighborhood_only",
+    "location_not_found",
+    "location_ambiguous",
+    "location_outside_caba",
+    "topic_out_of_scope",
+]
+# activity: no rubro · location: neither address nor barrio · address: barrio without street and number
+MissingField = Literal["activity", "location", "address"]
+MISSING_FIELDS: frozenset[str] = frozenset(MissingField.__args__)
+
 InterpretationStatus = Literal[
     "ready_for_geocoding",
     "needs_clarification",
@@ -47,9 +62,9 @@ class InterpretationResponse(BaseModel):
     activity: ActivityInterpretation
     location: LocationInterpretation
     jurisdiction: str = "CABA"
-    missing_fields: list[str] = Field(default_factory=list)
-    clarification_question: Optional[str] = None
+    missing_fields: list[MissingField] = Field(default_factory=list)
     status: InterpretationStatus
+    reason: Optional[Reason] = Field(default=None, description="Por qué falta algo; null si está lista")
     provider: str = Field(description="mock | llm")
     fallback_reason: Optional[Literal["llm_unavailable", "llm_rate_limited", "llm_invalid_output"]] = Field(
         default=None,

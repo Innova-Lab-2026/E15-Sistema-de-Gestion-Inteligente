@@ -11,6 +11,7 @@ from app.schemas.limits import (
     CabaLatitude,
     CabaLongitude,
 )
+from app.schemas.interpretation import LocationInterpretation, MissingField, Reason
 from app.schemas.location import LocationCandidate
 from app.schemas.zoning import ZoningOut
 
@@ -62,15 +63,20 @@ class ConsultationRequest(BaseModel):
 
 
 class ConsultationActivity(BaseModel):
-    normalized_category: str
-    display_name: str
+    # null when the activity is still missing: the interpretation is returned partial (B09).
+    normalized_category: Optional[str] = None
+    display_name: Optional[str] = None
     confidence: float = 1.0
     raw_text: Optional[str] = None
 
 
 class ConsultationInterpretation(BaseModel):
+    """What was understood so far. Always present, also when the consultation is blocked."""
+
     intent: Optional[str] = "start_commercial_activity"
-    activity: ConsultationActivity
+    activity: ConsultationActivity = Field(default_factory=ConsultationActivity)
+    location: Optional[LocationInterpretation] = None
+    missing_fields: list[MissingField] = Field(default_factory=list)
     original_query: Optional[str] = None
 
 
@@ -192,5 +198,9 @@ class ConsultationResponse(BaseModel):
     sources: list[SourceItem] = Field(default_factory=list)
     zoning: Optional[ZoningOut] = None
     data_status: DataStatus = Field(default_factory=DataStatus)
-    reason: Optional[str] = Field(default=None, examples=["location_neighborhood_only"])
+    reason: Optional[Reason] = Field(
+        default=None,
+        description="Por qué la consulta no está completa (valores fijos); null si no falta nada",
+        examples=["location_neighborhood_only"],
+    )
     message: Optional[str] = None

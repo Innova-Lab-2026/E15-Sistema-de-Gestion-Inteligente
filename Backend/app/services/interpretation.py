@@ -9,13 +9,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings
 from app.db.catalog_data import activity_synonyms
-from app.db.data_files import barrio, barrio_por_variante
+from app.db.data_files import barrio, barrio_por_variante, fold
 from app.models import ActivityCategory
 from app.providers.llm import LLMClient, LLMUnavailableError
 from app.providers.address_parser import extract_address, normalize_address
 from app.providers.mock_interpreter import mock_interpret
 from app.providers.neighborhood_parser import NeighborhoodMatch, find_neighborhood
 from app.schemas.interpretation import (
+    MISSING_FIELDS,
     ActivityInterpretation,
     InterpretationResponse,
     LocationInterpretation,
@@ -24,6 +25,22 @@ from app.schemas.interpretation import (
 logger = logging.getLogger(__name__)
 
 INTERPRETATION_PROMPT_VERSION = "interpret-v1"
+
+# Palabras que muestran que la consulta es sobre abrir o habilitar una actividad. Sin ninguna
+# de ellas, sin rubro y sin dirección, la consulta queda fuera de tema (topic_out_of_scope).
+COMMERCIAL_INTENT_WORDS = {
+    "abrir", "abro", "poner", "pongo", "montar", "monto", "habilitar", "habilito", "habilitacion",
+    "instalar", "emprender", "emprendimiento", "negocio", "local", "comercio", "comercial",
+    "vender", "vendo", "venta", "tienda", "rubro", "actividad", "empresa", "fabrica",
+    "taller", "oficina", "inaugurar", "alquilar", "arrancar",
+}
+
+
+def literal_in_query(text: str | None, query: str) -> str | None:
+    """`text` if it appears in the query (ignoring case and accents); None if it was paraphrased."""
+    if not text or not text.strip():
+        return None
+    return text.strip() if fold(text) and fold(text) in fold(query) else None
 
 SYSTEM_PROMPT = """Sos un extractor de consultas ciudadanas para CABA (Buenos Aires).
 Debes devolver SOLO un JSON valido (sin markdown) con este esquema exacto:
@@ -138,33 +155,38 @@ class InterpretationService:
         catalog: dict[str, str],
         provider: str,
     ) -> InterpretationResponse:
+        """Validate a raw interpretation (LLM or rules) into the fixed contract.
+
+        Nothing the LLM writes reaches the response: codes outside the catalog are dropped,
+        `raw_text` must appear in the query and `clarification_question` only goes to the logs.
+        """
         activity_raw = (raw.get("activity") or {}) if isinstance(raw.get("activity"), dict) else {}
         location_raw = (raw.get("location") or {}) if isinstance(raw.get("location"), dict) else {}
 
         code = activity_raw.get("normalized_category")
-        raw_text = activity_raw.get("raw_text")
+        raw_text = literal_in_query(activity_raw.get("raw_text"), query)
         conf_act = float(activity_raw.get("confidence") or 0.0)
         loc_text = location_raw.get("raw_text") or location_raw.get("address")
         # El LLM puede devolver la altura en palabras ("Monroe dos mil quinientos"): USIG necesita cifras.
         address = normalize_address(location_raw.get("address") or location_raw.get("raw_text"))
         conf_loc = float(location_raw.get("confidence") or 0.0)
 
-        missing = list(raw.get("missing_fields") or [])
+        missing = [m for m in (raw.get("missing_fields") or []) if m in MISSING_FIELDS]
         status = raw.get("status") or "needs_clarification"
-        question = raw.get("clarification_question")
         intent = raw.get("intent")
         display_name = None
+        reason: str | None = None
+        if provider == "llm" and raw.get("clarification_question"):
+            logger.info("LLM clarification_question (not exposed): %r", raw.get("clarification_question"))
+        if activity_raw.get("raw_text") and raw_text is None:
+            logger.info("Dropped activity.raw_text not present in the query: %r", activity_raw.get("raw_text"))
 
         if code and code not in catalog:
             # Model invented a category — reject
+            logger.info("Dropped activity code outside the catalog: %r", code)
             code = None
-            display_name = None
-            status = "out_of_scope"
-            question = (
-                "La actividad detectada no pertenece al catalogo del MVP "
-                f"({', '.join(sorted(catalog.keys()))}). "
-                "Reformula la consulta con una actividad soportada."
-            )
+            status = "activity_unknown"
+            reason = "activity_not_in_catalog"
             if "activity" not in missing:
                 missing.append("activity")
         elif code:
@@ -175,11 +197,7 @@ class InterpretationService:
                 missing.append("activity")
             if status == "ready_for_geocoding":
                 status = "activity_unknown"
-            if not question:
-                question = (
-                    "No pude clasificar la actividad en el catalogo del MVP. "
-                    f"Actividades soportadas: {', '.join(sorted(catalog.keys()))}."
-                )
+            reason = "activity_not_in_catalog" if raw_text else "activity_missing"
 
         parsed_query = extract_address(query)
         neighborhood = find_neighborhood(
@@ -201,10 +219,6 @@ class InterpretationService:
                 missing.append("location")
             if status == "ready_for_geocoding":
                 status = "needs_clarification"
-            if not question:
-                question = (
-                    "Falta una direccion con calle y altura en CABA para continuar."
-                )
         else:
             address = address or loc_text
             loc_text = loc_text or address
@@ -212,9 +226,20 @@ class InterpretationService:
 
         if code and address and status not in {"out_of_scope", "activity_unknown"}:
             status = "ready_for_geocoding"
-            missing = [m for m in missing if m not in {"activity", "location"}]
-            question = None
+            missing = [m for m in missing if m not in {"activity", "location", "address"}]
             intent = intent or "start_commercial_activity"
+
+        if not code and not address and not self._in_scope(query, intent):
+            # Not about opening an activity ("cómo saco el DNI", "qué clima hace").
+            status = "out_of_scope"
+            reason = "topic_out_of_scope"
+        elif code and status != "ready_for_geocoding":
+            if not address and not loc_text:
+                reason = "location_neighborhood_only" if neighborhood else "location_missing"
+            elif status == "out_of_scope":
+                reason = "topic_out_of_scope"
+            else:
+                reason = "activity_not_in_catalog"
 
         return InterpretationResponse(
             intent=intent,
@@ -237,11 +262,18 @@ class InterpretationService:
             ),
             jurisdiction=str(raw.get("jurisdiction") or "CABA"),
             missing_fields=missing,
-            clarification_question=question,
             status=status,  # type: ignore[arg-type]
+            reason=reason,  # type: ignore[arg-type]
             provider=provider,
             original_query=query,
         )
+
+    @staticmethod
+    def _in_scope(query: str, intent: str | None) -> bool:
+        if intent == "start_commercial_activity":
+            return True
+        words = set(fold(query).split())
+        return bool(words & COMMERCIAL_INTENT_WORDS)
 
     @staticmethod
     def _neighborhood_from_id(barrio_id: str | None) -> NeighborhoodMatch | None:
