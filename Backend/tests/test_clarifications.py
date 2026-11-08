@@ -109,14 +109,28 @@ def test_no_llm_text_in_responses(client, llm, path):
 def test_llm_code_outside_catalog_is_activity_not_in_catalog(client, llm):
     llm.mock(
         return_value=_llm_answer(
+            activity={"raw_text": "tienda de regalos", "normalized_category": "rubro_inventado", "confidence": 0.9},
+            location={"raw_text": "Florida 500", "address": "Florida 500", "confidence": 0.9},
+            status="ready_for_geocoding",
+        )
+    )
+    data = client.post("/api/v1/interpretations", json={"query": "quiero abrir una tienda de regalos en Florida 500"}).json()
+    assert data["provider"] == "llm"
+    assert data["activity"]["normalized_category"] is None
+    assert data["activity"]["raw_text"] == "tienda de regalos"
+    assert data["reason"] == "activity_not_in_catalog"
+    assert "rubro_inventado" not in json.dumps(data)
+
+
+def test_synonym_rescues_an_invented_llm_code(client, llm):
+    llm.mock(
+        return_value=_llm_answer(
             activity={"raw_text": "cafetería", "normalized_category": "rubro_inventado", "confidence": 0.9},
             location={"raw_text": "Av. Corrientes 2500", "address": "Av. Corrientes 2500", "confidence": 0.9},
             status="ready_for_geocoding",
         )
     )
     data = client.post("/api/v1/interpretations", json={"query": "quiero abrir una cafetería en Av. Corrientes 2500"}).json()
-    assert data["provider"] == "llm"
-    assert data["activity"]["normalized_category"] is None
-    assert data["activity"]["raw_text"] == "cafetería"
-    assert data["reason"] == "activity_not_in_catalog"
-    assert "rubro_inventado" not in json.dumps(data)
+    assert data["activity"]["normalized_category"] == "rubro_102"
+    assert data["activity_candidates"][0]["match"] == "synonym"
+    assert data["reason"] is None

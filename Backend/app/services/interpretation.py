@@ -15,8 +15,18 @@ from app.providers.llm import LLMClient, LLMUnavailableError
 from app.providers.address_parser import extract_address, normalize_address
 from app.providers.mock_interpreter import mock_interpret
 from app.providers.neighborhood_parser import NeighborhoodMatch, find_neighborhood
+from app.services.activity_candidates import (
+    activity_phrase,
+    llm_candidates,
+    merge,
+    pick,
+    rule_candidates,
+    similar_candidates,
+)
 from app.schemas.interpretation import (
+    INTERPRETATION_STATUSES,
     MISSING_FIELDS,
+    ActivityCandidate,
     ActivityInterpretation,
     InterpretationResponse,
     LocationInterpretation,
@@ -24,7 +34,7 @@ from app.schemas.interpretation import (
 
 logger = logging.getLogger(__name__)
 
-INTERPRETATION_PROMPT_VERSION = "interpret-v1"
+INTERPRETATION_PROMPT_VERSION = "interpret-v2"
 
 # Palabras que muestran que la consulta es sobre abrir o habilitar una actividad. Sin ninguna
 # de ellas, sin rubro y sin dirección, la consulta queda fuera de tema (topic_out_of_scope).
@@ -51,6 +61,7 @@ Debes devolver SOLO un JSON valido (sin markdown) con este esquema exacto:
     "normalized_category": string|null,
     "confidence": number
   },
+  "activity_candidates": string[],
   "location": {
     "raw_text": string|null,
     "address": string|null,
@@ -58,17 +69,20 @@ Debes devolver SOLO un JSON valido (sin markdown) con este esquema exacto:
   },
   "jurisdiction": "CABA",
   "missing_fields": string[],
-  "clarification_question": string|null,
   "status": "ready_for_geocoding" | "needs_clarification" | "out_of_scope" | "activity_unknown"
 }
 
 Reglas:
-- normalized_category SOLO puede ser uno de los codigos del catalogo provisto, o null.
 - El catalogo usa codes `rubro_{id}` con el `epok_rubro_id` y el nombre oficial de Ciudad 3D.
 - normalized_category SOLO puede ser uno de esos codes, o null. No inventes rubros.
-- Si la actividad no esta en el catalogo → status activity_unknown o out_of_scope, no inventes otro codigo.
+- activity_candidates: hasta 3 codes del catalogo, del mas al menos parecido a la actividad pedida.
+  Completalo siempre que haya una actividad, aunque normalized_category sea null.
+- activity.raw_text: las palabras exactas de la consulta que nombran la actividad, sin reescribirlas.
+- confidence: de 0 a 1, cuan seguro estas de normalized_category.
+- Si la actividad no esta en el catalogo → normalized_category null y status activity_unknown.
 - location.address debe ser la mejor direccion extraida (calle y altura si hay).
-- Si falta actividad o direccion → needs_clarification y pregunta en espanol.
+- missing_fields solo puede tener "activity", "location" o "address".
+- Si falta actividad o direccion → needs_clarification. No escribas preguntas ni explicaciones.
 - No inventes tramites, coordenadas ni requisitos.
 - Intent es start_commercial_activity solo si la persona quiere iniciar una actividad comercial.
 """
@@ -173,6 +187,8 @@ class InterpretationService:
 
         missing = [m for m in (raw.get("missing_fields") or []) if m in MISSING_FIELDS]
         status = raw.get("status") or "needs_clarification"
+        if status not in INTERPRETATION_STATUSES:
+            raise ValueError(f"invalid interpretation status: {status!r}")
         intent = raw.get("intent")
         display_name = None
         reason: str | None = None
@@ -181,23 +197,41 @@ class InterpretationService:
         if activity_raw.get("raw_text") and raw_text is None:
             logger.info("Dropped activity.raw_text not present in the query: %r", activity_raw.get("raw_text"))
 
-        if code and code not in catalog:
-            # Model invented a category — reject
+        invented = isinstance(code, str) and code not in catalog
+        if invented:
             logger.info("Dropped activity code outside the catalog: %r", code)
-            code = None
-            status = "activity_unknown"
-            reason = "activity_not_in_catalog"
-            if "activity" not in missing:
-                missing.append("activity")
-        elif code:
+
+        # B10: synonyms / distinctive official words, the LLM, and text similarity.
+        in_scope = self._in_scope(query, intent)
+        candidates = merge(
+            rule_candidates(query, catalog)
+            + (llm_candidates(activity_raw, raw.get("activity_candidates"), catalog) if provider == "llm" else [])
+        )
+        phrase = raw_text or activity_phrase(query)
+        if pick(candidates) is None and in_scope:
+            candidates = merge(candidates + similar_candidates(phrase, catalog))
+        best = pick(candidates)
+        code = best.code if best else None
+
+        if code:
             display_name = catalog[code]
-            conf_act = max(conf_act, 0.5)
+            conf_act = best.score
+            if status == "activity_unknown":
+                # The rubro came from a synonym or similarity, not from the raw interpretation.
+                status = "needs_clarification"
+            raw_text = raw_text or (literal_in_query(phrase, query) if best.match == "name" else None)
         else:
             if "activity" not in missing:
                 missing.append("activity")
             if status == "ready_for_geocoding":
                 status = "activity_unknown"
-            reason = "activity_not_in_catalog" if raw_text else "activity_missing"
+            if candidates and not raw_text:
+                raw_text = literal_in_query(phrase, query)
+            if raw_text or candidates or invented:
+                status = "activity_unknown"
+                reason = "activity_not_in_catalog"
+            else:
+                reason = "activity_missing"
 
         parsed_query = extract_address(query)
         neighborhood = find_neighborhood(
@@ -249,6 +283,9 @@ class InterpretationService:
                 display_name=display_name,
                 confidence=min(max(conf_act, 0.0), 1.0),
             ),
+            activity_candidates=[
+                ActivityCandidate(code=c.code, name=c.name, score=c.score, match=c.match) for c in candidates
+            ],
             location=LocationInterpretation(
                 raw_text=loc_text,
                 address=address,

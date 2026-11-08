@@ -8,7 +8,6 @@ que queda, con palabras completas: así "Retiro" no da "tiro", "botica" no da "t
 from __future__ import annotations
 
 import re
-from collections import Counter
 from functools import lru_cache
 from typing import Any
 
@@ -32,19 +31,27 @@ _NAME_TOKEN_MIN_LENGTH = 5
 
 
 @lru_cache
-def _name_tokens() -> list[tuple[str, str]]:
-    """(palabra plegada, rubro_code) de los nombres oficiales que identifican un solo rubro (o dos)."""
+def name_token_index() -> dict[str, tuple[str, ...]]:
+    """Palabra plegada de los nombres oficiales -> rubros cuyo nombre la tiene (uno o dos)."""
     per_code = {code: {fold(k) for k in keywords} for code, _n, _e, _c, _r, keywords in ACTIVITY_DEFINITIONS}
-    counts = Counter(token for tokens in per_code.values() for token in tokens)
-    pairs = [
-        (token, code)
-        for code, tokens in per_code.items()
-        for token in tokens
+    owners: dict[str, list[str]] = {}
+    for code, tokens in per_code.items():
+        for token in tokens:
+            owners.setdefault(token, []).append(code)
+    return {
+        token: tuple(codes)
+        for token, codes in owners.items()
         if len(token) >= _NAME_TOKEN_MIN_LENGTH
         and " " not in token
         and token not in _NAME_TOKEN_STOPWORDS
-        and counts[token] <= _NAME_TOKEN_MAX_RUBROS
-    ]
+        and len(codes) <= _NAME_TOKEN_MAX_RUBROS
+    }
+
+
+@lru_cache
+def _name_tokens() -> list[tuple[str, str]]:
+    """(palabra plegada, rubro_code), las más largas primero."""
+    pairs = [(token, code) for token, codes in name_token_index().items() for code in codes]
     return sorted(pairs, key=lambda item: (-len(item[0]), item[1]))
 
 
@@ -70,7 +77,7 @@ def find_activity(text: str, catalog: dict[str, str]) -> tuple[str, str, str] | 
     return None
 
 
-def _without(text: str, spans: list[tuple[int, int]]) -> str:
+def without(text: str, spans: list[tuple[int, int]]) -> str:
     """El texto con esos tramos reemplazados por una coma (corta palabras, no las junta)."""
     out, last = [], 0
     for start, end in sorted(spans):
@@ -93,17 +100,24 @@ def _literal(text: str, folded_term: str) -> str | None:
     return None
 
 
-def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
-    """Return a raw interpretation dict (pre-validation). catalog: code -> display_name."""
-    text = query.strip()
-
+def location_spans(text: str) -> list[tuple[int, int]]:
+    """Tramos de la dirección y del barrio: se sacan del texto antes de buscar el rubro."""
     parsed = extract_address(text)
     spans = [(parsed.start, parsed.end)] if parsed else []
     neighborhood = find_neighborhood(text, skip=spans)
     if neighborhood:
         spans.append((neighborhood.start, neighborhood.end))
+    return spans
 
-    found = find_activity(_without(text, spans), catalog)
+
+def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
+    """Return a raw interpretation dict (pre-validation). catalog: code -> display_name."""
+    text = query.strip()
+
+    parsed = extract_address(text)
+    spans = location_spans(text)
+
+    found = find_activity(without(text, spans), catalog)
     activity_code = found[0] if found else None
     activity_raw = (_literal(text, found[1]) or found[1]) if found else None
 

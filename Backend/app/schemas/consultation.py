@@ -11,7 +11,7 @@ from app.schemas.limits import (
     CabaLatitude,
     CabaLongitude,
 )
-from app.schemas.interpretation import LocationInterpretation, MissingField, Reason
+from app.schemas.interpretation import ActivityCandidate, LocationInterpretation, MissingField, Reason
 from app.schemas.location import LocationCandidate
 from app.schemas.zoning import ZoningOut
 
@@ -76,6 +76,7 @@ class ConsultationInterpretation(BaseModel):
     intent: Optional[str] = "start_commercial_activity"
     activity: ConsultationActivity = Field(default_factory=ConsultationActivity)
     location: Optional[LocationInterpretation] = None
+    activity_candidates: list[ActivityCandidate] = Field(default_factory=list)
     missing_fields: list[MissingField] = Field(default_factory=list)
     original_query: Optional[str] = None
 

@@ -122,6 +122,23 @@ class MockGeocoder(GeocoderClient):
                 provider_id="geocoder-mock",
                 provider_name="Mock geocoder CABA",
             ),
+            # Caso de B10 ("tienda de regalos en Florida 500").
+            "florida 500": GeocodeResult(
+                status="confirmed",
+                original_address="Florida 500",
+                hits=[
+                    GeocodeHit(
+                        normalized_address="FLORIDA 500, CABA",
+                        latitude=-34.6013,
+                        longitude=-58.3747,
+                        commune="1",
+                        neighborhood="San Nicolas",
+                        precision="rooftop",
+                    )
+                ],
+                provider_id="geocoder-mock",
+                provider_name="Mock geocoder CABA",
+            ),
             # Direcciones de data/consultas_prueba.csv (B08).
             "cabildo 2000": GeocodeResult(
                 status="confirmed",

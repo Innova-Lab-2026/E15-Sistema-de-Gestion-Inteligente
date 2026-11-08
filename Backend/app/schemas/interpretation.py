@@ -20,6 +20,15 @@ class ActivityInterpretation(BaseModel):
     confidence: float = Field(default=0.0, ge=0.0, le=1.0)
 
 
+class ActivityCandidate(BaseModel):
+    code: str = Field(examples=["rubro_16"])
+    name: str
+    score: float = Field(ge=0.0, le=1.0)
+    match: Literal["synonym", "llm", "name"] = Field(
+        description="synonym: sinónimo exacto · llm: lo propuso el modelo · name: parecido de texto"
+    )
+
+
 class LocationInterpretation(BaseModel):
     raw_text: Optional[str] = None
     address: Optional[str] = None
@@ -57,12 +66,19 @@ InterpretationStatus = Literal[
 ]
 
 
+INTERPRETATION_STATUSES: frozenset[str] = frozenset(InterpretationStatus.__args__)
+
+
 class InterpretationResponse(BaseModel):
     intent: Optional[str] = None
     activity: ActivityInterpretation
     location: LocationInterpretation
     jurisdiction: str = "CABA"
     missing_fields: list[MissingField] = Field(default_factory=list)
+    activity_candidates: list[ActivityCandidate] = Field(
+        default_factory=list,
+        description="Hasta 3 rubros habilitados, el mejor primero. Si no hay rubro elegido, para mostrar opciones",
+    )
     status: InterpretationStatus
     reason: Optional[Reason] = Field(default=None, description="Por qué falta algo; null si está lista")
     provider: str = Field(description="mock | llm")

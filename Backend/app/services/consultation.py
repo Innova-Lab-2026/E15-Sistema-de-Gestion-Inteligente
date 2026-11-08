@@ -143,6 +143,7 @@ class ConsultationService:
                 raw_text=activity_raw,
             ),
             location=interpreted.location if interpreted else None,
+            activity_candidates=list(interpreted.activity_candidates) if interpreted else [],
             original_query=original_query
             or f"Consulta deterministica: {activity.code} en {address or 'ubicacion confirmada'}",
         )
@@ -400,6 +401,7 @@ class ConsultationService:
                 raw_text=interpreted.activity.raw_text,
             ),
             location=interpreted.location,
+            activity_candidates=list(interpreted.activity_candidates),
             missing_fields=list(interpreted.missing_fields),
             original_query=interpreted.original_query,
         )
