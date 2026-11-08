@@ -33,6 +33,7 @@ Copiar desde `.env.example`. Las más usadas:
 | `EPOK_PROVIDER` | `epok` / `mock` | Zoning Ciudad 3D vs fixtures |
 | `LLM_API_KEY` | vacío o key | Sin key → interpretación mock |
 | `LLM_BASE_URL` / `LLM_MODEL` | OpenAI-compatible | Cliente LLM |
+| `LLM_FALLBACK_BASE_URL` / `LLM_FALLBACK_API_KEY` / `LLM_FALLBACK_MODEL` | vacío | LLM de respaldo (por ejemplo OpenRouter): se usa si el principal falla; después, reglas locales |
 | `BA_DATA_*` | URL + User-Agent | Cliente CKAN (scripts / futuro) |
 | `DEBUG` | `false` / `true` | `true` loguea las queries SQL |
 | `CORS_ORIGINS` / `CORS_ALLOW_CREDENTIALS` | lista separada por comas / `false` | Orígenes del frontend (incluye Vite `:5173` por defecto) |

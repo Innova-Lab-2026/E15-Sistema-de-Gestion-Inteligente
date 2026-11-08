@@ -429,7 +429,7 @@ En ningun caso se debe completar silenciosamente un dato faltante con una suposi
 - Procesamiento: Python, Pandas y GeoPandas.
 - Formatos: JSON, CSV, XLSX, GeoJSON, KML o SHP segun la fuente.
 - Mapa: Leaflet o MapLibre.
-- IA: proveedor configurable por `LLM_BASE_URL`, `LLM_API_KEY` y `LLM_MODEL`.
+- IA: proveedor configurable por `LLM_BASE_URL`, `LLM_API_KEY` y `LLM_MODEL`, con respaldo opcional `LLM_FALLBACK_*` (principal → respaldo → reglas locales).
 - Geocodificacion: servicio compatible con CABA y con politica de uso adecuada.
 - Hosting: Vercel para frontend y Render, Railway o equivalente para backend.
 

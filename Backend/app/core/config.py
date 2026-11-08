@@ -46,6 +46,10 @@ class Settings(BaseSettings):
     llm_api_key: str = Field(default="", alias="LLM_API_KEY")
     llm_model: str = Field(default="gemini-flash-lite-latest", alias="LLM_MODEL")
     llm_timeout_seconds: int = Field(default=30, alias="LLM_TIMEOUT_SECONDS")
+    # Backup LLM (OpenRouter in PLAN.md): used when the main one fails (503, 429, timeout, bad JSON).
+    llm_fallback_base_url: str = Field(default="", alias="LLM_FALLBACK_BASE_URL")
+    llm_fallback_api_key: str = Field(default="", alias="LLM_FALLBACK_API_KEY")
+    llm_fallback_model: str = Field(default="", alias="LLM_FALLBACK_MODEL")
 
     # "mock" uses local fixtures and is meant for offline development and tests only.
     geocoder_provider: str = Field(default="usig", alias="GEOCODER_PROVIDER")

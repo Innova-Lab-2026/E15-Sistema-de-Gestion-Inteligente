@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+from dataclasses import dataclass
 from typing import Any
 
 import httpx
@@ -35,16 +36,40 @@ class LLMInvalidOutputError(LLMUnavailableError):
     reason = "llm_invalid_output"
 
 
+@dataclass(frozen=True)
+class LLMEndpoint:
+    name: str  # "primary" | "fallback"
+    base_url: str
+    api_key: str
+    model: str
+
+
 class LLMClient:
+    """Chain of OpenAI-compatible providers: the main LLM, then the backup (B17)."""
+
     def __init__(self, settings: Settings) -> None:
-        self.base_url = (settings.llm_base_url or "").rstrip("/")
-        self.api_key = settings.llm_api_key or ""
-        self.model = settings.llm_model
         self.timeout = settings.llm_timeout_seconds
+        candidates = [
+            LLMEndpoint("primary", settings.llm_base_url, settings.llm_api_key, settings.llm_model),
+            LLMEndpoint(
+                "fallback",
+                settings.llm_fallback_base_url,
+                settings.llm_fallback_api_key,
+                settings.llm_fallback_model or settings.llm_model,
+            ),
+        ]
+        self.endpoints = [
+            LLMEndpoint(e.name, (e.base_url or "").rstrip("/"), e.api_key or "", e.model)
+            for e in candidates
+            if e.base_url and e.api_key
+        ]
+        self.model = settings.llm_model
+        # Model that produced the last answer (for logs and the consultation record).
+        self.last_model: str | None = None
 
     @property
     def is_configured(self) -> bool:
-        return bool(self.base_url and self.api_key)
+        return bool(self.endpoints)
 
     async def complete_json(
         self,
@@ -52,16 +77,36 @@ class LLMClient:
         system_prompt: str,
         user_prompt: str,
     ) -> dict[str, Any]:
-        if not self.is_configured:
+        if not self.endpoints:
             raise LLMUnavailableError("LLM_BASE_URL / LLM_API_KEY not configured")
+        last_error: LLMUnavailableError | None = None
+        for endpoint in self.endpoints:
+            try:
+                result = await self._complete_json(endpoint, system_prompt=system_prompt, user_prompt=user_prompt)
+            except LLMUnavailableError as exc:
+                last_error = exc
+                logger.warning("LLM %s (%s) failed: %s", endpoint.name, endpoint.model, exc.reason)
+                continue
+            self.last_model = endpoint.model
+            logger.info("LLM answered with %s (%s)", endpoint.model, endpoint.name)
+            return result
+        assert last_error is not None
+        raise last_error
 
-        url = f"{self.base_url}/chat/completions"
+    async def _complete_json(
+        self,
+        endpoint: LLMEndpoint,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+    ) -> dict[str, Any]:
+        url = f"{endpoint.base_url}/chat/completions"
         headers = {
-            "Authorization": f"Bearer {self.api_key}",
+            "Authorization": f"Bearer {endpoint.api_key}",
             "Content-Type": "application/json",
         }
         payload = {
-            "model": self.model,
+            "model": endpoint.model,
             "temperature": 0.1,
             "response_format": {"type": "json_object"},
             "messages": [
