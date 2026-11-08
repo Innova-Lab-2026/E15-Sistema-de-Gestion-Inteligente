@@ -81,6 +81,9 @@ class InterpretationResponse(BaseModel):
     )
     status: InterpretationStatus
     reason: Optional[Reason] = Field(default=None, description="Por qué falta algo; null si está lista")
+    message: Optional[str] = Field(
+        default=None, description="Texto para la persona según reason (plantilla del backend, nunca del LLM)"
+    )
     provider: str = Field(description="mock | llm")
     fallback_reason: Optional[Literal["llm_unavailable", "llm_rate_limited", "llm_invalid_output"]] = Field(
         default=None,

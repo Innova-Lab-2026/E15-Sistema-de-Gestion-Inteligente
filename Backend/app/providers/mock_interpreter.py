@@ -131,32 +131,12 @@ def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
     if not address_raw:
         missing.append("location")
 
-    catalog_preview = ", ".join(sorted(catalog.keys())[:8])
-    if len(catalog) > 8:
-        catalog_preview += ", ..."
-
     if activity_code and address_raw:
         status = "ready_for_geocoding"
-        question = None
-    elif activity_code and not address_raw:
-        status = "needs_clarification"
-        question = (
-            f'Detecte la actividad "{catalog.get(activity_code, activity_code)}", '
-            "pero falta una direccion con calle y altura en CABA. "
-            "Indica la direccion para continuar."
-        )
     elif address_raw and not activity_code:
         status = "activity_unknown"
-        question = (
-            "Detecte una direccion, pero la actividad no esta en el catalogo del MVP "
-            f"({catalog_preview}). Reformula la actividad o consulta el listado /activities."
-        )
     else:
         status = "needs_clarification"
-        question = (
-            "No pude detectar actividad ni direccion. "
-            'Ejemplo: "Quiero abrir una ferreteria en Santiago del Estero 112".'
-        )
 
     return {
         "intent": intent,
@@ -173,6 +153,6 @@ def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
         },
         "jurisdiction": "CABA",
         "missing_fields": missing,
-        "clarification_question": question,
+        "clarification_question": None,
         "status": status,
     }

@@ -28,6 +28,7 @@ from app.schemas.consultation import (
 )
 from app.schemas.interpretation import InterpretationResponse
 from app.services.interpretation import InterpretationService
+from app.services.messages import message_for
 from app.services.location import LocationService
 from app.services.zoning import ZoningService
 from app.schemas.zoning import ZoningOut
@@ -98,12 +99,13 @@ class ConsultationService:
                     # Partial interpretation: the Frontend keeps what was already understood.
                     interpretation=self._partial_interpretation(interpreted),
                     location=ConsultationLocation(status="pending"),
-                    summary="Se necesita aclaracion para continuar.",
+                    summary=interpreted.message or "Se necesita aclaracion para continuar.",
                     data_status=DataStatus(
                         overall="blocked",
                         missing=list(interpreted.missing_fields),
                     ),
                     reason=interpreted.reason,
+                    message=interpreted.message,
                 )
 
             activity_code = interpreted.activity.normalized_category
@@ -118,9 +120,10 @@ class ConsultationService:
                 status="activity_unknown",
                 interpretation=self._partial_interpretation(interpreted),
                 location=ConsultationLocation(status="pending"),
-                summary="No se indico una actividad del catalogo.",
+                summary=message_for("activity_missing"),
                 data_status=DataStatus(overall="blocked", missing=["activity"]),
                 reason="activity_missing",
+                message=message_for("activity_missing"),
             )
 
         activity = await self._get_activity(activity_code)
@@ -129,9 +132,10 @@ class ConsultationService:
                 status="activity_unknown",
                 interpretation=self._partial_interpretation(interpreted),
                 location=ConsultationLocation(status="pending"),
-                summary="La actividad indicada no pertenece al catalogo.",
+                summary=message_for("activity_not_in_catalog"),
                 data_status=DataStatus(overall="blocked", missing=["activity"]),
                 reason="activity_not_in_catalog",
+                message=message_for("activity_not_in_catalog"),
             )
 
         interpretation = ConsultationInterpretation(
@@ -177,9 +181,10 @@ class ConsultationService:
                     status="needs_clarification",
                     interpretation=interpretation,
                     location=ConsultationLocation(status="pending"),
-                    summary="Falta una direccion para geocodificar.",
+                    summary=message_for("location_missing"),
                     data_status=DataStatus(overall="blocked", missing=["location"]),
                     reason="location_missing",
+                    message=message_for("location_missing"),
                 )
             geo = await self.location_service.geocode(address)
             if geo.status == "ambiguous":
@@ -191,17 +196,14 @@ class ConsultationService:
                         candidates=geo.candidates,
                         message=geo.message,
                     ),
-                    summary=(
-                        "Hay varias coincidencias de ubicacion. "
-                        "Confirma una con confirmed_location para continuar."
-                    ),
+                    summary=message_for("location_ambiguous", address=address),
                     data_status=DataStatus(
                         overall="blocked",
                         missing=["confirmed_location"],
                         warnings=["ambiguous_address"],
                     ),
                     reason="location_ambiguous",
-                    message=geo.message,
+                    message=message_for("location_ambiguous", address=address),
                 )
             if geo.status == "out_of_scope":
                 return ConsultationResponse(
@@ -212,12 +214,12 @@ class ConsultationService:
                         message=geo.message,
                         candidates=geo.candidates,
                     ),
-                    summary=geo.message or "La ubicacion esta fuera de CABA.",
+                    summary=message_for("location_outside_caba"),
                     data_status=DataStatus(
                         overall="blocked", missing=["location_in_caba"]
                     ),
                     reason="location_outside_caba",
-                    message=geo.message,
+                    message=message_for("location_outside_caba", address=address),
                 )
             if geo.status == "not_found":
                 return ConsultationResponse(
@@ -227,10 +229,10 @@ class ConsultationService:
                         status="not_found",
                         message=geo.message,
                     ),
-                    summary=geo.message or "No se pudo geocodificar la direccion.",
+                    summary=message_for("location_not_found", address=address),
                     data_status=DataStatus(overall="blocked", missing=["location"]),
                     reason="location_not_found",
-                    message=geo.message,
+                    message=message_for("location_not_found", address=address),
                 )
             if geo.status == "unavailable":
                 # Partial answer: requirements/offices/sources still apply without coordinates.
@@ -272,10 +274,7 @@ class ConsultationService:
         if location.status == "neighborhood":
             missing.append("address")
             reason = "location_neighborhood_only"
-            message = (
-                f"Con el barrio {location.neighborhood} te mostramos los tramites y la sede de la "
-                f"Comuna {location.commune}. Para revisar la zonificacion indica calle y altura."
-            )
+            message = message_for(reason, neighborhood=location.neighborhood, commune=location.commune)
 
         if location.latitude is not None and location.longitude is not None:
             zoning_result = await get_epok_client(self.settings).lookup_zoning(

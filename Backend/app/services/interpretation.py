@@ -15,6 +15,7 @@ from app.providers.llm import LLMClient, LLMUnavailableError
 from app.providers.address_parser import extract_address, normalize_address
 from app.providers.mock_interpreter import mock_interpret
 from app.providers.neighborhood_parser import NeighborhoodMatch, find_neighborhood
+from app.services.messages import message_for
 from app.services.activity_candidates import (
     activity_phrase,
     llm_candidates,
@@ -301,6 +302,14 @@ class InterpretationService:
             missing_fields=missing,
             status=status,  # type: ignore[arg-type]
             reason=reason,  # type: ignore[arg-type]
+            message=message_for(
+                reason,  # type: ignore[arg-type]
+                activity_text=raw_text,
+                has_candidates=bool(candidates),
+                address=address,
+                neighborhood=neighborhood.name if neighborhood else None,
+                commune=str(neighborhood.commune) if neighborhood else None,
+            ),
             provider=provider,
             original_query=query,
         )
