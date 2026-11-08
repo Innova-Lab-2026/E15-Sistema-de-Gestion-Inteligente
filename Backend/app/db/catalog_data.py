@@ -5,7 +5,8 @@ Snapshot: app/db/epok_rubros_snapshot.json (regenerar con scripts/fetch_epok_rub
 
 El `code` API es `rubro_{rubro_id}` para no inventar identificadores.
 `name` es el texto oficial del rubro.
-Los aliases ciudadanos solo ayudan a interpretar NL (mock/LLM), no reemplazan el catalogo.
+Los sinonimos ciudadanos solo ayudan a interpretar NL (mock/LLM), no reemplazan el catalogo.
+La fuente de sinonimos es `data/sinonimos.csv` (equipo de Data); ver `activity_synonyms()`.
 """
 
 from __future__ import annotations
@@ -14,6 +15,8 @@ import json
 import re
 from functools import lru_cache
 from pathlib import Path
+
+from app.db.data_files import fold, sinonimos
 
 SNAPSHOT_PATH = Path(__file__).with_name("epok_rubros_snapshot.json")
 
@@ -30,7 +33,9 @@ EPOK_CATEGORIES: dict[int, str] = {
     10: "Industria",
 }
 
-# Sinonimos ciudadanos → rubro_id oficial (epok). No son codigos inventados.
+# Sinonimos del codigo (previos a data/sinonimos.csv) → rubro_id oficial (epok).
+# Solo suman terminos que el CSV no define: nunca pisan un termino del CSV. Cubren, entre otros,
+# los 17 rubros que el CSV no tiene, hasta que Data diga si los suma o se sacan (ROADMAP B05).
 CITIZEN_ALIASES: dict[int, tuple[str, ...]] = {
     102: (
         "cafeteria",
@@ -85,8 +90,38 @@ CITIZEN_ALIASES: dict[int, tuple[str, ...]] = {
 }
 
 
+# Terminos del CSV cuyo rubro Data todavia tiene que confirmar: se mantiene lo que hacia el codigo
+# (None = no se usa como sinonimo). Sacar la linea cuando Data responda.
+PENDING_SYNONYMS: dict[str, int | None] = {
+    "veterinaria": 104,  # CSV: 136 (venta de animales); codigo: 104 (consultorio veterinario)
+    "confiteria": 471,  # CSV: 102 (gastronomia); codigo: 471 (alimentacion para llevar)
+    "comercio minorista": None,  # CSV: 16; ¿se saca? (demasiado generico)
+}
+
+
 def rubro_code(rubro_id: int) -> str:
     return f"rubro_{rubro_id}"
+
+
+@lru_cache
+def activity_synonyms() -> dict[str, str]:
+    """Sinonimo ciudadano en forma plegada (`fold`) -> rubro_code.
+
+    Orden: data/sinonimos.csv manda; los alias del codigo completan terminos que el CSV no
+    tiene; los terminos pendientes de Data conservan el rubro que tenian en el codigo.
+    """
+    merged: dict[str, str] = {}
+    for term, code in sinonimos().items():
+        merged[fold(term)] = code
+    for rubro_id, aliases in CITIZEN_ALIASES.items():
+        for alias in aliases:
+            merged.setdefault(fold(alias), rubro_code(rubro_id))
+    for term, rubro_id in PENDING_SYNONYMS.items():
+        if rubro_id is None:
+            merged.pop(fold(term), None)
+        else:
+            merged[fold(term)] = rubro_code(rubro_id)
+    return merged
 
 
 def _tokens_from_official_name(name: str) -> tuple[str, ...]:
@@ -132,16 +167,18 @@ def load_epok_rubros() -> tuple[dict, ...]:
 
 
 def build_activity_definitions() -> list[tuple[str, str, str, int, int, tuple[str, ...]]]:
-    """code, name, example, epok_category_id, epok_rubro_id, keywords."""
+    """code, name, example, epok_category_id, epok_rubro_id, keywords.
+
+    `keywords` son las palabras del nombre oficial: el interprete por reglas las usa solo
+    despues de los sinonimos (`activity_synonyms`).
+    """
     rows: list[tuple[str, str, str, int, int, tuple[str, ...]]] = []
     for item in load_epok_rubros():
         rid = int(item["rubro_id"])
         cat_id = int(item["categoria_id"])
         name = str(item["rubro"])
         code = rubro_code(rid)
-        aliases = CITIZEN_ALIASES.get(rid, ())
-        tokens = _tokens_from_official_name(name)
-        keywords = tuple(dict.fromkeys([*aliases, *tokens]))
+        keywords = _tokens_from_official_name(name)
         if not keywords:
             keywords = (name.lower(),)
         example = f"Consulta orientativa: {name}"

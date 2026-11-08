@@ -8,6 +8,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings
+from app.db.catalog_data import activity_synonyms
 from app.models import ActivityCategory
 from app.providers.llm import LLMClient, LLMUnavailableError
 from app.providers.address_parser import normalize_address
@@ -112,8 +113,14 @@ class InterpretationService:
             ],
             ensure_ascii=False,
         )
+        enabled = {row["code"] for row in json.loads(catalog_json)}
+        synonyms_json = json.dumps(
+            {term: code for term, code in activity_synonyms().items() if code in enabled},
+            ensure_ascii=False,
+        )
         user_prompt = (
             f"Catalogo permitido (codes):\n{catalog_json}\n\n"
+            f"Sinonimos ciudadanos (termino -> code), usalos para elegir el code:\n{synonyms_json}\n\n"
             f"Consulta ciudadana:\n{query}\n"
         )
         return await self.llm.complete_json(

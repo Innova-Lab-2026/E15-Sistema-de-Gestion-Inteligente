@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from app.db.catalog_data import ACTIVITY_DEFINITIONS
+from app.db.catalog_data import ACTIVITY_DEFINITIONS, activity_synonyms
+from app.db.data_files import fold
 from app.providers.address_parser import extract_address
 
+# Palabras de los nombres oficiales: respaldo cuando ningun sinonimo coincide.
 # Longer / more specific keywords first
 _ACTIVITY_KEYWORDS: list[tuple[str, tuple[str, ...]]] = sorted(
     [(code, keywords) for code, _n, _e, _eid, _rid, keywords in ACTIVITY_DEFINITIONS],
@@ -14,23 +16,32 @@ _ACTIVITY_KEYWORDS: list[tuple[str, tuple[str, ...]]] = sorted(
 )
 
 
-def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
-    """Return a raw interpretation dict (pre-validation). catalog: code -> display_name."""
-    text = query.strip()
-    lower = text.lower()
+def _synonyms_longest_first() -> list[tuple[str, str]]:
+    return sorted(activity_synonyms().items(), key=lambda item: -len(item[0]))
 
-    activity_code: str | None = None
-    activity_raw: str | None = None
+
+def _find_activity(text: str, catalog: dict[str, str]) -> tuple[str, str] | None:
+    """(rubro_code, termino tal cual en la consulta). Sinonimos primero, el mas largo gana."""
+    folded = fold(text)
+    for term, code in _synonyms_longest_first():
+        if code in catalog and term in folded:
+            return code, term
+    lower = text.lower()
     for code, keywords in _ACTIVITY_KEYWORDS:
         if code not in catalog:
             continue
         for kw in keywords:
             if kw in lower:
-                activity_code = code
-                activity_raw = kw
-                break
-        if activity_code:
-            break
+                return code, kw
+    return None
+
+
+def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
+    """Return a raw interpretation dict (pre-validation). catalog: code -> display_name."""
+    text = query.strip()
+
+    found = _find_activity(text, catalog)
+    activity_code, activity_raw = found if found else (None, None)
 
     parsed = extract_address(text)
     address_raw = parsed.raw_text if parsed else None
