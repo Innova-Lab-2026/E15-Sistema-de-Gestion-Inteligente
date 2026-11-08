@@ -1,16 +1,18 @@
 from __future__ import annotations
 
+import logging
 import math
 from typing import Any
 
 from sqlalchemy import select
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.config import Settings
 from app.core.territory import normalize_commune, same_commune
 from app.db.data_files import barrio, barrio_por_variante
-from app.models import ActivityCategory, MapLayer, Office, Requirement, Source
+from app.models import ActivityCategory, MapLayer, Office, Requirement, Source, UnrecognizedActivity
 from app.schemas.consultation import (
     ConsultationActivity,
     ConsultationInterpretation,
@@ -34,6 +36,9 @@ from app.services.zoning import ZoningService
 from app.schemas.zoning import ZoningOut
 from app.providers.epok import get_epok_client
 from app.db.ba_data_context import gastronomy_context
+
+
+logger = logging.getLogger(__name__)
 
 
 def _haversine_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -74,7 +79,7 @@ class ConsultationService:
         if body.query and (not activity_code or not address):
             interpreted = await InterpretationService(
                 self.settings, self.db
-            ).interpret(body.query.strip())
+            ).interpret(body.query.strip(), conversation_id=body.conversation_id)
             self._llm_fallback_reason = interpreted.fallback_reason
 
             original_query = interpreted.original_query
@@ -137,6 +142,9 @@ class ConsultationService:
                 reason="activity_not_in_catalog",
                 message=message_for("activity_not_in_catalog"),
             )
+
+        if body.activity_code and body.conversation_id:
+            await self._record_choice(body.conversation_id, activity.code)
 
         interpretation = ConsultationInterpretation(
             intent="start_commercial_activity",
@@ -390,6 +398,25 @@ class ConsultationService:
             reason=reason,
             message=message,
         )
+
+    async def _record_choice(self, conversation_id: str, code: str) -> None:
+        """B16: the rubro the person picked after an unrecognized activity in the same conversation."""
+        try:
+            row = await self.db.scalar(
+                select(UnrecognizedActivity)
+                .where(
+                    UnrecognizedActivity.conversation_id == conversation_id,
+                    UnrecognizedActivity.chosen_code.is_(None),
+                )
+                .order_by(UnrecognizedActivity.id.desc())
+                .limit(1)
+            )
+            if row is not None:
+                row.chosen_code = code
+                await self.db.commit()
+        except SQLAlchemyError as exc:
+            await self.db.rollback()
+            logger.warning("Could not record the chosen activity: %r", exc)
 
     @staticmethod
     def _partial_interpretation(interpreted: InterpretationResponse | None) -> ConsultationInterpretation | None:

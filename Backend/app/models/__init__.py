@@ -8,6 +8,7 @@ from app.models.entities import (
     Requirement,
     RequirementSource,
     Source,
+    UnrecognizedActivity,
 )
 
 __all__ = [
@@ -20,4 +21,5 @@ __all__ = [
     "Requirement",
     "RequirementSource",
     "Source",
+    "UnrecognizedActivity",
 ]

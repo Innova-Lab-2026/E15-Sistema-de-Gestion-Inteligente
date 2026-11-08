@@ -26,4 +26,4 @@ async def interpret_query(
     # LLM failures never surface here: the service falls back to local rules and reports it in
     # `fallback_reason`.
     service = InterpretationService(settings=settings, db=db)
-    return await service.interpret(query)
+    return await service.interpret(query, conversation_id=body.conversation_id)

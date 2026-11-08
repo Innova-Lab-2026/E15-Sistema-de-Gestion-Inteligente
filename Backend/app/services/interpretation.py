@@ -5,12 +5,13 @@ import logging
 from typing import Any
 
 from sqlalchemy import select
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings
 from app.db.catalog_data import activity_synonyms
 from app.db.data_files import barrio, barrio_por_variante, fold
-from app.models import ActivityCategory
+from app.models import ActivityCategory, UnrecognizedActivity
 from app.providers.llm import LLMClient, LLMUnavailableError
 from app.providers.address_parser import extract_address, normalize_address
 from app.providers.mock_interpreter import mock_interpret
@@ -95,7 +96,29 @@ class InterpretationService:
         self.db = db
         self.llm = LLMClient(settings)
 
-    async def interpret(self, query: str) -> InterpretationResponse:
+    async def interpret(self, query: str, conversation_id: str | None = None) -> InterpretationResponse:
+        response = await self._interpret(query)
+        if response.reason == "activity_not_in_catalog" and response.activity.raw_text:
+            await self._record_unrecognized(response, conversation_id)
+        return response
+
+    async def _record_unrecognized(self, response: InterpretationResponse, conversation_id: str | None) -> None:
+        """B16: keep what was not recognized for Data. Never breaks the response."""
+        try:
+            self.db.add(
+                UnrecognizedActivity(
+                    raw_text=(response.activity.raw_text or "")[:255],
+                    candidates=[c.model_dump() for c in response.activity_candidates],
+                    conversation_id=conversation_id,
+                    provider=response.provider,
+                )
+            )
+            await self.db.commit()
+        except SQLAlchemyError as exc:
+            await self.db.rollback()
+            logger.warning("Could not record unrecognized activity: %r", exc)
+
+    async def _interpret(self, query: str) -> InterpretationResponse:
         catalog = await self._load_catalog()
         fallback_reason: str | None = None
 

@@ -178,3 +178,22 @@ class MapLayerSource(Base):
         ForeignKey("sources.id", ondelete="CASCADE"),
         primary_key=True,
     )
+
+
+class UnrecognizedActivity(Base):
+    """An activity the person named that was not in the catalog (B16), for Data's synonyms.
+
+    Only the words that name the activity are kept, not the whole query.
+    """
+
+    __tablename__ = "unrecognized_activities"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    raw_text: Mapped[str] = mapped_column(String(255))
+    candidates: Mapped[Optional[list]] = mapped_column(JSONB, nullable=True)
+    # The rubro the person picked afterwards (same conversation_id), if any.
+    chosen_code: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
+    conversation_id: Mapped[Optional[str]] = mapped_column(String(64), nullable=True, index=True)
+    provider: Mapped[str] = mapped_column(String(16))
+

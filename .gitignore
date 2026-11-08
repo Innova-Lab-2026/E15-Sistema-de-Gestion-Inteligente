@@ -25,3 +25,6 @@ node_modules/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Export de scripts/export_unrecognized.py (B16): se manda a Data, no se versiona
+actividades_no_reconocidas.csv
