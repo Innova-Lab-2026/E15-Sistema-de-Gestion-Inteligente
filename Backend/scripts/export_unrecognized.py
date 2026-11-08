@@ -21,7 +21,7 @@ from pathlib import Path
 from sqlalchemy import select
 
 from app.db.data_files import fold
-from app.db.session import AsyncSessionLocal
+from app.db.session import AsyncSessionLocal, engine
 from app.models import UnrecognizedActivity
 
 COLUMNS = ["termino", "rubro_code", "veces", "veces_elegido", "candidatos", "primera_vez", "ultima_vez"]
@@ -76,6 +76,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--output", default="actividades_no_reconocidas.csv", help="archivo, o - para la pantalla")
     parser.add_argument("--since", help="solo desde esta fecha (AAAA-MM-DD)")
     args = parser.parse_args(argv)
+    engine.echo = False  # with DEBUG=true the SQL would end up mixed with the CSV
     since = datetime.fromisoformat(args.since).replace(tzinfo=timezone.utc) if args.since else None
     rows = asyncio.run(build_rows(since))
     write_csv(rows, args.output)
