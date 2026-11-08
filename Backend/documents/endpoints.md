@@ -12,6 +12,7 @@ Prefijo de negocio: `/api/v1` (salvo health).
 |---|---|---|---|
 | GET | `/health` | — | `{ "status": "ok" }` (liveness, no toca la base) |
 | GET | `/ready` | — | `{ "status": "ready" }` o 503 `database_unavailable` |
+| GET | `/status` | — | Proveedores activos sin claves: `llm.active` (`llm` o `rules`) y modelo, `geocoder.simulated` (`true` = geocodificador simulado), `geocoder.breaker_open`, `epok.simulated`, y cuántas filas tiene cada archivo de `data/` |
 
 ## Catálogo
 
