@@ -321,7 +321,7 @@ class InterpretationService:
                 neighborhood=neighborhood.name if neighborhood else None,
                 commune=str(neighborhood.commune) if neighborhood else None,
                 approximate=bool(
-                    address and parsed_query and parsed_query.approximate and parsed_query.address == address
+                    address and parsed_query and parsed_query.approximate and fold(address).startswith(fold(parsed_query.street))
                 ),
             ),
             jurisdiction=str(raw.get("jurisdiction") or "CABA"),

@@ -36,6 +36,11 @@ from app.providers.address_parser import extract_address, normalize_address
         ("Quiero abrir una ferretería en Santiago del Estero 112", "Santiago del Estero 112", "Santiago del Estero 112"),
         ("en Av. Corrientes 2.500", "Av. Corrientes 2500", "Av. Corrientes 2.500"),
         ("en Monroe N° 1500", "Monroe 1500", "Monroe N° 1500"),
+        # Cifra + "mil"
+        ("quiero abrir cafeteria en Monroe al 2 mil", "Monroe 2000", "Monroe al 2 mil"),
+        ("en Monroe al 2 mil 500", "Monroe 2500", "Monroe al 2 mil 500"),
+        ("en Monroe 2 mil quinientos", "Monroe 2500", "Monroe 2 mil quinientos"),
+        ("en Monroe 2 mil. Tengo 3 empleados", "Monroe 2000", "Monroe 2 mil"),
         ("quiero una cafeteria Monroe 1500", "Monroe 1500", "Monroe 1500"),
         # Calles con números en el nombre: el nombre no se toca
         ("en 9 de Julio 1000", "9 de Julio 1000", "9 de Julio 1000"),
@@ -74,10 +79,33 @@ def test_ignores_numbers_that_are_not_heights(query):
 
 
 @pytest.mark.parametrize(
+    ("query", "address", "approximate"),
+    [
+        # Dos alturas: se usa la primera y la ubicación queda aproximada.
+        ("quiero abrir cafeteria en monroe al 2 mil o 2500", "monroe 2000", True),
+        ("una cafeteria en Monroe 2000 o 2500", "Monroe 2000", True),
+        ("una cafeteria en Monroe dos mil u ochocientos", "Monroe 2000", True),
+        # Dos direcciones distintas no son dos alturas.
+        ("una cafeteria en Monroe 2500 o en Cabildo 1000", "Monroe 2500", False),
+        ("una cafeteria en Monroe 2500", "Monroe 2500", False),
+    ],
+)
+def test_two_heights_use_the_first_one(query, address, approximate):
+    parsed = extract_address(query)
+
+    assert parsed is not None
+    assert (parsed.address, parsed.approximate) == (address, approximate)
+
+
+@pytest.mark.parametrize(
     ("value", "expected"),
     [
         ("Monroe dos mil quinientos", "Monroe 2500"),
         ("Monroe 2500", "Monroe 2500"),
+        ("Monroe 2 mil", "Monroe 2000"),
+        ("Monroe 2000 o 2500", "Monroe 2000"),
+        ("Av. Corrientes 2.500", "Av. Corrientes 2.500"),
+        ("Gorriti 4500, Palermo", "Gorriti 4500, Palermo"),
         ("Belgrano", "Belgrano"),
         (None, None),
     ],
@@ -121,3 +149,29 @@ def test_llm_address_in_words_is_converted(client, override_settings):
     assert body["provider"] == "llm"
     assert body["location"]["address"] == "Monroe 2500"
     assert body["location"]["raw_text"] == "Monroe dos mil quinientos"
+
+
+@pytest.mark.parametrize("llm_address", ["Monroe 2 mil o 2500", "Monroe 2000", "Monroe 2500"])
+def test_llm_with_two_heights_is_approximate(client, override_settings, llm_address):
+    llm_url = "https://llm.test/v1"
+    override_settings(llm_base_url=llm_url, llm_api_key="test-key")
+    output = {
+        "intent": "start_commercial_activity",
+        "activity": {"raw_text": "cafeteria", "normalized_category": "rubro_102", "confidence": 0.9},
+        "location": {"raw_text": llm_address, "address": llm_address, "confidence": 0.9},
+        "jurisdiction": "CABA",
+        "missing_fields": [],
+        "status": "ready_for_geocoding",
+    }
+    with respx.mock(assert_all_called=False) as mock:
+        mock.post(f"{llm_url}/chat/completions").mock(
+            return_value=httpx.Response(200, json={"choices": [{"message": {"content": json.dumps(output)}}]})
+        )
+        body = client.post(
+            "/api/v1/interpretations",
+            json={"query": "quiero abrir cafeteria en monroe al 2 mil o 2500"},
+        ).json()
+
+    assert body["provider"] == "llm"
+    assert body["location"]["address"] in {"Monroe 2000", "Monroe 2500"}
+    assert body["location"]["approximate"] is True

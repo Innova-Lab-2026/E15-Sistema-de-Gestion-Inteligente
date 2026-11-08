@@ -320,7 +320,7 @@ class ConsultationService:
             missing.append("location")
             warnings.append("geocoder_unavailable")
         if approximate and location.status == "confirmed":
-            # "A entre B y C": geocoded at the first corner.
+            # "A entre B y C" (first corner) or "2000 o 2500" (first height).
             warnings.append("address_approximate")
         if location.status == "neighborhood":
             missing.append("address")

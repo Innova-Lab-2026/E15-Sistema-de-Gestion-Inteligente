@@ -13,6 +13,8 @@ Entiende alturas escritas de muchas formas y las devuelve en cifras:
     "calle Olazábal ocho dos uno"   -> "calle Olazábal 821"   (cifra por cifra)
     "Rivadavia quince cuarenta"     -> "Rivadavia 1540"       (de a dos cifras)
     "Av. Corrientes 2.500"          -> "Av. Corrientes 2500"
+    "Monroe al 2 mil"               -> "Monroe 2000"   (cifra + "mil"; también "2 mil 500")
+    "Monroe 2000 o 2500"            -> "Monroe 2000"   (aproximada: se usa la primera altura)
 
 El nombre de la calle se copia tal cual: "Tres Arroyos 500" o "9 de Julio 1000" no se tocan.
 No corrige ni completa calles: eso lo hace USIG después.
@@ -271,7 +273,7 @@ class ParsedAddress:
     start: int = 0  # posición del tramo en el texto original
     end: int = 0
     cross_street: str | None = None  # la otra calle de la esquina
-    approximate: bool = False  # "entre calles": se toma la primera esquina
+    approximate: bool = False  # "entre calles" (primera esquina) o "2000 o 2500" (primera altura)
 
 
 def _tokenize(text: str) -> list[_Token]:
@@ -286,6 +288,28 @@ def _tokenize(text: str) -> list[_Token]:
     return tokens
 
 
+def _mil_remainder(tokens: list[_Token], start: int) -> tuple[int, int] | None:
+    """Lo que sigue a "2 mil": una cifra ("500") o palabras ("quinientos"), menor que 1000."""
+    if tokens[start - 1].ends_sentence or start >= len(tokens):
+        return None
+    tok = tokens[start]
+    if tok.kind == "num":
+        value = int(tok.text.replace(".", ""))
+        return (value, start + 1) if 1 <= value < 1000 else None
+    entries: list[tuple[str, int]] = []
+    j = start
+    while j < len(tokens) and tokens[j].kind == "word":
+        parts = _number_word(tokens[j].text)
+        if parts is None or any(kind == "mil" for kind, _ in parts):
+            break
+        entries.extend(parts)
+        j += 1
+        if tokens[j - 1].ends_sentence:
+            break
+    value = words_to_number(entries) if entries else None
+    return (value, j) if value is not None and 1 <= value < 1000 else None
+
+
 def _number_runs(tokens: list[_Token]) -> list[tuple[int, int, int]]:
     """Tramos de tokens que forman una altura: (inicio, fin exclusivo, número)."""
     runs: list[tuple[int, int, int]] = []
@@ -294,9 +318,16 @@ def _number_runs(tokens: list[_Token]) -> list[tuple[int, int, int]]:
         tok = tokens[i]
         if tok.kind == "num":
             value = int(tok.text.replace(".", ""))
+            end = i + 1
+            if end < len(tokens) and tokens[end].kind == "word" and tokens[end].folded == "mil" and value < 100:
+                # "2 mil", "2 mil 500", "2 mil quinientos".
+                value, end = value * 1000, end + 1
+                rest = _mil_remainder(tokens, end)
+                if rest:
+                    value, end = value + rest[0], rest[1]
             if 1 <= value <= _MAX_NUMBER:
-                runs.append((i, i + 1, value))
-            i += 1
+                runs.append((i, end, value))
+            i = end
             continue
         if tok.kind != "word" or _number_word(tok.text) is None:
             i += 1
@@ -460,12 +491,20 @@ def _corner(text: str, tokens: list[_Token]) -> ParsedAddress | None:
     return None
 
 
+def _alternative_height(tokens: list[_Token], end: int, runs: list[tuple[int, int, int]]) -> bool:
+    """True si después de la altura viene otra con "o" / "u" ("2000 o 2500", "al 2 mil o 2500")."""
+    if end >= len(tokens) or tokens[end].folded not in {"o", "u"} or tokens[end - 1].ends_sentence:
+        return False
+    return any(start == end + 1 for start, _e, _n in runs)
+
+
 def extract_address(text: str) -> ParsedAddress | None:
     """Busca la primera "calle + altura" de un texto; si no hay, una esquina. None si no hay ninguna."""
     if not text:
         return None
     tokens = _tokenize(text)
-    for start, end, number in _number_runs(tokens):
+    runs = _number_runs(tokens)
+    for start, end, number in runs:
         after = tokens[end] if end < len(tokens) else None
         if after and after.kind == "word" and after.folded in _NOT_HEIGHT_AFTER:
             continue
@@ -481,13 +520,21 @@ def extract_address(text: str) -> ParsedAddress | None:
             number=number,
             start=street[0].start,
             end=raw_end,
+            # "Monroe 2000 o 2500": se usa la primera altura.
+            approximate=_alternative_height(tokens, end, runs),
         )
     return _corner(text, tokens)
 
 
 def normalize_address(address: str | None) -> str | None:
-    """Pasa a cifras una altura escrita en palabras. Deja igual lo que ya tiene cifras o no se entiende."""
-    if not address or re.search(r"\d", address):
+    """Pasa a cifras la altura que el LLM devuelva en palabras ("Monroe dos mil", "Monroe 2 mil") y
+    deja una sola altura si trae dos ("Monroe 2000 o 2500"). Lo demás queda igual."""
+    if not address:
         return address
     parsed = extract_address(address)
-    return parsed.address if parsed else address
+    if parsed is None:
+        return address
+    if re.search(r"\d", address) and not re.search(r"\d\s*mil\b", _fold(address)) and not parsed.approximate:
+        # Ya tiene cifras ("Av. Corrientes 2.500", "Gorriti 4500, Palermo"): USIG la entiende así.
+        return address
+    return parsed.address

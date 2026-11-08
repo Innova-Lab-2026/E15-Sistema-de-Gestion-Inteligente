@@ -94,3 +94,13 @@ def test_corner_reaches_usig_as_intersection(client, override_settings):
     sent = parse_qs(urlparse(str(route.calls.last.request.url)).query)["direccion"]
     assert sent == ["Corrientes y Callao"]
     assert body["location"]["precision"] == "intersection"
+
+
+def test_two_heights_are_approximate(client):
+    query = "quiero abrir un kiosco en Corrientes al 2 mil 500 o 2600"
+    interpretation = client.post("/api/v1/interpretations", json={"query": query}).json()
+    assert interpretation["location"]["address"] == "Corrientes 2500"
+    assert interpretation["location"]["approximate"] is True
+
+    body = client.post("/api/v1/consultations", json={"query": query}).json()
+    assert "address_approximate" in body["data_status"]["warnings"]
