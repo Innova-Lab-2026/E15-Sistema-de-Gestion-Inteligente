@@ -103,35 +103,54 @@ La IA debe devolver JSON validado contra un esquema. El backend no debe utilizar
   "activity": {
     "raw_text": "local de ropa",
     "normalized_category": "rubro_16",
-    "display_name": "Comercio de indumentaria",
-    "confidence": 0.96
+    "display_name": "1.8. Comercio minorista excluido comestibles como uso principal",
+    "confidence": 1.0
   },
+  "activity_candidates": [
+    { "code": "rubro_16", "name": "1.8. Comercio minorista excluido comestibles como uso principal", "score": 1.0, "match": "synonym" }
+  ],
   "location": {
     "raw_text": "Av. Corrientes 2500",
-    "address": null,
-    "confidence": 0.94
+    "address": "Av. Corrientes 2500",
+    "confidence": 0.85,
+    "neighborhood_id": null,
+    "neighborhood": null,
+    "commune": null,
+    "approximate": false
   },
   "jurisdiction": "CABA",
   "missing_fields": [],
-  "clarification_question": null,
-  "status": "ready_for_geocoding"
+  "status": "ready_for_geocoding",
+  "reason": null,
+  "message": null,
+  "provider": "mock",
+  "fallback_reason": null,
+  "original_query": "Quiero abrir un local de ropa en Av. Corrientes 2500. Que tengo que hacer?"
 }
 ```
 
+Lo que escribe el LLM nunca llega a la respuesta: los codes fuera del catalogo se descartan, `activity.raw_text` se descarta si no aparece en la consulta (el modelo a veces parafrasea) y el LLM ya no redacta preguntas. El texto para la persona sale de plantillas del backend (`message`, ver 5.3).
+
 ### 5.3 Casos que requieren aclaracion
 
-La plataforma debe pedir aclaracion cuando:
+Cuando falta algo, la respuesta trae un `reason` con valores fijos, `missing_fields` (solo `activity`, `location` o `address`) y un `message` armado con una plantilla por `reason`. El Frontend puede mostrar `message` o escribir su propio texto segun `reason`. La interpretacion parcial vuelve siempre, tambien en `/consultations`, para no perder lo que ya se entendio.
 
-- No se detecta una actividad.
-- La actividad no pertenece al catalogo del MVP.
-- La direccion es incompleta o ambigua.
-- La direccion parece estar fuera de CABA.
-- Existen varias coincidencias de geocodificacion.
-- La consulta combina varias actividades que no pueden resolverse juntas.
+| `reason` | Cuando | Que conviene mostrar |
+|---|---|---|
+| `activity_missing` | No se detecta ninguna actividad | Pedir el rubro |
+| `activity_not_in_catalog` | Se nombra una actividad que no esta en el catalogo, o el rubro es dudoso | Las opciones de `activity_candidates` |
+| `location_missing` | Hay rubro pero ni direccion ni barrio | Pedir calle y altura |
+| `location_neighborhood_only` | Hay rubro y barrio, sin calle (respuesta `partial`) | Tramites y sede comunal; pedir la direccion para la zonificacion |
+| `location_not_found` | El geocodificador no encuentra la direccion | Pedir que revise calle y altura |
+| `location_ambiguous` | Varias coincidencias | Los `location.candidates` para elegir |
+| `location_outside_caba` | La ubicacion esta fuera de CABA | Aviso de alcance |
+| `topic_out_of_scope` | La consulta no es sobre abrir una actividad | Aviso de alcance |
 
-Ejemplo:
+Candidatos de rubro (`activity_candidates`, hasta 3, el mejor primero): sinonimo exacto (`match: "synonym"`, score 1.0), propuesta del LLM filtrada por el catalogo (`"llm"`) y parecido de texto con sinonimos y nombres oficiales (`"name"`, funciona sin LLM). El backend toma el primero como `normalized_category` solo si su `score` es >= 0.85 y le gana al segundo por 0.1; si no, devuelve los candidatos con `reason: activity_not_in_catalog`. Elegido un candidato, el Frontend manda `activity_code` y `address` (o `neighborhood_id`) a `/consultations`.
 
-> Detecte la actividad “local de ropa”, pero la direccion puede corresponder a dos ubicaciones. Selecciona la correcta en el mapa para continuar.
+Ejemplo de `message` (plantilla, sin codigos internos):
+
+> No encontramos «tienda de regalos» en el catálogo. Elegí la actividad más parecida.
 
 ## 6. Catalogo de actividades
 
@@ -305,20 +324,27 @@ Respuesta de referencia:
     "intent": "start_commercial_activity",
     "activity": {
       "normalized_category": "rubro_16",
-      "display_name": "Comercio de indumentaria",
-      "confidence": 0.96
+      "display_name": "1.8. Comercio minorista excluido comestibles como uso principal",
+      "confidence": 1.0,
+      "raw_text": "local de ropa"
     },
+    "location": { "raw_text": "Av. Corrientes 2500", "address": "Av. Corrientes 2500", "neighborhood_id": null, "commune": null, "approximate": false },
+    "activity_candidates": [],
+    "missing_fields": [],
     "original_query": "Quiero abrir un local de ropa en Av. Corrientes 2500. Que tengo que hacer?"
   },
   "location": {
     "normalized_address": "Avenida Corrientes 2500, CABA",
     "commune": "3",
     "neighborhood": "Balvanera",
+    "neighborhood_id": "balvanera",
     "latitude": -34.604,
     "longitude": -58.413,
     "precision": "rooftop",
     "status": "confirmed"
   },
+  "reason": null,
+  "message": null,
   "summary": "Orientacion generada a partir de la informacion oficial recuperada.",
   "requirements": [],
   "documents": [],
@@ -337,6 +363,10 @@ Respuesta de referencia:
 ```
 
 Todos los bloques de contenido deben incluir `source_ids`. La respuesta no debe incluir afirmaciones oficiales sin una fuente asociada.
+
+- `interpretation` viene siempre en las consultas en lenguaje natural, tambien si estan bloqueadas (con `activity.normalized_category: null` si falta el rubro).
+- `reason` y `message` siguen la tabla de 5.3. Con rubro y barrio sin calle la consulta es `partial`, `location.status: "neighborhood"` y `reason: "location_neighborhood_only"`: tramites y sede de la comuna, sin zonificacion.
+- `commune` es siempre el numero de comuna en texto, de `"1"` a `"15"`.
 
 ## 12. Rol de la IA en la respuesta final
 

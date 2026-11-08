@@ -45,11 +45,17 @@ Tip: preferí `http://127.0.0.1:8000` en `baseUrl` si `localhost` da 404 en Wind
 4. **02 Location → POST Zoning** → smp + mixtura
 5. **03 Consultations → cafeteria + Corrientes** → 6 pasos + `zoning` + bloque BA Data
 3. **04 Interpretations → sin direccion** → `needs_clarification`
-4. **04 Interpretations → fuera de catalogo** → `activity_unknown` / `out_of_scope`
+4. **04 Interpretations → fuera de catalogo** → trae `reason` (ya no `clarification_question`)
 
 Sin `LLM_API_KEY` usa intérprete mock. Con key intenta LLM y, si falla, cae a mock.
 
 Flujo sugerido: Interpret → Geocode, o Consultation NL de un solo paso.
+
+## Etapa 5 — Aclaraciones (contrato normalizado)
+
+**05 Clarifications**: un pedido por cada `reason` (`activity_missing`, `activity_not_in_catalog`, `location_missing`, `location_neighborhood_only`, `location_not_found`, `location_ambiguous`, `location_outside_caba`, `topic_out_of_scope`) y el segundo paso con el candidato elegido (`rubro_16` + `Florida 500`). Cada test revisa `reason`, `status` y que `message` no tenga códigos internos. Con USIG real, `location_ambiguous` y `location_outside_caba` pueden dar `location_not_found`.
+
+Regenerar: `python scripts/update_postman_clarifications.py`. Contrato: [`../documents/endpoints.md`](../documents/endpoints.md#aclaraciones-reason).
 
 ## Errores y límites (endurecimiento)
 
