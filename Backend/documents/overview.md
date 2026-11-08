@@ -9,12 +9,17 @@ Este API arma una **respuesta de orientación** unificada: actividad, ubicación
 ## Flujo típico de una consulta
 
 ```text
-query NL  ──► interpretación (LLM o mock)
+query NL  ──► interpretación: dirección, barrio (data/barrios.csv), rubro
+              (sinónimos de data/sinonimos.csv → LLM → parecido de texto)
                     │
+                    ├─► falta algo: reason + message + interpretación parcial
+                    │   (activity_candidates para elegir el rubro)
+                    ├─► rubro + barrio sin calle: partial (trámites + sede comunal)
+                    ▼
 activity_code + address
                     │
                     ▼
-              geocode USIG  ──► lat/lng, comuna, barrio
+              geocode USIG  ──► lat/lng, comuna ("1"–"15"), barrio
                     │
                     ▼
          zoning epok (parcela/smp/mixtura/rubro)
@@ -23,7 +28,7 @@ activity_code + address
    requirements + offices + BA Data context + sources
                     │
                     ▼
-            ConsultationResponse
+            ConsultationResponse  ──► se guarda (GET /api/v1/consultations/{id})
 ```
 
 También se puede llamar en modo **determinístico** (sin NL): `activity_code` + `address` directo a `POST /api/v1/consultations`.
@@ -44,7 +49,8 @@ También se puede llamar en modo **determinístico** (sin NL): `activity_code` +
 ## Qué es real vs local
 
 - **Reales (en runtime o snapshot oficial):** USIG, epok, rubros epok, trámites curados GCBA, oficinas AGC/Sedes Comunales, BA Data (snapshot CKAN).
-- **Locales / fallback:** mock geocoder, mock epok, mock interpreter si no hay `LLM_API_KEY`.
+- **Locales / fallback:** mock geocoder, mock epok, mock interpreter si no hay `LLM_API_KEY` (o si fallan el LLM principal y el de respaldo). `GET /status` dice cuáles están activos.
+- **Del equipo de Data:** `data/` (barrios, sinónimos, consultas de prueba y sus `.meta.json`). Cómo actualizarlo: [actualizar-data.md](actualizar-data.md).
 
 Detalle de fuentes: [fuentes-y-datos.md](fuentes-y-datos.md).  
 Cómo cargar datos: [snapshots-y-seed.md](snapshots-y-seed.md).

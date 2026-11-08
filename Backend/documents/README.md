@@ -21,6 +21,8 @@ Swagger en vivo (con la API levantada): [http://127.0.0.1:8000/docs](http://127.
 | [fuentes-pruebas.md](fuentes-pruebas.md) | Pruebas de acceso a fuentes oficiales |
 | [arquitectura-ia.md](arquitectura-ia.md) | Flujo IA, contratos JSON |
 | [plan-implementacion.md](plan-implementacion.md) | Plan técnico por etapas |
+| [actualizar-data.md](actualizar-data.md) | Para Data: formato de `data/`, cómo probar un cambio y exportar lo no reconocido |
+| [`../ROADMAP.md`](../ROADMAP.md) | Tareas del backend y estado |
 
 ## Pruebas
 
