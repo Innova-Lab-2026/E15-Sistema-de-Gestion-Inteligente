@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -49,7 +50,9 @@ class GeocoderClient(ABC):
 
 
 def _normalize_key(address: str) -> str:
-    return " ".join(address.lower().strip().replace(",", " ").split())
+    key = " ".join(address.lower().strip().replace(",", " ").split())
+    # "avenida Corrientes 2500", "Avda. Corrientes 2500" y "Av Corrientes 2500" son la misma fixture.
+    return re.sub(r"^(?:avenida|avda\.?|av\.?)\s+", "av. ", key)
 
 
 def _is_caba_item(item: dict[str, Any]) -> bool:
@@ -93,6 +96,23 @@ class MockGeocoder(GeocoderClient):
                         longitude=-58.413,
                         commune="3",
                         neighborhood="Balvanera",
+                        precision="rooftop",
+                    )
+                ],
+                provider_id="geocoder-mock",
+                provider_name="Mock geocoder CABA",
+            ),
+            # Direcciones de data/consultas_prueba.csv (B08).
+            "cabildo 2000": GeocodeResult(
+                status="confirmed",
+                original_address="Cabildo 2000",
+                hits=[
+                    GeocodeHit(
+                        normalized_address="CABILDO AV. 2000, CABA",
+                        latitude=-34.5627,
+                        longitude=-58.4563,
+                        commune="13",
+                        neighborhood="Belgrano",
                         precision="rooftop",
                     )
                 ],
