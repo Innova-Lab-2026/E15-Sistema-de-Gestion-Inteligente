@@ -14,6 +14,8 @@ COPY app ./app
 # Archivos del equipo de Data (barrios, sinónimos): los lee app/db/data_files.py
 COPY data ./data
 COPY scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+# Export para Data (B16): python -m scripts.export_unrecognized
+COPY scripts/export_unrecognized.py ./scripts/export_unrecognized.py
 
 # Run without root privileges.
 RUN useradd --system --uid 10001 --no-create-home tecba
