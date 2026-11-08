@@ -254,6 +254,8 @@ class ParsedAddress:
     address: str  # calle + altura en cifras ("Monroe 1500"), lista para USIG
     street: str
     number: int
+    start: int = 0  # posición del tramo en el texto original
+    end: int = 0
 
 
 def _tokenize(text: str) -> list[_Token]:
@@ -387,6 +389,8 @@ def extract_address(text: str) -> ParsedAddress | None:
             address=f"{street_text} {number}",
             street=street_text,
             number=number,
+            start=street[0].start,
+            end=raw_end,
         )
     return None
 

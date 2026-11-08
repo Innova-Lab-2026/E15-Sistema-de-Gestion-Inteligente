@@ -1,38 +1,95 @@
-"""Rule-based interpreter for local tests without an LLM key."""
+"""Rule-based interpreter for local tests without an LLM key.
+
+Orden: 1) dirección (`address_parser`), 2) barrio (`neighborhood_parser`), 3) rubro en el texto
+que queda, con palabras completas: así "Retiro" no da "tiro", "botica" no da "tic" y
+"Flores" (el barrio) no da Vivero.
+"""
 
 from __future__ import annotations
 
+import re
+from collections import Counter
+from functools import lru_cache
 from typing import Any
 
 from app.db.catalog_data import ACTIVITY_DEFINITIONS, activity_synonyms
 from app.db.data_files import fold
 from app.providers.address_parser import extract_address
+from app.providers.neighborhood_parser import find_neighborhood
 
-# Palabras de los nombres oficiales: respaldo cuando ningun sinonimo coincide.
-# Longer / more specific keywords first
-_ACTIVITY_KEYWORDS: list[tuple[str, tuple[str, ...]]] = sorted(
-    [(code, keywords) for code, _n, _e, _eid, _rid, keywords in ACTIVITY_DEFINITIONS],
-    key=lambda item: -max((len(k) for k in item[1]), default=0),
-)
+# Palabras de los nombres oficiales que no sirven para elegir un rubro: lugares, palabras de
+# todos los días o demasiado generales. Son la causa de la mayoría de los falsos positivos.
+_NAME_TOKEN_STOPWORDS = {
+    "buenos", "aires", "ciudad", "barrio", "parque", "villa", "puerto", "alto", "bajo", "centro",
+    "casa", "general", "especial", "publico", "publica", "nivel", "clase", "tipo", "otro", "otra",
+    "similares", "excepto", "excluido", "incluido", "principal", "comercial", "comercio",
+    "minorista", "mayorista", "establecimiento", "establecimientos", "servicio", "local",
+    "venta", "ventas", "hasta", "superior", "estandar", "categoria", "metros", "cuadrados",
+}
+# Una palabra que aparece en tres o más nombres oficiales no identifica un rubro.
+_NAME_TOKEN_MAX_RUBROS = 2
+_NAME_TOKEN_MIN_LENGTH = 5
+
+
+@lru_cache
+def _name_tokens() -> list[tuple[str, str]]:
+    """(palabra plegada, rubro_code) de los nombres oficiales que identifican un solo rubro (o dos)."""
+    per_code = {code: {fold(k) for k in keywords} for code, _n, _e, _c, _r, keywords in ACTIVITY_DEFINITIONS}
+    counts = Counter(token for tokens in per_code.values() for token in tokens)
+    pairs = [
+        (token, code)
+        for code, tokens in per_code.items()
+        for token in tokens
+        if len(token) >= _NAME_TOKEN_MIN_LENGTH
+        and " " not in token
+        and token not in _NAME_TOKEN_STOPWORDS
+        and counts[token] <= _NAME_TOKEN_MAX_RUBROS
+    ]
+    return sorted(pairs, key=lambda item: (-len(item[0]), item[1]))
+
+
+@lru_cache(maxsize=4096)
+def _word_pattern(term: str) -> re.Pattern[str]:
+    # Palabra completa, admite plural ("kioscos", "farmacias").
+    return re.compile(rf"(?<![a-z0-9]){re.escape(term)}(?:s|es)?(?![a-z0-9])")
 
 
 def _synonyms_longest_first() -> list[tuple[str, str]]:
     return sorted(activity_synonyms().items(), key=lambda item: -len(item[0]))
 
 
-def _find_activity(text: str, catalog: dict[str, str]) -> tuple[str, str] | None:
-    """(rubro_code, termino tal cual en la consulta). Sinonimos primero, el mas largo gana."""
+def find_activity(text: str, catalog: dict[str, str]) -> tuple[str, str, str] | None:
+    """(rubro_code, término encontrado, "synonym" | "name"). Sinónimos primero, el más largo gana."""
     folded = fold(text)
     for term, code in _synonyms_longest_first():
-        if code in catalog and term in folded:
-            return code, term
-    lower = text.lower()
-    for code, keywords in _ACTIVITY_KEYWORDS:
-        if code not in catalog:
-            continue
-        for kw in keywords:
-            if kw in lower:
-                return code, kw
+        if code in catalog and _word_pattern(term).search(folded):
+            return code, term, "synonym"
+    for token, code in _name_tokens():
+        if code in catalog and _word_pattern(token).search(folded):
+            return code, token, "name"
+    return None
+
+
+def _without(text: str, spans: list[tuple[int, int]]) -> str:
+    """El texto con esos tramos reemplazados por una coma (corta palabras, no las junta)."""
+    out, last = [], 0
+    for start, end in sorted(spans):
+        out.append(text[last:start])
+        out.append(" , ")
+        last = end
+    out.append(text[last:])
+    return "".join(out)
+
+
+def _literal(text: str, folded_term: str) -> str | None:
+    """El término tal como lo escribió la persona ("cafetería"), para `activity.raw_text`."""
+    for match in re.finditer(r"[^\W_]+(?:\s+[^\W_]+)*", text):
+        words = list(re.finditer(r"[^\W_]+", match.group()))
+        n = len(folded_term.split())
+        for i in range(len(words) - n + 1):
+            chunk = match.group()[words[i].start() : words[i + n - 1].end()]
+            if _word_pattern(folded_term).fullmatch(fold(chunk)):
+                return chunk
     return None
 
 
@@ -40,10 +97,16 @@ def mock_interpret(query: str, catalog: dict[str, str]) -> dict[str, Any]:
     """Return a raw interpretation dict (pre-validation). catalog: code -> display_name."""
     text = query.strip()
 
-    found = _find_activity(text, catalog)
-    activity_code, activity_raw = found if found else (None, None)
-
     parsed = extract_address(text)
+    spans = [(parsed.start, parsed.end)] if parsed else []
+    neighborhood = find_neighborhood(text, skip=spans)
+    if neighborhood:
+        spans.append((neighborhood.start, neighborhood.end))
+
+    found = find_activity(_without(text, spans), catalog)
+    activity_code = found[0] if found else None
+    activity_raw = (_literal(text, found[1]) or found[1]) if found else None
+
     address_raw = parsed.raw_text if parsed else None
     address = parsed.address if parsed else None
 
