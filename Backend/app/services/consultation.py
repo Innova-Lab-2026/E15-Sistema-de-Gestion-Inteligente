@@ -325,6 +325,10 @@ class ConsultationService:
                                 ingested_at=epok_src.ingested_at.isoformat()
                                 if epok_src.ingested_at
                                 else None,
+                                published_at=epok_src.published_at.isoformat()
+                                if epok_src.published_at
+                                else None,
+                                license=epok_src.license,
                             )
                         )
 
@@ -547,6 +551,7 @@ class ConsultationService:
 
         territorial: list[TerritorialItem] = []
         if commune and latitude is None and neighborhood:
+            source_ids.add("source-data-barrios")
             territorial.append(
                 TerritorialItem(
                     title="Contexto territorial de la consulta",
@@ -621,6 +626,8 @@ class ConsultationService:
                             ingested_at=src.ingested_at.isoformat()
                             if src.ingested_at
                             else None,
+                            published_at=src.published_at.isoformat() if src.published_at else None,
+                            license=src.license,
                         )
                     )
 

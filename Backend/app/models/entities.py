@@ -57,6 +57,7 @@ class Source(Base):
     transform_rule: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     backup_url: Mapped[Optional[str]] = mapped_column(String(512), nullable=True)
     related_activities: Mapped[Optional[list]] = mapped_column(JSONB, nullable=True)
+    license: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
 
 
 class Requirement(Base):

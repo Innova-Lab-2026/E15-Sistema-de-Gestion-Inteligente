@@ -11,6 +11,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.db.ba_data_context import map_layer_defs_from_snapshot
+from app.db.data_files import DATA_DIR, meta
 from app.db.catalog_data import ACTIVITY_DEFINITIONS, EPOK_CATEGORIES
 from app.db.offices_data import office_defs_from_snapshot
 from app.db.tramites_curados import (
@@ -43,6 +44,41 @@ def _activity_id(code: str) -> str:
 
 def _requirement_id(code: str) -> str:
     return f"requirement-{code}"
+
+
+def _meta_date(value: object) -> datetime | None:
+    try:
+        return datetime.fromisoformat(str(value)).replace(tzinfo=timezone.utc)
+    except ValueError:
+        logger.warning("data/*.meta.json: fecha invalida %r", value)
+        return None
+
+
+def _data_file_sources() -> dict[str, Source]:
+    """One source per data/<archivo>.meta.json (B13): real name, URL, organization, license and date."""
+    sources: dict[str, Source] = {}
+    for meta_path in sorted(DATA_DIR.glob("*.meta.json")):
+        stem = meta_path.name.removesuffix(".meta.json")
+        info = meta(f"{stem}.csv")
+        if not info:
+            continue
+        sid = f"source-data-{stem.replace('_', '-')}"
+        sources[sid] = Source(
+            id=sid,
+            name=str(info.get("nombre") or stem),
+            organization=str(info.get("organismo") or "GCBA"),
+            url=info.get("url"),
+            source_type="territorial",
+            jurisdiction="CABA",
+            published_at=_meta_date(info.get("publicado")),
+            ingested_at=_meta_date(info.get("descargado")) or _utcnow(),
+            validity_status="available",
+            transform_rule=f"data/{stem}.csv",
+            backup_url=None,
+            related_activities=None,
+            license=info.get("licencia"),
+        )
+    return sources
 
 
 async def _ensure_sources(session: AsyncSession) -> dict[str, Source]:
@@ -166,6 +202,8 @@ async def _ensure_sources(session: AsyncSession) -> dict[str, Source]:
         ),
     }
 
+    wanted.update(_data_file_sources())
+
     existing = {
         s.id: s
         for s in (
@@ -182,9 +220,10 @@ async def _ensure_sources(session: AsyncSession) -> dict[str, Source]:
             row.transform_rule = src.transform_rule
             row.related_activities = src.related_activities
             row.published_at = src.published_at
-            row.ingested_at = _utcnow()
+            row.ingested_at = src.ingested_at
             row.validity_status = src.validity_status
             row.backup_url = src.backup_url
+            row.license = src.license
         else:
             session.add(src)
             existing[sid] = src

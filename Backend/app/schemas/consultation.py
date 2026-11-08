@@ -147,7 +147,9 @@ class SourceItem(BaseModel):
     url: Optional[str] = None
     source_type: str
     validity_status: str
+    published_at: Optional[str] = None
     ingested_at: Optional[str] = None
+    license: Optional[str] = None
 
 
 class MapLayerItem(BaseModel):

@@ -32,6 +32,7 @@ class SourceOut(BaseModel):
     transform_rule: Optional[str] = None
     backup_url: Optional[str] = None
     related_activities: Optional[list[str]] = None
+    license: Optional[str] = None
 
 
 class OfficeOut(BaseModel):
