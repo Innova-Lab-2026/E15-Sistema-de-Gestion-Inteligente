@@ -8,6 +8,22 @@
     {
       "key": "baseUrl",
       "value": "http://localhost:8000"
+    },
+    {
+      "key": "consultationId",
+      "value": ""
+    },
+    {
+      "key": "consultationStatus",
+      "value": ""
+    },
+    {
+      "key": "candidate",
+      "value": ""
+    },
+    {
+      "key": "confirmedLocation",
+      "value": ""
     }
   ],
   "item": [
@@ -1259,6 +1275,209 @@
         }
       ],
       "description": "Un caso por cada reason del contrato de aclaraciones (documents/endpoints.md)."
+    },
+    {
+      "name": "06 End to end",
+      "item": [
+        {
+          "name": "GET Status — proveedores activos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('providers sin claves', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.providers.llm.active).to.be.oneOf(['llm', 'rules']);",
+                  "  pm.expect(j.providers.geocoder.simulated).to.be.a('boolean');",
+                  "  pm.expect(j.providers.epok.simulated).to.be.a('boolean');",
+                  "  pm.expect(pm.response.text()).to.not.match(/api_key|Bearer/i);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/status",
+            "description": "Qué proveedores están activos (LLM o reglas, USIG o simulado, epok) sin mostrar claves."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Consultation — guarda el caso",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.collectionVariables.set('consultationId', j.consultation_id);",
+                  "pm.collectionVariables.set('consultationStatus', j.status);",
+                  "pm.test('tiene consultation_id', function () { pm.expect(j.consultation_id).to.match(/^consultation-/); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/consultations",
+            "description": "Cada consulta queda guardada: el id se usa en el pedido siguiente.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Quiero abrir un local de ropa en Av. Corrientes 2500\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Consultation by id — mismo caso",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('mismo caso', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(j.consultation_id).to.eql(pm.collectionVariables.get('consultationId'));",
+                  "  pm.expect(j.status).to.eql(pm.collectionVariables.get('consultationStatus'));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/consultations/{{consultationId}}",
+            "description": "Devuelve la misma respuesta que el POST anterior."
+          },
+          "response": []
+        },
+        {
+          "name": "GET Consultation by id — inexistente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 404', function () { pm.response.to.have.status(404); });",
+                  "pm.test('not_found', function () { pm.expect(pm.response.json().error.code).to.eql('not_found'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/consultations/consultation-doesnotexist",
+            "description": "404 con el formato único de errores."
+          },
+          "response": []
+        },
+        {
+          "name": "POST Consultation — dirección ambigua",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "if (j.status === 'needs_location_confirmation') {",
+                  "  pm.collectionVariables.set('candidate', JSON.stringify(j.location.candidates[0]));",
+                  "  pm.test('sin respuesta oficial hasta confirmar', function () {",
+                  "    pm.expect(j.reason).to.eql('location_ambiguous');",
+                  "    pm.expect(j.requirements).to.eql([]);",
+                  "  });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/consultations",
+            "description": "Con el geocodificador simulado 'Palermo' es ambiguo: pide confirmar y no da requisitos.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"address\": \"Palermo\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Consultation — ubicación confirmada",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('sigue con la ubicación confirmada', function () {",
+                  "  var j = pm.response.json();",
+                  "  pm.expect(['complete', 'partial']).to.include(j.status);",
+                  "  pm.expect(j.location.status).to.eql('confirmed');",
+                  "});"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var c = JSON.parse(pm.collectionVariables.get('candidate') || 'null') || {",
+                  "  normalized_address: 'Av. Santa Fe y Coronel Diaz, Palermo, CABA', latitude: -34.5865, longitude: -58.4095,",
+                  "  commune: '14', neighborhood: 'Palermo' };",
+                  "pm.collectionVariables.set('confirmedLocation', JSON.stringify({",
+                  "  normalized_address: c.normalized_address, latitude: c.latitude, longitude: c.longitude,",
+                  "  commune: c.commune, neighborhood: c.neighborhood }));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/v1/consultations",
+            "description": "Segundo paso: la persona eligió un candidato y se manda como confirmed_location.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activity_code\": \"rubro_102\",\n  \"confirmed_location\": {{confirmedLocation}}\n}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Estado de proveedores, consultas guardadas y confirmación de una dirección ambigua."
     },
     {
       "name": "90 Errors & limits",

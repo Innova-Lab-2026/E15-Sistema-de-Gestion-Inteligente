@@ -57,6 +57,12 @@ Flujo sugerido: Interpret → Geocode, o Consultation NL de un solo paso.
 
 Regenerar: `python scripts/update_postman_clarifications.py`. Contrato: [`../documents/endpoints.md`](../documents/endpoints.md#aclaraciones-reason).
 
+## Etapa 6 — Punta a punta
+
+**06 End to end**: `GET /status` (proveedores activos, sin claves), consulta guardada y recuperada con `GET /api/v1/consultations/{id}`, 404 de una consulta inexistente, y el flujo de dirección ambigua → `confirmed_location`. Correr la carpeta en orden (usa variables de colección).
+
+Regenerar: `python scripts/update_postman_e2e.py`.
+
 ## Errores y límites (endurecimiento)
 
 1. **00 Health → GET Ready** — `{ "status": "ready" }` si la base responde.
