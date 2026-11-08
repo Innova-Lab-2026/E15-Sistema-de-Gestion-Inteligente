@@ -11,6 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY alembic.ini ./
 COPY alembic ./alembic
 COPY app ./app
+# Archivos del equipo de Data (barrios, sinónimos): los lee app/db/data_files.py
+COPY data ./data
 COPY scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Run without root privileges.
