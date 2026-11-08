@@ -181,7 +181,10 @@ class InterpretationService:
                     f"Actividades soportadas: {', '.join(sorted(catalog.keys()))}."
                 )
 
-        neighborhood = self._neighborhood(query)
+        parsed_query = extract_address(query)
+        neighborhood = find_neighborhood(
+            query, skip=[(parsed_query.start, parsed_query.end)] if parsed_query else None
+        )
         if address and barrio_por_variante(address):
             # The "address" is only a barrio name ("Palermo"): keep it as the neighborhood.
             neighborhood = neighborhood or self._neighborhood_from_id(barrio_por_variante(address))
@@ -228,6 +231,9 @@ class InterpretationService:
                 neighborhood_id=neighborhood.barrio_id if neighborhood else None,
                 neighborhood=neighborhood.name if neighborhood else None,
                 commune=str(neighborhood.commune) if neighborhood else None,
+                approximate=bool(
+                    address and parsed_query and parsed_query.approximate and parsed_query.address == address
+                ),
             ),
             jurisdiction=str(raw.get("jurisdiction") or "CABA"),
             missing_fields=missing,
@@ -236,12 +242,6 @@ class InterpretationService:
             provider=provider,
             original_query=query,
         )
-
-    @staticmethod
-    def _neighborhood(query: str) -> NeighborhoodMatch | None:
-        """Barrio named in the query itself (same rules with or without LLM), outside the address."""
-        parsed = extract_address(query)
-        return find_neighborhood(query, skip=[(parsed.start, parsed.end)] if parsed else None)
 
     @staticmethod
     def _neighborhood_from_id(barrio_id: str | None) -> NeighborhoodMatch | None:

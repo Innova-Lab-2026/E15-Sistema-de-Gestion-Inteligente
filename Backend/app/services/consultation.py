@@ -63,6 +63,7 @@ class ConsultationService:
         address = body.address
         original_query = body.query
         neighborhood_id = body.neighborhood_id
+        approximate = False
         confidence = 1.0
         activity_raw: str | None = None
 
@@ -109,6 +110,7 @@ class ConsultationService:
             activity_code = interpreted.activity.normalized_category
             address = interpreted.location.address or interpreted.location.raw_text
             neighborhood_id = neighborhood_id or interpreted.location.neighborhood_id
+            approximate = interpreted.location.approximate
             confidence = interpreted.activity.confidence
             activity_raw = interpreted.activity.raw_text
 
@@ -258,6 +260,9 @@ class ConsultationService:
         if location.status == "unavailable":
             missing.append("location")
             warnings.append("geocoder_unavailable")
+        if approximate and location.status == "confirmed":
+            # "A entre B y C": geocoded at the first corner.
+            warnings.append("address_approximate")
         if location.status == "neighborhood":
             missing.append("address")
             reason = "location_neighborhood_only"

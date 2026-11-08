@@ -16,6 +16,18 @@ Entiende alturas escritas de muchas formas y las devuelve en cifras:
 
 El nombre de la calle se copia tal cual: "Tres Arroyos 500" o "9 de Julio 1000" no se tocan.
 No corrige ni completa calles: eso lo hace USIG después.
+
+Si no hay altura, reconoce esquinas, que USIG acepta como cruce de calles:
+
+    "Corrientes y Callao" / "Corrientes esquina Callao" / "Corrientes esq. Callao"
+                                    -> "Corrientes y Callao"
+    "Corrientes entre Callao y Riobamba"
+                                    -> "Corrientes y Callao"  (primera esquina, aproximada)
+
+"y" también separa ideas ("en Corrientes y tengo dos empleados"): es esquina solo si las dos
+partes parecen nombres de calle (con mayúscula y sin palabras como "tengo" o "local").
+Las calles en minúscula y sin "en" ("una cafeteria monroe 1500") necesitan el callejero
+oficial de USIG y todavía no se reconocen (ROADMAP B27).
 """
 
 from __future__ import annotations
@@ -24,6 +36,8 @@ import re
 import unicodedata
 from dataclasses import dataclass
 from functools import lru_cache
+
+from app.db.data_files import barrio_por_variante
 
 # ---------------------------------------------------------------------------
 # Números en palabras
@@ -206,7 +220,7 @@ _TOKEN = re.compile(
 # Abreviaturas que terminan en punto sin cortar la oración.
 _ABBREVIATIONS = {
     "av", "avda", "pje", "diag", "bv", "bvd", "nro", "num", "gral", "dr", "pte", "cnel",
-    "tte", "sta", "sto", "ing", "pres", "int", "cap", "alte", "mcal", "hno", "pasj",
+    "tte", "sta", "sto", "ing", "pres", "int", "cap", "alte", "mcal", "hno", "pasj", "esq",
 }
 # Palabras que marcan dónde empieza el nombre de la calle (no forman parte de él).
 _PREPOSITIONS = {"en", "sobre", "por"}
@@ -253,9 +267,11 @@ class ParsedAddress:
     raw_text: str  # tramo literal de la consulta ("Monroe al mil quinientos")
     address: str  # calle + altura en cifras ("Monroe 1500"), lista para USIG
     street: str
-    number: int
+    number: int  # 0 en una esquina
     start: int = 0  # posición del tramo en el texto original
     end: int = 0
+    cross_street: str | None = None  # la otra calle de la esquina
+    approximate: bool = False  # "entre calles": se toma la primera esquina
 
 
 def _tokenize(text: str) -> list[_Token]:
@@ -370,8 +386,82 @@ def _street_before(tokens: list[_Token], run_start: int) -> list[_Token] | None:
     return street if has_name else None
 
 
+_CORNER = {"y", "esquina", "esq"}
+_BETWEEN = "entre"
+
+
+def _street_after(tokens: list[_Token], start: int) -> list[_Token] | None:
+    """Nombre de calle que empieza en `start`: con mayúscula (o tipo de calle) y sin verbos ni "local"."""
+    street: list[_Token] = []
+    i = start
+    while i < len(tokens) and len(street) < 6:
+        tok = tokens[i]
+        if tok.kind not in {"word", "num"}:
+            break
+        folded = tok.folded
+        if folded in _NOT_STREET or folded in _PREPOSITIONS or folded in _CORNER or folded == _BETWEEN:
+            break
+        if not street and not (tok.text[:1].isupper() or folded in _STREET_TYPES or tok.kind == "num"):
+            return None
+        if street and not (tok.text[:1].isupper() or folded in _CONNECTORS or folded in _STREET_TYPES):
+            break
+        street.append(tok)
+        if tok.ends_sentence:
+            break
+        i += 1
+    while street and street[-1].folded in _CONNECTORS:
+        street.pop()
+    has_name = any(
+        t.kind == "word" and t.folded not in _STREET_TYPES and t.folded not in _CONNECTORS and len(t.folded) >= 3
+        for t in street
+    )
+    return street if has_name else None
+
+
+def _is_barrio(tokens: list[_Token]) -> bool:
+    return barrio_por_variante(" ".join(t.text for t in tokens)) is not None and tokens[0].folded not in _STREET_TYPES
+
+
+def _corner(text: str, tokens: list[_Token]) -> ParsedAddress | None:
+    for k, tok in enumerate(tokens):
+        if tok.kind != "word" or tok.folded not in _CORNER | {_BETWEEN} or k == 0:
+            continue
+        first = _street_before(tokens, k)
+        # "en la esquina de Corrientes y Callao": la calle empieza después de "esquina de".
+        while first and (first[0].folded in _CONNECTORS or first[0].folded in _CORNER):
+            first.pop(0)
+        second = _street_after(tokens, k + 1)
+        if not first or not second:
+            continue
+        if not first[0].text[:1].isupper() and first[0].folded not in _STREET_TYPES:
+            continue
+        if _is_barrio(first) or _is_barrio(second):  # "en Palermo y Belgrano" son dos barrios
+            continue
+        end_token = second[-1]
+        approximate = tok.folded == _BETWEEN
+        if approximate:
+            # "A entre B y C": hace falta la segunda calle para que sea "entre calles".
+            j = k + 1 + len(second)
+            if j >= len(tokens) or tokens[j].folded != "y" or not _street_after(tokens, j + 1):
+                continue
+            end_token = _street_after(tokens, j + 1)[-1]
+        first_text = " ".join(t.text for t in first)
+        second_text = " ".join(t.text for t in second)
+        return ParsedAddress(
+            raw_text=" ".join(text[first[0].start : end_token.end].split()),
+            address=f"{first_text} y {second_text}",
+            street=first_text,
+            number=0,
+            start=first[0].start,
+            end=end_token.end,
+            cross_street=second_text,
+            approximate=approximate,
+        )
+    return None
+
+
 def extract_address(text: str) -> ParsedAddress | None:
-    """Busca la primera "calle + altura" de un texto. None si no hay ninguna."""
+    """Busca la primera "calle + altura" de un texto; si no hay, una esquina. None si no hay ninguna."""
     if not text:
         return None
     tokens = _tokenize(text)
@@ -392,7 +482,7 @@ def extract_address(text: str) -> ParsedAddress | None:
             start=street[0].start,
             end=raw_end,
         )
-    return None
+    return _corner(text, tokens)
 
 
 def normalize_address(address: str | None) -> str | None:

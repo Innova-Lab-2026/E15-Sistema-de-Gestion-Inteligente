@@ -29,6 +29,9 @@ class LocationInterpretation(BaseModel):
     )
     neighborhood: Optional[str] = Field(default=None, description="Nombre oficial del barrio", examples=["Belgrano"])
     commune: Optional[str] = Field(default=None, description='Comuna del barrio, "1" a "15"', examples=["13"])
+    approximate: bool = Field(
+        default=False, description='"Corrientes entre Callao y Riobamba": se usa la primera esquina'
+    )
 
 
 InterpretationStatus = Literal[

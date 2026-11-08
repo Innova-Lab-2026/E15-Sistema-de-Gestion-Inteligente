@@ -52,7 +52,10 @@ class GeocoderClient(ABC):
 def _normalize_key(address: str) -> str:
     key = " ".join(address.lower().strip().replace(",", " ").split())
     # "avenida Corrientes 2500", "Avda. Corrientes 2500" y "Av Corrientes 2500" son la misma fixture.
-    return re.sub(r"^(?:avenida|avda\.?|av\.?)\s+", "av. ", key)
+    key = re.sub(r"^(?:avenida|avda\.?|av\.?)\s+", "av. ", key)
+    if " y " in key:  # esquina: "av. corrientes y av. callao" -> "corrientes y callao"
+        key = re.sub(r"(?:^|(?<= ))av\. ", "", key)
+    return key
 
 
 def _is_caba_item(item: dict[str, Any]) -> bool:
@@ -97,6 +100,23 @@ class MockGeocoder(GeocoderClient):
                         commune="3",
                         neighborhood="Balvanera",
                         precision="rooftop",
+                    )
+                ],
+                provider_id="geocoder-mock",
+                provider_name="Mock geocoder CABA",
+            ),
+            # Esquina (B27): USIG la resuelve como cruce de calles.
+            "corrientes y callao": GeocodeResult(
+                status="confirmed",
+                original_address="Corrientes y Callao",
+                hits=[
+                    GeocodeHit(
+                        normalized_address="CORRIENTES AV. y CALLAO AV., CABA",
+                        latitude=-34.6043,
+                        longitude=-58.3922,
+                        commune="1",
+                        neighborhood="San Nicolas",
+                        precision="intersection",
                     )
                 ],
                 provider_id="geocoder-mock",
@@ -316,7 +336,13 @@ class UsigGeocoder(GeocoderClient):
             commune=normalize_commune(commune),
             neighborhood=neighborhood,
             city="Ciudad Autonoma de Buenos Aires",
-            precision="rooftop" if item.get("altura") else "street",
+            precision=(
+                "intersection"
+                if item.get("tipo") == "calle_y_calle"
+                else "rooftop"
+                if item.get("altura")
+                else "street"
+            ),
         )
 
     async def _lookup_datos_utiles(
