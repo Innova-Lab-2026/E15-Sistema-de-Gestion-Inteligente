@@ -197,3 +197,25 @@ class UnrecognizedActivity(Base):
     conversation_id: Mapped[Optional[str]] = mapped_column(String(64), nullable=True, index=True)
     provider: Mapped[str] = mapped_column(String(16))
 
+
+class ConsultationRecord(Base):
+    """Every answered consultation (B20): what was asked, understood, located and cited, with
+    which model and prompt version. `response` is the full answer, served again by id."""
+
+    __tablename__ = "consultations"
+
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), index=True)
+    query: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    request: Mapped[dict] = mapped_column(JSONB)
+    status: Mapped[str] = mapped_column(String(64))
+    reason: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
+    interpretation: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
+    location: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
+    source_ids: Mapped[Optional[list]] = mapped_column(JSONB, nullable=True)
+    provider: Mapped[Optional[str]] = mapped_column(String(16), nullable=True)  # llm | mock | None (deterministic)
+    llm_model: Mapped[Optional[str]] = mapped_column(String(128), nullable=True)
+    prompt_version: Mapped[Optional[str]] = mapped_column(String(32), nullable=True)
+    conversation_id: Mapped[Optional[str]] = mapped_column(String(64), nullable=True, index=True)
+    response: Mapped[dict] = mapped_column(JSONB)
+

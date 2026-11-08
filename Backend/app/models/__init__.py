@@ -1,5 +1,6 @@
 from app.models.entities import (
     ActivityCategory,
+    ConsultationRecord,
     MapLayer,
     MapLayerSource,
     Office,
@@ -13,6 +14,7 @@ from app.models.entities import (
 
 __all__ = [
     "ActivityCategory",
+    "ConsultationRecord",
     "MapLayer",
     "MapLayerSource",
     "Office",

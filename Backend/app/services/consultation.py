@@ -12,7 +12,15 @@ from sqlalchemy.orm import selectinload
 from app.core.config import Settings
 from app.core.territory import normalize_commune, same_commune
 from app.db.data_files import barrio, barrio_por_variante
-from app.models import ActivityCategory, MapLayer, Office, Requirement, Source, UnrecognizedActivity
+from app.models import (
+    ActivityCategory,
+    ConsultationRecord,
+    MapLayer,
+    Office,
+    Requirement,
+    Source,
+    UnrecognizedActivity,
+)
 from app.schemas.consultation import (
     ConsultationActivity,
     ConsultationInterpretation,
@@ -29,7 +37,7 @@ from app.schemas.consultation import (
     TerritorialItem,
 )
 from app.schemas.interpretation import InterpretationResponse
-from app.services.interpretation import InterpretationService
+from app.services.interpretation import INTERPRETATION_PROMPT_VERSION, InterpretationService
 from app.services.messages import message_for
 from app.services.location import LocationService
 from app.services.zoning import ZoningService
@@ -56,6 +64,8 @@ class ConsultationService:
         self.db = db
         self.location_service = LocationService(settings)
         self._llm_fallback_reason: str | None = None
+        self._provider: str | None = None
+        self._llm_model: str | None = None
 
     async def create(self, body: ConsultationRequest) -> ConsultationResponse:
         response = await self._build_response(body)
@@ -63,7 +73,37 @@ class ConsultationService:
             # The LLM was configured but failed: the frontend can tell the user the
             # interpretation came from local rules.
             response.data_status.warnings.append("llm_fallback_mock")
+        await self._save(body, response)
         return response
+
+    async def get(self, consultation_id: str) -> ConsultationResponse | None:
+        record = await self.db.get(ConsultationRecord, consultation_id)
+        return ConsultationResponse.model_validate(record.response) if record else None
+
+    async def _save(self, body: ConsultationRequest, response: ConsultationResponse) -> None:
+        """B20: keep the case so it can be read again by consultation_id. Never breaks the answer."""
+        try:
+            self.db.add(
+                ConsultationRecord(
+                    id=response.consultation_id,
+                    query=body.query,
+                    request=body.model_dump(mode="json"),
+                    status=response.status,
+                    reason=response.reason,
+                    interpretation=response.interpretation.model_dump(mode="json") if response.interpretation else None,
+                    location=response.location.model_dump(mode="json"),
+                    source_ids=[s.id for s in response.sources],
+                    provider=self._provider,
+                    llm_model=self._llm_model,
+                    prompt_version=INTERPRETATION_PROMPT_VERSION if self._provider else None,
+                    conversation_id=body.conversation_id,
+                    response=response.model_dump(mode="json"),
+                )
+            )
+            await self.db.commit()
+        except SQLAlchemyError as exc:
+            await self.db.rollback()
+            logger.warning("Could not store consultation %s: %r", response.consultation_id, exc)
 
     async def _build_response(self, body: ConsultationRequest) -> ConsultationResponse:
         activity_code = body.activity_code
@@ -77,10 +117,13 @@ class ConsultationService:
 
         # Natural language path
         if body.query and (not activity_code or not address):
-            interpreted = await InterpretationService(
-                self.settings, self.db
-            ).interpret(body.query.strip(), conversation_id=body.conversation_id)
+            interpretation_service = InterpretationService(self.settings, self.db)
+            interpreted = await interpretation_service.interpret(
+                body.query.strip(), conversation_id=body.conversation_id
+            )
             self._llm_fallback_reason = interpreted.fallback_reason
+            self._provider = interpreted.provider
+            self._llm_model = interpretation_service.used_model
 
             original_query = interpreted.original_query
             # Activity + barrio without street: answer partially by barrio (B07).

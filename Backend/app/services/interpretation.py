@@ -95,9 +95,12 @@ class InterpretationService:
         self.settings = settings
         self.db = db
         self.llm = LLMClient(settings)
+        self.used_model: str | None = None
 
     async def interpret(self, query: str, conversation_id: str | None = None) -> InterpretationResponse:
         response = await self._interpret(query)
+        # Model that answered (main or backup), for the consultation record (B20).
+        self.used_model = self.llm.last_model if response.provider == "llm" else None
         if response.reason == "activity_not_in_catalog" and response.activity.raw_text:
             await self._record_unrecognized(response, conversation_id)
         return response

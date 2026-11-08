@@ -73,6 +73,7 @@ Regla para elegir el rubro sin preguntar: el primer candidato con `score >= 0.85
 | Método | Path | Body | Respuesta |
 |---|---|---|---|
 | POST | `/api/v1/consultations` | Determinístico: `{ "activity_code": "rubro_102", "address": "Av. Corrientes 2500" }` o `{ "activity_code": "rubro_315", "neighborhood_id": "belgrano" }` **o** NL: `{ "query": "..." }` | Orientación: requirements, offices, zoning, sources, contexto BA Data |
+| GET | `/api/v1/consultations/{consultation_id}` | — | La misma respuesta que devolvió el POST (cada consulta queda guardada con la consulta original, interpretación, ubicación, fuentes, proveedor, modelo y versión del prompt). 404 `not_found` si no existe |
 
 Estados tipados incluyen actividad desconocida, ubicación fuera de CABA, parcial si epok o USIG fallan, etc. Cada estado bloqueado trae `reason` y `message` (ver [Aclaraciones](#aclaraciones-reason)) y la `interpretation` parcial (rubro, dirección, barrio y `activity_candidates` ya detectados). Con rubro y barrio sin calle: `status: "partial"`, `location.status: "neighborhood"`, `reason: "location_neighborhood_only"`, trámites y sede de la comuna sin zonificación. `location.commune` es siempre `"1"`–`"15"` y `location.neighborhood_id` el `barrio_id`.
 
