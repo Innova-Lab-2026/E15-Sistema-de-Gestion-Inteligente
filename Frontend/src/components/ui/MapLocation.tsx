@@ -12,7 +12,7 @@ export default function MapLocation({
       zoom={16}
       className="m-auto font-sans z-10"
       scrollWheelZoom={false}
-      style={{ height: "200px", width: "200px" }}
+      style={{ height: "250px", width: "250px" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -50,13 +50,6 @@ export default function HomePage() {
           según el lugar exacto donde estés.
         </p>
       </div>
-      <div className="w-3xl">
-        <Alert
-          title="Revisa la ubicación"
-          message=" Para consultar sobre apertura de tu cafetería, necesitás seleccionar una dirección dentro de CABA."
-          type="error"
-        />
-      </div>
       <form
         onSubmit={handleOnSubmit}
         className="relative w-full max-w-3xl mt-5 mx-auto flex flex-col sm:block gap-3 sm:gap-0"

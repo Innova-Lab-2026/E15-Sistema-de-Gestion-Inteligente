@@ -5,7 +5,7 @@ export default function Navbar() {
         <a href="#" className="font-semibold">
           Gestión Inteligente
         </a>
-        <div className="flex">
+        <div className="flex uppercase font-semibold">
           <p>Ingresar</p>
         </div>
       </header>
