@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import LoadingScreen from "./LoadingScreen";
+import Alert from "../ui/Alert";
 
 export default function HomePage() {
   const queryRef = useRef<HTMLInputElement>(null);
@@ -41,6 +42,13 @@ export default function HomePage() {
           Te ayudamos a entender trámites, requisitos y contexto territorial,
           según el lugar exacto donde estés.
         </p>
+      </div>
+      <div className="w-3xl">
+        <Alert
+          title="Revisa la ubicación"
+          message=" Para consultar sobre apertura de tu cafetería, necesitás seleccionar una dirección dentro de CABA."
+          type="error"
+        />
       </div>
       <form
         onSubmit={handleOnSubmit}
