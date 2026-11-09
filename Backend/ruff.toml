@@ -1,0 +1,8 @@
+target-version = "py313"
+extend-exclude = [".cursor"]
+
+[lint.per-file-ignores]
+# Scripts add the repo root to sys.path before importing `app`.
+"scripts/*" = ["E402"]
+# conftest sets environment variables before importing the app (settings are read at import).
+"tests/conftest.py" = ["E402"]

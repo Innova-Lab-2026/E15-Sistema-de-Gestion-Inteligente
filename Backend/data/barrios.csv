@@ -1,0 +1,49 @@
+barrio_id,nombre,comuna,variantes
+agronomia,Agronomía,15,AGRONOMIA|Agronomia|AgronomÃ­a
+almagro,Almagro,5,ALMAGRO
+balvanera,Balvanera,3,BALVANERA
+barracas,Barracas,4,BARRACAS
+belgrano,Belgrano,13,BELGRANO
+boedo,Boedo,5,BOEDO
+caballito,Caballito,6,CABALLITO
+chacarita,Chacarita,15,CHACARITA
+coghlan,Coghlan,12,COGHLAN
+colegiales,Colegiales,13,COLEGIALES
+constitucion,Constitución,1,CONSTITUCION|Constitucion|ConstituciÃ³n
+flores,Flores,7,FLORES
+floresta,Floresta,10,FLORESTA
+la_boca,La Boca,4,BOCA|Boca
+la_paternal,La Paternal,15,PATERNAL|Paternal
+liniers,Liniers,9,LINIERS
+mataderos,Mataderos,9,MATADEROS
+monserrat,Monserrat,1,MONSERRAT|Montserrat
+monte_castro,Monte Castro,10,MONTE CASTRO
+nueva_pompeya,Nueva Pompeya,4,NUEVA POMPEYA
+nunez,Núñez,13,NUÑEZ|Nunez|NÃºÃ±ez
+palermo,Palermo,14,PALERMO
+parque_avellaneda,Parque Avellaneda,9,PARQUE AVELLANEDA
+parque_chacabuco,Parque Chacabuco,7,PARQUE CHACABUCO
+parque_chas,Parque Chas,15,PARQUE CHAS
+parque_patricios,Parque Patricios,4,PARQUE PATRICIOS
+puerto_madero,Puerto Madero,1,PUERTO MADERO
+recoleta,Recoleta,2,RECOLETA
+retiro,Retiro,1,RETIRO
+saavedra,Saavedra,12,SAAVEDRA
+san_cristobal,San Cristóbal,3,SAN CRISTOBAL|San Cristobal|San CristÃ³bal
+san_nicolas,San Nicolás,1,SAN NICOLAS|San Nicolas|San NicolÃ¡s
+san_telmo,San Telmo,1,SAN TELMO
+versalles,Versalles,10,VERSALLES
+villa_crespo,Villa Crespo,15,VILLA CRESPO
+villa_devoto,Villa Devoto,11,VILLA DEVOTO
+villa_general_mitre,Villa General Mitre,11,VILLA GRAL. MITRE|Villa Gral Mitre|Villa Gral. Mitre
+villa_lugano,Villa Lugano,8,VILLA LUGANO
+villa_luro,Villa Luro,10,VILLA LURO
+villa_ortuzar,Villa Ortúzar,15,VILLA ORTUZAR|Villa Ortuzar|Villa OrtÃºzar
+villa_pueyrredon,Villa Pueyrredón,12,VILLA PUEYRREDON|Villa Pueyrredon|Villa PueyrredÃ³n
+villa_real,Villa Real,10,VILLA REAL
+villa_riachuelo,Villa Riachuelo,8,VILLA RIACHUELO
+villa_santa_rita,Villa Santa Rita,11,VILLA SANTA RITA
+villa_soldati,Villa Soldati,8,VILLA SOLDATI
+villa_urquiza,Villa Urquiza,12,VILLA URQUIZA
+villa_del_parque,Villa del Parque,11,VILLA DEL PARQUE
+velez_sarsfield,Vélez Sarsfield,10,VELEZ SARSFIELD|Velez Sarsfield|VÃ©lez Sarsfield

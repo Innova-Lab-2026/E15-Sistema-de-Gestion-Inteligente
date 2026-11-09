@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TECBA – Qué hay detrás del backend | Presentación al equipo</title>
+<style>
+  :root{--bg:#0f172a;--card:#ffffff;--ink:#1e293b;--mut:#64748b;--acc:#2563eb;--ok:#16a34a;--warn:#d97706;--bad:#dc2626;--soft:#f1f5f9}
+  *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif;background:#eef2ff;color:var(--ink);line-height:1.55}
+  header.hero{background:linear-gradient(135deg,#1e3a8a,#2563eb 60%,#06b6d4);color:#fff;padding:56px 24px;text-align:center}
+  header.hero h1{margin:0 0 8px;font-size:clamp(24px,4vw,40px)}header.hero p{margin:6px auto;max-width:820px;opacity:.95}
+  .pill{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 14px;margin:4px;font-size:14px}
+  nav.toc{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e2e8f0;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;font-size:14px}
+  nav.toc a{color:var(--acc);text-decoration:none;white-space:nowrap;background:var(--soft);padding:6px 12px;border-radius:999px}
+  main{max-width:1020px;margin:0 auto;padding:24px 16px 64px}
+  section.card{background:var(--card);border-radius:16px;padding:28px;margin:20px 0;box-shadow:0 6px 24px rgba(15,23,42,.08)}
+  h2{margin-top:0;font-size:24px}h3{margin-bottom:6px}
+  .grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .src{border:1px solid #e2e8f0;border-radius:12px;padding:16px;background:#f8fafc}
+  .src h3{margin:0 0 4px}.badge{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;margin-bottom:8px}
+  .ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.bad{background:#fee2e2;color:#991b1b}.info{background:#dbeafe;color:#1d4ed8}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}th,td{border:1px solid #e2e8f0;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f1f5f9}
+  code,pre{font-family:ui-monospace,Consolas,monospace;font-size:13px}pre{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:14px;overflow-x:auto}
+  .flow{background:var(--soft);border-radius:12px;padding:16px;font-size:14px}
+  .links{list-style:none;padding:0;margin:12px 0 0;font-size:13px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px}
+  .links li{margin:6px 0}
+  .links a{color:var(--acc);word-break:break-all}
+  .links b{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+  .roles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .role{border-left:5px solid var(--acc);background:#f8fafc;padding:12px 14px;border-radius:0 10px 10px 0}
+  footer{text-align:center;color:var(--mut);font-size:13px;padding:24px}
+  @media print{nav.toc{display:none}section.card{box-shadow:none;border:1px solid #ddd}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>Sistema de Gestión Inteligente – TECBA</h1>
+  <p>Lo que el <b>backend</b> está integrando y lo que cada área necesita saber. Caso piloto: <b>“Quiero abrir una cafetería en Av. Corrientes 2500. ¿Qué tengo que hacer?”</b></p>
+  <div><span class="pill">UX/UI</span><span class="pill">Frontend</span><span class="pill">QA / Testing</span><span class="pill">PO</span><span class="pill">Análisis de Datos</span><span class="pill">Backend</span></div>
+</header>
+<nav class="toc">
+  <a href="#flujo">1. Flujo</a><a href="#fuentes">2. Fuentes</a><a href="#complemento">3. Cómo se combinan</a><a href="#reparto">4. Datos vs Backend</a><a href="#contrato">5. Contrato API</a><a href="#roles">6. Qué necesita cada área</a><a href="#plan">7. Plan</a>
+</nav>
+<main>
+
+<section class="card" id="flujo">
+  <h2>1. El flujo completo en 30 segundos</h2>
+  <div class="flow"><b>Persona escribe qué + dónde</b> → backend interpreta actividad y ubicación → consulta 3+ fuentes → integra territorio + normativa + trámites → devuelve <b>orientación + mapa + fuentes</b> → la IA permite repreguntar. La IA <b>nunca inventa</b>: solo resume lo respaldado.</div>
+  <div class="grid g2" style="margin-top:12px">
+    <div><b>Stack backend:</b> Python + FastAPI + PostgreSQL/PostGIS. Geocodificación USIG. IA como capa de interpretación con respuestas citadas.</div>
+    <div><b>Regla de oro:</b> cada bloque de respuesta indica su fuente oficial. Si una fuente no está disponible, se avisa y se muestra el resto.</div>
+  </div>
+</section>
+
+<section class="card" id="fuentes">
+  <h2>2. Las fuentes: qué hacen y qué les pedimos</h2>
+  <div class="grid g2">
+    <div class="src"><span class="badge ok">USIG — ¿DÓNDE es?</span>
+      <h3>Geocodificación + territorio</h3>
+      <p><b>Hace:</b> convierte “Corrientes 2500” en dirección oficial + coordenadas, y describe la zona.</p>
+      <p><b>Por qué:</b> sin ubicación no hay mapa, ni normativa, ni trámites. Es la puerta de entrada.</p>
+      <p><b>Obtenemos:</b> dirección normalizada, latitud/longitud, comuna, barrio, comisaría, hospital, escuela.</p>
+      <ul class="links"><li><b>Probar en vivo ↓</b></li>
+        <li><a href="https://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=Corrientes%202500&amp;maxOptions=3&amp;geocodificar=TRUE" target="_blank" rel="noopener">Buscar “Corrientes 2500” (normalizar)</a></li>
+        <li><a href="https://ws.usig.buenosaires.gob.ar/datos_utiles?x=-58.401981&amp;y=-34.604792" target="_blank" rel="noopener">Datos de la zona (Comuna 3, Balvanera)</a></li>
+        <li><a href="https://mapa.buenosaires.gob.ar/" target="_blank" rel="noopener">Mapa interactivo de la Ciudad</a></li>
+        <li><a href="https://usig.buenosaires.gob.ar/apis/" target="_blank" rel="noopener">Documentación de APIs USIG</a></li>
+      </ul>
+    </div>
+    <div class="src"><span class="badge ok">Ciudad 3D — ¿QUÉ se permite?</span>
+      <h3>Normativa urbanística + catastro</h3>
+      <p><b>Hace:</b> dice qué rubros y construcciones están permitidos en cada lote (mixturas, usos, edificabilidad).</p>
+      <p><b>Por qué:</b> es la única que cruza <b>actividad × ubicación</b> (ej: cafetería en esa cuadra).</p>
+      <p><b>Obtenemos:</b> categorías de uso, rubros permitidos, mixtura del lote, edificabilidad, afectaciones.</p>
+      <ul class="links"><li><b>Probar en vivo ↓</b></li>
+        <li><a href="https://ciudad3d.buenosaires.gob.ar/" target="_blank" rel="noopener">Visor Ciudad 3D</a></li>
+        <li><a href="https://epok.buenosaires.gob.ar/cur3d/categorias/" target="_blank" rel="noopener">Categorías de uso (Comercial, Servicios…)</a></li>
+        <li><a href="https://epok.buenosaires.gob.ar/cur3d/cuadrosdeuso/rubros/?categoria=1&amp;mixtura=2" target="_blank" rel="noopener">Rubros comerciales permitidos (ejemplo)</a></li>
+      </ul>
+    </div>
+    <div class="src"><span class="badge warn">BA Data — ¿QUÉ contexto hay?</span>
+      <h3>Catálogo de datos abiertos</h3>
+      <p><b>Hace:</b> reúne cientos de datasets de la Ciudad (locales, servicios, catastro, tablas y mapas).</p>
+      <p><b>Por qué:</b> aporta contexto para enriquecer la respuesta (qué hay en la zona).</p>
+      <p><b>Obtenemos:</b> tablas y archivos para cargar en nuestra base y mostrar contexto.</p>
+      <ul class="links"><li><b>Probar en vivo ↓</b></li>
+        <li><a href="https://data.buenosaires.gob.ar/" target="_blank" rel="noopener">Portal BA Data</a></li>
+        <li><a href="https://data.buenosaires.gob.ar/api/3/action/status_show" target="_blank" rel="noopener">Estado de la API</a></li>
+        <li><a href="https://data.buenosaires.gob.ar/api/3/action/package_list" target="_blank" rel="noopener">Lista de datasets</a></li>
+        <li><a href="https://data.buenosaires.gob.ar/api/3/action/package_show?id=api-consulta-datos-utiles" target="_blank" rel="noopener">Ejemplo: dataset “datos útiles”</a></li>
+      </ul>
+    </div>
+    <div class="src"><span class="badge bad">Trámites — ¿CÓMO lo habilito?</span>
+      <h3>Guía oficial paso a paso</h3>
+      <p><b>Hace:</b> explica requisitos, documentación y pasos (habilitación común, exprés, licencias).</p>
+      <p><b>Por qué:</b> construye el <b>camino feliz</b> accionable. Sin esto solo mostramos datos sueltos.</p>
+      <p><b>Obtenemos:</b> pasos ordenados, requisitos, documentación y enlaces oficiales.</p>
+      <ul class="links"><li><b>Probar en vivo ↓</b></li>
+        <li><a href="https://buenosaires.gob.ar/tramites/como-habilitar-tu-local-comercial-en-la-ciudad" target="_blank" rel="noopener">Guía: cómo habilitar tu local</a></li>
+        <li><a href="https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica" target="_blank" rel="noopener">Habilitación de actividad económica</a></li>
+        <li><a href="https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres" target="_blank" rel="noopener">Habilitación exprés (locales chicos)</a></li>
+      </ul>
+    </div>
+  </div>
+  <p><span class="badge info">4ª fuente / futuro: IDECABA</span> Geoportal de la Ciudad para sumar más capas al mapa.</p>
+  <ul class="links"><li><b>Probar en vivo ↓</b></li>
+    <li><a href="https://idecaba.buenosaires.gob.ar/" target="_blank" rel="noopener">Portal IDECABA</a></li>
+    <li><a href="https://visualizador-idecaba.buenosaires.gob.ar/" target="_blank" rel="noopener">Visualizador de mapas</a></li>
+    <li><a href="https://geonetwork-idecaba.buenosaires.gob.ar/geonetwork/" target="_blank" rel="noopener">Catálogo de capas</a></li>
+  </ul>
+</section>
+
+<section class="card" id="complemento">
+  <h2>3. Cómo se complementan</h2>
+  <pre>USIG (dónde: punto + barrio)
+   │ punto ─────────────────▶ Ciudad 3D (qué se permite: rubros)
+   │ barrio/zona             │ rubro cafetería
+   ▼                         ▼
+BA Data (contexto) ───▶ Trámites (cómo: pasos + requisitos)
+                            ▼  Respuesta: mapa + pasos + territorio + fuentes</pre>
+  <p><b>Ejemplo Corrientes 2500:</b> USIG ubica el punto en Balvanera, Comuna 3 → Ciudad 3D indica rubros comerciales permitidos → BA Data suma contexto de la zona → Trámites arma la guía (cuenta miBA → autorización → certificado ambiental).</p>
+</section>
+
+<section class="card" id="reparto">
+  <h2>4. Reparto de tareas: Análisis de Datos vs Backend</h2>
+  <p>El equipo de <b>Análisis de Datos</b> define <b>qué dato vale y cómo se lee</b>; el <b>Backend</b> lo convierte en <b>sistema en vivo</b> (base, servicios, mapa, IA). Datos no programa ni mantiene la plataforma; Backend no decide el criterio del dato.</p>
+  <div class="grid g2">
+    <div class="src"><span class="badge ok">📊 Análisis de Datos — hasta acá</span>
+      <p>✔ Elegir qué datasets y capas sirven para la cafetería y cuáles no.<br>
+      ✔ Revisar calidad: estructura, nulos, duplicados, formatos y fechas.<br>
+      ✔ Entregar <b>archivos curados de muestra</b> (CSV/Excel/GeoJSON) + diccionario de campos.<br>
+      ✔ Armar <b>mapeos y reglas</b>: ej. rubro Ciudad 3D → trámite que corresponde; tabla de equivalencias.<br>
+      ✔ Curar la <b>guía de trámites</b> (pasos, requisitos, docs + enlace oficial) en planilla.<br>
+      ✔ Definir <b>casos esperados</b>: 15–20 consultas con su respuesta correcta para validar la IA.<br>
+      ✔ Documentar <b>origen, fecha, límites y transformaciones</b> de cada dato.</p>
+    </div>
+    <div class="src"><span class="badge info">⚙️ Backend — desde acá</span>
+      <p>✔ Diseñar la base (PostGIS), los ETL automáticos y la actualización periódica.<br>
+      ✔ Exponer todo como <b>servicios en vivo</b>: geocodificación, territorio, trámites, mapa, chat IA.<br>
+      ✔ Implementar las reglas de Datos en código + manejo de errores y caídas.<br>
+      ✔ Integrar la IA, la trazabilidad técnica y el despliegue.<br>
+      ✔ Rendimiento, seguridad y monitoreo.</p>
+    </div>
+  </div>
+  <table><tr><th>Entregable (ejemplo)</th><th>Lo prepara Datos</th><th>Lo opera Backend</th></tr>
+  <tr><td>Guía de trámites cafetería</td><td>Planilla con pasos + requisitos + URL oficial</td><td>Tabla en base + servicio de consulta</td></tr>
+  <tr><td>Rubros permitidos</td><td>Tabla rubro → trámite + casos de prueba</td><td>Regla en código + endpoint</td></tr>
+  <tr><td>Dataset BA Data útil</td><td>Muestra limpia + diccionario + reporte de calidad</td><td>ETL completo + recarga programada</td></tr>
+  <tr><td>Contexto territorial</td><td>Qué campos mostrar por zona (comuna, barrio…)</td><td>Servicio + GeoJSON para el mapa</td></tr>
+  <tr><td>Validación IA</td><td>Set de preguntas/respuestas esperadas</td><td>Prompts + evaluación automática</td></tr></table>
+  <p style="color:var(--mut)"><b>Handoff:</b> Datos entrega archivos + reglas + diccionario en carpeta compartida; Backend los versiona y automatiza. Si cambia una fuente, Datos avisa el impacto y Backend ajusta el servicio.</p>
+</section>
+
+<section class="card" id="contrato">
+  <h2>5. Lo que el backend entrega al frontend</h2>
+  <table><tr><th>Servicio</th><th>Entrega</th></tr>
+  <tr><td>Consulta inicial</td><td>Actividad detectada + ubicación normalizada + coordenadas</td></tr>
+  <tr><td>Territorio</td><td>Contexto de la zona (comuna, barrio, servicios)</td></tr>
+  <tr><td>Trámites</td><td>Pasos, requisitos y documentación con enlace oficial</td></tr>
+  <tr><td>Mapa</td><td>Punto + capas en formato GeoJSON para el mapa interactivo</td></tr>
+  <tr><td>Chat IA</td><td>Respuesta citada + repreguntas sugeridas</td></tr>
+  <tr><td>Fuentes</td><td>Origen de cada dato mostrado</td></tr></table>
+<pre>{
+  "actividad": "cafetería",
+  "ubicacion": "CORRIENTES AV. 2500, CABA",
+  "territorio": {"comuna": "Comuna 3", "barrio": "Balvanera"},
+  "tramites": [{"titulo": "Habilitación exprés",
+                "pasos": ["Crear cuenta miBA", "Solicitar autorización", "Certificado ambiental"]}],
+  "fuentes": [{"nombre": "USIG"}, {"nombre": "Trámites GCBA"}]
+}</pre>
+</section>
+
+<section class="card" id="roles">
+  <h2>6. Qué necesita cada área</h2>
+  <div class="roles">
+    <div class="role"><b>📊 Análisis de Datos</b><br>Entregar por fuente: muestra curada + diccionario + mapeos + casos esperados + reporte de calidad y límites. Nada de APIs: su salida es el insumo que Backend automatiza.</div>
+    <div class="role"><b>🎨 UX/UI</b><br>Diseñar: barra “qué + dónde”, resultado en 3 bloques (pasos / territorio / mapa), sello de fuente por bloque, estados de carga, sin datos y fuera de alcance, repreguntas sugeridas.</div>
+    <div class="role"><b>💻 Frontend</b><br>Consumir los 6 servicios, mapa con punto + 1 capa, navegación respuesta ↔ mapa ↔ fuentes, y manejo de respuestas parciales.</div>
+    <div class="role"><b>🧪 QA / Testing</b><br>Casos: camino feliz “cafetería Corrientes 2500”, dirección inexistente o ambigua, consulta fuera de alcance. Validar coordenadas, trazabilidad y que la IA cite fuentes.</div>
+    <div class="role"><b>📋 PO</b><br>Alcance MVP: 1 rubro, 3 fuentes integradas, 1 camino feliz completo. Criterio de aprobación: recorrido sin errores críticos y con fuentes visibles.</div>
+  </div>
+</section>
+
+<section class="card" id="plan">
+  <h2>7. Plan inmediato</h2>
+  <p><b>Datos (esta semana):</b> elegir datasets del caso cafetería, primera muestra curada + diccionario, planilla de trámites y 10 consultas esperadas.<br>
+  <b>Backend (en paralelo):</b> base territorial, geocodificación en vivo y primer mapa de prueba para frontend con los insumos de Datos.</p>
+</section>
+
+</main>
+<footer>TECBA · Presentación del backend para todo el equipo</footer>
+</body>
+</html>
