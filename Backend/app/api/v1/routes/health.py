@@ -68,6 +68,7 @@ async def status(settings: Settings = Depends(get_settings)) -> StatusResponse:
                 active="llm" if llm.is_configured else "rules",
                 model=(primary or backup).model if llm.is_configured else None,
                 fallback=LLMBackupStatus(configured=backup is not None, model=backup.model if backup else None),
+                rules_header=settings.debug,
             ),
             geocoder=GeocoderStatus(
                 provider=geocoder,

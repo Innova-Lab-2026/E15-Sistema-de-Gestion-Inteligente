@@ -97,11 +97,16 @@ class InterpretationService:
         self.llm = LLMClient(settings)
         self.used_model: str | None = None
 
-    async def interpret(self, query: str, conversation_id: str | None = None) -> InterpretationResponse:
-        response = await self._interpret(query)
+    async def interpret(
+        self, query: str, conversation_id: str | None = None, *, rules_only: bool = False
+    ) -> InterpretationResponse:
+        """`rules_only` (header X-Interpreter: rules, only with DEBUG): skip the LLM even if it is
+        configured, to test without spending calls. Those queries are not recorded for B16: they
+        show what the rules miss, not what production would answer."""
+        response = await self._interpret(query, rules_only=rules_only)
         # Model that answered (main or backup), for the consultation record (B20).
         self.used_model = self.llm.last_model if response.provider == "llm" else None
-        if response.reason == "activity_not_in_catalog" and response.activity.raw_text:
+        if response.reason == "activity_not_in_catalog" and response.activity.raw_text and not rules_only:
             await self._record_unrecognized(response, conversation_id)
         return response
 
@@ -121,11 +126,11 @@ class InterpretationService:
             await self.db.rollback()
             logger.warning("Could not record unrecognized activity: %r", exc)
 
-    async def _interpret(self, query: str) -> InterpretationResponse:
+    async def _interpret(self, query: str, *, rules_only: bool = False) -> InterpretationResponse:
         catalog = await self._load_catalog()
         fallback_reason: str | None = None
 
-        if self._choose_provider() == "llm":
+        if not rules_only and self._choose_provider() == "llm":
             try:
                 raw = await self._interpret_with_llm(query, catalog)
                 return self._validate_and_build(query=query, raw=raw, catalog=catalog, provider="llm")

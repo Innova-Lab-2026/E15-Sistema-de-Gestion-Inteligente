@@ -24,6 +24,7 @@ def test_status_with_real_providers_never_shows_keys(client, override_settings):
         llm_fallback_base_url="https://openrouter.test/api/v1",
         llm_fallback_api_key="secret-backup-key",
         llm_fallback_model="backup-model:free",
+        debug=False,
     )
     response = client.get("/status")
     body = response.json()
@@ -33,6 +34,7 @@ def test_status_with_real_providers_never_shows_keys(client, override_settings):
         "active": "llm",
         "model": "gemini-flash-lite-latest",
         "fallback": {"configured": True, "model": "backup-model:free"},
+        "rules_header": False,
     }
     assert "secret" not in response.text
     assert "gemini.test" not in response.text and "openrouter.test" not in response.text

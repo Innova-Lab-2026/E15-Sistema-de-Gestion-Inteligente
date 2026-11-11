@@ -16,6 +16,10 @@ class LLMStatus(BaseModel):
     active: Literal["llm", "rules"] = Field(description="rules = intérprete local sin IA")
     model: Optional[str] = None
     fallback: LLMBackupStatus
+    rules_header: bool = Field(
+        default=False,
+        description='true = con DEBUG, POST /interpretations acepta "X-Interpreter: rules" para no llamar al LLM',
+    )
 
 
 class GeocoderStatus(BaseModel):
