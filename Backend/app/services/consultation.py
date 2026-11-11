@@ -335,6 +335,10 @@ class ConsultationService:
         if location.status == "unavailable":
             missing.append("location")
             warnings.append("geocoder_unavailable")
+        if location.status == "confirmed" and not (location.commune and location.neighborhood):
+            # USIG gave the address but not its comuna/barrio in time: no communal office or BA Data.
+            missing.append("neighborhood")
+            warnings.append("neighborhood_unavailable")
         if approximate and location.status == "confirmed":
             # "A entre B y C" (first corner) or "2000 o 2500" (first height).
             warnings.append("address_approximate")

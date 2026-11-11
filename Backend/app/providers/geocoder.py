@@ -359,16 +359,27 @@ class UsigGeocoder(GeocoderClient):
             )
         if usig_state.is_open:
             return self._unavailable(address)
+        # The total timeout guards the whole address, but it only discards what is still missing:
+        # if `normalizar` answered, the address and its coordinates are kept even when there is
+        # no time left for comuna and barrio (datos_utiles).
+        deadline = time.monotonic() + settings.geocoder_total_timeout_seconds
         try:
-            result = await asyncio.wait_for(self._geocode(address), timeout=settings.geocoder_total_timeout_seconds)
+            async with shared_http_client(self.settings) as client:
+                direcciones = await asyncio.wait_for(
+                    self._normalize(client, address), timeout=settings.geocoder_total_timeout_seconds
+                )
+                # USIG answered: a slow comuna/barrio lookup is not a failure for the breaker.
+                usig_state.record(True, settings.geocoder_breaker_failures, settings.geocoder_breaker_cooldown_seconds)
+                result, complete = await self._to_result(client, address, direcciones, deadline)
         except (TimeoutError, httpx.HTTPError, ValueError, KeyError, TypeError, AttributeError) as exc:
             # Network failure, HTTP error, WAF HTML page, unexpected JSON or too slow: answer a
             # typed status so consultations can respond partially instead of failing.
             logger.warning("USIG unavailable: %r", exc)
             usig_state.record(False, settings.geocoder_breaker_failures, settings.geocoder_breaker_cooldown_seconds)
             return self._unavailable(address)
-        usig_state.record(True, settings.geocoder_breaker_failures, settings.geocoder_breaker_cooldown_seconds)
-        usig_state.store(key, result, settings.geocoder_cache_ttl_seconds, settings.geocoder_cache_size)
+        if complete:
+            # Without comuna/barrio it is not cached: the next query can still get them.
+            usig_state.store(key, result, settings.geocoder_cache_ttl_seconds, settings.geocoder_cache_size)
         return result
 
     def _unavailable(self, address: str) -> GeocodeResult:
@@ -378,57 +389,61 @@ class UsigGeocoder(GeocoderClient):
             message="El servicio de geocodificacion (USIG) no esta disponible en este momento.",
         )
 
-    async def _geocode(self, address: str) -> GeocodeResult:
+    async def _normalize(self, client: httpx.AsyncClient, address: str) -> list[dict[str, Any]]:
+        """USIG `normalizar`: official address and coordinates (the essential step)."""
         url = f"{self.base_url}/normalizar/?direccion={quote(address)}&geocodificar=true"
-        async with shared_http_client(self.settings) as client:
-            response = await client.get(url, timeout=self.timeout)
-            response.raise_for_status()
-            payload = response.json()
+        response = await client.get(url, timeout=self.timeout)
+        response.raise_for_status()
+        payload = response.json()
+        direcciones = payload.get("direccionesNormalizadas") or []
+        if not isinstance(direcciones, list):
+            raise TypeError("direccionesNormalizadas is not a list")
+        return direcciones
 
-            direcciones = payload.get("direccionesNormalizadas") or []
-            if not direcciones:
-                return self._result(
-                    status="not_found",
-                    address=address,
-                    message="No se pudo geocodificar la direccion.",
-                )
+    async def _to_result(
+        self,
+        client: httpx.AsyncClient,
+        address: str,
+        direcciones: list[dict[str, Any]],
+        deadline: float,
+    ) -> tuple[GeocodeResult, bool]:
+        """The result and whether it is complete (every hit has comuna and barrio)."""
+        if not direcciones:
+            return self._result(status="not_found", address=address, message="No se pudo geocodificar la direccion."), True
 
-            caba_items = [item for item in direcciones if _is_caba_item(item)]
-            if not caba_items:
-                return self._result(
-                    status="out_of_scope",
-                    address=address,
-                    message="La ubicacion parece estar fuera de CABA.",
-                )
+        caba_items = [item for item in direcciones if _is_caba_item(item)]
+        if not caba_items:
+            return self._result(
+                status="out_of_scope", address=address, message="La ubicacion parece estar fuera de CABA."
+            ), True
 
-            hits: list[GeocodeHit] = []
-            for item in caba_items:
-                hit = await self._item_to_hit(client, item, address)
-                if hit is not None:
-                    hits.append(hit)
+        # Comuna and barrio of every candidate at the same time, with the time that is left.
+        hits = [
+            hit
+            for hit in await asyncio.gather(*(self._item_to_hit(client, item, address, deadline) for item in caba_items))
+            if hit is not None
+        ]
+        complete = all(hit.commune and hit.neighborhood for hit in hits)
 
-            if not hits:
-                return self._result(
-                    status="not_found",
-                    address=address,
-                    message="No se pudo geocodificar la direccion.",
-                )
+        if not hits:
+            return self._result(status="not_found", address=address, message="No se pudo geocodificar la direccion."), True
 
-            if len(hits) > 1:
-                return self._result(
-                    status="ambiguous",
-                    address=address,
-                    hits=hits,
-                    message="Hay varias coincidencias en CABA. Selecciona la ubicacion correcta.",
-                )
+        if len(hits) > 1:
+            return self._result(
+                status="ambiguous",
+                address=address,
+                hits=hits,
+                message="Hay varias coincidencias en CABA. Selecciona la ubicacion correcta.",
+            ), complete
 
-            return self._result(status="confirmed", address=address, hits=hits)
+        return self._result(status="confirmed", address=address, hits=hits), complete
 
     async def _item_to_hit(
         self,
         client: httpx.AsyncClient,
         item: dict[str, Any],
         fallback_address: str,
+        deadline: float,
     ) -> GeocodeHit | None:
         coords = item.get("coordenadas") or {}
         lat_raw = coords.get("y")
@@ -442,7 +457,17 @@ class UsigGeocoder(GeocoderClient):
         neighborhood = item.get("nombre_barrio") or item.get("barrio")
 
         if not commune or not neighborhood:
-            enriched = await self._lookup_datos_utiles(client, longitude, latitude)
+            remaining = deadline - time.monotonic()
+            enriched: dict[str, str | None] = {"comuna": None, "barrio": None}
+            if remaining > 0:
+                try:
+                    enriched = await asyncio.wait_for(
+                        self._lookup_datos_utiles(client, longitude, latitude), timeout=remaining
+                    )
+                except TimeoutError:
+                    logger.warning("USIG datos_utiles too slow: address kept without comuna/barrio")
+            else:
+                logger.warning("No time left for USIG datos_utiles: address kept without comuna/barrio")
             commune = commune or enriched.get("comuna")
             neighborhood = neighborhood or enriched.get("barrio")
 
