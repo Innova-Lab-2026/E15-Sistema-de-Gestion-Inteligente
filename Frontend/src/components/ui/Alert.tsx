@@ -8,7 +8,6 @@ export interface AlertProps {
   message?: React.ReactNode;
   children?: React.ReactNode;
   closable?: boolean;
-  onClose?: () => void;
   className?: string;
   icon?: React.ReactNode;
   layout?: "inline" | "block";
@@ -20,7 +19,6 @@ export default function Alert({
   message,
   children,
   closable = true,
-  onClose,
   className = "",
   icon,
   layout = "inline",
@@ -33,7 +31,6 @@ export default function Alert({
 
   const handleClose = () => {
     setIsVisible(false);
-    onClose?.();
   };
 
   const styleConfig = typeStyles[type] ?? typeStyles.info;
@@ -42,7 +39,7 @@ export default function Alert({
   return (
     <div
       role="alert"
-      className={`w-full flex items-start gap-3 p-3.5 sm:p-4 rounded-lg border text-sm sm:text-base leading-relaxed text-primary-gray shadow-xs transition-all [&_a]:text-semantic-blue [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:opacity-80 ${styleConfig.container} ${className}`}
+      className={`w-full flex items-start gap-3 p-3.5 sm:p-4 rounded-lg border text-xs sm:text-sm leading-relaxed text-primary-gray shadow-xs transition-all [&_a]:text-semantic-blue [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:opacity-80 ${styleConfig.container} ${className}`}
     >
       <div className="shrink-0 mt-0.5">{renderedIcon}</div>
 

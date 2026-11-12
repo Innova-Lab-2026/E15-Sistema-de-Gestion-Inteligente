@@ -22,7 +22,7 @@ export default function LoadingScreen() {
   }, []);
 
   return (
-    <section className="flex flex-col items-center justify-center bg-background-gray h-[calc(100dvh-56px)] mx-auto w-full max-md:px-4 gap-8">
+    <section className="flex flex-col items-center justify-center bg-background-white-2 h-[calc(100dvh-56px)] mx-auto w-full max-md:px-4 gap-8">
       <div>
         <Spinner size={72} />
       </div>

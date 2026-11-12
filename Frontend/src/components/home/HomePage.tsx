@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import LoadingScreen from "./LoadingScreen";
+import ResultsPage from "../results/ResultsPage";
 import Alert from "../ui/Alert";
 
 export default function HomePage() {
   const queryRef = useRef<HTMLInputElement>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [finishedLoading, setFinishedLoading] = useState(false);
 
   useEffect(() => {
     if (queryRef.current) {
@@ -25,6 +27,7 @@ export default function HomePage() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      setFinishedLoading(true);
     }, 2000);
   };
 
@@ -32,8 +35,12 @@ export default function HomePage() {
     return <LoadingScreen />;
   }
 
+  if (finishedLoading) {
+    return <ResultsPage />;
+  }
+
   return (
-    <section className="flex flex-col items-center justify-center max-md:pt-48 max-md:pb-20 bg-background-gray h-[calc(100dvh-56px)] mx-auto w-full max-md:px-4 gap-8">
+    <section className="flex flex-col items-center justify-center max-md:pt-48 max-md:pb-20 bg-background-white-2 h-[calc(100dvh-56px)] mx-auto w-full max-md:px-4 gap-8">
       <div className="">
         <h1 className="text-4xl font-semibold text-primary-gray">
           ¿Qué querés hacer en la ciudad?
@@ -43,20 +50,13 @@ export default function HomePage() {
           según el lugar exacto donde estés.
         </p>
       </div>
-      <div className="w-3xl">
-        <Alert
-          title="Revisa la ubicación"
-          message=" Para consultar sobre apertura de tu cafetería, necesitás seleccionar una dirección dentro de CABA."
-          type="error"
-        />
-      </div>
       <form
         onSubmit={handleOnSubmit}
         className="relative w-full max-w-3xl mt-5 mx-auto flex flex-col sm:block gap-3 sm:gap-0"
       >
         <input
           ref={queryRef}
-          className="p-2 pl-5 pr-5 sm:pr-36 w-full h-14 sm:h-16 rounded-lg text-primary-gray placeholder-primary-gray bg-white border-none shadow-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary-yellow/60"
+          className="p-2 pl-5 pr-5 sm:pr-36 w-full h-14 sm:h-16 rounded-lg text-primary-gray placeholder-primary-gray bg-white border-2 border-secundary-gray shadow-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary-yellow/60 focus:border-white"
           type="text"
           placeholder="Ej.: Quiero abrir una cafeteria en Av. Corrientes 2500"
         />
