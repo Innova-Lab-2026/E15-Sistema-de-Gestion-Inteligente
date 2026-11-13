@@ -4,6 +4,7 @@
 - **Licencia:** CC-BY-2.5-AR
 - **Fecha de actualización de la fuente:** 2026-07-29
 - **Fecha de descarga:** 2026-10-28
+- **Última modificación del archivo:** 2026-11-13
 - **Archivo original:** barrios_comunas_p_Ciencia_de_Datos_y_PP.csv
 
 ## Columnas
@@ -18,4 +19,5 @@
 ## Notas
 
 - 48 barrios. Monserrat se escribe con una sola "t", como en la fuente; "Montserrat" figura en variantes.
-- Las variantes con símbolos raros (por ejemplo `NÃºÃ±ez`) están a propósito: son errores de codificación frecuentes en otros datasets.
+- Las variantes con símbolos raros (por ejemplo `NÃºÃ±ez` y `NuÃƒÂ±ez`) están a propósito: son errores de codificación frecuentes en otros datasets.
+- La variante `NuÃƒÂ±ez` de Núñez se agregó a pedido del backend (codificación rota dos veces).
