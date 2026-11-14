@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import LoadingScreen from "./LoadingScreen";
 import ResultsPage from "../results/ResultsPage";
-import Alert from "../ui/Alert";
 
 export default function HomePage() {
   const queryRef = useRef<HTMLInputElement>(null);
