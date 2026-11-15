@@ -1,21 +1,26 @@
 import { resultsData } from "./resultsData";
 
+import type { ConsultResponse } from "@/utils/consult-type";
+import type { LatLngExpression } from "leaflet";
+import Alert from "../ui/Alert";
+import MapLocation from "../ui/MapLocation";
 import Procedures from "./Procedures";
 import Requirements from "./Requirements";
 import Roadmap from "./Roadmap";
 import Sources from "./Sources";
 import Summary from "./Summary";
-import MapLocation from "../ui/MapLocation";
-import type { LatLngExpression } from "leaflet";
-import Alert from "../ui/Alert";
 
-export default function ResultsPage() {
-  const position: LatLngExpression = [-34.604694295560144, -58.402042990374156];
+export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
+  const position: LatLngExpression = [
+    consult.location.latitude,
+    consult.location.longitude,
+  ];
 
   return (
     <main className="flex flex-col justify-start text-left bg-background-white-2 h-full mx-auto w-full gap-12 px-15 py-8 max-md:px-8">
       <h1 className="text-3xl font-semibold text-primary-gray">
-        {resultsData.title}
+        Abrir una {consult.interpretation.activity.raw_text} en{" "}
+        {consult.location.normalized_address}
       </h1>
 
       <div className="grid grid-cols-[2fr_1fr] max-sm:grid-cols-1 gap-10 w-full">
@@ -23,13 +28,13 @@ export default function ResultsPage() {
         <div className="flex flex-col gap-8 order-2 sm:order-1">
           {/* Resumen */}
           <Summary
-            activity={resultsData.activity}
-            location={resultsData.location}
+            activity={consult.interpretation.activity.raw_text}
+            location={consult.location.normalized_address}
             summary={resultsData.summary}
           />
 
           {/* Pasos */}
-          <Roadmap />
+          <Roadmap stepsConsult={consult.steps} />
 
           {/* Tramites */}
           <Procedures procedures={resultsData.procedures} />
@@ -42,7 +47,9 @@ export default function ResultsPage() {
               <h2 className="text-xl font-semibold text-primary-gray bg-background-white">
                 Ubicación
               </h2>
-              <p className="text-primary-gray text-sm">Av. Corrientes 2500</p>
+              <p className="text-primary-gray text-sm">
+                {consult.location.normalized_address}
+              </p>
             </div>
             <MapLocation position={position} />
             {/* <iframe
