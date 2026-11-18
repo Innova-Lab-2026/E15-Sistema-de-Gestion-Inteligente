@@ -30,7 +30,10 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
           <Summary
             activity={consult.interpretation.activity.raw_text}
             location={consult.location.normalized_address}
-            summary={resultsData.summary}
+            summary={{
+              description: consult.summary,
+              title: consult.interpretation.activity.display_name,
+            }}
           />
 
           {/* Pasos */}
@@ -52,11 +55,6 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               </p>
             </div>
             <MapLocation position={position} />
-            {/* <iframe
-              className="w-full h-full"
-              title="Mapa de ubicación"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.091187059168!2d-58.41015568477046!3d-34.60373858046086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5e6c8a7e9b%3A0x8c8c8c8c8c8c8c8c!2sAv.%20Corrientes%202500%2C%20C1045%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1620000000000"
-            /> */}
             <button className="shrink-0 px-4 py-2 bg-semantic-blue text-white hover:brightness-95 active:scale-[0.98] trasition-all cursor-pointer font-semibold rounded-lg text-sm sm:text-base">
               Abrir mapa interactivo
             </button>
@@ -83,7 +81,7 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
       </div>
 
       {/* Requisitos */}
-      <Requirements requirements={resultsData.requirements} />
+      <Requirements requirements={consult.requirements} />
 
       {/* Fuentes */}
       <Sources />

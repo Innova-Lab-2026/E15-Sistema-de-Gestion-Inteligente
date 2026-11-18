@@ -98,17 +98,10 @@ export default function HomePage() {
         <div className="w-full max-w-3xl">
           <Alert
             key={`status-${consult?.consultation_id || consult?.status}`}
-            message={statusFeedback.message}
+            message={statusFeedback.suggestion}
             title={statusFeedback.title}
             type={statusFeedback.type}
-          >
-            {statusFeedback.suggestion && (
-              <p className="mt-2.5 text-xs sm:text-sm text-primary-gray-2 bg-white/70 p-2.5 rounded-md border border-black/5">
-                <strong className="text-primary-gray">Sugerencia: </strong>
-                {statusFeedback.suggestion}
-              </p>
-            )}
-          </Alert>
+          />
         </div>
       )}
       <form

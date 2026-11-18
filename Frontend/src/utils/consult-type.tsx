@@ -167,6 +167,7 @@ export interface Requirement {
   description: string;
   status: string;
   source_ids: string[];
+  documents: Document[];
 }
 
 export interface Document {
