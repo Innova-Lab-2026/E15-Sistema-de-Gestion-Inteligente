@@ -1,0 +1,1042 @@
+{
+  "meta": {
+    "nombre": "Relación rubro-trámite",
+    "url": null,
+    "organismo": "Equipo BI, Data & ML (elaboración propia)",
+    "licencia": null,
+    "publicado": "2026-11-15",
+    "descargado": "2026-11-15",
+    "version": "2.0",
+    "filas": 92,
+    "rubros": 12,
+    "valores_aplicacion": {
+      "obligatorio": "aplica siempre",
+      "condicional": "aplica solo si se cumple la condición",
+      "alternativa": "se elige una de las vías (habilitación general o exprés)",
+      "referencia": "guía orientativa para consultar"
+    },
+    "valores_confianza": [
+      "alta",
+      "media",
+      "pendiente_verificacion"
+    ]
+  },
+  "rubros": [
+    {
+      "rubro_code": "rubro_4",
+      "rubro_codigo_oficial": "1.8.32",
+      "rubro_nombre": "Pinturería",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-local-atencion-publico",
+          "tramite_nombre": "Guía de inspección AGC: local de atención al público",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "Verificar si comercializa inflamables: en ese caso no aplica la modalidad exprés",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_16",
+      "rubro_codigo_oficial": "1.8",
+      "rubro_nombre": "Comercio minorista excluido comestibles como uso principal",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-local-atencion-publico",
+          "tramite_nombre": "Guía de inspección AGC: local de atención al público",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_66",
+      "rubro_codigo_oficial": "1.8.2",
+      "rubro_nombre": "Farmacia",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "La modalidad exprés no aplica a este rubro",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 2,
+          "tramite_id": "habilitacion-establecimiento-farmaceutico",
+          "tramite_nombre": "Habilitación de establecimiento farmacéutico",
+          "aplicacion": "obligatorio",
+          "condicion": "Requiere la disposición de habilitación de la Ciudad (QR) como paso previo",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-farmacias",
+          "tramite_nombre": "Guía de inspección AGC: farmacias",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "pendiente_verificacion",
+          "observacion": "Guía oficial no leída: relevar contenido",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Farmacias%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_102",
+      "rubro_codigo_oficial": "1.5",
+      "rubro_nombre": "Alimentación en general y gastronomía",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 5,
+          "tramite_id": "curso-manipulacion-higienica-alimentos",
+          "tramite_nombre": "Curso de manipulación higiénica de alimentos (carnet de manipulador)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "orden": 6,
+          "tramite_id": "certificado-limpieza-campanas",
+          "tramite_nombre": "Certificado de limpieza de campanas y conductos",
+          "aplicacion": "condicional",
+          "condicion": "Solo si el local tiene campana, chimenea o conducto de evacuación",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/gcaba_historico/guia-para-administrar-tu-local-comercial/certificado-de-limpieza-de-campanas"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-gastronomicos",
+          "tramite_nombre": "Guía de inspección AGC: establecimientos gastronómicos",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_104",
+      "rubro_codigo_oficial": "5.1.1",
+      "rubro_nombre": "Consultorio veterinario",
+      "categoria": "Sanidad",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "media",
+          "observacion": "Verificar si aplica: la guía exige director médico veterinario matriculado (normativa específica)",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 6,
+          "tramite_id": "certificado-limpieza-campanas",
+          "tramite_nombre": "Certificado de limpieza de campanas y conductos",
+          "aplicacion": "condicional",
+          "condicion": "Solo si el local tiene campana, chimenea o conducto de evacuación",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/gcaba_historico/guia-para-administrar-tu-local-comercial/certificado-de-limpieza-de-campanas"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-veterinarias",
+          "tramite_nombre": "Guía de inspección AGC: veterinarias",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "La guía se titula 'Veterinarias'; confirmar que cubre el rubro 'Consultorio veterinario'",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_136",
+      "rubro_codigo_oficial": "1.8.9",
+      "rubro_nombre": "Local de venta de animales domésticos",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-local-atencion-publico",
+          "tramite_nombre": "Guía de inspección AGC: local de atención al público",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "Rubro con normativa específica no relevada; ver pendientes",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_137",
+      "rubro_codigo_oficial": "1.6.1",
+      "rubro_nombre": "Supermercado",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 5,
+          "tramite_id": "curso-manipulacion-higienica-alimentos",
+          "tramite_nombre": "Curso de manipulación higiénica de alimentos (carnet de manipulador)",
+          "aplicacion": "condicional",
+          "condicion": "Personal que manipule alimentos",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-local-atencion-publico",
+          "tramite_nombre": "Guía de inspección AGC: local de atención al público",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_169",
+      "rubro_codigo_oficial": "1.4.3",
+      "rubro_nombre": "Maxikiosco",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 5,
+          "tramite_id": "curso-manipulacion-higienica-alimentos",
+          "tramite_nombre": "Curso de manipulación higiénica de alimentos (carnet de manipulador)",
+          "aplicacion": "condicional",
+          "condicion": "Personal que manipule alimentos",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-kiosco-maxikiosco",
+          "tramite_nombre": "Guía de inspección AGC: kiosco y maxikiosco",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_245",
+      "rubro_codigo_oficial": "1.4.2",
+      "rubro_nombre": "Local de venta de golosinas envasadas (kiosco)",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 5,
+          "tramite_id": "curso-manipulacion-higienica-alimentos",
+          "tramite_nombre": "Curso de manipulación higiénica de alimentos (carnet de manipulador)",
+          "aplicacion": "condicional",
+          "condicion": "Personal que manipule alimentos",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-kiosco-maxikiosco",
+          "tramite_nombre": "Guía de inspección AGC: kiosco y maxikiosco",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_309",
+      "rubro_codigo_oficial": "1.8.23",
+      "rubro_nombre": "Ferretería industrial, máquinas, herramientas, motores industriales y agrícolas",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-local-atencion-publico",
+          "tramite_nombre": "Guía de inspección AGC: local de atención al público",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "Verificar si comercializa explosivos o inflamables: en ese caso no aplica la modalidad exprés",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_315",
+      "rubro_codigo_oficial": "6.1.16",
+      "rubro_nombre": "Salón de estética",
+      "categoria": "Servicios",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-peluqueria-salon-belleza",
+          "tramite_nombre": "Guía de inspección AGC: peluquería, salón de belleza y servicios personales directos",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "pendiente_verificacion",
+          "observacion": "Guía oficial no leída: relevar contenido; incluye Decreto 861/1997",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Peluqueria_%20Salon%20de%20Belleza_%20Servicios%20personales%20directos%202025%20OK003.pdf"
+        }
+      ]
+    },
+    {
+      "rubro_code": "rubro_471",
+      "rubro_codigo_oficial": "1.5.3",
+      "rubro_nombre": "Alimentación en general para llevar",
+      "categoria": "Comercial",
+      "tramites": [
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica",
+          "tramite_nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+          "aplicacion": "alternativa",
+          "condicion": "Es la vía cuando no corresponde el trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 1,
+          "tramite_id": "habilitacion-actividad-economica-expres",
+          "tramite_nombre": "Habilitación de actividad económica exprés",
+          "aplicacion": "alternativa",
+          "condicion": "Solo si la superficie es de hasta 200 m2 y se cumplen las condiciones de ubicación y uso del trámite exprés",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "tramite_id": "certificado-aptitud-ambiental",
+          "tramite_nombre": "Certificado de Aptitud Ambiental (CAA)",
+          "aplicacion": "obligatorio",
+          "condicion": "Se genera automáticamente en la modalidad exprés",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 4,
+          "tramite_id": "sistema-autoproteccion",
+          "tramite_nombre": "Sistema de Autoprotección (Ley 5920)",
+          "aplicacion": "obligatorio",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007"
+        },
+        {
+          "orden": 5,
+          "tramite_id": "curso-manipulacion-higienica-alimentos",
+          "tramite_nombre": "Curso de manipulación higiénica de alimentos (carnet de manipulador)",
+          "aplicacion": "obligatorio",
+          "condicion": "Personal que manipule alimentos",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "orden": 6,
+          "tramite_id": "certificado-limpieza-campanas",
+          "tramite_nombre": "Certificado de limpieza de campanas y conductos",
+          "aplicacion": "condicional",
+          "condicion": "Solo si el local tiene campana, chimenea o conducto de evacuación",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/gcaba_historico/guia-para-administrar-tu-local-comercial/certificado-de-limpieza-de-campanas"
+        },
+        {
+          "orden": 7,
+          "tramite_id": "permisos-publicidad",
+          "tramite_nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+          "aplicacion": "condicional",
+          "condicion": "Solo si instala letreros, toldos, marquesinas, sombrillas o carteles",
+          "confianza": "media",
+          "observacion": "",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad"
+        },
+        {
+          "orden": 8,
+          "tramite_id": "libro-inspecciones-digital",
+          "tramite_nombre": "Libro de Inspecciones Digital",
+          "aplicacion": "obligatorio",
+          "condicion": "Se accede una vez que el local está librado al uso",
+          "confianza": "alta",
+          "observacion": "",
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        },
+        {
+          "orden": 9,
+          "tramite_id": "guia-inspeccion-gastronomicos",
+          "tramite_nombre": "Guía de inspección AGC: establecimientos gastronómicos",
+          "aplicacion": "referencia",
+          "condicion": "",
+          "confianza": "media",
+          "observacion": "Se asimila a la guía de gastronómicos por analogía; confirmar con la AGC",
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        }
+      ]
+    }
+  ]
+}
