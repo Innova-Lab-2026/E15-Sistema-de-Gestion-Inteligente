@@ -48,7 +48,7 @@ export default function Alert({
           <p className="text-primary-gray">
             {title && (
               <strong className="font-bold text-primary-gray mr-1">
-                {title}
+                {title}:
               </strong>
             )}
             {message && <span>{message}</span>}

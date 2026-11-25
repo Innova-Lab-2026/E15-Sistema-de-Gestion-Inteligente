@@ -1,21 +1,26 @@
 import { resultsData } from "./resultsData";
 
+import type { ConsultResponse } from "@/utils/consult-type";
+import type { LatLngExpression } from "leaflet";
+import Alert from "../ui/Alert";
+import MapLocation from "../ui/MapLocation";
 import Procedures from "./Procedures";
 import Requirements from "./Requirements";
 import Roadmap from "./Roadmap";
 import Sources from "./Sources";
 import Summary from "./Summary";
-import MapLocation from "../ui/MapLocation";
-import type { LatLngExpression } from "leaflet";
-import Alert from "../ui/Alert";
 
-export default function ResultsPage() {
-  const position: LatLngExpression = [-34.604694295560144, -58.402042990374156];
+export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
+  const position: LatLngExpression = [
+    consult.location.latitude,
+    consult.location.longitude,
+  ];
 
   return (
     <main className="flex flex-col justify-start text-left bg-background-white-2 h-full mx-auto w-full gap-12 px-15 py-8 max-md:px-8">
       <h1 className="text-3xl font-semibold text-primary-gray">
-        {resultsData.title}
+        Abrir una {consult.interpretation.activity.raw_text} en{" "}
+        {consult.location.normalized_address}
       </h1>
 
       <div className="grid grid-cols-[2fr_1fr] max-sm:grid-cols-1 gap-10 w-full">
@@ -23,13 +28,16 @@ export default function ResultsPage() {
         <div className="flex flex-col gap-8 order-2 sm:order-1">
           {/* Resumen */}
           <Summary
-            activity={resultsData.activity}
-            location={resultsData.location}
-            summary={resultsData.summary}
+            activity={consult.interpretation.activity.raw_text}
+            location={consult.location.normalized_address}
+            summary={{
+              description: consult.summary,
+              title: consult.interpretation.activity.display_name,
+            }}
           />
 
           {/* Pasos */}
-          <Roadmap />
+          <Roadmap stepsConsult={consult.steps} />
 
           {/* Tramites */}
           <Procedures procedures={resultsData.procedures} />
@@ -42,14 +50,11 @@ export default function ResultsPage() {
               <h2 className="text-xl font-semibold text-primary-gray bg-background-white">
                 Ubicación
               </h2>
-              <p className="text-primary-gray text-sm">Av. Corrientes 2500</p>
+              <p className="text-primary-gray text-sm">
+                {consult.location.normalized_address}
+              </p>
             </div>
             <MapLocation position={position} />
-            {/* <iframe
-              className="w-full h-full"
-              title="Mapa de ubicación"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.091187059168!2d-58.41015568477046!3d-34.60373858046086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5e6c8a7e9b%3A0x8c8c8c8c8c8c8c8c!2sAv.%20Corrientes%202500%2C%20C1045%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1620000000000"
-            /> */}
             <button className="shrink-0 px-4 py-2 bg-semantic-blue text-white hover:brightness-95 active:scale-[0.98] trasition-all cursor-pointer font-semibold rounded-lg text-sm sm:text-base">
               Abrir mapa interactivo
             </button>
@@ -76,7 +81,7 @@ export default function ResultsPage() {
       </div>
 
       {/* Requisitos */}
-      <Requirements requirements={resultsData.requirements} />
+      <Requirements requirements={consult.requirements} />
 
       {/* Fuentes */}
       <Sources />
