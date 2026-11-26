@@ -19,7 +19,7 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
   return (
     <main className="flex flex-col justify-start text-left bg-background-white-2 h-full mx-auto w-full gap-12 px-15 py-8 max-md:px-8">
       <h1 className="text-3xl font-semibold text-primary-gray">
-        Abrir una {consult.interpretation.activity.raw_text} en{" "}
+        Abrir {consult.interpretation.activity.raw_text} en{" "}
         {consult.location.normalized_address}
       </h1>
 
@@ -34,6 +34,9 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               description: consult.summary,
               title: consult.interpretation.activity.display_name,
             }}
+            steps={consult.steps.length}
+            procedures={consult.sources.length}
+            documents={consult.sources.length}
           />
 
           {/* Pasos */}
@@ -52,7 +55,7 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               </h2>
               <p className="text-primary-gray text-sm">
                 {consult.location.normalized_address}
-              </p>
+                </p>
             </div>
             <MapLocation position={position} />
             <button className="shrink-0 px-4 py-2 bg-semantic-blue text-white hover:brightness-95 active:scale-[0.98] trasition-all cursor-pointer font-semibold rounded-lg text-sm sm:text-base">
