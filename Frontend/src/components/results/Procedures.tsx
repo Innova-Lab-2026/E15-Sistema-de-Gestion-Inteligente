@@ -5,7 +5,7 @@ export default function Procedures({ procedures }: { procedures: { id: number; t
         <section className="flex flex-col gap-8">
 
             <h2 className="mt-4 text-2xl font-semibold text-primary-gray">
-                2 - Trámites requeridos (Paso 2)
+                2 - Trámites requeridos
             </h2>
 
             {procedures.map((procedure) => (
