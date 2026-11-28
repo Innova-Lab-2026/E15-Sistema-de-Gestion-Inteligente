@@ -15,13 +15,13 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
   ];
 
   return (
-    <main className="flex flex-col justify-start text-left bg-background-white-2 h-full mx-auto w-full gap-12 px-15 py-8 max-md:px-8">
+    <main className="flex  flex-col justify-start text-left bg-background-white-2 h-full mx-auto w-full max-w-5xl gap-12 px-6 sm:px-12 py-8">
       <h1 className="text-3xl font-semibold text-primary-gray">
         Abrir {consult.interpretation.activity.raw_text} en{" "}
         {consult.location.normalized_address}
       </h1>
 
-      <div className="grid grid-cols-[2fr_1fr] max-sm:grid-cols-1 gap-10 w-full">
+      <div className="grid grid-cols-[2fr_1.2fr] max-sm:grid-cols-1 gap-10 w-full">
         {/* Columna izquierda */}
         <div className="flex flex-col gap-8 order-2 sm:order-1">
           {/* Resumen */}
@@ -32,9 +32,9 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               description: consult.summary,
               title: consult.interpretation.activity.display_name,
             }}
-            steps={consult.steps.length}
-            procedures={consult.documents.slice(0, 3).length}
-            documents={consult.documents.length}
+            steps={consult.steps.length || 0}
+            procedures={consult.documents.slice(0, 3).length || 0}
+            documents={consult.documents.length || 0}
           />
 
           {/* Pasos */}
