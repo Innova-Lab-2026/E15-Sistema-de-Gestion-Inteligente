@@ -1,5 +1,3 @@
-import { resultsData } from "./resultsData";
-
 import type { ConsultResponse } from "@/utils/consult-type";
 import type { LatLngExpression } from "leaflet";
 import Alert from "../ui/Alert";
@@ -43,7 +41,7 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
           <Roadmap stepsConsult={consult.steps} />
 
           {/* Tramites */}
-          <Procedures procedures={resultsData.procedures} />
+          <Procedures procedures={consult.documents} />
         </div>
 
         {/* Columna derecha - Mapa */}
@@ -55,7 +53,7 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               </h2>
               <p className="text-primary-gray text-sm">
                 {consult.location.normalized_address}
-                </p>
+              </p>
             </div>
             <MapLocation position={position} />
             <button className="shrink-0 px-4 py-2 bg-semantic-blue text-white hover:brightness-95 active:scale-[0.98] trasition-all cursor-pointer font-semibold rounded-lg text-sm sm:text-base">
