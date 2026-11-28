@@ -154,7 +154,7 @@ export default function HomePage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-primary-yellow hover:brightness-105 max-md:mt-2 active:scale-[0.98] transition-all cursor-pointer font-semibold rounded-lg sm:rounded-lg h-11 sm:h-12 w-full sm:w-32 text-primary-gray static sm:absolute z-10 sm:top-2 sm:right-2 px-5 flex items-center justify-center text-sm sm:text-base shadow-sm sm:shadow-none"
+              className="bg-primary-yellow hover:brightness-105 max-sm:mt-2 active:scale-[0.98] transition-all cursor-pointer font-semibold rounded-lg sm:rounded-lg h-11 sm:h-12 w-full sm:w-32 text-primary-gray static sm:absolute z-10 sm:top-2 sm:right-2 px-5 flex items-center justify-center text-sm sm:text-base shadow-sm sm:shadow-none"
             >
               Consultar
             </button>

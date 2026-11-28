@@ -20,10 +20,10 @@ export default function LoadingScreen() {
       <div>
         <Spinner size={72} />
       </div>
-      <h1 className="text-4xl font-semibold text-primary-gray">
+      <h1 className="text-4xl font-semibold text-primary-gray text-center">
         {LOADING_MESSAGES[currentIndex]}
       </h1>
-      <p className="mt-5 text-primary-gray-2 text-base">
+      <p className="mt-5 text-primary-gray-2 text-base text-center">
         Nuestra IA está integrando datos territoriales y requisitos.
       </p>
     </section>
