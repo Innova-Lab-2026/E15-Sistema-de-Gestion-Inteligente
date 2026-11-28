@@ -10,9 +10,8 @@ export default function MapLocation({
     <MapContainer
       center={position}
       zoom={16}
-      className="m-auto font-sans z-10"
+      className="m-auto font-sans z-10 w-full h-56 rounded-lg"
       scrollWheelZoom={false}
-      style={{ height: "250px", width: "250px" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

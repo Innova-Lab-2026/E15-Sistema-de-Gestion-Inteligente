@@ -1,12 +1,6 @@
+import { LOADING_MESSAGES } from "@/utils/constants";
 import { useEffect, useState } from "react";
 import Spinner from "../ui/Spinner";
-
-const loadingMessages = [
-  "Interpretando tu consulta",
-  "Identificando actividad y ubicación",
-  "Consultando normativas y BA data",
-  "Estructurando tu respuesta",
-];
 
 export default function LoadingScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,7 +8,7 @@ export default function LoadingScreen() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex < loadingMessages.length - 1 ? prevIndex + 1 : 0,
+        prevIndex < LOADING_MESSAGES.length - 1 ? prevIndex + 1 : 0,
       );
     }, 1000);
 
@@ -27,7 +21,7 @@ export default function LoadingScreen() {
         <Spinner size={72} />
       </div>
       <h1 className="text-4xl font-semibold text-primary-gray">
-        {loadingMessages[currentIndex]}
+        {LOADING_MESSAGES[currentIndex]}
       </h1>
       <p className="mt-5 text-primary-gray-2 text-base">
         Nuestra IA está integrando datos territoriales y requisitos.
