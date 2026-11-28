@@ -33,8 +33,8 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               title: consult.interpretation.activity.display_name,
             }}
             steps={consult.steps.length}
-            procedures={consult.sources.length}
-            documents={consult.sources.length}
+            procedures={consult.documents.slice(0, 3).length}
+            documents={consult.documents.length}
           />
 
           {/* Pasos */}
@@ -65,12 +65,24 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
             Contexto de la zona
           </h3>
           <div className="flex flex-col gap-4">
-            <Alert
-              title="Alta densidad peatonal"
-              layout="block"
-              message="Zona de alto tráfico ideal para cafeterías"
-              type="info"
-            />
+            {consult.zoning.rubro_allowed && (
+              <Alert
+                title="El rubro está permitido en esta dirección"
+                layout="block"
+                message="La actividad cumple con la normativa de Mixtura de Usos del lote."
+                type="info"
+              />
+            )}
+            {!consult.zoning.rubro_allowed && (
+              <Alert
+                title="Actividad no permitida en esta parcela"
+                layout="block"
+                message={
+                  "egún el Código Urbanístico (Ciudad 3D), este rubro no está habilitado para la mixtura de usos de la dirección ingresada. Probá consultando otra ubicación o corredor comercial."
+                }
+                type="error"
+              />
+            )}
             <Alert
               title="Area de protección histórica"
               layout="block"

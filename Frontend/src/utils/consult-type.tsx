@@ -12,6 +12,7 @@ export interface ConsultResponse {
   physical_offices: PhysicalOffice[];
   map_layers: MapLayer[];
   sources: Source[];
+  zoning: Zoning;
   data_status: DataStatus;
   message: string;
 }
@@ -249,4 +250,21 @@ export interface DataStatus {
   overall: string;
   missing: string[];
   warnings: string[];
+}
+
+export interface Zoning {
+  status: string;
+  latitude: number;
+  longitude: number;
+  mixtura: number;
+  usos: number[];
+  epok_category_id: number;
+  epok_rubro_id: number;
+  rubro_allowed: boolean;
+  allowed_rubro_ids_sample: number[];
+  message: string;
+  provider_id: string;
+  provider_name: string;
+  retrieved_at: string;
+  source_ids: string[];
 }
