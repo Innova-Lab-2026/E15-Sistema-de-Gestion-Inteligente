@@ -1,5 +1,3 @@
-import { resultsData } from "./resultsData";
-
 import type { ConsultResponse } from "@/utils/consult-type";
 import type { LatLngExpression } from "leaflet";
 import Alert from "../ui/Alert";
@@ -19,7 +17,7 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
   return (
     <main className="flex flex-col justify-start text-left bg-background-white-2 h-full mx-auto w-full gap-12 px-15 py-8 max-md:px-8">
       <h1 className="text-3xl font-semibold text-primary-gray">
-        Abrir una {consult.interpretation.activity.raw_text} en{" "}
+        Abrir {consult.interpretation.activity.raw_text} en{" "}
         {consult.location.normalized_address}
       </h1>
 
@@ -34,13 +32,16 @@ export default function ResultsPage({ consult }: { consult: ConsultResponse }) {
               description: consult.summary,
               title: consult.interpretation.activity.display_name,
             }}
+            steps={consult.steps.length}
+            procedures={consult.sources.length}
+            documents={consult.sources.length}
           />
 
           {/* Pasos */}
           <Roadmap stepsConsult={consult.steps} />
 
           {/* Tramites */}
-          <Procedures procedures={resultsData.procedures} />
+          <Procedures procedures={consult.documents} />
         </div>
 
         {/* Columna derecha - Mapa */}

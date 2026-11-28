@@ -1,11 +1,11 @@
-import type { Document } from "@/utils/consult-type";
+import type { Procedure } from "@/utils/consult-type";
 
 export default function RequirementGroup({
   title,
   items,
 }: {
   title: string;
-  items: Document[];
+  items: Procedure[];
 }) {
   return (
     <div>

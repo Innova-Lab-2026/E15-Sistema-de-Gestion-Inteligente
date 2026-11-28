@@ -5,7 +5,7 @@ export interface ConsultResponse {
   location: Location;
   summary: string;
   requirements: Requirement[];
-  documents: Document[];
+  documents: Procedure[];
   steps: Step[];
   territorial_information: TerritorialInformation[];
   online_procedures: OnlineProcedure[];
@@ -167,10 +167,10 @@ export interface Requirement {
   description: string;
   status: string;
   source_ids: string[];
-  documents: Document[];
+  documents: Procedure[];
 }
 
-export interface Document {
+export interface Procedure {
   name: string;
   details: string;
   url_fuente: string;

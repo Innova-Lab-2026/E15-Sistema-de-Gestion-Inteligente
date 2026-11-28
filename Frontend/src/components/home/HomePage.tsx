@@ -3,11 +3,12 @@ import {
   type ConsultResponse,
 } from "@/utils/consult-type";
 import { useEffect, useRef, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import ResultsPage from "../results/ResultsPage";
 import Alert from "../ui/Alert";
 import LoadingScreen from "./LoadingScreen";
 
-const URL_API = "https://orientacion-ciudadana.onrender.com";
+const URL_API = "https://orientacion-ciudadana-caba.onrender.com";
 
 export default function HomePage() {
   const queryRef = useRef<HTMLInputElement>(null);
@@ -15,6 +16,10 @@ export default function HomePage() {
   const [consult, setConsult] = useState<ConsultResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isCompleted, setIsCompleted] = useState(false);
+
+  const { setShowNewQuery } = useOutletContext<{
+    setShowNewQuery: (value: boolean) => void;
+  }>();
 
   useEffect(() => {
     if (queryRef.current) {
@@ -43,6 +48,7 @@ export default function HomePage() {
     if (query) {
       setError("");
       setIsLoading(true);
+      setShowNewQuery(true);
       try {
         const res = await fetch(`${URL_API}/api/v1/consultations`, {
           method: "POST",
@@ -95,12 +101,20 @@ export default function HomePage() {
         </p>
       </div>
       {statusFeedback && (
-        <div className="w-full max-w-3xl">
+        <div className="w-full max-w-3xl flex flex-col gap-4">
           <Alert
             key={`status-${consult?.consultation_id || consult?.status}`}
             message={statusFeedback.suggestion}
             title={statusFeedback.title}
             type={statusFeedback.type}
+          />
+          <Alert
+            key={`status-info`}
+            message={
+              "Para resolver tus dudas, comunicate por teléfono al 147 o escribile a Boti por WhatsApp al 11-5050-0147."
+            }
+            title={"¿Tenés dudas?"}
+            type={"info"}
           />
         </div>
       )}
