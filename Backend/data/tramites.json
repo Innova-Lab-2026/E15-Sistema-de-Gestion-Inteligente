@@ -1,0 +1,1218 @@
+{
+  "meta": {
+    "proyecto": "E15 - Sistema de Gestión Inteligente",
+    "generado_el": "2026-11-15",
+    "jurisdiccion": "CABA",
+    "encoding": "UTF-8",
+    "nota": "Solo se incluyen requisitos respaldados por una fuente oficial con url_fuente. Los campos 'confianza' y 'revision' indican qué tan verificado está cada dato.",
+    "confianza_valores": [
+      "alta",
+      "media",
+      "pendiente_verificacion"
+    ]
+  },
+  "fuentes": [
+    {
+      "id": "src-habilitacion",
+      "nombre": "Habilitación de actividad económica",
+      "organizacion": "GCBA / AGC",
+      "url": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-expres",
+      "nombre": "Habilitación de actividad económica exprés",
+      "organizacion": "GCBA / AGC",
+      "url": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-caa",
+      "nombre": "Certificado de Aptitud Ambiental (CAA)",
+      "organizacion": "GCBA / Agencia de Protección Ambiental",
+      "url": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-manipulacion",
+      "nombre": "Curso de manipulación higiénica de los alimentos",
+      "organizacion": "GCBA / AGC",
+      "url": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos",
+      "tipo": "oficial",
+      "revision": "leido_parcial",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-higiene-alimentaria",
+      "nombre": "Dirección General de Higiene y Seguridad Alimentaria",
+      "organizacion": "GCBA / AGC",
+      "url": "https://buenosaires.gob.ar/agc/direcciongeneralhigieneyseguridadalimentaria",
+      "tipo": "oficial",
+      "revision": "leido_parcial",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guias-indice",
+      "nombre": "Guías orientativas para la inspección (índice)",
+      "organizacion": "GCBA / AGC",
+      "url": "https://buenosaires.gob.ar/gcaba_historico/guia-para-administrar-tu-local-comercial/guias-orientativas-para-la-inspeccion",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guia-gastro",
+      "nombre": "Guía de inspección: establecimientos gastronómicos",
+      "organizacion": "GCBA / AGC",
+      "url": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guia-kiosco",
+      "nombre": "Guía de inspección: kiosco y maxikiosco",
+      "organizacion": "GCBA / AGC",
+      "url": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guia-local",
+      "nombre": "Guía de inspección: local de atención al público",
+      "organizacion": "GCBA / AGC",
+      "url": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guia-peluqueria",
+      "nombre": "Guía de inspección: peluquería, salón de belleza, servicios personales directos",
+      "organizacion": "GCBA / AGC",
+      "url": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Peluqueria_%20Salon%20de%20Belleza_%20Servicios%20personales%20directos%202025%20OK003.pdf",
+      "tipo": "oficial",
+      "revision": "no_leido_acceso_bloqueado",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guia-farmacias",
+      "nombre": "Guía de inspección: farmacias",
+      "organizacion": "GCBA / AGC",
+      "url": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Farmacias%20OK003.pdf",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-farmacia-nacion",
+      "nombre": "Habilitar un establecimiento farmacéutico",
+      "organizacion": "Ministerio de Salud de la Nación / argentina.gob.ar",
+      "url": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-libre-regencia",
+      "nombre": "Certificado de libre regencia y/o actuación profesional",
+      "organizacion": "Ministerio de Salud de la Nación / argentina.gob.ar",
+      "url": "https://www.argentina.gob.ar/servicio/certificado-de-libre-regencia-yo-actuacion-profesional",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-autoproteccion",
+      "nombre": "Ley 5920 - Sistema de Autoprotección (norma en Boletín Oficial CABA)",
+      "organizacion": "GCBA / Boletín Oficial",
+      "url": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-campanas",
+      "nombre": "Certificado de limpieza de campanas",
+      "organizacion": "GCBA / AGC",
+      "url": "https://buenosaires.gob.ar/gcaba_historico/guia-para-administrar-tu-local-comercial/certificado-de-limpieza-de-campanas",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-libro-digital",
+      "nombre": "Libro de Inspecciones Digital (portal)",
+      "organizacion": "GCBA / AGC",
+      "url": "https://librodigital.agcontrol.gob.ar/",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-publicidad",
+      "nombre": "Permisos de publicidad",
+      "organizacion": "GCBA",
+      "url": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-decreto-861",
+      "nombre": "Decreto 861/1997 - desinfección y esterilización en peluquerías y salones de belleza",
+      "organizacion": "GCBA / Boletín Oficial",
+      "url": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/50039",
+      "tipo": "oficial",
+      "revision": "leido_parcial",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-anexo2-res96",
+      "nombre": "Anexo II Res. 96/AGC/25 - usos de actividad económica y tipos de trámite",
+      "organizacion": "GCBA / Boletín Oficial",
+      "url": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/781370",
+      "tipo": "oficial",
+      "revision": "enlazado_no_leido",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-vidrieras",
+      "nombre": "Vidrieras no podrán exhibir animales (nota sobre Ley 451 art. 1.2.9 y ley 2019)",
+      "organizacion": "Derecho en Zapatillas (nota periodística)",
+      "url": "https://www.derechoenzapatillas.com/amp/2021/vidrieras-no-podran-exhibir-animales/",
+      "tipo": "secundaria",
+      "revision": "leido_parcial",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "src-guia-vet",
+      "nombre": "Guía de inspección: veterinarias",
+      "organizacion": "GCBA / AGC",
+      "url": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf",
+      "tipo": "oficial",
+      "revision": "leido",
+      "verificado_el": "2026-11-15"
+    }
+  ],
+  "tramites": [
+    {
+      "id": "habilitacion-actividad-economica",
+      "nombre": "Habilitación de actividad económica (con evaluación técnica profesional)",
+      "tipo": "habilitacion",
+      "organismo": "AGC - Dirección General de Habilitaciones y Permisos",
+      "modalidad": "Online (SSIT / TAD con miBA nivel 3)",
+      "costo": "Gratuito (Ley Tarifaria vigente)",
+      "descripcion": "Autorización para desarrollar actividades comerciales en CABA; el local debe aprobar una evaluación técnica profesional.",
+      "url_oficial": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica",
+      "fuente_ids": [
+        "src-habilitacion"
+      ],
+      "requisitos": [
+        {
+          "id": "habilitacion-actividad-economica-r01",
+          "texto": "Usuario y clave miBA nivel 3",
+          "tipo": "previo",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "id": "habilitacion-actividad-economica-r02",
+          "texto": "Formulario de conformación de la unidad de uso (declaración jurada de la actividad a desarrollar)",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "id": "habilitacion-actividad-economica-r03",
+          "texto": "Anexo Técnico firmado por profesional responsable matriculado (arquitecto, ingeniero o maestro mayor de obras): encomienda profesional, datos del profesional, información de la unidad de uso, mixtura o área especial, croquis de ubicación y declaración jurada de verificación del local",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "id": "habilitacion-actividad-economica-r04",
+          "texto": "Certificado de Aptitud Ambiental (CAA)",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "id": "habilitacion-actividad-economica-r05",
+          "texto": "Si corresponde: certificado de sobrecarga, plano de uso de actividad económica y autorización de emplazamiento",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "id": "habilitacion-actividad-economica-r06",
+          "texto": "Según la normativa de la actividad, puede solicitarse documentación específica adicional",
+          "tipo": "condicion",
+          "obligatorio": false,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        }
+      ],
+      "pasos": [
+        {
+          "orden": 1,
+          "titulo": "Iniciar la solicitud",
+          "descripcion": "Ingresar a la plataforma SSIT de la AGC con miBA y elegir 'Nueva Autorización de Actividad Económica'.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 2,
+          "titulo": "Cargar al titular o firmante",
+          "descripcion": "Ingresar el CUIT de la persona solicitante (física o jurídica).",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 3,
+          "titulo": "Declarar la ubicación",
+          "descripcion": "Cargar dirección o partida y datos catastrales; al guardar se generan número de trámite y código de seguridad que el profesional necesita para el Anexo Técnico.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 4,
+          "titulo": "Solicitar el Certificado de Aptitud Ambiental",
+          "descripcion": "Tramitar el CAA en la Agencia de Protección Ambiental.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        },
+        {
+          "orden": 5,
+          "titulo": "Evaluación de la AGC",
+          "descripcion": "La Dirección General de Habilitaciones y Permisos puede librar al uso, aprobar, observar o rechazar. Si se libra al uso, se entrega oblea con QR y se accede al Libro de Inspecciones Digital.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        }
+      ],
+      "notas": [
+        "Tipos de autorización según la página oficial: declaración responsable sin planos (hasta 500 m2, inicio inmediato con oblea QR; por encima de 500 m2 se requiere declaración responsable con plano), declaración responsable con plano, y licencia (requiere inspección previa y no permite iniciar hasta la notificación; validez de 15 años).",
+        "Estar 'librado al uso' no equivale a tener la habilitación de la actividad comercial.",
+        "Atención presencial: Tte. Gral. Juan Domingo Perón 2941, lunes a viernes de 9 a 13:30 h.",
+        "Qué tipo de autorización corresponde a cada rubro surge del Anexo II de la Res. 96/AGC/25 (pendiente de relevar)."
+      ],
+      "normativa": [
+        "Ley 6.101",
+        "Decreto 40/19",
+        "Ley 6.099 (Código Urbanístico)",
+        "Ley 6438 (Código de Edificación)",
+        "Decreto 87/19 (asimilación de rubros)",
+        "Res. 96/AGC/25"
+      ],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "habilitacion-actividad-economica-expres",
+      "nombre": "Habilitación de actividad económica exprés",
+      "tipo": "habilitacion",
+      "organismo": "AGC",
+      "modalidad": "Online (SSIT / TAD con miBA nivel 3)",
+      "costo": "Gratuito (Ley Tarifaria vigente)",
+      "descripcion": "Alternativa sin evaluación técnica profesional para locales de menos de 200 m2 que cumplen las condiciones de ubicación y uso.",
+      "url_oficial": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres",
+      "fuente_ids": [
+        "src-expres"
+      ],
+      "requisitos": [
+        {
+          "id": "habilitacion-actividad-economica-expres-r01",
+          "texto": "Usuario y clave miBA nivel 3",
+          "tipo": "previo",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "id": "habilitacion-actividad-economica-expres-r02",
+          "texto": "Superficie total que no supere los 200 m2",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "id": "habilitacion-actividad-economica-expres-r03",
+          "texto": "No comercializar explosivos, inflamables ni productos medicinales sin envasar",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "id": "habilitacion-actividad-economica-expres-r04",
+          "texto": "No estar en galerías, centros comerciales, paseos de compras, mercados, patios gastronómicos, estaciones de subte/tren, aeropuertos u otros complejos comerciales",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "id": "habilitacion-actividad-economica-expres-r05",
+          "texto": "No estar en áreas especiales (históricas, culturales, ambientales o con usos específicos del Código Urbanístico) ni en edificios catalogados",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "id": "habilitacion-actividad-economica-expres-r06",
+          "texto": "Cumplir las condiciones de accesibilidad y no tener entrepisos en las plantas a habilitar",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "id": "habilitacion-actividad-economica-expres-r07",
+          "texto": "No realizar actividades que requieran normativa específica (por ejemplo farmacia, agencia de lotería o estudio profesional)",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        }
+      ],
+      "pasos": [
+        {
+          "orden": 1,
+          "titulo": "Iniciar la solicitud",
+          "descripcion": "Ingresar a SSIT con miBA y elegir 'Habilitación de actividad económica exprés'.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 2,
+          "titulo": "Declarar ubicación y titular",
+          "descripcion": "Dirección, partida o datos catastrales, y CUIT de la persona solicitante.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 3,
+          "titulo": "Completar formularios",
+          "descripcion": "Datos del local y conformidad de uso; declarar rubro y actividades.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        },
+        {
+          "orden": 4,
+          "titulo": "Confirmar",
+          "descripcion": "Al completar los formularios se genera el CAA de forma automática; si no se cumple un requisito, el sistema deriva al trámite correspondiente.",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica-expres"
+        }
+      ],
+      "notas": [
+        "Si el local no cumple las condiciones, corresponde la habilitación de actividad económica con evaluación técnica profesional."
+      ],
+      "normativa": [
+        "Ley 6.101",
+        "Res. 96/AGC/25",
+        "Decreto 87/19"
+      ],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "certificado-aptitud-ambiental",
+      "nombre": "Certificado de Aptitud Ambiental (CAA)",
+      "tipo": "certificado",
+      "organismo": "Agencia de Protección Ambiental (GCBA)",
+      "modalidad": "Online",
+      "costo": "No relevado",
+      "descripcion": "Documento que verifica que las actividades del comercio cumplen la normativa ambiental vigente; se solicita dentro de la habilitación (se genera automáticamente en la modalidad exprés).",
+      "url_oficial": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa",
+      "fuente_ids": [
+        "src-caa",
+        "src-habilitacion",
+        "src-expres"
+      ],
+      "requisitos": [
+        {
+          "id": "certificado-aptitud-ambiental-r01",
+          "texto": "Solicitar el CAA durante la habilitación de actividad económica (automático en exprés)",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Requisitos propios del CAA no relevados: la página del trámite está enlazada desde la habilitación pero no fue leída."
+      ],
+      "normativa": [],
+      "confianza": "media",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "curso-manipulacion-higienica-alimentos",
+      "nombre": "Curso de manipulación higiénica de alimentos (carnet de manipulador)",
+      "tipo": "capacitacion",
+      "organismo": "AGC - Dirección General de Higiene y Seguridad Alimentaria",
+      "modalidad": "Online, presencial o renovación online",
+      "costo": "Gratuito",
+      "descripcion": "Capacitación básica obligatoria para quienes manipulan alimentos; quienes aprueban reciben el Carnet de Manipulador, vigente 3 años.",
+      "url_oficial": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos",
+      "fuente_ids": [
+        "src-manipulacion",
+        "src-higiene-alimentaria"
+      ],
+      "requisitos": [
+        {
+          "id": "curso-manipulacion-higienica-alimentos-r01",
+          "texto": "Registrarse como alumno en el portal web de alimentos de la AGC",
+          "tipo": "previo",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "id": "curso-manipulacion-higienica-alimentos-r02",
+          "texto": "Cursar y aprobar la evaluación de conocimientos básicos de manipulación higiénica de alimentos",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/tramites/curso-de-manipulacion-higienica-de-los-alimentos"
+        },
+        {
+          "id": "curso-manipulacion-higienica-alimentos-r03",
+          "texto": "Todo el personal que manipule alimentos (elaboración, servicio, venta y distribución) debe contar con el carnet vigente",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://buenosaires.gob.ar/agc/direcciongeneralhigieneyseguridadalimentaria"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "El carnet tiene validez de 3 años y puede renovarse online."
+      ],
+      "normativa": [],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "sistema-autoproteccion",
+      "nombre": "Sistema de Autoprotección (Ley 5920)",
+      "tipo": "obligacion",
+      "organismo": "GCBA (Ley 5920; disposiciones DGDCIV)",
+      "modalidad": "A confirmar",
+      "costo": "No relevado",
+      "descripcion": "Conjunto de medidas para prevenir y controlar riesgos; la AGC verifica su cumplimiento en la inspección.",
+      "url_oficial": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/394007",
+      "fuente_ids": [
+        "src-autoproteccion",
+        "src-guia-gastro",
+        "src-guia-kiosco",
+        "src-guia-local"
+      ],
+      "requisitos": [
+        {
+          "id": "sistema-autoproteccion-r01",
+          "texto": "Plano de evacuación visible, visado y conforme a la realidad",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "sistema-autoproteccion-r02",
+          "texto": "Roles y capacitación del personal designado en el Plan",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "sistema-autoproteccion-r03",
+          "texto": "Informe descriptivo del Sistema de Autoprotección",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "sistema-autoproteccion-r04",
+          "texto": "Gastronómicos: declaración jurada o disposición aprobatoria del sistema, según corresponda",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Las guías citan la Ley 5920 y las disposiciones 331/DGDCIV/25 (kiosco, local de atención al público) y 1358/DGDCIV/2019 y 356/DGDCIV/2023 (gastronómicos)."
+      ],
+      "normativa": [
+        "Ley 5920",
+        "Decreto 51/18",
+        "Disp. 331/DGDCIV/25",
+        "Disp. 1358/DGDCIV/2019",
+        "Disp. 356/DGDCIV/2023"
+      ],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "certificado-limpieza-campanas",
+      "nombre": "Certificado de limpieza de campanas y conductos",
+      "tipo": "certificado",
+      "organismo": "AGC (registro de empresas de limpieza)",
+      "modalidad": "A confirmar",
+      "costo": "No relevado",
+      "descripcion": "Exigido a todo local con campana, chimenea o conducto de evacuación de humos, gases, vapores u olores; lo emite una empresa registrada ante la AGC.",
+      "url_oficial": "https://buenosaires.gob.ar/gcaba_historico/guia-para-administrar-tu-local-comercial/certificado-de-limpieza-de-campanas",
+      "fuente_ids": [
+        "src-campanas",
+        "src-guia-gastro",
+        "src-guia-local",
+        "src-guia-kiosco"
+      ],
+      "requisitos": [
+        {
+          "id": "certificado-limpieza-campanas-r01",
+          "texto": "Certificado de limpieza emitido por empresa de limpieza de campanas, conductos y afines registrada ante la AGC",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Aplica solo si el local tiene campana, chimenea o conducto de evacuación."
+      ],
+      "normativa": [],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "libro-inspecciones-digital",
+      "nombre": "Libro de Inspecciones Digital",
+      "tipo": "obligacion",
+      "organismo": "AGC",
+      "modalidad": "Online (CUIT y clave miBA)",
+      "costo": "No relevado",
+      "descripcion": "Una vez que la actividad está librada al uso se accede al Libro de Inspecciones Digital, que las guías de inspección listan como documentación exigible.",
+      "url_oficial": "https://librodigital.agcontrol.gob.ar/",
+      "fuente_ids": [
+        "src-libro-digital",
+        "src-habilitacion",
+        "src-guia-gastro"
+      ],
+      "requisitos": [
+        {
+          "id": "libro-inspecciones-digital-r01",
+          "texto": "Acceder al Libro de Inspecciones Digital con CUIT y clave miBA",
+          "tipo": "previo",
+          "obligatorio": true,
+          "url_fuente": "https://librodigital.agcontrol.gob.ar/"
+        }
+      ],
+      "pasos": [],
+      "notas": [],
+      "normativa": [
+        "Res. 422/AGC/20"
+      ],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "permisos-publicidad",
+      "nombre": "Permiso de publicidad (letreros, toldos, marquesinas, sombrillas, carteles)",
+      "tipo": "permiso",
+      "organismo": "GCBA",
+      "modalidad": "Online",
+      "costo": "No relevado",
+      "descripcion": "Si el local tiene letreros, toldos, marquesinas, sombrillas o carteles, la guía de inspección exige permiso vigente y seguro de responsabilidad civil.",
+      "url_oficial": "https://buenosaires.gob.ar/tramites/permisos-de-publicidad",
+      "fuente_ids": [
+        "src-publicidad",
+        "src-guia-gastro",
+        "src-guia-kiosco",
+        "src-guia-local"
+      ],
+      "requisitos": [
+        {
+          "id": "permisos-publicidad-r01",
+          "texto": "Disposición de permiso vigente para la instalación y emplazamiento",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "permisos-publicidad-r02",
+          "texto": "Seguro de responsabilidad civil contra terceros",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Condicional: solo si el local instala letreros, toldos, marquesinas, sombrillas o carteles."
+      ],
+      "normativa": [],
+      "confianza": "media",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "habilitacion-establecimiento-farmaceutico",
+      "nombre": "Habilitación de establecimiento farmacéutico",
+      "tipo": "habilitacion",
+      "organismo": "Ministerio de Salud de la Nación (TAD)",
+      "modalidad": "Online (TAD, clave fiscal AFIP nivel 2 o superior)",
+      "costo": "Gratuito (Res. Ministerial 1938/2025)",
+      "descripcion": "Habilitación sanitaria del establecimiento farmacéutico, que se suma a la habilitación comercial de la Ciudad.",
+      "url_oficial": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico",
+      "fuente_ids": [
+        "src-farmacia-nacion"
+      ],
+      "requisitos": [
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r01",
+          "texto": "Formulario de solicitud online en TAD y nota de aceptación del cargo firmada por el presentante y el Director Técnico",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r02",
+          "texto": "Título de propiedad, contrato de locación o comodato con firmas certificadas por escribano (el comodato debe acompañarse del título de propiedad)",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r03",
+          "texto": "Plano del establecimiento con carátula del Ministerio de Salud, escala 1:100, con ambientes y medidas, firmado y sellado por el profesional y el apoderado",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r04",
+          "texto": "Disposición de habilitación definitiva o provisoria otorgada por GCBA (lectura de código QR)",
+          "tipo": "previo",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r05",
+          "texto": "Certificado de libre regencia del profesional farmacéutico",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/certificado-de-libre-regencia-yo-actuacion-profesional"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r06",
+          "texto": "Planta física: 35 m2 de atención al público y 15 m2 de sector alopático (depósito y/u oficina), conforme a las resoluciones citadas por el organismo",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r07",
+          "texto": "Si está en propiedad horizontal: reglamento de copropiedad que indique el destino del inmueble",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r08",
+          "texto": "Personas jurídicas: estatuto social inscripto en IGJ (autenticado por escribano) y acta de directorio que designa al Director Técnico",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        },
+        {
+          "id": "habilitacion-establecimiento-farmaceutico-r09",
+          "texto": "Clave fiscal AFIP nivel 2 o superior, o apoderamiento en TAD",
+          "tipo": "previo",
+          "obligatorio": true,
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        }
+      ],
+      "pasos": [
+        {
+          "orden": 1,
+          "titulo": "Obtener la habilitación de la Ciudad",
+          "descripcion": "La solicitud exige la disposición de habilitación del GCBA (QR).",
+          "url_fuente": "https://buenosaires.gob.ar/tramites/habilitacion-de-actividad-economica"
+        },
+        {
+          "orden": 2,
+          "titulo": "Ingresar a TAD",
+          "descripcion": "Trámite 'Habilitación de establecimiento farmacéutico', con clave fiscal y CUIT.",
+          "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+        }
+      ],
+      "notas": [
+        "La constancia de trámite iniciado no habilita a funcionar.",
+        "La habilitación exprés de la Ciudad no aplica a farmacias."
+      ],
+      "normativa": [
+        "Res. Secretarial 192/1998",
+        "Res. 1793/2014",
+        "Res. Ministerial 2070/2014",
+        "Res. Ministerial 1938/2025"
+      ],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "guia-inspeccion-gastronomicos",
+      "nombre": "Guía de inspección AGC: establecimientos gastronómicos",
+      "tipo": "guia_inspeccion",
+      "organismo": "AGC - Dirección General de Fiscalización y Control",
+      "modalidad": "Orientativa (no vinculante)",
+      "costo": "No aplica",
+      "descripcion": "Documentación y condiciones que los inspectores controlan en locales gastronómicos.",
+      "url_oficial": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf",
+      "fuente_ids": [
+        "src-guia-gastro"
+      ],
+      "requisitos": [
+        {
+          "id": "guia-inspeccion-gastronomicos-r01",
+          "texto": "Certificado original de autorización con código QR, exhibido y con local librado al uso; el rubro y la superficie deben coincidir con la realidad",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r02",
+          "texto": "RNE y RNPA, de corresponder",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r03",
+          "texto": "Libro digital o registro de inspección; chapa catastral visible en el frente",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r04",
+          "texto": "Carteles de prohibición de fumar y de consumo de tabaco",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r05",
+          "texto": "Extintores vigentes (1 cada 200 m2 y uno por planta), medios de salida libres, señalización y luces de emergencia",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r06",
+          "texto": "Gas natural en todo el local y sin garrafas",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r07",
+          "texto": "Protocolo de medición de puesta a tierra con encomienda profesional y tablero con disyuntor diferencial",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r08",
+          "texto": "Certificado de desratización y desinfección, análisis bacteriológico del agua y limpieza de tanques",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r09",
+          "texto": "Carnet de manipulación de alimentos del personal",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-gastronomicos-r10",
+          "texto": "Plano conforme a obra de condiciones contra incendio y certificado final, de corresponder",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/establec_gastronomicos%202025%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Es una guía orientativa: los inspectores pueden pedir más documentación."
+      ],
+      "normativa": [],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "guia-inspeccion-kiosco-maxikiosco",
+      "nombre": "Guía de inspección AGC: kiosco y maxikiosco",
+      "tipo": "guia_inspeccion",
+      "organismo": "AGC - Dirección General de Fiscalización y Control",
+      "modalidad": "Orientativa (no vinculante)",
+      "costo": "No aplica",
+      "descripcion": "Documentación y condiciones que los inspectores controlan en kioscos y maxikioscos.",
+      "url_oficial": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf",
+      "fuente_ids": [
+        "src-guia-kiosco"
+      ],
+      "requisitos": [
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r01",
+          "texto": "Certificado original de autorización con código QR, exhibido y con local librado al uso",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r02",
+          "texto": "Libro digital o registro de inspección; identificación catastral en el frente",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r03",
+          "texto": "Prohibición de expendio de bebidas alcohólicas, incluido el envío a domicilio",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r04",
+          "texto": "Prohibición de fumar (Ley 1799)",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r05",
+          "texto": "Sistema de Autoprotección conforme a la Ley 5920 y la Disp. 331/DGDCIV/25",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r06",
+          "texto": "Extintores, medios de salida libres y protocolo de puesta a tierra",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r07",
+          "texto": "Comprobante de desratización/desinfección, limpieza semestral de tanques de agua y análisis bacteriológico del agua",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r08",
+          "texto": "Capacitación en manipulación de alimentos del personal involucrado",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-kiosco-maxikiosco-r09",
+          "texto": "Si comparte el local con otro uso: independización con tabique de al menos 2,10 m de altura",
+          "tipo": "condicion",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Kiosco%20y%20Maxikiosco%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Es una guía orientativa: los inspectores pueden pedir más documentación."
+      ],
+      "normativa": [],
+      "confianza": "alta",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "guia-inspeccion-local-atencion-publico",
+      "nombre": "Guía de inspección AGC: local de atención al público",
+      "tipo": "guia_inspeccion",
+      "organismo": "AGC - Dirección General de Fiscalización y Control",
+      "modalidad": "Orientativa (no vinculante)",
+      "costo": "No aplica",
+      "descripcion": "Guía general para comercios minoristas y de atención al público; se usa por analogía en los rubros sin guía propia (a confirmar con la AGC).",
+      "url_oficial": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf",
+      "fuente_ids": [
+        "src-guia-local"
+      ],
+      "requisitos": [
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r01",
+          "texto": "Certificado original de autorización con código QR, exhibido y con local librado al uso",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r02",
+          "texto": "Libro digital o registro de inspección; identificación catastral en el frente",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r03",
+          "texto": "Libro de quejas, reclamos y sugerencias a disposición del público",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r04",
+          "texto": "Prohibición de fumar (Ley 1799)",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r05",
+          "texto": "Sistema de Autoprotección conforme a la Ley 5920 y la Disp. 331/DGDCIV/25",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r06",
+          "texto": "Extintores (1 cada 200 m2 o fracción), medios de salida libres y protocolo de puesta a tierra",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r07",
+          "texto": "Comprobante de desratización/desinfección y certificados de limpieza de tanques y análisis bacteriológico del agua",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-local-atencion-publico-r08",
+          "texto": "Plano de habilitación conforme a la realidad e instalaciones contra incendio, de corresponder",
+          "tipo": "documento",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Local%20de%20atencion%20al%20publico%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Es una guía orientativa y genérica: su aplicación a cada rubro debe confirmarse con la AGC."
+      ],
+      "normativa": [],
+      "confianza": "media",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "guia-inspeccion-peluqueria-salon-belleza",
+      "nombre": "Guía de inspección AGC: peluquería, salón de belleza y servicios personales directos",
+      "tipo": "guia_inspeccion",
+      "organismo": "AGC - Dirección General de Fiscalización y Control",
+      "modalidad": "Orientativa (no vinculante)",
+      "costo": "No aplica",
+      "descripcion": "Guía oficial para el rubro. El PDF no pudo leerse en esta revisión (acceso automatizado bloqueado): hay que curar su contenido a mano.",
+      "url_oficial": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Peluqueria_%20Salon%20de%20Belleza_%20Servicios%20personales%20directos%202025%20OK003.pdf",
+      "fuente_ids": [
+        "src-guia-peluqueria",
+        "src-decreto-861"
+      ],
+      "requisitos": [
+        {
+          "id": "guia-inspeccion-peluqueria-salon-belleza-r01",
+          "texto": "Cumplir los procedimientos de desinfección y esterilización de útiles e instrumentos en peluquerías y salones de belleza (Decreto 861/1997)",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/50039"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Contenido de la guía pendiente de relevar."
+      ],
+      "normativa": [
+        "Decreto 861/1997"
+      ],
+      "confianza": "pendiente_verificacion",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "guia-inspeccion-farmacias",
+      "nombre": "Guía de inspección AGC: farmacias",
+      "tipo": "guia_inspeccion",
+      "organismo": "AGC - Dirección General de Fiscalización y Control",
+      "modalidad": "Orientativa (no vinculante)",
+      "costo": "No aplica",
+      "descripcion": "Guía oficial para el rubro; enlazada en el índice de guías pero no leída en esta revisión.",
+      "url_oficial": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Farmacias%20OK003.pdf",
+      "fuente_ids": [
+        "src-guia-farmacias"
+      ],
+      "requisitos": [],
+      "pasos": [],
+      "notas": [
+        "Contenido de la guía pendiente de relevar."
+      ],
+      "normativa": [],
+      "confianza": "pendiente_verificacion",
+      "verificado_el": "2026-11-09"
+    },
+    {
+      "id": "guia-inspeccion-veterinarias",
+      "nombre": "Guía de inspección AGC: veterinarias",
+      "tipo": "guia_inspeccion",
+      "organismo": "AGC - Dirección General de Fiscalización y Control",
+      "modalidad": "Orientativa (no vinculante)",
+      "costo": "No aplica",
+      "descripcion": "Documentación y condiciones que los inspectores controlan en veterinarias.",
+      "url_oficial": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf",
+      "fuente_ids": [
+        "src-guia-vet"
+      ],
+      "requisitos": [
+        {
+          "id": "guia-inspeccion-veterinarias-r01",
+          "texto": "Chapa mural con indicación de clase, establecimiento y nombre del director médico veterinario",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r02",
+          "texto": "Establecimiento a cargo de un director médico veterinario matriculado",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r03",
+          "texto": "Certificado original de autorización con código QR, exhibido y con local librado al uso; libro digital o registro de inspección",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r04",
+          "texto": "Prohibición de fumar (Ley 1799)",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r05",
+          "texto": "Sistema de Autoprotección conforme a la Ley 5920 y la Disp. 331/DGDCIV/25",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r06",
+          "texto": "Extintores (1 cada 200 m2 o fracción), medios de salida libres, tablero con disyuntor diferencial y protocolo de puesta a tierra con encomienda profesional",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r07",
+          "texto": "Comprobante de desratización/desinfección, certificado semestral de limpieza de tanques de agua potable y análisis bacteriológico del agua",
+          "tipo": "documento",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r08",
+          "texto": "Sanitarios en condiciones de uso, con revestimiento impermeable y que cumplan la Ley 962 de accesibilidad",
+          "tipo": "condicion",
+          "obligatorio": true,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r09",
+          "texto": "Laboratorio con pisos y paredes impermeables (friso de 1,50 m), local de curaciones u operaciones con paredes impermeables hasta 2 m y sector de baño de animales con agua fría y caliente",
+          "tipo": "condicion",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r10",
+          "texto": "Equipos de rayos X, resonancia magnética, láser o IPL: deben estar habilitados ante el Ministerio de Salud",
+          "tipo": "condicion",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        },
+        {
+          "id": "guia-inspeccion-veterinarias-r11",
+          "texto": "Área de internación con celdas o jaulas con puerta de seguridad",
+          "tipo": "condicion",
+          "obligatorio": false,
+          "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+        }
+      ],
+      "pasos": [],
+      "notas": [
+        "Es una guía orientativa: los inspectores pueden pedir más documentación.",
+        "La guía enuncia las exigencias de laboratorio e internación para veterinarias en general; hay que confirmar cuáles aplican a un consultorio."
+      ],
+      "normativa": [
+        "Ley 6100 (Código de Edificación)",
+        "Ordenanza 34.421 (Código de Habilitaciones)",
+        "Ley 5920",
+        "Disp. 331/DGDCIV/25",
+        "Ley 962",
+        "Ley 1799"
+      ],
+      "confianza": "alta",
+      "verificado_el": "2026-11-15"
+    }
+  ],
+  "pendientes": [
+    {
+      "id": "pend-01",
+      "rubro_id": 136,
+      "tema": "Venta de animales domésticos: no se encontró un trámite oficial específico. Una nota periodística menciona la prohibición de exhibir animales en vidrieras (Ley 451, art. 1.2.9, y ley de 2019).",
+      "accion": "Confirmar con la AGC o en el Digesto de la Ciudad y, si corresponde, sumar el trámite o la restricción.",
+      "url_fuente": "https://www.derechoenzapatillas.com/amp/2021/vidrieras-no-podran-exhibir-animales/"
+    },
+    {
+      "id": "pend-02",
+      "rubro_id": 315,
+      "tema": "La guía de inspección de peluquerías no pudo leerse (acceso automatizado bloqueado).",
+      "accion": "Leer el PDF a mano y completar sus requisitos.",
+      "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Peluqueria_%20Salon%20de%20Belleza_%20Servicios%20personales%20directos%202025%20OK003.pdf"
+    },
+    {
+      "id": "pend-03",
+      "rubro_id": 66,
+      "tema": "La guía de inspección de farmacias está enlazada pero no se leyó.",
+      "accion": "Leer el PDF y completar sus requisitos.",
+      "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Farmacias%20OK003.pdf"
+    },
+    {
+      "id": "pend-04",
+      "rubro_id": 66,
+      "tema": "La página oficial indica que el Ministerio de Salud de la Nación habilita farmacias en CABA; una norma de 2014 asignaba la habilitación técnica al Ministerio de Salud porteño.",
+      "accion": "Confirmar qué jurisdicción aplica hoy antes de publicar el trámite.",
+      "url_fuente": "https://www.argentina.gob.ar/servicio/habilitar-un-establecimiento-farmaceutico"
+    },
+    {
+      "id": "pend-05",
+      "rubro_id": null,
+      "tema": "El tipo de autorización por rubro (declaración responsable sin planos, con planos o licencia) surge del Anexo II de la Res. 96/AGC/25.",
+      "accion": "Relevar el Anexo II y cruzarlo con los rubros del catálogo.",
+      "url_fuente": "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/781370"
+    },
+    {
+      "id": "pend-06",
+      "rubro_id": null,
+      "tema": "Varias páginas enlazadas (CAA, campanas, libro digital, publicidad, Ley 5920) no se leyeron; solo se usó lo que dicen las guías de inspección.",
+      "accion": "Leer cada página y completar requisitos, costos y plazos.",
+      "url_fuente": "https://buenosaires.gob.ar/tramites/impacto-ambiental-certificado-de-aptitud-ambiental-caa"
+    },
+    {
+      "id": "pend-07",
+      "rubro_id": 104,
+      "tema": "No está confirmado si la habilitación exprés aplica a veterinarias (exigen director médico veterinario matriculado) ni cuáles exigencias de la guía (laboratorio, internación) aplican a un consultorio.",
+      "accion": "Consultar a la AGC antes de publicar la vía de habilitación del rubro.",
+      "url_fuente": "https://static.buenosaires.gob.ar/sites/default/files/2026-03/Guia%20Veterinarias%202025%20OK003.pdf"
+    }
+  ]
+}

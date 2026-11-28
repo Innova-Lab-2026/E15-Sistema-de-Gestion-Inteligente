@@ -1,21 +1,31 @@
-pregunta,rubro_esperado,barrio_esperado
-quiero poner una barbería en Belgrano,rubro_315,belgrano
-quiero abrir una cafetería en avenida Corrientes al 2500,rubro_102,balvanera
-quiero abrir una cafetería en Palermo,rubro_102,palermo
-cuánto sale un pasaje a Mar del Plata,,
-quiero poner una barbería en Cabildo 2000,rubro_315,belgrano
-necesito abrir una farmacia en Caballito,rubro_66,caballito
-quiero abrir un kiosco en Recoleta,rubro_245,recoleta
-como habilito un maxikiosco en Flores,rubro_169,flores
-quiero montar una ferreteria en Villa Crespo,rubro_309,villa_crespo
-quiero abrir un supermercado en Villa Urquiza,rubro_137,villa_urquiza
-quiero abrir una pintureria en Almagro,rubro_4,almagro
-quiero vender mascotas en Nunez,rubro_136,nunez
-quiero abrir un local de ropa en San Telmo,rubro_16,san_telmo
-quiero abrir un local de comida para llevar en Boedo,rubro_471,boedo
-abrir cafeteria en velez sarsfield,rubro_102,velez_sarsfield
-quiero abrir un restaurante en Palermo,rubro_102,palermo
-quiero abrir un local en Caballito,,caballito
-quiero abrir un negocio,,
-cómo saco el DNI,,
-qué clima hace hoy en Buenos Aires,,
+pregunta,rubro_esperado,barrio_esperado,estado_esperado
+quiero poner una barbería en Belgrano,rubro_315,belgrano,completa
+quiero abrir una cafetería en avenida Corrientes al 2500,rubro_102,balvanera,completa
+quiero abrir una cafetería en Palermo,rubro_102,palermo,completa
+cuánto sale un pasaje a Mar del Plata,,,fuera_de_alcance
+quiero poner una barbería en Cabildo 2000,rubro_315,belgrano,completa
+necesito abrir una farmacia en Caballito,rubro_66,caballito,completa
+quiero abrir un kiosco en Recoleta,rubro_245,recoleta,completa
+como habilito un maxikiosco en Flores,rubro_169,flores,completa
+quiero montar una ferreteria en Villa Crespo,rubro_309,villa_crespo,completa
+quiero abrir un supermercado en Villa Urquiza,rubro_137,villa_urquiza,completa
+quiero abrir una pintureria en Almagro,rubro_4,almagro,completa
+quiero vender mascotas en Nunez,rubro_136,nunez,completa
+quiero abrir un local de ropa en San Telmo,rubro_16,san_telmo,completa
+quiero abrir un local de comida para llevar en Boedo,rubro_471,boedo,completa
+abrir cafeteria en velez sarsfield,rubro_102,velez_sarsfield,completa
+quiero abrir un restaurante en Palermo,rubro_102,palermo,completa
+quiero abrir un local en Caballito,,caballito,pide_aclaracion
+quiero abrir un negocio,,,pide_aclaracion
+cómo saco el DNI,,,fuera_de_alcance
+qué clima hace hoy en Buenos Aires,,,fuera_de_alcance
+quiero abrir un kiosco en Flores,rubro_245,flores,completa
+quiero abrir una farmacia en Retiro,rubro_66,retiro,completa
+quiero abrir una cafetería en Parque Chas,rubro_102,parque_chas,completa
+quiero abrir un kiosko en Floresta,rubro_245,floresta,completa
+quiero abrir una peluqeria en Villa Urquiza,rubro_315,villa_urquiza,completa
+peluquería en Av. Cabildo 2000,rubro_315,belgrano,completa
+quiero abrir una cafeteria en Nuñes,rubro_102,nunez,completa
+quiero abrir una ferretería en Parque Patricios,rubro_309,parque_patricios,completa
+quiero abrir una farmacia,rubro_66,,pide_aclaracion
+cómo pago el ABL,,,fuera_de_alcance
